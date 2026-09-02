@@ -63,6 +63,7 @@ from datetime import datetime, timedelta
 import requests
 
 from api_teste_token import gerar_token
+from credenciais import CODIGO_EVENTO, TOKEN_PARCEIRO
 
 # ---------------------------------------------------------------- endpoints
 URL_PROD = "https://app.netpdv.com:5566/api/relatorios/ListaTransacoes"
@@ -72,8 +73,8 @@ TOKEN_URL_PROD = "https://app.netpdv.com:5566/api/relatorios/GeraToken"
 TOKEN_URL_DEV = "http://devapp.netpdv.info:5566/api/relatorios/GeraToken"
 
 # ------------------------------------------------------------- credenciais
-TOKEN_PARCEIRO = "09C7DF1421"
-CODIGO_EVENTO = 38049
+# TOKEN_PARCEIRO e CODIGO_EVENTO vem de credenciais.json ou das variaveis de
+# ambiente (ver credenciais.py) - nunca do codigo, que vai para o repositorio.
 
 TIMEOUT = 180
 

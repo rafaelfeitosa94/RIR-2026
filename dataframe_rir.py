@@ -23,14 +23,33 @@ Uso como biblioteca:
     df = carregar_transacoes()
     # -> DataFrame com as colunas "Transação id", "Nome do Evento", ...
 
+LEITURA CONTINUA (estilo readStream)
+------------------------------------
+LeitorStream consome as transacoes como um log: guarda um offset (os ids ja
+entregues) e a cada ciclo chama a API, le o que chegou e devolve SO os
+registros novos, em micro-lotes.
+
+    from dataframe_rir import LeitorStream
+
+    for lote in LeitorStream().stream(intervalo=60):
+        if lote.empty:
+            continue
+        print(len(lote), "transacoes novas")
+
+O offset fica em dados_rir2026/offset_stream.json, entao reiniciar o processo
+nao reprocessa o que ja foi entregue.
+
 Uso pela linha de comando (inspecao rapida):
 
     python dataframe_rir.py
     python dataframe_rir.py --info
+    python dataframe_rir.py --stream --intervalo 60
 """
 
 import argparse
+import json
 import os
+import time
 
 import pandas as pd
 
@@ -41,8 +60,17 @@ from api_transacoes_rir import (
     JSONL_AMBULANTES,
     JSONL_TRANSACOES,
     PASTA_DADOS,
+    coletar,
     ler_jsonl,
 )
+
+# Offset do leitor continuo: ids de transacao ja entregues.
+ARQ_OFFSET = "offset_stream.json"
+
+# Intervalo padrao entre ciclos, em segundos. O WS entrega no maximo 1 hora
+# por requisicao e a hora corrente e re-baixada a cada ciclo, entao nao
+# adianta ciclar muito mais rapido do que a granularidade dos dados.
+INTERVALO_PADRAO = 60
 
 # ----------------------------------------------------------------- colunas
 # De-para campo da API -> nome da coluna no software de destino.
@@ -187,6 +215,102 @@ def carregar_movimentos_ambulantes(pasta=PASTA_DADOS, converter_tipos=True):
     return _montar(registros, CAMPOS_AMBULANTE, COLUNAS_AMBULANTE, converter_tipos)
 
 
+# ------------------------------------------------------------------ stream
+class LeitorStream:
+    """Consumidor incremental das transacoes, no estilo readStream.
+
+    Mantem um offset - o conjunto de transacao_id ja entregues - e a cada
+    ciclo devolve apenas os registros que ainda nao passaram por aqui.
+
+    O offset e por transacao, e nao por hora, de proposito: a coleta re-baixa
+    a hora corrente varias vezes para pegar lancamentos atrasados, entao os
+    mesmos registros reaparecem no .jsonl. Filtrar por id garante que cada
+    transacao seja entregue uma unica vez, mesmo com o processo reiniciando.
+
+    Cancelamentos nao violam isso: a Zig cria uma transacao NOVA apontando
+    para a original em transacao_original_id, entao ela vem como um registro
+    inedito e e entregue normalmente.
+    """
+
+    def __init__(self, pasta=PASTA_DADOS, persistir_offset=True):
+        self.pasta = pasta
+        self.persistir_offset = persistir_offset
+        self.arq_offset = os.path.join(pasta, ARQ_OFFSET)
+        self.entregues = self._carregar_offset()
+
+    # ------------------------------------------------------------- offset
+    def _carregar_offset(self):
+        if not self.persistir_offset or not os.path.exists(self.arq_offset):
+            return set()
+        try:
+            with open(self.arq_offset, encoding="utf-8") as arquivo:
+                return set(json.load(arquivo).get("transacao_ids", []))
+        except (ValueError, OSError):
+            # Offset corrompido nao pode derrubar a coleta: recomeca do zero,
+            # o pior caso e reentregar registros que o consumidor ja viu.
+            print("  aviso: offset ilegivel, recomecando do zero")
+            return set()
+
+    def _salvar_offset(self):
+        if not self.persistir_offset:
+            return
+        os.makedirs(self.pasta, exist_ok=True)
+        with open(self.arq_offset, "w", encoding="utf-8") as arquivo:
+            json.dump({"atualizado_em": pd.Timestamp.now().isoformat(),
+                       "total": len(self.entregues),
+                       "transacao_ids": sorted(self.entregues)},
+                      arquivo)
+
+    def reiniciar(self):
+        """Zera o offset: o proximo lote traz tudo de novo."""
+        self.entregues = set()
+        self._salvar_offset()
+
+    # -------------------------------------------------------------- lote
+    def proximo_lote(self, coletar_antes=True, **kwargs_coleta):
+        """Chama a API (opcional), le o acumulado e devolve so o que e novo.
+
+        Devolve um DataFrame ja renomeado; vazio quando nada novo chegou.
+        """
+        if coletar_antes:
+            coletar(self.pasta, **kwargs_coleta)
+
+        df = carregar_transacoes(self.pasta)
+        if df.empty:
+            return df
+
+        coluna_id = COLUNAS_TRANSACAO["transacao_id"]
+        novos = df[~df[coluna_id].isin(self.entregues)]
+
+        if not novos.empty:
+            self.entregues.update(novos[coluna_id].tolist())
+            self._salvar_offset()
+
+        return novos
+
+    def stream(self, intervalo=INTERVALO_PADRAO, coletar_antes=True,
+               **kwargs_coleta):
+        """Generator infinito: a cada 'intervalo' segundos, emite um lote.
+
+        Emite um DataFrame vazio quando nada novo chegou, para o consumidor
+        poder distinguir "sem novidade" de "processo travado".
+        """
+        while True:
+            inicio = time.monotonic()
+            try:
+                yield self.proximo_lote(coletar_antes, **kwargs_coleta)
+            except KeyboardInterrupt:
+                raise
+            except Exception as e:
+                # Um ciclo que falha (rede, WS fora do ar) nao pode matar o
+                # stream: avisa e tenta de novo no proximo intervalo.
+                print(f"  erro no ciclo: {type(e).__name__}: {e}")
+
+            espera = intervalo - (time.monotonic() - inicio)
+            if espera > 0:
+                time.sleep(espera)
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="Monta o DataFrame das transacoes do RIR 2026 ja coletadas.")
@@ -196,12 +320,50 @@ def main():
                         help="mostra dtypes e uso de memoria em vez das linhas")
     parser.add_argument("--ambulantes", action="store_true",
                         help="usa os movimentos de ambulante no lugar das transacoes")
+    parser.add_argument("--stream", action="store_true",
+                        help="leitura continua: coleta e imprime so o que chega de novo")
+    parser.add_argument("--intervalo", type=int, default=INTERVALO_PADRAO,
+                        help=f"segundos entre ciclos do --stream (padrao: {INTERVALO_PADRAO})")
+    parser.add_argument("--sem-coletar", action="store_true",
+                        help="nao chama a API; usa so o que ja esta em disco")
     args = parser.parse_args()
+
+    # Sem coletar, o DataFrame sai com o que foi baixado na ultima execucao -
+    # que pode ser de horas atras. Atualizar e o padrao.
+    if not args.sem_coletar and not args.stream:
+        from api_transacoes_rir import coletar
+        print("Atualizando da API...")
+        coletar(args.pasta)
+        print()
+
+    if args.stream:
+        leitor = LeitorStream(args.pasta)
+        print(f"Lendo em tempo real a cada {args.intervalo}s "
+              f"({len(leitor.entregues)} transacoes ja entregues). Ctrl+C para parar.")
+        try:
+            for lote in leitor.stream(intervalo=args.intervalo):
+                marca = pd.Timestamp.now().strftime("%H:%M:%S")
+                if lote.empty:
+                    print(f"[{marca}] sem novidade")
+                else:
+                    print(f"[{marca}] +{len(lote)} linhas novas")
+                    with pd.option_context("display.max_columns", None,
+                                           "display.width", 200):
+                        print(lote[["Transação id", "Nome do Ponto",
+                                    "Produto", "Valor Total"]].to_string(index=False))
+        except KeyboardInterrupt:
+            print("\nStream encerrado.")
+        return
 
     df = (carregar_movimentos_ambulantes(args.pasta) if args.ambulantes
           else carregar_transacoes(args.pasta))
 
-    print(f"{len(df)} linhas x {len(df.columns)} colunas\n")
+    print(f"{len(df)} linhas x {len(df.columns)} colunas")
+    if not df.empty:
+        ultima = df[COLUNAS_TRANSACAO["data_hora_realizacao"]].max()
+        atraso = (pd.Timestamp.now() - ultima).total_seconds()
+        print(f"ultima transacao: {ultima:%d/%m %H:%M:%S} ({max(atraso, 0):.0f}s atras)")
+    print()
 
     if args.info:
         df.info()
