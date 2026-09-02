@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RIR 2026 — Vendas ao vivo</title>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
+<style>
+  :root{
+    --bg:#0b1020; --card:#141a2f; --card2:#1a2140; --linha:#252d4d;
+    --txt:#e8ecf8; --txt2:#94a0c4; --acento:#ff9f43; --ok:#22c55e; --erro:#ef4444;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);
+       font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
+  header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+         padding:16px 22px;background:var(--card);border-bottom:1px solid var(--linha)}
+  h1{font-size:18px;margin:0;font-weight:650;letter-spacing:.2px}
+  .sub{color:var(--txt2);font-size:12px}
+  .selo{display:flex;align-items:center;gap:7px;margin-left:auto;
+        background:var(--card2);border:1px solid var(--linha);
+        padding:6px 13px;border-radius:20px;font-size:12px;font-weight:600}
+  .bolinha{width:8px;height:8px;border-radius:50%;background:var(--ok);
+           animation:pulsa 1.6s ease-in-out infinite}
+  .bolinha.off{background:var(--erro);animation:none}
+  @keyframes pulsa{0%,100%{opacity:1}50%{opacity:.25}}
+  main{padding:18px 22px 40px}
+  .kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+        margin-bottom:18px}
+  .kpi{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:15px 17px}
+  .kpi .rot{color:var(--txt2);font-size:11px;text-transform:uppercase;
+            letter-spacing:.8px;margin-bottom:7px}
+  .kpi .val{font-size:26px;font-weight:700;line-height:1.15}
+  .kpi .pe{color:var(--txt2);font-size:11px;margin-top:5px}
+  .kpi.destaque .val{color:var(--acento)}
+  .grade{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+  .card{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px}
+  .card h2{font-size:13px;margin:0 0 12px;font-weight:600;color:var(--txt2);
+           text-transform:uppercase;letter-spacing:.7px}
+  .largo{grid-column:1/-1}
+  table{width:100%;border-collapse:collapse;font-size:12.5px}
+  th{text-align:left;color:var(--txt2);font-weight:600;padding:7px 8px;
+     border-bottom:1px solid var(--linha);font-size:11px;
+     text-transform:uppercase;letter-spacing:.5px}
+  td{padding:7px 8px;border-bottom:1px solid rgba(37,45,77,.5)}
+  tbody tr:last-child td{border-bottom:none}
+  td.num{text-align:right;font-variant-numeric:tabular-nums}
+  .cancel{color:var(--erro)}
+  /* marca que a venda teve mais produtos além do principal mostrado */
+  .mais{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
+        background:var(--card2);border:1px solid var(--linha);
+        color:var(--txt2);font-size:10.5px;font-weight:600}
+  .vazio{color:var(--txt2);text-align:center;padding:36px;font-size:13px}
+  @media(max-width:640px){.kpi .val{font-size:21px}main{padding:14px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>RIR 2026 — Vendas ao vivo</h1>
+    <div class="sub" id="sub">conectando…</div>
+  </div>
+  <div class="selo"><span class="bolinha off" id="bolinha"></span><span id="status">offline</span></div>
+</header>
+
+<main>
+  <div class="kpis" id="kpis"></div>
+
+  <div class="grade">
+    <div class="card largo">
+      <h2>Faturamento por hora</h2>
+      <div id="gHora"></div>
+    </div>
+    <div class="card">
+      <h2>Top 10 produtos</h2>
+      <div id="gProduto"></div>
+    </div>
+    <div class="card">
+      <h2>Por ponto de venda</h2>
+      <div id="gPonto"></div>
+    </div>
+    <div class="card">
+      <h2>Forma de pagamento</h2>
+      <div id="gPagamento"></div>
+    </div>
+    <div class="card">
+      <h2>Categoria</h2>
+      <div id="gCategoria"></div>
+    </div>
+    <div class="card largo">
+      <h2>Últimas transações</h2>
+      <div id="feed"><div class="vazio">aguardando…</div></div>
+    </div>
+  </div>
+</main>
+
+<script>
+const moeda = v => (v ?? 0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
+const num   = v => (v ?? 0).toLocaleString('pt-BR',{maximumFractionDigits:0});
+
+// ApexCharts é reconstruído a cada snapshot só na primeira vez; depois usamos
+// updateSeries/updateOptions, que anima em vez de piscar o gráfico inteiro.
+const graficos = {};
+
+const BASE = {
+  chart:{ background:'transparent', foreColor:'#94a0c4', toolbar:{show:false},
+          animations:{enabled:true, easing:'easeinout', speed:400},
+          fontFamily:"'Segoe UI',system-ui,sans-serif" },
+  theme:{ mode:'dark' },
+  grid:{ borderColor:'#252d4d', strokeDashArray:3 },
+  dataLabels:{ enabled:false },
+  tooltip:{ theme:'dark' },
+};
+
+function desenhar(id, opcoes, series){
+  if(graficos[id]){
+    graficos[id].updateOptions(opcoes, false, false, false);
+    graficos[id].updateSeries(series, true);
+    return;
+  }
+  const g = new ApexCharts(document.querySelector('#'+id),
+                           Object.assign({}, BASE, opcoes, {series}));
+  g.render();
+  graficos[id] = g;
+}
+
+function renderKpis(s){
+  const t = s.resumo.totais;
+  const ticket = t.transacoes_venda ? t.valor_bruto_vendas / t.transacoes_venda : 0;
+  const cards = [
+    {rot:'Faturamento líquido', val:moeda(t.valor_liquido), destaque:true,
+     pe:`bruto ${moeda(t.valor_bruto_vendas)}`},
+    {rot:'Transações',   val:num(t.transacoes_venda), pe:`${num(t.transacoes)} com cancelamentos`},
+    {rot:'Itens',        val:num(t.itens),            pe:'quantidade líquida'},
+    {rot:'Ticket médio', val:moeda(ticket),           pe:'por transação de venda'},
+    {rot:'Cancelado',    val:moeda(t.valor_cancelado),pe:`${num(t.transacoes_cancelamento)} transações`},
+  ];
+  document.getElementById('kpis').innerHTML = cards.map(c => `
+    <div class="kpi ${c.destaque?'destaque':''}">
+      <div class="rot">${c.rot}</div><div class="val">${c.val}</div>
+      <div class="pe">${c.pe}</div>
+    </div>`).join('');
+}
+
+function renderGraficos(s){
+  const r = s.resumo;
+
+  // Eixo de tempo (não categorias): o Apex espaça os rótulos sozinho, o que
+  // importa quando os 12 dias de evento viram ~288 pontos horários.
+  const hora = r.por_hora || [];
+  desenhar('gHora', {
+    chart:{type:'area', height:260, zoom:{type:'x', enabled:true},
+           toolbar:{show:true, tools:{download:false}}},
+    xaxis:{type:'datetime', labels:{datetimeUTC:false, style:{fontSize:'11px'}}},
+    yaxis:{labels:{formatter:v => 'R$ '+num(v)}},
+    // 'straight' e não 'smooth': a curva suave inventa valores entre as horas
+    // e chega a desenhar faturamento negativo onde não houve.
+    stroke:{curve:'straight', width:2},
+    colors:['#ff9f43'],
+    fill:{type:'gradient', gradient:{shadeIntensity:1, opacityFrom:.45, opacityTo:.05}},
+    tooltip:{x:{format:'dd/MM HH:00'}, y:{formatter:v => moeda(v)}},
+  }, [{name:'Faturamento', data:hora.map(h => ({
+        x:new Date(h._hora + ':00:00').getTime(),
+        y:+h.valor_liquido.toFixed(2)}))}]);
+
+  const prod = (r.por_produto || []).slice(0,10);
+  desenhar('gProduto', {
+    chart:{type:'bar', height:300},
+    plotOptions:{bar:{horizontal:true, borderRadius:4, barHeight:'70%'}},
+    xaxis:{categories:prod.map(p => p.Produto), labels:{formatter:v => 'R$ '+num(v)}},
+    colors:['#ff9f43'],
+    tooltip:{y:{formatter:v => moeda(v)}},
+  }, [{name:'Faturamento', data:prod.map(p => +p.valor_liquido.toFixed(2))}]);
+
+  const ponto = r.por_ponto || [];
+  desenhar('gPonto', {
+    chart:{type:'bar', height:300},
+    plotOptions:{bar:{horizontal:true, borderRadius:4, barHeight:'70%'}},
+    xaxis:{categories:ponto.map(p => p['Nome do Ponto']), labels:{formatter:v => 'R$ '+num(v)}},
+    colors:['#60a5fa'],
+    tooltip:{y:{formatter:v => moeda(v)}},
+  }, [{name:'Faturamento', data:ponto.map(p => +p.valor_liquido.toFixed(2))}]);
+
+  const pag = r.por_forma_pagamento || [];
+  desenhar('gPagamento', {
+    chart:{type:'donut', height:280},
+    labels:pag.map(p => p['Forma de Pagamento']),
+    colors:['#ff9f43','#60a5fa','#22c55e','#a78bfa','#f472b6'],
+    legend:{position:'bottom'},
+    tooltip:{y:{formatter:v => moeda(v)}},
+  }, pag.map(p => +p.valor_liquido.toFixed(2)));
+
+  const cat = r.por_categoria || [];
+  desenhar('gCategoria', {
+    chart:{type:'donut', height:280},
+    labels:cat.map(c => c['Categoria Produto']),
+    colors:['#22c55e','#ff9f43','#60a5fa','#a78bfa'],
+    legend:{position:'bottom'},
+    tooltip:{y:{formatter:v => moeda(v)}},
+  }, cat.map(c => +c.valor_liquido.toFixed(2)));
+}
+
+function renderFeed(s){
+  if(!s.feed.length){
+    document.getElementById('feed').innerHTML = '<div class="vazio">nenhuma transação ainda</div>';
+    return;
+  }
+  document.getElementById('feed').innerHTML = `
+    <table><thead><tr>
+      <th>Hora</th><th>Ponto</th><th>Produto</th><th>Operação</th>
+      <th>Pagamento</th><th class="num">Itens</th><th class="num">Valor da venda</th>
+    </tr></thead><tbody>` +
+    s.feed.map(f => `<tr class="${f.cancelamento?'cancel':''}">
+        <td>${f.hora}</td><td>${f.ponto ?? '—'}</td>
+        <td>${f.produto ?? '—'}${f.outros_produtos ? `<span class="mais">+${f.outros_produtos}</span>` : ''}</td>
+        <td>${f.operacao ?? '—'}</td><td>${f.pagamento ?? '—'}</td>
+        <td class="num">${f.quantidade ?? '—'}</td>
+        <td class="num">${moeda(f.valor)}</td>
+      </tr>`).join('') + '</tbody></table>';
+}
+
+function aplicar(s){
+  if(s.vazio){
+    document.getElementById('sub').textContent =
+      'nenhuma transação coletada ainda — aguardando o evento';
+    return;
+  }
+  renderKpis(s); renderGraficos(s); renderFeed(s);
+  const hora = new Date(s.atualizado_em).toLocaleTimeString('pt-BR');
+  document.getElementById('sub').textContent =
+    `atualizado ${hora} · dado de ${Math.round(s.atraso_s)}s atrás`;
+}
+
+function selo(texto, offline){
+  document.getElementById('status').textContent = texto;
+  document.getElementById('bolinha').classList.toggle('off', offline);
+}
+
+// ---------------------------------------------------------------- modo 1
+// Servidor local (painel_server.py): SSE empurra cada snapshot novo.
+function modoServidor(){
+  const fonte = new EventSource('/api/stream');
+  fonte.onopen    = () => selo('ao vivo', false);
+  fonte.onmessage = e  => aplicar(JSON.parse(e.data));
+  // O EventSource reconecta sozinho; não fechamos a conexão aqui.
+  fonte.onerror   = () => selo('reconectando…', true);
+}
+
+// ---------------------------------------------------------------- modo 2
+// GitHub Pages: não há servidor, só arquivo estático. Busca os JSONs que o
+// stream_rir.py publica e remonta o mesmo formato de snapshot. Sem push:
+// pergunta de tempos em tempos.
+const INTERVALO_ESTATICO = 60000;
+
+async function buscarEstatico(){
+  // O ?t= fura o cache do CDN do Pages, que serviria a versão anterior.
+  const t = Date.now();
+  const [resumo, painel] = await Promise.all([
+    fetch(`publico/resumo.json?t=${t}`).then(r => r.json()),
+    fetch(`publico/painel.json?t=${t}`).then(r => r.json()).catch(() => ({feed:[]})),
+  ]);
+
+  const ultima = resumo.totais?.ultima_transacao;
+  return {
+    vazio: !resumo.totais || !resumo.totais.transacoes,
+    atualizado_em: resumo.atualizado_em,
+    ultima_transacao: ultima,
+    // Aqui o "atraso" é medido contra a última venda publicada, então inclui
+    // o ciclo do publicador e o cache do GitHub — por isso é de minutos.
+    atraso_s: ultima ? Math.max((Date.now() - new Date(ultima)) / 1000, 0) : null,
+    resumo,
+    feed: painel.feed || [],
+  };
+}
+
+async function modoEstatico(){
+  const ciclo = async () => {
+    try{
+      aplicar(await buscarEstatico());
+      selo('publicado', false);
+    }catch(e){
+      selo('sem dados', true);
+    }
+  };
+  await ciclo();
+  setInterval(ciclo, INTERVALO_ESTATICO);
+}
+
+// Descobre em qual dos dois modos estamos: se /api/snapshot responde, há
+// servidor; se não, é o site estático.
+fetch('/api/snapshot')
+  .then(r => { if(!r.ok) throw 0; return r.json(); })
+  .then(s => { if(!s.vazio) aplicar(s); modoServidor(); })
+  .catch(modoEstatico);
+</script>
+</body>
+</html>
