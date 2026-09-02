@@ -1,40 +1,48 @@
 name: Publicar vendas RIR 2026
 
 # Roda nos servidores do GitHub - nao depende de nenhuma maquina ligada.
-# A cada execucao: chama a API da Zig, regenera publico/*.json e commita.
-# O GitHub Pages republica sozinho a cada commit.
+#
+# POR QUE UM LACO, E NAO UM CRON DE 5 MINUTOS
+# -------------------------------------------
+# O evento 'schedule' do Actions e melhor-esforco: o GitHub atrasa e ate
+# descarta execucoes agendadas sob carga. Na pratica um "*/5" roda a cada 15,
+# 30 ou 60 minutos - inutil para acompanhar venda ao vivo.
+#
+# Entao, em vez de 288 execucoes por dia, esta workflow abre UMA execucao que
+# fica viva publicando a cada 2 minutos ate perto do limite de 6 horas por job,
+# e no fim dispara a proxima. Repositorio publico tem minutos de Actions
+# ilimitados, entao isso nao consome cota.
 
 on:
+  workflow_dispatch:
   schedule:
-    # A cada 5 minutos: e o intervalo minimo aceito pelo GitHub. Na pratica o
-    # agendador atrasa em horario de pico, entao o intervalo real fica entre
-    # 5 e 15 minutos.
-    - cron: "*/5 * * * *"
-  workflow_dispatch:        # permite rodar na mao pela aba Actions
+    # Rede de seguranca: se a corrente quebrar (job morto, limite atingido),
+    # isto reabre o laco. Nao e o mecanismo principal, e o plano B.
+    - cron: "*/30 * * * *"
 
-# Necessario para o passo de commit conseguir escrever no repositorio.
 permissions:
   contents: write
+  actions: write            # necessario para encadear a proxima execucao
 
 concurrency:
-  # Duas execucoes ao mesmo tempo brigariam no push. A nova espera a anterior
-  # terminar em vez de ser cancelada, para nenhum ciclo de coleta se perder.
+  # Um laco por vez. Uma execucao nova espera a anterior terminar em vez de
+  # ser cancelada, senao a rede de seguranca mataria o laco em andamento.
   group: publicar-rir
   cancel-in-progress: false
 
 jobs:
   publicar:
     runs-on: ubuntu-latest
+    timeout-minutes: 355    # o teto do GitHub e 360
 
     env:
-      # O runner do GitHub roda em UTC. Sem isto, datetime.now() adianta 3h:
-      # o coletor pediria horas que ainda nao aconteceram e marcaria como
-      # "definitiva" uma hora que ainda esta recebendo venda.
+      # O runner roda em UTC. Sem isto, datetime.now() adianta 3h: o coletor
+      # pediria horas futuras e fecharia hora que ainda esta vendendo.
       TZ: America/Sao_Paulo
-      # Credenciais da Zig: cadastradas em Settings > Secrets and variables >
-      # Actions. Nunca ficam no codigo - credenciais.py le do ambiente.
       ZIG_TOKEN_PARCEIRO: ${{ secrets.ZIG_TOKEN_PARCEIRO }}
       ZIG_CODIGO_EVENTO: ${{ secrets.ZIG_CODIGO_EVENTO }}
+      INTERVALO_S: 120       # segundos entre publicacoes
+      DURACAO_S: 19800       # 5h30 de laco, com folga ate o teto de 6h
 
     steps:
       - uses: actions/checkout@v4
@@ -46,31 +54,64 @@ jobs:
       - name: Instalar dependencias
         run: pip install --quiet requests pandas
 
-      # O .jsonl bruto nao vai para o repositorio (ficaria enorme), entao fica
-      # no cache entre execucoes. Se o cache sumir, a execucao seguinte apenas
-      # recoleta o periodo inteiro - fica mais lenta, mas nao perde dado.
+      # O .jsonl bruto nao vai para o repositorio (ficaria enorme). Se o cache
+      # sumir, a execucao seguinte so recoleta o periodo - fica lenta, nao
+      # perde dado.
       - name: Restaurar dados coletados
-        uses: actions/cache@v4
+        uses: actions/cache/restore@v4
         with:
           path: dados_rir2026
           key: dados-rir-${{ github.run_id }}
           restore-keys: dados-rir-
 
-      - name: Coletar e gerar os JSONs
-        run: python stream_rir.py --uma-vez --sem-git --reusar-token
-
-      - name: Commitar o que mudou
+      - name: Publicar em laco
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add publico
-          # Sem mudanca nao ha commit: evita encher o historico de commits
-          # vazios nas horas em que o evento nao esta vendendo.
-          if git diff --cached --quiet; then
-            echo "nada mudou nesta execucao"
+
+          fim=$(( $(date +%s) + DURACAO_S ))
+          ciclo=0
+
+          while [ "$(date +%s)" -lt "$fim" ]; do
+            ciclo=$((ciclo + 1))
+            echo "::group::ciclo $ciclo - $(date '+%H:%M:%S')"
+
+            python stream_rir.py --uma-vez --sem-git --reusar-token || true
+
+            git add publico
+            if git diff --cached --quiet; then
+              echo "nada mudou"
+            else
+              git commit -q -m "dados RIR26 $(date '+%Y-%m-%d %H:%M:%S')"
+              # Outra execucao (ou o PC do BI) pode ter commitado no meio.
+              git pull --rebase --autostash -q origin main || true
+              git push -q || echo "push falhou - tenta no proximo ciclo"
+            fi
+
+            echo "::endgroup::"
+            sleep "$INTERVALO_S"
+          done
+
+      # Guarda o estado para a proxima execucao nao recomecar do zero.
+      - name: Salvar dados coletados
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: dados_rir2026
+          key: dados-rir-${{ github.run_id }}
+
+      - name: Encadear a proxima execucao
+        if: always()
+        env:
+          # O GITHUB_TOKEN NAO consegue disparar outra workflow (o GitHub
+          # bloqueia para evitar recursao). Com um PAT em secrets.PAT_CHAIN a
+          # corrente segue sem intervalo; sem ele, o cron de 30 min reabre o
+          # laco - com um buraco de ate ~1h a cada 5h30.
+          GH_TOKEN: ${{ secrets.PAT_CHAIN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "PAT_CHAIN nao configurado - a proxima execucao virá do cron."
             exit 0
           fi
-          git commit -m "dados RIR26 $(date '+%Y-%m-%d %H:%M:%S')"
-          # Outra execucao pode ter commitado enquanto esta rodava.
-          git pull --rebase --autostash origin main
-          git push
+          gh workflow run publicar.yml --repo "${{ github.repository }}"
+          echo "proxima execucao disparada"
