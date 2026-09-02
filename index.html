@@ -111,6 +111,15 @@
   .vazio{color:var(--txt2);text-align:center;padding:32px;font-size:13px}
   .rolar{overflow-x:auto}
 
+  .atualizar{width:100%;margin-top:18px;padding:10px;border-radius:8px;cursor:pointer;
+             font-size:13px;font-weight:700;font-family:inherit;border:1px solid var(--azul);
+             background:var(--azul);color:#fff;transition:opacity .15s}
+  .atualizar:hover{opacity:.88}
+  .atualizar:disabled{opacity:.55;cursor:default}
+  .forcar{display:block;margin-top:8px;text-align:center;font-size:11.5px;
+          color:var(--txt2);text-decoration:none}
+  .forcar:hover{color:var(--azul);text-decoration:underline}
+
   .tema{display:flex;gap:6px;margin-bottom:16px}
   .tema button{flex:1;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:12px;
                font-weight:600;font-family:inherit;border:1px solid var(--linha);
@@ -158,6 +167,10 @@
 
   <h3>Dia</h3>
   <div class="opcoes" id="fDia"></div>
+
+  <button id="btnAtualizar" class="atualizar">↻ Atualizar agora</button>
+  <a id="forcarPublicacao" class="forcar" target="_blank" rel="noopener" hidden>
+    forçar publicação no GitHub ↗</a>
 
   <div class="selo"><span class="bolinha off" id="bolinha"></span><span id="status">conectando…</span></div>
 </aside>
@@ -681,6 +694,7 @@ async function buscarEstatico(){
   };
 }
 async function modoEstatico(){
+  ligarLinkDePublicacao();
   const ciclo = async () => {
     try{ aplicar(await buscarEstatico()); selo('publicado', false); }
     catch(e){ selo('sem dados', true); }
@@ -689,10 +703,60 @@ async function modoEstatico(){
   setInterval(ciclo, INTERVALO_ESTATICO);
 }
 
+// ------------------------------------------------------- atualizar agora
+// No modo servidor o botão acorda o laço de coleta (chama a API da Zig na
+// hora). No modo Pages não há servidor: o máximo que dá é rebuscar os JSONs
+// publicados, sem esperar o ciclo de 60s - o dado em si só muda quando o
+// publicador commitar.
+let modoAtual = 'estatico';
+
+// No GitHub Pages a página não tem como rodar o coletor: o botão só relê o
+// que já está publicado. Quem publica é a workflow do Actions, então expõe-se
+// o link para dispará-la à mão. Não dá para chamá-la daqui por JS: exigiria um
+// token do GitHub embutido na página, que é pública.
+function ligarLinkDePublicacao(){
+  const m = location.hostname.match(/^([^.]+)\.github\.io$/);
+  const repo = location.pathname.split('/').filter(Boolean)[0];
+  if(!m || !repo) return;
+  const a = document.getElementById('forcarPublicacao');
+  a.href = `https://github.com/${m[1]}/${repo}/actions/workflows/publicar.yml`;
+  a.hidden = false;
+}
+
+async function atualizarAgora(){
+  const b = document.getElementById('btnAtualizar');
+  const original = b.textContent;
+  b.disabled = true;
+  b.textContent = '↻ atualizando…';
+
+  try{
+    if(modoAtual === 'servidor'){
+      // Uma coleta leva ~6s (gerar token + chamar a Zig + remontar). Espera-se
+      // a chegada de uma versão NOVA pelo SSE, não um tempo fixo: com tempo
+      // fixo o botão se reabilitava antes de o dado aparecer na tela.
+      const versaoAntes = DADOS && DADOS.versao;
+      await fetch('/api/atualizar', {method:'POST'});
+      const limite = Date.now() + 20000;
+      while(Date.now() < limite && DADOS && DADOS.versao === versaoAntes){
+        await new Promise(r => setTimeout(r, 300));
+      }
+    }else{
+      aplicar(await buscarEstatico());
+    }
+  }catch(e){
+    b.textContent = '↻ falhou - tente de novo';
+    setTimeout(() => { b.textContent = original; b.disabled = false; }, 2500);
+    return;
+  }
+  b.textContent = original;
+  b.disabled = false;
+}
+document.getElementById('btnAtualizar').onclick = atualizarAgora;
+
 // Descobre o modo: se /api/snapshot responde, há servidor; senão, é estático.
 fetch('/api/snapshot')
   .then(r => { if(!r.ok) throw 0; return r.json(); })
-  .then(s => { if(!s.vazio) aplicar(s); modoServidor(); })
+  .then(s => { modoAtual='servidor'; if(!s.vazio) aplicar(s); modoServidor(); })
   .catch(modoEstatico);
 </script>
 </body>

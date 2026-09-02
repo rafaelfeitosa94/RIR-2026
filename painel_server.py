@@ -97,6 +97,11 @@ class Estado:
 
 ESTADO = Estado()
 
+# O botao "Atualizar agora" seta este evento: o laco acorda antes da hora em
+# vez de esperar o intervalo cheio. Usar o mesmo laco (e nao disparar uma
+# coleta paralela) evita duas chamadas simultaneas a API da Zig.
+ACORDAR = threading.Event()
+
 
 def montar_snapshot(pasta=PASTA_DADOS):
     """Le o acumulado em disco e monta o snapshot que o painel consome.
@@ -134,7 +139,8 @@ def laco_coleta(intervalo, pasta, coletar_antes, renovar_token):
 
         espera = intervalo - (time.monotonic() - inicio)
         if espera > 0:
-            time.sleep(espera)
+            ACORDAR.wait(timeout=espera)
+        ACORDAR.clear()
 
 
 # ------------------------------------------------------------------ http
@@ -162,6 +168,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(ESTADO.snapshot)
         if rota == "/api/stream":
             return self._sse()
+
+        self._cabecalho(404, "text/plain; charset=utf-8", 9)
+        self.wfile.write(b"nao achei")
+
+    def do_POST(self):
+        if self.path.split("?")[0] == "/api/atualizar":
+            ACORDAR.set()
+            return self._json({"ok": True, "versao": ESTADO.versao})
 
         self._cabecalho(404, "text/plain; charset=utf-8", 9)
         self.wfile.write(b"nao achei")
