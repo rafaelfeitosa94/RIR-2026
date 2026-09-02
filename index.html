@@ -6,91 +6,220 @@
 <title>RIR 2026 — Vendas ao vivo</title>
 <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.54.1/dist/apexcharts.min.js"></script>
 <style>
+  /* Tema claro (padrão) e escuro. Só as cores mudam entre os dois: tudo o
+     mais é definido uma vez só, em variáveis. */
   :root{
-    --bg:#0b1020; --card:#141a2f; --card2:#1a2140; --linha:#252d4d;
-    --txt:#e8ecf8; --txt2:#94a0c4; --acento:#ff9f43; --ok:#22c55e; --erro:#ef4444;
+    --bg:#f4f6fb; --card:#ffffff; --linha:#e6e9f2; --txt:#1f2a44; --txt2:#68738f;
+    --hover:#f7f9fd; --trilho:#eef1f8; --chip:#eef1f8;
+    --azul:#008FFB; --verde:#00E396; --amarelo:#FEB019; --vermelho:#FF4560;
+    --roxo:#775DD0; --positivo:#00a878;
+    --sombra:0 2px 10px rgba(31,42,68,.07);
+    --sidebar:264px;
   }
+  html[data-tema="escuro"]{
+    --bg:#0e1424; --card:#171e33; --linha:#26304d; --txt:#e8ecf8; --txt2:#8f9bbd;
+    --hover:#1d2540; --trilho:#232c47; --chip:#232c47;
+    --positivo:#22c55e;
+    --sombra:0 2px 12px rgba(0,0,0,.28);
+  }
+  /* As logos das marcas são coloridas e algumas têm traço escuro: no tema
+     escuro ganham um chip branco atrás para continuarem legíveis. */
+  html[data-tema="escuro"] .marcas{background:#fff}
+  html[data-tema="escuro"] .logo-evento{filter:contrast(1.45) saturate(1.1) brightness(1.15)}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
-       font-family:'Segoe UI',system-ui,-apple-system,sans-serif}
-  header{display:flex;align-items:center;gap:16px;flex-wrap:wrap;
-         padding:16px 22px;background:var(--card);border-bottom:1px solid var(--linha)}
-  h1{font-size:18px;margin:0;font-weight:650;letter-spacing:.2px}
-  .sub{color:var(--txt2);font-size:12px}
-  .selo{display:flex;align-items:center;gap:7px;margin-left:auto;
-        background:var(--card2);border:1px solid var(--linha);
-        padding:6px 13px;border-radius:20px;font-size:12px;font-weight:600}
-  .bolinha{width:8px;height:8px;border-radius:50%;background:var(--ok);
-           animation:pulsa 1.6s ease-in-out infinite}
-  .bolinha.off{background:var(--erro);animation:none}
+       font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:14px}
+
+  /* ------------------------------------------------------------ sidebar */
+  aside{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:var(--card);
+        border-right:1px solid var(--linha);padding:18px 16px;overflow-y:auto}
+  /* A URL do pngegg é um thumbnail SEM canal alfa: o xadrez de "transparência"
+     está pintado nos pixels (branco alternando com #EEE). O contraste empurra
+     o #EEE para branco e some com o xadrez, preservando o vermelho da marca.
+     O certo mesmo é trocar por um PNG com fundo transparente de verdade. */
+  .logo-evento{display:block;width:100%;max-height:104px;object-fit:contain;
+               margin-bottom:14px;filter:contrast(1.45) saturate(1.1)}
+  .marcas{display:flex;gap:6px;align-items:center;padding:12px 8px;
+          background:var(--card);border:1px solid var(--linha);border-radius:10px;margin-bottom:18px}
+  /* mesma caixa para as três: altura fixa e contain, então proporções e
+     fundos diferentes não fazem uma parecer maior que a outra */
+  .marcas img{flex:1 1 0;height:42px;min-width:0;object-fit:contain}
+  aside h3{font-size:11px;text-transform:uppercase;letter-spacing:.8px;
+           color:var(--txt2);margin:18px 0 8px;font-weight:700}
+  .opcoes{display:flex;flex-direction:column;gap:6px}
+  .opcao{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;
+         cursor:pointer;border:1px solid var(--linha);background:var(--card);
+         transition:background .15s,border-color .15s}
+  .opcao:hover{background:var(--hover)}
+  .opcao.on{border-color:var(--azul);background:rgba(0,143,251,.07)}
+  .opcao input{accent-color:var(--azul);margin:0}
+  select{width:100%;padding:8px 10px;border:1px solid var(--linha);border-radius:8px;
+         background:var(--card);color:var(--txt);font-size:13px;font-family:inherit}
+  .selo{display:flex;align-items:center;gap:7px;margin-top:20px;padding:8px 11px;
+        border-radius:8px;background:var(--hover);border:1px solid var(--linha);
+        font-size:11.5px;font-weight:600;color:var(--txt2)}
+  .bolinha{width:8px;height:8px;border-radius:50%;background:var(--verde);
+           animation:pulsa 1.6s ease-in-out infinite;flex:none}
+  .bolinha.off{background:var(--vermelho);animation:none}
   @keyframes pulsa{0%,100%{opacity:1}50%{opacity:.25}}
-  main{padding:18px 22px 40px}
-  .kpis{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-        margin-bottom:18px}
-  .kpi{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:15px 17px}
+
+  /* --------------------------------------------------------------- main */
+  main{margin-left:var(--sidebar);padding:20px 24px 44px}
+  .topo{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:18px}
+  h1{font-size:20px;margin:0;font-weight:700}
+  .sub{color:var(--txt2);font-size:12.5px}
+
+  /* São exatamente 3 indicadores: lado a lado, e empilhados só no estreito. */
+  .kpis{display:grid;gap:14px;grid-template-columns:repeat(4,1fr);margin-bottom:16px}
+  @media(max-width:1180px){.kpis{grid-template-columns:repeat(2,1fr)}}
+  @media(max-width:620px){.kpis{grid-template-columns:1fr}}
+  .kpi{background:var(--card);border:1px solid var(--linha);border-radius:12px;
+       padding:16px 18px;box-shadow:var(--sombra)}
   .kpi .rot{color:var(--txt2);font-size:11px;text-transform:uppercase;
-            letter-spacing:.8px;margin-bottom:7px}
-  .kpi .val{font-size:26px;font-weight:700;line-height:1.15}
-  .kpi .pe{color:var(--txt2);font-size:11px;margin-top:5px}
-  .kpi.destaque .val{color:var(--acento)}
-  .grade{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
-  .card{background:var(--card);border:1px solid var(--linha);border-radius:12px;padding:16px}
-  .card h2{font-size:13px;margin:0 0 12px;font-weight:600;color:var(--txt2);
-           text-transform:uppercase;letter-spacing:.7px}
+            letter-spacing:.8px;margin-bottom:8px;font-weight:700}
+  .kpi .val{font-size:27px;font-weight:700;line-height:1.15;letter-spacing:-.5px}
+  .kpi .pe{font-size:11.5px;margin-top:7px;color:var(--txt2)}
+  .delta{font-weight:700}
+  .delta.sobe{color:var(--positivo)} .delta.desce{color:var(--vermelho)}
+
+  .grade{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(360px,1fr))}
+  .card{background:var(--card);border:1px solid var(--linha);border-radius:12px;
+        padding:16px 18px;box-shadow:var(--sombra)}
+  .card h2{font-size:13px;margin:0 0 4px;font-weight:700}
+  .card .dica{color:var(--txt2);font-size:11.5px;margin-bottom:8px}
   .largo{grid-column:1/-1}
-  table{width:100%;border-collapse:collapse;font-size:12.5px}
-  th{text-align:left;color:var(--txt2);font-weight:600;padding:7px 8px;
-     border-bottom:1px solid var(--linha);font-size:11px;
-     text-transform:uppercase;letter-spacing:.5px}
-  td{padding:7px 8px;border-bottom:1px solid rgba(37,45,77,.5)}
+  .cabeca{display:flex;align-items:center;justify-content:space-between;gap:12px;
+          margin-bottom:10px;flex-wrap:wrap}
+  .cabeca select{width:auto;min-width:130px}
+
+  table{width:100%;border-collapse:collapse;font-size:13px}
+  th{text-align:left;color:var(--txt2);font-weight:700;padding:8px;
+     border-bottom:2px solid var(--linha);font-size:10.5px;
+     text-transform:uppercase;letter-spacing:.6px;white-space:nowrap}
+  td{padding:8px;border-bottom:1px solid var(--linha)}
   tbody tr:last-child td{border-bottom:none}
-  td.num{text-align:right;font-variant-numeric:tabular-nums}
-  .cancel{color:var(--erro)}
-  /* marca que a venda teve mais produtos além do principal mostrado */
+  tbody tr:hover{background:var(--hover)}
+  td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+  .barra{position:relative;background:var(--trilho);border-radius:4px;height:6px;
+         margin-top:4px;overflow:hidden}
+  .barra i{position:absolute;inset:0 auto 0 0;background:var(--azul);border-radius:4px}
+  .tagm{display:inline-block;padding:1px 7px;border-radius:9px;font-size:10.5px;
+        font-weight:700;background:var(--chip);color:var(--txt2)}
+  .cancel{color:var(--vermelho)}
   .mais{display:inline-block;margin-left:6px;padding:1px 6px;border-radius:9px;
-        background:var(--card2);border:1px solid var(--linha);
-        color:var(--txt2);font-size:10.5px;font-weight:600}
-  .vazio{color:var(--txt2);text-align:center;padding:36px;font-size:13px}
-  @media(max-width:640px){.kpi .val{font-size:21px}main{padding:14px}}
+        background:var(--chip);color:var(--txt2);font-size:10.5px;font-weight:700}
+  .vazio{color:var(--txt2);text-align:center;padding:32px;font-size:13px}
+  .rolar{overflow-x:auto}
+
+  .tema{display:flex;gap:6px;margin-bottom:16px}
+  .tema button{flex:1;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:12px;
+               font-weight:600;font-family:inherit;border:1px solid var(--linha);
+               background:var(--card);color:var(--txt2);transition:all .15s}
+  .tema button.on{border-color:var(--azul);color:var(--azul);background:rgba(0,143,251,.09)}
+
+  /* Tabela de meta: uma linha por dia, uma coluna por marca. */
+  .meta td, .meta th{text-align:right}
+  .meta td:first-child, .meta th:first-child{text-align:left;font-weight:700;white-space:nowrap}
+  .meta .real{font-weight:700;font-variant-numeric:tabular-nums}
+  .meta .alvo{color:var(--txt2);font-size:11px;font-variant-numeric:tabular-nums}
+  .meta .ating{font-weight:700;font-size:12px}
+  .meta .barra{height:5px;margin-top:3px}
+  .meta tr.total td{border-top:2px solid var(--linha);background:var(--hover)}
+  .semmeta{color:var(--txt2);font-size:11.5px}
+
+  @media(max-width:900px){
+    aside{position:static;width:auto;border-right:none;border-bottom:1px solid var(--linha)}
+    main{margin-left:0;padding:16px}
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <div>
-    <h1>RIR 2026 — Vendas ao vivo</h1>
-    <div class="sub" id="sub">conectando…</div>
+<aside>
+  <img class="logo-evento" alt="Rock in Rio"
+       src="https://e7.pngegg.com/pngimages/815/577/png-clipart-bela-vista-park-rock-in-rio-lisboa-2018-rock-in-rio-2018-lisboa-sunday-rock-in-rio-text-logo-thumbnail.png">
+
+  <div class="marcas">
+    <img alt="Espetto Carioca" src="https://espettocarioca.com.br/wp-content/uploads/2024/04/espetto-carioca-logo.png">
+    <img alt="Boteco Mané"     src="https://botecomane.com.br/wp-content/uploads/2024/06/mane-logo-vermelho.png">
+    <img alt="Sirene"          src="https://franquia.sirene.com.br/wp-content/uploads/2021/03/isotipo-amarelo.png">
   </div>
-  <div class="selo"><span class="bolinha off" id="bolinha"></span><span id="status">offline</span></div>
-</header>
+
+  <div class="tema">
+    <button id="temaClaro">☀ Claro</button>
+    <button id="temaEscuro">☾ Escuro</button>
+  </div>
+
+  <h3>Palco</h3>
+  <div class="opcoes" id="fPalco"></div>
+
+  <h3>Marca</h3>
+  <div class="opcoes" id="fMarca"></div>
+
+  <h3>Dia</h3>
+  <div class="opcoes" id="fDia"></div>
+
+  <div class="selo"><span class="bolinha off" id="bolinha"></span><span id="status">conectando…</span></div>
+</aside>
 
 <main>
+  <div class="topo">
+    <h1>RIR 2026 — Vendas ao vivo</h1>
+    <div class="sub" id="sub">carregando…</div>
+  </div>
+
   <div class="kpis" id="kpis"></div>
 
   <div class="grade">
     <div class="card largo">
-      <h2>Faturamento por hora</h2>
+      <div class="cabeca">
+        <div>
+          <h2>Venda por hora</h2>
+          <div class="dica" id="dicaHora">comparado com o mesmo horário do dia anterior</div>
+        </div>
+      </div>
       <div id="gHora"></div>
     </div>
-    <div class="card">
-      <h2>Top 10 produtos</h2>
-      <div id="gProduto"></div>
+
+    <div class="card largo">
+      <h2>Venda por dia</h2>
+      <div class="dica">faturamento líquido de cada dia do evento</div>
+      <div id="gDia"></div>
     </div>
-    <div class="card">
-      <h2>Por ponto de venda</h2>
-      <div id="gPonto"></div>
+
+    <div class="card largo">
+      <h2>Meta por marca e dia</h2>
+      <div class="dica" id="dicaMeta">realizado sobre a meta de faturamento de cada dia</div>
+      <div class="rolar" id="meta"></div>
     </div>
+
+    <div class="card largo">
+      <div class="cabeca">
+        <div>
+          <h2>Ranking de produtos</h2>
+          <div class="dica" id="dicaRank">participação sobre o faturamento do recorte</div>
+        </div>
+        <select id="fHora"></select>
+      </div>
+      <div class="rolar" id="ranking"></div>
+    </div>
+
     <div class="card">
       <h2>Forma de pagamento</h2>
+      <div class="dica">faturamento por forma</div>
       <div id="gPagamento"></div>
     </div>
+
     <div class="card">
       <h2>Categoria</h2>
+      <div class="dica">comida x bebida</div>
       <div id="gCategoria"></div>
     </div>
+
     <div class="card largo">
       <h2>Últimas transações</h2>
-      <div id="feed"><div class="vazio">aguardando…</div></div>
+      <div class="dica">feed das vendas mais recentes (não segue os filtros)</div>
+      <div class="rolar" id="feed"><div class="vazio">aguardando…</div></div>
     </div>
   </div>
 </main>
@@ -98,111 +227,398 @@
 <script>
 const moeda = v => (v ?? 0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
 const num   = v => (v ?? 0).toLocaleString('pt-BR',{maximumFractionDigits:0});
+const pct   = v => (v ?? 0).toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+'%';
 
-// ApexCharts é reconstruído a cada snapshot só na primeira vez; depois usamos
-// updateSeries/updateOptions, que anima em vez de piscar o gráfico inteiro.
+let DADOS = null;                       // último snapshot recebido
+const sel = {palcos:new Set(), marcas:new Set(), dias:new Set(), hora:''};
+let filtrosMontados = false;
+
+// Paleta e base dos gráficos no estilo das demos do apexcharts.com.
+const CORES = ['#008FFB','#00E396','#FEB019','#FF4560','#775DD0','#3F51B5','#546E7A'];
+
+let tema = localStorage.getItem('rir-tema') || 'claro';
+
+function base(){
+  const escuro = tema === 'escuro';
+  return {
+    chart:{ background:'transparent', foreColor: escuro ? '#8f9bbd' : '#68738f',
+            fontFamily:"'Segoe UI',system-ui,sans-serif", toolbar:{show:false},
+            animations:{enabled:true, easing:'easeinout', speed:450},
+            dropShadow:{enabled:true, top:3, left:2, blur:4, opacity: escuro ? .3 : .10} },
+    colors:CORES,
+    theme:{ mode: escuro ? 'dark' : 'light' },
+    grid:{ borderColor: escuro ? '#26304d' : '#e6e9f2', strokeDashArray:4 },
+    dataLabels:{ enabled:false },
+    tooltip:{ theme: escuro ? 'dark' : 'light' },
+  };
+}
+
 const graficos = {};
-
-const BASE = {
-  chart:{ background:'transparent', foreColor:'#94a0c4', toolbar:{show:false},
-          animations:{enabled:true, easing:'easeinout', speed:400},
-          fontFamily:"'Segoe UI',system-ui,sans-serif" },
-  theme:{ mode:'dark' },
-  grid:{ borderColor:'#252d4d', strokeDashArray:3 },
-  dataLabels:{ enabled:false },
-  tooltip:{ theme:'dark' },
-};
-
 function desenhar(id, opcoes, series){
   if(graficos[id]){
-    graficos[id].updateOptions(opcoes, false, false, false);
+    graficos[id].updateOptions(Object.assign({}, base(), opcoes), false, false, false);
     graficos[id].updateSeries(series, true);
     return;
   }
   const g = new ApexCharts(document.querySelector('#'+id),
-                           Object.assign({}, BASE, opcoes, {series}));
-  g.render();
-  graficos[id] = g;
+                           Object.assign({}, base(), opcoes, {series}));
+  g.render(); graficos[id] = g;
 }
 
-function renderKpis(s){
-  const t = s.resumo.totais;
-  const ticket = t.transacoes_venda ? t.valor_bruto_vendas / t.transacoes_venda : 0;
+function aplicarTema(novo){
+  tema = novo;
+  localStorage.setItem('rir-tema', novo);
+  document.documentElement.setAttribute('data-tema', novo);
+  document.getElementById('temaClaro').classList.toggle('on', novo === 'claro');
+  document.getElementById('temaEscuro').classList.toggle('on', novo === 'escuro');
+  // Os gráficos guardam as cores no momento em que foram criados: para o tema
+  // valer neles é preciso destruir e redesenhar, não só trocar as variáveis.
+  Object.keys(graficos).forEach(id => { graficos[id].destroy(); delete graficos[id]; });
+  if(DADOS) { render(); }
+}
+document.getElementById('temaClaro').onclick  = () => aplicarTema('claro');
+document.getElementById('temaEscuro').onclick = () => aplicarTema('escuro');
+aplicarTema(tema);
+
+// ------------------------------------------------------------------ filtros
+// Os fatos vêm indexados por dimensão; aqui só resolvemos quais índices de
+// ponto sobrevivem aos filtros e somamos as linhas correspondentes.
+function pontosAtivos(F){
+  const ok = new Set();
+  F.pontos.forEach((_,i) => {
+    const palco = F.palcos[F.ponto_palco[i]];
+    const marca = F.marcas[F.ponto_marca[i]];
+    if((!sel.palcos.size || sel.palcos.has(palco)) &&
+       (!sel.marcas.size || sel.marcas.has(marca))) ok.add(i);
+  });
+  return ok;
+}
+
+function montarFiltros(F){
+  const caixa = (destino, valores, conjunto) => {
+    document.getElementById(destino).innerHTML = valores.map(v => `
+      <label class="opcao" data-v="${v}">
+        <input type="checkbox" value="${v}"><span>${v}</span>
+      </label>`).join('');
+    document.querySelectorAll(`#${destino} input`).forEach(el => {
+      el.addEventListener('change', () => {
+        el.checked ? conjunto.add(el.value) : conjunto.delete(el.value);
+        el.closest('.opcao').classList.toggle('on', el.checked);
+        render();
+      });
+    });
+  };
+  caixa('fPalco', F.palcos, sel.palcos);
+  caixa('fMarca', F.marcas, sel.marcas);
+
+  // Dias também como checkbox: o evento tem 8 datas e é comum querer somar
+  // duas ou três. Nenhum marcado = todos, mesma regra de palco e marca.
+  caixa('fDia', F.dias.map(d => d), sel.dias);
+  document.querySelectorAll('#fDia .opcao span').forEach((el,i) => {
+    el.textContent = F.dias[i].split('-').reverse().join('/');
+  });
+
+  filtrosMontados = true;
+}
+
+function atualizarHoras(F, linhas){
+  const horas = [...new Set(linhas.map(l => l[1]))].sort((a,b)=>a-b);
+  const alvo = document.getElementById('fHora');
+  const antes = sel.hora;
+  alvo.innerHTML = '<option value="">Todas as horas</option>' +
+    horas.map(h => `<option value="${h}">${String(h).padStart(2,'0')}h</option>`).join('');
+  alvo.value = horas.includes(+antes) ? antes : (sel.hora = '');
+  alvo.onchange = () => { sel.hora = alvo.value; render(); };
+}
+
+// ---------------------------------------------------------------- agregação
+// Com vários dias marcados, o gráfico por hora e o D-1 precisam de UM dia de
+// referência: usa-se o mais recente entre os selecionados (ou o último dia com
+// venda, quando nenhum está marcado).
+function diaReferencia(F, comVenda){
+  const candidatos = sel.dias.size ? F.dias.filter(d => sel.dias.has(d)) : comVenda;
+  return candidatos.length ? candidatos[candidatos.length-1] : '';
+}
+
+function diaAnterior(F, dia, comVenda){
+  if(!dia) return '';
+  const anteriores = comVenda.filter(d => d < dia);
+  return anteriores.length ? anteriores[anteriores.length-1] : '';
+}
+
+function somar(linhas){                       // [dia,hora,ponto,v,q,t]
+  return linhas.reduce((a,l) => ({v:a.v+l[3], q:a.q+l[4], t:a.t+l[5]}),
+                       {v:0,q:0,t:0});
+}
+
+function porHora(linhas){
+  const s = new Array(24).fill(0);
+  linhas.forEach(l => s[l[1]] += l[3]);
+  return s;
+}
+
+function variacao(atual, anterior){
+  if(!anterior) return null;
+  return (atual - anterior) / Math.abs(anterior) * 100;
+}
+
+// ------------------------------------------------------------------ render
+function render(){
+  if(!DADOS || !DADOS.fatos || !DADOS.fatos.dias.length) return;
+  const F = DADOS.fatos;
+  if(!filtrosMontados) montarFiltros(F);
+
+  const ativos = pontosAtivos(F);
+  const noPonto = l => ativos.has(l[2]);
+  const noDia   = l => !sel.dias.size || sel.dias.has(F.dias[l[0]]);
+
+  const vendaTodas = F.venda.filter(noPonto);
+  const vendaSel   = vendaTodas.filter(noDia);
+
+  // Dias que efetivamente têm venda, em ordem - base do D-1.
+  const comVenda = F.dias.filter(d =>
+    vendaTodas.some(l => F.dias[l[0]] === d && l[3] !== 0));
+
+  const referencia = diaReferencia(F, comVenda);
+  const anterior   = diaAnterior(F, referencia, comVenda);
+  const vendaRef   = vendaTodas.filter(l => F.dias[l[0]] === referencia);
+  const vendaAnt   = anterior ? vendaTodas.filter(l => F.dias[l[0]] === anterior) : [];
+
+  atualizarHoras(F, vendaSel);
+
+  const totais = somar(vendaSel);
+  renderKpis(totais, somar(vendaRef), somar(vendaAnt), anterior, referencia);
+  renderHora(F, vendaRef, vendaAnt, anterior, referencia);
+  renderDia(F, vendaTodas);
+  renderMeta(F, ativos);
+  renderRanking(F, ativos, totais.v);
+  renderDonuts();
+}
+
+function renderKpis(sel_, ref, ant, anterior, referencia){
+  // Os números grandes seguem o recorte de dias escolhido; a variação compara
+  // sempre o dia de referência com o dia de venda anterior a ele - somar
+  // vários dias e comparar com "ontem" não diria nada.
+  const ticket = sel_.t ? sel_.v / sel_.t : 0;
   const cards = [
-    {rot:'Faturamento líquido', val:moeda(t.valor_liquido), destaque:true,
-     pe:`bruto ${moeda(t.valor_bruto_vendas)}`},
-    {rot:'Transações',   val:num(t.transacoes_venda), pe:`${num(t.transacoes)} com cancelamentos`},
-    {rot:'Itens',        val:num(t.itens),            pe:'quantidade líquida'},
-    {rot:'Ticket médio', val:moeda(ticket),           pe:'por transação de venda'},
-    {rot:'Cancelado',    val:moeda(t.valor_cancelado),pe:`${num(t.transacoes_cancelamento)} transações`},
+    {rot:'Faturamento',   val:moeda(sel_.v), d:variacao(ref.v, ant.v)},
+    {rot:'Transações',    val:num(sel_.t),   d:variacao(ref.t, ant.t)},
+    {rot:'Ticket médio',  val:moeda(ticket),
+     d:variacao(ref.t ? ref.v/ref.t : 0, ant.t ? ant.v/ant.t : 0)},
+    {rot:'Itens vendidos',val:num(sel_.q),   d:variacao(ref.q, ant.q)},
   ];
-  document.getElementById('kpis').innerHTML = cards.map(c => `
-    <div class="kpi ${c.destaque?'destaque':''}">
-      <div class="rot">${c.rot}</div><div class="val">${c.val}</div>
-      <div class="pe">${c.pe}</div>
-    </div>`).join('');
+  const rot = d => d.split('-').reverse().slice(0,2).join('/');
+  document.getElementById('kpis').innerHTML = cards.map(c => {
+    const pe = (c.d === null || !anterior)
+      ? '<span style="color:var(--txt2)">sem dia anterior para comparar</span>'
+      : `<span class="delta ${c.d>=0?'sobe':'desce'}">${c.d>=0?'▲':'▼'} ${pct(Math.abs(c.d))}</span>
+         ${rot(referencia)} vs ${rot(anterior)}`;
+    return `<div class="kpi"><div class="rot">${c.rot}</div>
+              <div class="val">${c.val}</div><div class="pe">${pe}</div></div>`;
+  }).join('');
 }
 
-function renderGraficos(s){
-  const r = s.resumo;
+function renderHora(F, hoje, ontem, anterior, referencia){
+  const rotulos = Array.from({length:24}, (_,h) => String(h).padStart(2,'0')+'h');
+  const nome = referencia ? referencia.split('-').reverse().join('/') : 'Período';
+  const series = [{name: nome, data: porHora(hoje)}];
+  if(anterior) series.push({name:'Dia -1 ('+anterior.split('-').reverse().join('/')+')', data: porHora(ontem)});
 
-  // Eixo de tempo (não categorias): o Apex espaça os rótulos sozinho, o que
-  // importa quando os 12 dias de evento viram ~288 pontos horários.
-  const hora = r.por_hora || [];
+  document.getElementById('dicaHora').textContent = anterior
+    ? `${nome} · linha tracejada = ${anterior.split('-').reverse().join('/')} (dia anterior)`
+    : `${nome} · ainda não há dia anterior para comparar`;
+
   desenhar('gHora', {
-    chart:{type:'area', height:260, zoom:{type:'x', enabled:true},
-           toolbar:{show:true, tools:{download:false}}},
-    xaxis:{type:'datetime', labels:{datetimeUTC:false, style:{fontSize:'11px'}}},
+    chart:{type:'area', height:300, zoom:{enabled:false}},
+    xaxis:{categories:rotulos, tickAmount:12, labels:{style:{fontSize:'11px'}}},
     yaxis:{labels:{formatter:v => 'R$ '+num(v)}},
-    // 'straight' e não 'smooth': a curva suave inventa valores entre as horas
-    // e chega a desenhar faturamento negativo onde não houve.
-    stroke:{curve:'straight', width:2},
-    colors:['#ff9f43'],
-    fill:{type:'gradient', gradient:{shadeIntensity:1, opacityFrom:.45, opacityTo:.05}},
-    tooltip:{x:{format:'dd/MM HH:00'}, y:{formatter:v => moeda(v)}},
-  }, [{name:'Faturamento', data:hora.map(h => ({
-        x:new Date(h._hora + ':00:00').getTime(),
-        y:+h.valor_liquido.toFixed(2)}))}]);
-
-  const prod = (r.por_produto || []).slice(0,10);
-  desenhar('gProduto', {
-    chart:{type:'bar', height:300},
-    plotOptions:{bar:{horizontal:true, borderRadius:4, barHeight:'70%'}},
-    xaxis:{categories:prod.map(p => p.Produto), labels:{formatter:v => 'R$ '+num(v)}},
-    colors:['#ff9f43'],
+    stroke:{curve:'smooth', width:[3,2], dashArray:[0,5]},
+    fill:{type:'gradient', gradient:{shadeIntensity:1, opacityFrom:[.4,.05], opacityTo:[.05,0], stops:[0,90,100]}},
+    markers:{size:0, hover:{size:5}},
+    legend:{position:'top', horizontalAlign:'right'},
     tooltip:{y:{formatter:v => moeda(v)}},
-  }, [{name:'Faturamento', data:prod.map(p => +p.valor_liquido.toFixed(2))}]);
+  }, series);
+}
 
-  const ponto = r.por_ponto || [];
-  desenhar('gPonto', {
-    chart:{type:'bar', height:300},
-    plotOptions:{bar:{horizontal:true, borderRadius:4, barHeight:'70%'}},
-    xaxis:{categories:ponto.map(p => p['Nome do Ponto']), labels:{formatter:v => 'R$ '+num(v)}},
-    colors:['#60a5fa'],
+function renderDia(F, linhas){
+  const porDia = {};
+  linhas.forEach(l => { const d = F.dias[l[0]]; porDia[d] = (porDia[d]||0) + l[3]; });
+  // Todos os dias do evento entram, mesmo os que ainda não aconteceram: é o
+  // que deixa ver a meta que falta cumprir.
+  const dias = F.dias;
+
+  const series = [{name:'Faturamento',
+                   data: dias.map(d => +(porDia[d]||0).toFixed(2))}];
+
+  // A meta segue o filtro de marca: com Mané marcado, a linha é a meta do Mané.
+  const marcasAtivas = sel.marcas.size ? [...sel.marcas] : F.marcas;
+  const metaDia = d => marcasAtivas.reduce(
+    (t,m) => t + ((F.metas[d] || {})[m] || 0), 0);
+  if(dias.some(d => metaDia(d) > 0)){
+    series.push({name:'Meta', data: dias.map(d => +metaDia(d).toFixed(2))});
+  }
+
+  desenhar('gDia', {
+    chart:{type:'line', height:290, zoom:{enabled:false}},
+    xaxis:{categories:dias.map(d => d.split('-').reverse().slice(0,2).join('/'))},
+    yaxis:{labels:{formatter:v => 'R$ '+num(v)}},
+    stroke:{curve:'smooth', width:[4,2], dashArray:[0,6]},
+    colors:[CORES[1], CORES[3]],
+    markers:{size:[5,0], hover:{size:7}},
+    legend:{position:'top', horizontalAlign:'right'},
     tooltip:{y:{formatter:v => moeda(v)}},
-  }, [{name:'Faturamento', data:ponto.map(p => +p.valor_liquido.toFixed(2))}]);
+  }, series);
+}
 
+// ------------------------------------------------------------------- meta
+function renderMeta(F, ativos){
+  const marcas = F.marcas;
+  // Realizado por (dia, marca), respeitando os filtros de palco/marca.
+  const real = {};
+  F.venda.filter(l => ativos.has(l[2])).forEach(l => {
+    const d = F.dias[l[0]], m = marcas[F.ponto_marca[l[2]]];
+    (real[d] || (real[d] = {}))[m] = (real[d][m] || 0) + l[3];
+  });
+
+  const dias = F.dias.filter(d => sel.dias.size ? sel.dias.has(d) : true);
+  const visiveis = sel.marcas.size ? marcas.filter(m => sel.marcas.has(m)) : marcas;
+
+  const hoje = new Date().toISOString().slice(0,10);
+
+  const celula = (r, meta, dia) => {
+    if(!meta) return `<div class="real">${moeda(r)}</div><div class="semmeta">sem meta</div>`;
+
+    // Dia que ainda não aconteceu não "falhou" a meta: mostrar 0% em vermelho
+    // faria sete linhas de alarme falso durante quase todo o evento.
+    if(dia && dia > hoje && r === 0){
+      return `<div class="alvo">meta ${moeda(meta)}</div>
+              <div class="semmeta">ainda não ocorreu</div>`;
+    }
+
+    const p = r / meta * 100;
+    const cor = p >= 100 ? 'var(--positivo)' : p >= 70 ? 'var(--amarelo)' : 'var(--vermelho)';
+    return `<div class="real">${moeda(r)}</div>
+            <div class="alvo">meta ${moeda(meta)}</div>
+            <div class="ating" style="color:${cor}">${pct(p)}</div>
+            <div class="barra"><i style="width:${Math.min(Math.max(p,0),100)}%;background:${cor}"></i></div>`;
+  };
+
+  const soma = (obj, chaves) => chaves.reduce((t,k) => t + (obj[k] || 0), 0);
+  const totalReal = {}, totalMeta = {};
+
+  const linhas = dias.map(d => {
+    const r = real[d] || {}, m = F.metas[d] || {};
+    visiveis.forEach(x => { totalReal[x] = (totalReal[x]||0) + (r[x]||0);
+                            totalMeta[x] = (totalMeta[x]||0) + (m[x]||0); });
+    return `<tr>
+      <td>${d.split('-').reverse().join('/')}</td>
+      ${visiveis.map(x => `<td>${celula(r[x]||0, m[x]||0, d)}</td>`).join('')}
+      <td>${celula(soma(r, visiveis), soma(m, visiveis), d)}</td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('meta').innerHTML = `
+    <table class="meta"><thead><tr>
+      <th>Dia</th>${visiveis.map(m => `<th>${m.toUpperCase()}</th>`).join('')}<th>Total</th>
+    </tr></thead><tbody>${linhas}
+      <tr class="total"><td>Total</td>
+        ${visiveis.map(x => `<td>${celula(totalReal[x]||0, totalMeta[x]||0)}</td>`).join('')}
+        <td>${celula(soma(totalReal, visiveis), soma(totalMeta, visiveis))}</td>
+      </tr>
+    </tbody></table>`;
+
+  const geral = soma(totalMeta, visiveis);
+  document.getElementById('dicaMeta').textContent = geral
+    ? `meta do recorte ${moeda(geral)} · realizado ${pct(soma(totalReal,visiveis)/geral*100)}`
+    : 'sem meta cadastrada para este recorte';
+}
+
+function renderRanking(F, ativos, faturamentoTotal){
+  const linhas = F.produto.filter(l =>
+    ativos.has(l[2]) &&
+    (!sel.dias.size || sel.dias.has(F.dias[l[0]])) &&
+    (sel.hora === '' || l[1] === +sel.hora));
+
+  const porProduto = {};
+  linhas.forEach(l => {
+    const chave = l[3];
+    const a = porProduto[chave] || (porProduto[chave] = {v:0, q:0, marcas:{}});
+    a.v += l[4]; a.q += l[5];
+    // Guarda o faturamento por marca: o mesmo produto costuma ser vendido em
+    // pontos de marcas diferentes, e listar as três em toda linha polui.
+    // Mostra-se a marca que mais vendeu, com "+N" para as demais.
+    const m = F.marcas[F.ponto_marca[l[2]]];
+    a.marcas[m] = (a.marcas[m] || 0) + l[4];
+  });
+
+  const itens = Object.entries(porProduto)
+    .map(([i,a]) => {
+      const ranking = Object.entries(a.marcas).sort((x,y) => y[1] - x[1]);
+      return {nome:F.produtos[i], v:a.v, q:a.q,
+              marca:ranking[0][0], outrasMarcas:ranking.length - 1};
+    })
+    .sort((a,b) => b.v - a.v);
+  const total = itens.reduce((s,i) => s + i.v, 0);
+
+  // O ranking só enxerga faturamento com produto associado. Recarga, ativação
+  // e devolução entram no card de Faturamento mas não têm o que rankear, então
+  // a diferença é declarada em vez de o usuário descobrir somando a coluna.
+  const semProduto = (sel.hora === '' && faturamentoTotal != null)
+    ? faturamentoTotal - total : null;
+  document.getElementById('dicaRank').textContent =
+    `${itens.length} produtos · ${moeda(total)} em vendas com produto` +
+    (semProduto && Math.abs(semProduto) >= 0.01
+      ? ` · ${moeda(semProduto)} sem produto (recarga/ativação)` : '');
+
+  if(!itens.length){
+    document.getElementById('ranking').innerHTML =
+      '<div class="vazio">nenhuma venda neste recorte</div>';
+    return;
+  }
+
+  document.getElementById('ranking').innerHTML = `
+    <table><thead><tr>
+      <th class="num">#</th><th>Produto</th><th>Marca</th>
+      <th class="num">Itens</th><th class="num">Faturamento</th><th class="num">Part. (%)</th>
+    </tr></thead><tbody>` +
+    itens.map((it,i) => {
+      const p = total ? it.v/total*100 : 0;
+      return `<tr>
+        <td class="num">${i+1}</td>
+        <td>${it.nome}</td>
+        <td><span class="tagm">${it.marca}</span>${it.outrasMarcas
+              ? `<span class="mais" title="também vendido em outras marcas">+${it.outrasMarcas}</span>` : ''}</td>
+        <td class="num">${num(it.q)}</td>
+        <td class="num">${moeda(it.v)}</td>
+        <td class="num">${pct(p)}<div class="barra"><i style="width:${Math.max(p,0)}%"></i></div></td>
+      </tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderDonuts(){
+  const r = DADOS.resumo || {};
   const pag = r.por_forma_pagamento || [];
   desenhar('gPagamento', {
-    chart:{type:'donut', height:280},
+    chart:{type:'donut', height:270},
     labels:pag.map(p => p['Forma de Pagamento']),
-    colors:['#ff9f43','#60a5fa','#22c55e','#a78bfa','#f472b6'],
     legend:{position:'bottom'},
+    plotOptions:{pie:{donut:{size:'62%'}}},
     tooltip:{y:{formatter:v => moeda(v)}},
   }, pag.map(p => +p.valor_liquido.toFixed(2)));
 
   const cat = r.por_categoria || [];
   desenhar('gCategoria', {
-    chart:{type:'donut', height:280},
+    chart:{type:'donut', height:270},
     labels:cat.map(c => c['Categoria Produto']),
-    colors:['#22c55e','#ff9f43','#60a5fa','#a78bfa'],
+    colors:[CORES[1], CORES[2], CORES[3]],
     legend:{position:'bottom'},
+    plotOptions:{pie:{donut:{size:'62%'}}},
     tooltip:{y:{formatter:v => moeda(v)}},
   }, cat.map(c => +c.valor_liquido.toFixed(2)));
 }
 
 function renderFeed(s){
-  if(!s.feed.length){
+  if(!s.feed || !s.feed.length){
     document.getElementById('feed').innerHTML = '<div class="vazio">nenhuma transação ainda</div>';
     return;
   }
@@ -221,74 +637,59 @@ function renderFeed(s){
 }
 
 function aplicar(s){
+  DADOS = s;
   if(s.vazio){
-    document.getElementById('sub').textContent =
-      'nenhuma transação coletada ainda — aguardando o evento';
+    document.getElementById('sub').textContent = 'nenhuma transação coletada ainda';
     return;
   }
-  renderKpis(s); renderGraficos(s); renderFeed(s);
+  render();
+  renderFeed(s);
   const hora = new Date(s.atualizado_em).toLocaleTimeString('pt-BR');
   document.getElementById('sub').textContent =
     `atualizado ${hora} · dado de ${Math.round(s.atraso_s)}s atrás`;
 }
 
+// ------------------------------------------------------------------- modos
 function selo(texto, offline){
   document.getElementById('status').textContent = texto;
   document.getElementById('bolinha').classList.toggle('off', offline);
 }
 
-// ---------------------------------------------------------------- modo 1
-// Servidor local (painel_server.py): SSE empurra cada snapshot novo.
+// Modo 1 - servidor local (painel_server.py): SSE empurra cada snapshot.
 function modoServidor(){
   const fonte = new EventSource('/api/stream');
   fonte.onopen    = () => selo('ao vivo', false);
   fonte.onmessage = e  => aplicar(JSON.parse(e.data));
-  // O EventSource reconecta sozinho; não fechamos a conexão aqui.
-  fonte.onerror   = () => selo('reconectando…', true);
+  fonte.onerror   = () => selo('reconectando…', true);   // reconecta sozinho
 }
 
-// ---------------------------------------------------------------- modo 2
-// GitHub Pages: não há servidor, só arquivo estático. Busca os JSONs que o
-// stream_rir.py publica e remonta o mesmo formato de snapshot. Sem push:
-// pergunta de tempos em tempos.
+// Modo 2 - GitHub Pages: sem servidor, só arquivo estático.
 const INTERVALO_ESTATICO = 60000;
-
 async function buscarEstatico(){
-  // O ?t= fura o cache do CDN do Pages, que serviria a versão anterior.
-  const t = Date.now();
-  const [resumo, painel] = await Promise.all([
+  const t = Date.now();                       // fura o cache do CDN do Pages
+  const [resumo, painel, fatos] = await Promise.all([
     fetch(`publico/resumo.json?t=${t}`).then(r => r.json()),
     fetch(`publico/painel.json?t=${t}`).then(r => r.json()).catch(() => ({feed:[]})),
+    fetch(`publico/fatos.json?t=${t}`).then(r => r.json()).catch(() => null),
   ]);
-
   const ultima = resumo.totais?.ultima_transacao;
   return {
     vazio: !resumo.totais || !resumo.totais.transacoes,
     atualizado_em: resumo.atualizado_em,
-    ultima_transacao: ultima,
-    // Aqui o "atraso" é medido contra a última venda publicada, então inclui
-    // o ciclo do publicador e o cache do GitHub — por isso é de minutos.
-    atraso_s: ultima ? Math.max((Date.now() - new Date(ultima)) / 1000, 0) : null,
-    resumo,
-    feed: painel.feed || [],
+    atraso_s: ultima ? Math.max((Date.now() - new Date(ultima))/1000, 0) : 0,
+    resumo, feed: painel.feed || [], fatos,
   };
 }
-
 async function modoEstatico(){
   const ciclo = async () => {
-    try{
-      aplicar(await buscarEstatico());
-      selo('publicado', false);
-    }catch(e){
-      selo('sem dados', true);
-    }
+    try{ aplicar(await buscarEstatico()); selo('publicado', false); }
+    catch(e){ selo('sem dados', true); }
   };
   await ciclo();
   setInterval(ciclo, INTERVALO_ESTATICO);
 }
 
-// Descobre em qual dos dois modos estamos: se /api/snapshot responde, há
-// servidor; se não, é o site estático.
+// Descobre o modo: se /api/snapshot responde, há servidor; senão, é estático.
 fetch('/api/snapshot')
   .then(r => { if(!r.ok) throw 0; return r.json(); })
   .then(s => { if(!s.vazio) aplicar(s); modoServidor(); })
