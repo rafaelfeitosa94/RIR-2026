@@ -87,6 +87,7 @@ ARQ_INDICE = "indice.json"
 ARQ_RESUMO = "resumo.json"
 ARQ_RECENTES = "recentes.json"
 ARQ_PAINEL = "painel.json"
+ARQ_FATOS = "fatos.json"
 
 INTERVALO_PADRAO = 120
 
@@ -102,6 +103,41 @@ COLUNAS_PESSOAIS = [
     COLUNAS_TRANSACAO["documento_cliente"],
     COLUNAS_TRANSACAO["email_cliente"],
 ]
+
+# De-para do ponto de venda -> (marca, palco).
+#
+# ATENCAO a grafia: o PDV tem 'SUN.A.ESPETTO' (dois T, o ponto que mais vende)
+# e tambem 'SUN.A.ESPETO' (um T, com pouquissimas linhas). Os dois entram como
+# Espetto/Sunset - mapear so um deixaria de fora a maior parte do faturamento
+# do palco Sunset.
+DE_PARA_PONTOS = {
+    "MUN.A.SIRENE.AEB05": ("Sirene", "Mundo"),
+    "MUN.A.ESPETTO.AEB03": ("Espetto", "Mundo"),
+    "MUN.A.MANE.AEB04": ("Mané", "Mundo"),
+    "SUN.A.ESPETTO": ("Espetto", "Sunset"),
+    "SUN.A.ESPETO": ("Espetto", "Sunset"),
+}
+
+# Ponto que aparecer no dado sem estar no de-para cai aqui, em vez de sumir
+# silenciosamente do painel.
+MARCA_PADRAO = "Outros"
+PALCO_PADRAO = "Outros"
+
+# Meta de faturamento por dia e marca (planilha da operacao).
+#
+# So existem os 8 dias de show - 03, 08, 09, 10 e 14/09 nao tem meta porque
+# nao tem evento. Dia sem meta aparece no painel como "sem meta", e nao como
+# meta zero, que faria o atingimento estourar para infinito.
+METAS = {
+    "2026-09-02": {"Espetto":  42409.93, "Mané":  12117.12, "Sirene":  6058.56},
+    "2026-09-04": {"Espetto": 524577.11, "Mané": 149879.17, "Sirene": 74939.59},
+    "2026-09-05": {"Espetto": 517714.54, "Mané": 147918.44, "Sirene": 73959.22},
+    "2026-09-06": {"Espetto": 542734.54, "Mané": 155067.01, "Sirene": 77533.51},
+    "2026-09-07": {"Espetto": 457060.33, "Mané": 130588.67, "Sirene": 65294.33},
+    "2026-09-11": {"Espetto": 648317.47, "Mané": 185233.56, "Sirene": 92616.78},
+    "2026-09-12": {"Espetto": 557806.14, "Mané": 159373.18, "Sirene": 79686.59},
+    "2026-09-13": {"Espetto": 542220.82, "Mané": 154920.23, "Sirene": 77460.12},
+}
 
 # Atalhos para os nomes de destino usados nas agregacoes.
 COL_ID = COLUNAS_TRANSACAO["transacao_id"]
@@ -201,6 +237,86 @@ def montar_resumo(df):
     }
 
 
+# -------------------------------------------------------------------- fatos
+def montar_fatos(df):
+    """Tabelas-fato compactas, para o navegador filtrar sem novo request.
+
+    Duas tabelas, e nao uma, por causa da contagem de transacoes: uma venda
+    com 3 produtos ocupa 3 linhas do DataFrame, entao contar transacoes na
+    granularidade de produto contaria a mesma venda tres vezes. Em
+    (dia, hora, ponto) cada transacao cai numa celula so, e a contagem volta
+    a ser somavel.
+
+      venda   : [dia, hora, ponto, valor, itens, transacoes]
+      produto : [dia, hora, ponto, produto, valor, itens]
+
+    Os campos vao como indices das listas de dimensao (mesmo padrao dos
+    outros dashboards do BI) para o arquivo nao inchar com texto repetido.
+    """
+    vazio = {"dias": [], "pontos": [], "produtos": [], "marcas": [], "palcos": [],
+             "ponto_marca": [], "ponto_palco": [], "venda": [], "produto": [],
+             "metas": METAS}
+    if df.empty:
+        return vazio
+
+    base = df.copy()
+    sinal = _sinal(base)
+    base["_v"] = base[COL_VALOR_TOTAL].fillna(0) * sinal
+    base["_q"] = base[COL_QUANTIDADE].fillna(0).astype(float) * sinal
+    base["_dia"] = base[COL_REALIZACAO].dt.strftime("%Y-%m-%d")
+    base["_hora"] = base[COL_REALIZACAO].dt.hour
+    base["_ponto"] = base[COL_PONTO].fillna(MARCA_PADRAO)
+
+    pontos = sorted(base["_ponto"].unique())
+    marcas_por_ponto = {p: DE_PARA_PONTOS.get(p, (MARCA_PADRAO, PALCO_PADRAO))
+                        for p in pontos}
+    marcas = sorted({m for m, _ in marcas_por_ponto.values()})
+    palcos = sorted({p for _, p in marcas_por_ponto.values()})
+
+    # Dias com meta entram mesmo sem venda: o painel precisa mostrar o dia de
+    # show que ainda nao aconteceu (ou que nao vendeu nada) com 0% da meta.
+    dias = sorted(set(base["_dia"].unique()) | set(METAS))
+    produtos = sorted(base[COL_PRODUTO].dropna().unique())
+
+    i_dia = {v: i for i, v in enumerate(dias)}
+    i_ponto = {v: i for i, v in enumerate(pontos)}
+    i_produto = {v: i for i, v in enumerate(produtos)}
+
+    # itertuples renomeia colunas iniciadas por '_', entao as listas saem das
+    # proprias colunas, por posicao.
+    venda = (base.groupby(["_dia", "_hora", "_ponto"])
+                 .agg(v=("_v", "sum"), q=("_q", "sum"), t=(COL_ID, "nunique"))
+                 .reset_index())
+    venda_linhas = [[i_dia[d], int(h), i_ponto[p], round(float(v), 2),
+                     float(q), int(t)]
+                    for d, h, p, v, q, t in zip(
+                        venda["_dia"], venda["_hora"], venda["_ponto"],
+                        venda["v"], venda["q"], venda["t"])]
+
+    com_produto = base[base[COL_PRODUTO].notna()]
+    prod = (com_produto.groupby(["_dia", "_hora", "_ponto", COL_PRODUTO])
+                       .agg(v=("_v", "sum"), q=("_q", "sum"))
+                       .reset_index())
+    prod_linhas = [[i_dia[d], int(h), i_ponto[p], i_produto[pr],
+                    round(float(v), 2), float(q)]
+                   for d, h, p, pr, v, q in zip(
+                       prod["_dia"], prod["_hora"], prod["_ponto"],
+                       prod[COL_PRODUTO], prod["v"], prod["q"])]
+
+    return {
+        "dias": dias,
+        "pontos": pontos,
+        "produtos": produtos,
+        "marcas": marcas,
+        "palcos": palcos,
+        "ponto_marca": [marcas.index(marcas_por_ponto[p][0]) for p in pontos],
+        "ponto_palco": [palcos.index(marcas_por_ponto[p][1]) for p in pontos],
+        "venda": venda_linhas,
+        "produto": prod_linhas,
+        "metas": METAS,
+    }
+
+
 # -------------------------------------------------------------------- feed
 def montar_feed(df, limite=LIMITE_FEED):
     """Ultimas transacoes, uma linha por VENDA (nao por produto).
@@ -258,6 +374,7 @@ def montar_snapshot(df):
         "atraso_s": max((pd.Timestamp.now() - ultima).total_seconds(), 0),
         "resumo": montar_resumo(df),
         "feed": montar_feed(df),
+        "fatos": montar_fatos(df),
     }
 
 
@@ -350,6 +467,14 @@ def publicar(df, pasta_publico=PASTA_PUBLICO, pasta_dados=PASTA_DADOS,
                         json.dumps({"feed": montar_feed(df)},
                                    indent=2, ensure_ascii=False)):
         alterados.append(ARQ_PAINEL)
+
+    # Tabelas-fato: e o que permite ao painel filtrar por palco/marca/dia sem
+    # voltar ao servidor. Sem indentacao - o arquivo e grande e reescrito a
+    # cada ciclo.
+    if _gravar_se_mudou(os.path.join(pasta_publico, ARQ_FATOS),
+                        json.dumps(montar_fatos(df), ensure_ascii=False,
+                                   separators=(",", ":"))):
+        alterados.append(ARQ_FATOS)
 
     return alterados
 

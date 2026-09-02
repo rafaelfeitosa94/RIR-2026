@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "painel-rir",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["painel_server.py", "--sem-navegador"],
+      "port": 8531
+    }
+  ]
+}

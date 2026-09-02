@@ -1,0 +1,20 @@
+# Dados brutos e estado da coleta: ficam so nesta maquina.
+# O .jsonl cresce sem limite e o offset/estado sao locais - commitar isso
+# infla o repositorio e nao serve para nada no app.
+dados_rir2026/
+
+# Exportacoes locais: nao vao para o repositorio (binario, cresce a cada
+# exportacao e o app do Lovable le os JSONs, nao a planilha).
+*.csv
+*.xlsx
+~$*.xlsx
+
+# Python
+__pycache__/
+*.pyc
+
+# Pasta de trabalho local
+plano b/
+
+# Credenciais da Zig: NUNCA vao para o repositorio.
+credenciais.json
