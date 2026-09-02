@@ -67,7 +67,30 @@ git add . && git commit -m "coletor RIR26" && git push -u origin main
 Se o repositório remoto já tiver arquivos, rode antes
 `git pull --rebase origin main`.
 
-### 3. Rodar durante o evento
+### 3a. Publicar sozinho, sem PC ligado (GitHub Actions)
+
+O jeito recomendado. `.github/workflows/publicar.yml` roda a coleta **nos
+servidores do GitHub** a cada 5 minutos, commita os JSONs e o Pages republica.
+Nenhuma máquina sua precisa ficar ligada.
+
+Para ligar, uma vez só:
+
+1. Faça o push do repositório (inclui o workflow).
+2. No GitHub: **Settings → Secrets and variables → Actions → New repository
+   secret**, e cadastre os dois:
+   - `ZIG_TOKEN_PARCEIRO` = o código de parceiro da Zig
+   - `ZIG_CODIGO_EVENTO` = `38049`
+3. Aba **Actions** → *Publicar vendas RIR 2026* → **Run workflow** para testar
+   na hora, sem esperar o agendamento.
+
+Os secrets ficam com você: não aparecem no código, nos logs nem para quem lê o
+repositório.
+
+**Latência:** 5 minutos é o mínimo que o GitHub aceita no cron, e o agendador
+atrasa em horário de pico — na prática o link fica **5 a 15 minutos** atrás.
+Para tempo real de verdade, use o painel local (abaixo).
+
+### 3b. Rodar durante o evento
 
 ```bash
 python stream_rir.py
