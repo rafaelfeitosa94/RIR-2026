@@ -1,0 +1,44 @@
+{
+  "codigo_evento": 38049,
+  "atualizado_em": "2026-09-02T19:15:26",
+  "periodo": {
+    "inicio": "2026-09-02T00:00:00",
+    "fim": "2026-09-15T00:00:00"
+  },
+  "contem_dados_pessoais": false,
+  "horas_fechadas": [
+    {
+      "hora": "2026-09-02T12",
+      "arquivo": "horas/2026-09-02T12.json",
+      "linhas": 1,
+      "transacoes": 1,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-02T13",
+      "arquivo": "horas/2026-09-02T13.json",
+      "linhas": 7,
+      "transacoes": 7,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-02T16",
+      "arquivo": "horas/2026-09-02T16.json",
+      "linhas": 111,
+      "transacoes": 81,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-02T17",
+      "arquivo": "horas/2026-09-02T17.json",
+      "linhas": 395,
+      "transacoes": 318,
+      "definitiva": true
+    }
+  ],
+  "ao_vivo": {
+    "resumo": "resumo.json",
+    "recentes": "recentes.json",
+    "limite_recentes": 300
+  }
+}
