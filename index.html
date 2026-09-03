@@ -26,11 +26,6 @@
      tema (sem quadrado branco). Mané (vermelho) e Sirene (amarelo) aparecem
      no navy; só o Espetto é texto escuro, então é clareado por filtro. */
   html[data-tema="escuro"] .marcas img[alt="Espetto Carioca"]{filter:brightness(0) invert(1)}
-  /* A logo do evento é um thumbnail com fundo claro CHAPADO nos pixels (não é
-     transparente), então não há como deixá-la navy por CSS sem apagar o
-     vermelho. Fica num cartão claro contido, que lê como emblema proposital. */
-  html[data-tema="escuro"] .logo-evento{filter:contrast(1.45) saturate(1.1) brightness(1.12);
-     background:#fff;border-radius:12px;padding:10px 14px}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
        font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:14px}
@@ -38,12 +33,10 @@
   /* ------------------------------------------------------------ sidebar */
   aside{position:fixed;inset:0 auto 0 0;width:var(--sidebar);background:var(--card);
         border-right:1px solid var(--linha);padding:18px 16px;overflow-y:auto}
-  /* A URL do pngegg é um thumbnail SEM canal alfa: o xadrez de "transparência"
-     está pintado nos pixels (branco alternando com #EEE). O contraste empurra
-     o #EEE para branco e some com o xadrez, preservando o vermelho da marca.
-     O certo mesmo é trocar por um PNG com fundo transparente de verdade. */
-  .logo-evento{display:block;width:100%;max-height:104px;object-fit:contain;
-               margin-bottom:14px;filter:contrast(1.45) saturate(1.1)}
+  /* Logo horizontal oficial do Rock in Rio, PNG com fundo transparente:
+     funciona nos dois temas sem cartão nem filtro. */
+  .logo-evento{display:block;width:100%;max-height:88px;object-fit:contain;
+               margin-bottom:14px}
   .marcas{display:flex;gap:6px;align-items:center;padding:12px 8px;
           background:var(--card);border:1px solid var(--linha);border-radius:10px;margin-bottom:18px}
   /* mesma caixa para as três: altura fixa e contain, então proporções e
@@ -151,7 +144,7 @@
 
 <aside>
   <img class="logo-evento" alt="Rock in Rio"
-       src="https://e7.pngegg.com/pngimages/815/577/png-clipart-bela-vista-park-rock-in-rio-lisboa-2018-rock-in-rio-2018-lisboa-sunday-rock-in-rio-text-logo-thumbnail.png">
+       src="https://rockinrio.com/rio/wp-content/uploads/2023/10/rockinrio-logo-horizontal-40anos-1.png">
 
   <div class="marcas">
     <img alt="Espetto Carioca" src="https://espettocarioca.com.br/wp-content/uploads/2024/04/espetto-carioca-logo.png">
