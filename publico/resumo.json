@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-02T22:32:10",
+  "atualizado_em": "2026-09-02T22:34:13",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2152,
-    "transacoes_venda": 2135,
+    "transacoes": 2155,
+    "transacoes_venda": 2138,
     "transacoes_cancelamento": 17,
-    "itens": 3394.0,
-    "valor_liquido": 83844.0,
-    "valor_bruto_vendas": 84546.0,
+    "itens": 3398.0,
+    "valor_liquido": 83891.0,
+    "valor_bruto_vendas": 84593.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-02T22:31:11"
+    "ultima_transacao": "2026-09-02T22:33:22"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 55399.0,
-      "itens": 2269.0,
-      "transacoes": 1443,
-      "linhas": 1870
+      "valor_liquido": 55446.0,
+      "itens": 2273.0,
+      "transacoes": 1446,
+      "linhas": 1873
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 11592.0,
-      "itens": 644.0,
-      "transacoes": 468,
-      "linhas": 468
+      "valor_liquido": 11610.0,
+      "itens": 645.0,
+      "transacoes": 469,
+      "linhas": 469
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -149,10 +149,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 854.0,
-      "itens": 122.0,
-      "transacoes": 106,
-      "linhas": 106
+      "valor_liquido": 861.0,
+      "itens": 123.0,
+      "transacoes": 107,
+      "linhas": 107
     },
     {
       "Produto": "HEINEKEN ULT",
@@ -260,18 +260,18 @@
       "linhas": 7
     },
     {
+      "Produto": "COCA ZERO RT",
+      "valor_liquido": 374.0,
+      "itens": 34.0,
+      "transacoes": 31,
+      "linhas": 31
+    },
+    {
       "Produto": "COCA COLA RT",
       "valor_liquido": 363.0,
       "itens": 33.0,
       "transacoes": 35,
       "linhas": 35
-    },
-    {
-      "Produto": "COCA ZERO RT",
-      "valor_liquido": 352.0,
-      "itens": 32.0,
-      "transacoes": 30,
-      "linhas": 30
     },
     {
       "Produto": "BATATA MANE",
@@ -473,10 +473,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 49324.0,
-      "itens": 2506.0,
-      "transacoes": 1824,
-      "linhas": 2019
+      "valor_liquido": 49371.0,
+      "itens": 2510.0,
+      "transacoes": 1827,
+      "linhas": 2022
     },
     {
       "Categoria Produto": "Comida",
@@ -489,10 +489,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 41624.0,
-      "itens": 1674.0,
-      "transacoes": 1041,
-      "linhas": 1367
+      "valor_liquido": 41653.0,
+      "itens": 1677.0,
+      "transacoes": 1043,
+      "linhas": 1369
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -510,10 +510,10 @@
     },
     {
       "Forma de Pagamento": "Zig Cashless",
-      "valor_liquido": 187.0,
-      "itens": 9.0,
-      "transacoes": 9,
-      "linhas": 9
+      "valor_liquido": 205.0,
+      "itens": 10.0,
+      "transacoes": 10,
+      "linhas": 10
     }
   ],
   "por_hora": [
@@ -589,19 +589,19 @@
     },
     {
       "_hora": "2026-09-02T22",
-      "valor_liquido": 2576.0,
-      "itens": 124.0,
-      "transacoes": 79,
-      "linhas": 100
+      "valor_liquido": 2623.0,
+      "itens": 128.0,
+      "transacoes": 82,
+      "linhas": 103
     }
   ],
   "por_dia": [
     {
       "_dia": "2026-09-02",
-      "valor_liquido": 83844.0,
-      "itens": 3394.0,
-      "transacoes": 2152,
-      "linhas": 2805
+      "valor_liquido": 83891.0,
+      "itens": 3398.0,
+      "transacoes": 2155,
+      "linhas": 2808
     }
   ]
 }
