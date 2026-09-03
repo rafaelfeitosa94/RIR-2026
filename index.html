@@ -546,9 +546,21 @@ function renderMeta(F, ativos){
     : 'sem meta cadastrada para este recorte';
 }
 
+// Marca de uma linha de produto. O de-para da operação manda: uma venda que
+// saiu por terminal da marca errada (falha de PDV) é reatribuída pelo item.
+// Produto fora do de-para - todas as bebidas, e combos ainda não mapeados -
+// segue a marca do ponto de venda.
+function marcaDaLinha(F, l){
+  const i = F.produto_marca ? F.produto_marca[l[3]] : -1;
+  return F.marcas[i >= 0 ? i : F.ponto_marca[l[2]]];
+}
+
 function renderRanking(F, ativos, faturamentoTotal){
+  // Aqui o filtro de marca usa a marca CORRIGIDA (não a do ponto), senão
+  // reatribuir o produto e filtrar pelo terminal se contradiriam.
   const linhas = F.produto.filter(l =>
-    ativos.has(l[2]) &&
+    (!sel.palcos.size || sel.palcos.has(F.palcos[F.ponto_palco[l[2]]])) &&
+    (!sel.marcas.size || sel.marcas.has(marcaDaLinha(F, l))) &&
     (!sel.dias.size || sel.dias.has(F.dias[l[0]])) &&
     (sel.hora === '' || l[1] === +sel.hora));
 
@@ -560,7 +572,7 @@ function renderRanking(F, ativos, faturamentoTotal){
     // Guarda o faturamento por marca: o mesmo produto costuma ser vendido em
     // pontos de marcas diferentes, e listar as três em toda linha polui.
     // Mostra-se a marca que mais vendeu, com "+N" para as demais.
-    const m = F.marcas[F.ponto_marca[l[2]]];
+    const m = marcaDaLinha(F, l);
     a.marcas[m] = (a.marcas[m] || 0) + l[4];
   });
 
@@ -573,15 +585,23 @@ function renderRanking(F, ativos, faturamentoTotal){
     .sort((a,b) => b.v - a.v);
   const total = itens.reduce((s,i) => s + i.v, 0);
 
-  // O ranking só enxerga faturamento com produto associado. Recarga, ativação
-  // e devolução entram no card de Faturamento mas não têm o que rankear, então
-  // a diferença é declarada em vez de o usuário descobrir somando a coluna.
-  const semProduto = (sel.hora === '' && faturamentoTotal != null)
-    ? faturamentoTotal - total : null;
+  // O ranking só enxerga faturamento com produto associado; recarga e ativação
+  // entram no card mas não têm o que rankear. Essa diferença só é comparável
+  // sem filtro de marca: com filtro, o card soma pelo TERMINAL e o ranking
+  // pela marca CORRIGIDA, então a diferença deixa de ser "sem produto" e vira
+  // a própria reatribuição - rotulá-la de recarga seria mentira.
+  let nota = '';
+  if(sel.marcas.size){
+    nota = ' · marca corrigida pelo de-para do produto';
+  }else{
+    const semProduto = (sel.hora === '' && faturamentoTotal != null)
+      ? faturamentoTotal - total : null;
+    if(semProduto && Math.abs(semProduto) >= 0.01){
+      nota = ` · ${moeda(semProduto)} sem produto (recarga/ativação)`;
+    }
+  }
   document.getElementById('dicaRank').textContent =
-    `${itens.length} produtos · ${moeda(total)} em vendas com produto` +
-    (semProduto && Math.abs(semProduto) >= 0.01
-      ? ` · ${moeda(semProduto)} sem produto (recarga/ativação)` : '');
+    `${itens.length} produtos · ${moeda(total)} em vendas com produto` + nota;
 
   if(!itens.length){
     document.getElementById('ranking').innerHTML =

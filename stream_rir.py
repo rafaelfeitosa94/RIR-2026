@@ -79,6 +79,7 @@ from api_transacoes_rir import (
     coletar,
 )
 from dataframe_rir import COLUNAS_TRANSACAO, carregar_transacoes
+from de_para_produtos import DE_PARA_PRODUTO_MARCA
 
 # ---------------------------------------------------------------- arquivos
 PASTA_PUBLICO = "publico"
@@ -254,8 +255,8 @@ def montar_fatos(df):
     outros dashboards do BI) para o arquivo nao inchar com texto repetido.
     """
     vazio = {"dias": [], "pontos": [], "produtos": [], "marcas": [], "palcos": [],
-             "ponto_marca": [], "ponto_palco": [], "venda": [], "produto": [],
-             "metas": METAS}
+             "ponto_marca": [], "ponto_palco": [], "produto_marca": [],
+             "venda": [], "produto": [], "metas": METAS}
     if df.empty:
         return vazio
 
@@ -270,7 +271,10 @@ def montar_fatos(df):
     pontos = sorted(base["_ponto"].unique())
     marcas_por_ponto = {p: DE_PARA_PONTOS.get(p, (MARCA_PADRAO, PALCO_PADRAO))
                         for p in pontos}
-    marcas = sorted({m for m, _ in marcas_por_ponto.values()})
+    # As marcas do de-para tambem entram: um produto pode ser reatribuido a
+    # uma marca que ainda nao vendeu em nenhum ponto proprio.
+    marcas = sorted({m for m, _ in marcas_por_ponto.values()}
+                    | set(DE_PARA_PRODUTO_MARCA.values()))
     palcos = sorted({p for _, p in marcas_por_ponto.values()})
 
     # Dias com meta entram mesmo sem venda: o painel precisa mostrar o dia de
@@ -303,10 +307,18 @@ def montar_fatos(df):
                        prod["_dia"], prod["_hora"], prod["_ponto"],
                        prod[COL_PRODUTO], prod["v"], prod["q"])]
 
+    # Marca de cada produto pelo de-para da operacao. -1 = seguir a marca do
+    # ponto de venda (bebidas, e produtos que a planilha ainda nao cobre).
+    produto_marca = []
+    for nome in produtos:
+        marca = DE_PARA_PRODUTO_MARCA.get(nome)
+        produto_marca.append(marcas.index(marca) if marca in marcas else -1)
+
     return {
         "dias": dias,
         "pontos": pontos,
         "produtos": produtos,
+        "produto_marca": produto_marca,
         "marcas": marcas,
         "palcos": palcos,
         "ponto_marca": [marcas.index(marcas_por_ponto[p][0]) for p in pontos],
