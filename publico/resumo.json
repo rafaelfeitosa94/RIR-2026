@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-02T22:50:35",
+  "atualizado_em": "2026-09-02T22:52:38",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2167,
-    "transacoes_venda": 2150,
+    "transacoes": 2169,
+    "transacoes_venda": 2152,
     "transacoes_cancelamento": 17,
-    "itens": 3418.0,
-    "valor_liquido": 84278.0,
-    "valor_bruto_vendas": 84980.0,
+    "itens": 3422.0,
+    "valor_liquido": 84359.0,
+    "valor_bruto_vendas": 85061.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-02T22:47:28"
+    "ultima_transacao": "2026-09-02T22:51:35"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 55833.0,
-      "itens": 2293.0,
-      "transacoes": 1458,
-      "linhas": 1887
+      "valor_liquido": 55914.0,
+      "itens": 2297.0,
+      "transacoes": 1460,
+      "linhas": 1889
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 11772.0,
-      "itens": 654.0,
-      "transacoes": 475,
-      "linhas": 475
+      "valor_liquido": 11790.0,
+      "itens": 655.0,
+      "transacoes": 476,
+      "linhas": 476
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -302,6 +302,13 @@
       "linhas": 5
     },
     {
+      "Produto": "MIXED MARAC RT",
+      "valor_liquido": 189.0,
+      "itens": 9.0,
+      "transacoes": 6,
+      "linhas": 6
+    },
+    {
       "Produto": "AMERICAN FISH",
       "valor_liquido": 180.0,
       "itens": 4.0,
@@ -316,14 +323,14 @@
       "linhas": 2
     },
     {
-      "Produto": "RB TROPICAL",
+      "Produto": "MIEXD VODKA RT",
       "valor_liquido": 168.0,
       "itens": 8.0,
       "transacoes": 8,
       "linhas": 8
     },
     {
-      "Produto": "MIEXD VODKA RT",
+      "Produto": "RB TROPICAL",
       "valor_liquido": 168.0,
       "itens": 8.0,
       "transacoes": 8,
@@ -335,13 +342,6 @@
       "itens": 6.0,
       "transacoes": 6,
       "linhas": 6
-    },
-    {
-      "Produto": "MIXED MARAC RT",
-      "valor_liquido": 126.0,
-      "itens": 6.0,
-      "transacoes": 5,
-      "linhas": 5
     },
     {
       "Produto": "HEINEKEN 0.0 RT",
@@ -473,10 +473,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 49708.0,
-      "itens": 2528.0,
-      "transacoes": 1838,
-      "linhas": 2035
+      "valor_liquido": 49789.0,
+      "itens": 2532.0,
+      "transacoes": 1840,
+      "linhas": 2037
     },
     {
       "Categoria Produto": "Comida",
@@ -489,10 +489,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 41877.0,
-      "itens": 1688.0,
-      "transacoes": 1049,
-      "linhas": 1376
+      "valor_liquido": 41940.0,
+      "itens": 1691.0,
+      "transacoes": 1050,
+      "linhas": 1377
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -503,10 +503,10 @@
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 12022.0,
-      "itens": 481.0,
-      "transacoes": 300,
-      "linhas": 387
+      "valor_liquido": 12040.0,
+      "itens": 482.0,
+      "transacoes": 301,
+      "linhas": 388
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -589,19 +589,19 @@
     },
     {
       "_hora": "2026-09-02T22",
-      "valor_liquido": 3010.0,
-      "itens": 148.0,
-      "transacoes": 94,
-      "linhas": 117
+      "valor_liquido": 3091.0,
+      "itens": 152.0,
+      "transacoes": 96,
+      "linhas": 119
     }
   ],
   "por_dia": [
     {
       "_dia": "2026-09-02",
-      "valor_liquido": 84278.0,
-      "itens": 3418.0,
-      "transacoes": 2167,
-      "linhas": 2822
+      "valor_liquido": 84359.0,
+      "itens": 3422.0,
+      "transacoes": 2169,
+      "linhas": 2824
     }
   ]
 }

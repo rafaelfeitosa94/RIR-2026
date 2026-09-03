@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220046351,
+      "hora": "22:51:35",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC RT",
+      "outros_produtos": 0,
+      "quantidade": 3,
+      "valor": 63.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220046347,
+      "hora": "22:49:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220046336,
       "hora": "22:47:28",
       "ponto": "SUN.A.ESPETTO",
@@ -274,30 +298,6 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220046111,
-      "hora": "22:26:20",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220046107,
-      "hora": "22:26:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 3,
-      "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
