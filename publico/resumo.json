@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-02T22:19:53",
+  "atualizado_em": "2026-09-02T22:21:56",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2127,
-    "transacoes_venda": 2110,
+    "transacoes": 2129,
+    "transacoes_venda": 2112,
     "transacoes_cancelamento": 17,
-    "itens": 3358.0,
-    "valor_liquido": 83119.0,
-    "valor_bruto_vendas": 83821.0,
+    "itens": 3360.0,
+    "valor_liquido": 83142.0,
+    "valor_bruto_vendas": 83844.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-02T22:19:24"
+    "ultima_transacao": "2026-09-02T22:20:39"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 54674.0,
-      "itens": 2233.0,
-      "transacoes": 1418,
-      "linhas": 1842
+      "valor_liquido": 54697.0,
+      "itens": 2235.0,
+      "transacoes": 1420,
+      "linhas": 1844
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -149,10 +149,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 847.0,
-      "itens": 121.0,
-      "transacoes": 105,
-      "linhas": 105
+      "valor_liquido": 854.0,
+      "itens": 122.0,
+      "transacoes": 106,
+      "linhas": 106
     },
     {
       "Produto": "HEINEKEN ULT",
@@ -407,6 +407,13 @@
       "linhas": 3
     },
     {
+      "Produto": "RB ZERO RT",
+      "valor_liquido": 48.0,
+      "itens": 3.0,
+      "transacoes": 3,
+      "linhas": 3
+    },
+    {
       "Produto": "SALAD FISH",
       "valor_liquido": 43.0,
       "itens": 1.0,
@@ -414,14 +421,14 @@
       "linhas": 1
     },
     {
-      "Produto": "RB MELANCIA",
+      "Produto": "MIXED MARAC RT",
       "valor_liquido": 42.0,
       "itens": 2.0,
       "transacoes": 2,
       "linhas": 2
     },
     {
-      "Produto": "MIXED MARAC RT",
+      "Produto": "RB MELANCIA",
       "valor_liquido": 42.0,
       "itens": 2.0,
       "transacoes": 2,
@@ -433,13 +440,6 @@
       "itens": 3.0,
       "transacoes": 3,
       "linhas": 3
-    },
-    {
-      "Produto": "RB ZERO RT",
-      "valor_liquido": 32.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
     },
     {
       "Produto": "FANTA GUA 0",
@@ -473,10 +473,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 48736.0,
-      "itens": 2474.0,
-      "transacoes": 1802,
-      "linhas": 1995
+      "valor_liquido": 48759.0,
+      "itens": 2476.0,
+      "transacoes": 1804,
+      "linhas": 1997
     },
     {
       "Categoria Produto": "Comida",
@@ -489,10 +489,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 41313.0,
-      "itens": 1659.0,
-      "transacoes": 1030,
-      "linhas": 1354
+      "valor_liquido": 41329.0,
+      "itens": 1660.0,
+      "transacoes": 1031,
+      "linhas": 1355
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -503,10 +503,10 @@
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 11899.0,
-      "itens": 475.0,
-      "transacoes": 294,
-      "linhas": 381
+      "valor_liquido": 11906.0,
+      "itens": 476.0,
+      "transacoes": 295,
+      "linhas": 382
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -589,19 +589,19 @@
     },
     {
       "_hora": "2026-09-02T22",
-      "valor_liquido": 1851.0,
-      "itens": 88.0,
-      "transacoes": 54,
-      "linhas": 72
+      "valor_liquido": 1874.0,
+      "itens": 90.0,
+      "transacoes": 56,
+      "linhas": 74
     }
   ],
   "por_dia": [
     {
       "_dia": "2026-09-02",
-      "valor_liquido": 83119.0,
-      "itens": 3358.0,
-      "transacoes": 2127,
-      "linhas": 2777
+      "valor_liquido": 83142.0,
+      "itens": 3360.0,
+      "transacoes": 2129,
+      "linhas": 2779
     }
   ]
 }

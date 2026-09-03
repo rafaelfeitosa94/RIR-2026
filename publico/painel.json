@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220046027,
+      "hora": "22:20:39",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RB ZERO RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220046014,
+      "hora": "22:19:53",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220046005,
       "hora": "22:19:24",
       "ponto": "SUN.A.ESPETTO",
@@ -274,30 +298,6 @@
       "valor": 36.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220045732,
-      "hora": "22:07:57",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220045725,
-      "hora": "22:07:55",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
       "cancelamento": false
     }
   ]
