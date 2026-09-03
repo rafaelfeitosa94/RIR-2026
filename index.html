@@ -22,10 +22,15 @@
     --positivo:#22c55e;
     --sombra:0 2px 12px rgba(0,0,0,.28);
   }
-  /* As logos das marcas são coloridas e algumas têm traço escuro: no tema
-     escuro ganham um chip branco atrás para continuarem legíveis. */
-  html[data-tema="escuro"] .marcas{background:#fff}
-  html[data-tema="escuro"] .logo-evento{filter:contrast(1.45) saturate(1.1) brightness(1.15)}
+  /* As 3 logos de marca são PNG transparente. No escuro o fundo acompanha o
+     tema (sem quadrado branco). Mané (vermelho) e Sirene (amarelo) aparecem
+     no navy; só o Espetto é texto escuro, então é clareado por filtro. */
+  html[data-tema="escuro"] .marcas img[alt="Espetto Carioca"]{filter:brightness(0) invert(1)}
+  /* A logo do evento é um thumbnail com fundo claro CHAPADO nos pixels (não é
+     transparente), então não há como deixá-la navy por CSS sem apagar o
+     vermelho. Fica num cartão claro contido, que lê como emblema proposital. */
+  html[data-tema="escuro"] .logo-evento{filter:contrast(1.45) saturate(1.1) brightness(1.12);
+     background:#fff;border-radius:12px;padding:10px 14px}
   *{box-sizing:border-box}
   body{margin:0;background:var(--bg);color:var(--txt);
        font-family:'Segoe UI',system-ui,-apple-system,sans-serif;font-size:14px}
@@ -268,13 +273,20 @@ function base(){
 
 const graficos = {};
 function desenhar(id, opcoes, series){
+  const b = base();
+  // Merge em profundidade no 'chart': senão o chart:{} de cada gráfico
+  // sobrescreveria background:'transparent' e foreColor do base, e o
+  // ApexCharts pintaria o cinza-escuro padrão do tema dark por baixo.
+  const opts = Object.assign({}, b, opcoes,
+    {chart: Object.assign({}, b.chart, opcoes.chart || {})});
+
   if(graficos[id]){
-    graficos[id].updateOptions(Object.assign({}, base(), opcoes), false, false, false);
+    graficos[id].updateOptions(opts, false, false, false);
     graficos[id].updateSeries(series, true);
     return;
   }
   const g = new ApexCharts(document.querySelector('#'+id),
-                           Object.assign({}, base(), opcoes, {series}));
+                           Object.assign({}, opts, {series}));
   g.render(); graficos[id] = g;
 }
 
