@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-02T22:42:23",
+  "atualizado_em": "2026-09-02T22:44:26",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2156,
-    "transacoes_venda": 2139,
+    "transacoes": 2160,
+    "transacoes_venda": 2143,
     "transacoes_cancelamento": 17,
-    "itens": 3400.0,
-    "valor_liquido": 83927.0,
-    "valor_bruto_vendas": 84629.0,
+    "itens": 3407.0,
+    "valor_liquido": 84071.0,
+    "valor_bruto_vendas": 84773.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-02T22:41:07"
+    "ultima_transacao": "2026-09-02T22:43:30"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 55482.0,
-      "itens": 2275.0,
-      "transacoes": 1447,
-      "linhas": 1874
+      "valor_liquido": 55626.0,
+      "itens": 2282.0,
+      "transacoes": 1451,
+      "linhas": 1879
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 11646.0,
-      "itens": 647.0,
-      "transacoes": 470,
-      "linhas": 470
+      "valor_liquido": 11664.0,
+      "itens": 648.0,
+      "transacoes": 471,
+      "linhas": 471
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -331,10 +331,10 @@
     },
     {
       "Produto": "MIEXD VODKA RT",
-      "valor_liquido": 126.0,
-      "itens": 6.0,
-      "transacoes": 6,
-      "linhas": 6
+      "valor_liquido": 147.0,
+      "itens": 7.0,
+      "transacoes": 7,
+      "linhas": 7
     },
     {
       "Produto": "HEINEKEN 0.0 RT",
@@ -349,6 +349,20 @@
       "itens": 2.0,
       "transacoes": 2,
       "linhas": 2
+    },
+    {
+      "Produto": "MIXED GIN TO RT",
+      "valor_liquido": 105.0,
+      "itens": 5.0,
+      "transacoes": 4,
+      "linhas": 4
+    },
+    {
+      "Produto": "MIXED MARAC RT",
+      "valor_liquido": 105.0,
+      "itens": 5.0,
+      "transacoes": 4,
+      "linhas": 4
     },
     {
       "Produto": "MIXED SPRITZ RT",
@@ -386,13 +400,6 @@
       "linhas": 4
     },
     {
-      "Produto": "MIXED GIN TO RT",
-      "valor_liquido": 63.0,
-      "itens": 3.0,
-      "transacoes": 3,
-      "linhas": 3
-    },
-    {
       "Produto": "CB FISH&CHIPS + RED BULL COPO",
       "valor_liquido": 58.0,
       "itens": 1.0,
@@ -419,13 +426,6 @@
       "itens": 1.0,
       "transacoes": 1,
       "linhas": 1
-    },
-    {
-      "Produto": "MIXED MARAC RT",
-      "valor_liquido": 42.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
     },
     {
       "Produto": "RB MELANCIA",
@@ -473,10 +473,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 49407.0,
-      "itens": 2512.0,
-      "transacoes": 1828,
-      "linhas": 2023
+      "valor_liquido": 49551.0,
+      "itens": 2519.0,
+      "transacoes": 1832,
+      "linhas": 2028
     },
     {
       "Categoria Produto": "Comida",
@@ -489,17 +489,17 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 41689.0,
-      "itens": 1679.0,
-      "transacoes": 1044,
-      "linhas": 1370
+      "valor_liquido": 41773.0,
+      "itens": 1683.0,
+      "transacoes": 1046,
+      "linhas": 1373
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 30032.0,
-      "itens": 1231.0,
-      "transacoes": 803,
-      "linhas": 1043
+      "valor_liquido": 30092.0,
+      "itens": 1234.0,
+      "transacoes": 805,
+      "linhas": 1045
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -589,19 +589,19 @@
     },
     {
       "_hora": "2026-09-02T22",
-      "valor_liquido": 2659.0,
-      "itens": 130.0,
-      "transacoes": 83,
-      "linhas": 104
+      "valor_liquido": 2803.0,
+      "itens": 137.0,
+      "transacoes": 87,
+      "linhas": 109
     }
   ],
   "por_dia": [
     {
       "_dia": "2026-09-02",
-      "valor_liquido": 83927.0,
-      "itens": 3400.0,
-      "transacoes": 2156,
-      "linhas": 2809
+      "valor_liquido": 84071.0,
+      "itens": 3407.0,
+      "transacoes": 2160,
+      "linhas": 2814
     }
   ]
 }
