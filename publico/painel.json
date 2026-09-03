@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 220046336,
+      "hora": "22:47:28",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220046330,
+      "hora": "22:46:30",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220046334,
+      "hora": "22:46:25",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220046328,
       "hora": "22:45:44",
       "ponto": "SUN.A.ESPETTO",
@@ -260,42 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 3,
       "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220046104,
-      "hora": "22:25:34",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220046098,
-      "hora": "22:25:16",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220046096,
-      "hora": "22:25:07",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false

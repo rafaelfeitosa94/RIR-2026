@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-02T22:46:29",
+  "atualizado_em": "2026-09-02T22:48:32",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2164,
-    "transacoes_venda": 2147,
+    "transacoes": 2167,
+    "transacoes_venda": 2150,
     "transacoes_cancelamento": 17,
-    "itens": 3415.0,
-    "valor_liquido": 84221.0,
-    "valor_bruto_vendas": 84923.0,
+    "itens": 3418.0,
+    "valor_liquido": 84278.0,
+    "valor_bruto_vendas": 84980.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-02T22:45:44"
+    "ultima_transacao": "2026-09-02T22:47:28"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 55776.0,
-      "itens": 2290.0,
-      "transacoes": 1455,
-      "linhas": 1884
+      "valor_liquido": 55833.0,
+      "itens": 2293.0,
+      "transacoes": 1458,
+      "linhas": 1887
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 11736.0,
-      "itens": 652.0,
-      "transacoes": 473,
-      "linhas": 473
+      "valor_liquido": 11772.0,
+      "itens": 654.0,
+      "transacoes": 475,
+      "linhas": 475
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -337,6 +337,13 @@
       "linhas": 6
     },
     {
+      "Produto": "MIXED MARAC RT",
+      "valor_liquido": 126.0,
+      "itens": 6.0,
+      "transacoes": 5,
+      "linhas": 5
+    },
+    {
       "Produto": "HEINEKEN 0.0 RT",
       "valor_liquido": 126.0,
       "itens": 7.0,
@@ -351,25 +358,18 @@
       "linhas": 2
     },
     {
-      "Produto": "MIXED GIN TO RT",
-      "valor_liquido": 105.0,
-      "itens": 5.0,
-      "transacoes": 4,
-      "linhas": 4
-    },
-    {
-      "Produto": "MIXED MARAC RT",
-      "valor_liquido": 105.0,
-      "itens": 5.0,
-      "transacoes": 4,
-      "linhas": 4
-    },
-    {
       "Produto": "MIXED SPRITZ RT",
       "valor_liquido": 105.0,
       "itens": 5.0,
       "transacoes": 5,
       "linhas": 5
+    },
+    {
+      "Produto": "MIXED GIN TO RT",
+      "valor_liquido": 105.0,
+      "itens": 5.0,
+      "transacoes": 4,
+      "linhas": 4
     },
     {
       "Produto": "BATATA CRINKLE SIRENE",
@@ -473,10 +473,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 49651.0,
-      "itens": 2525.0,
-      "transacoes": 1835,
-      "linhas": 2032
+      "valor_liquido": 49708.0,
+      "itens": 2528.0,
+      "transacoes": 1838,
+      "linhas": 2035
     },
     {
       "Categoria Produto": "Comida",
@@ -489,24 +489,24 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 41859.0,
-      "itens": 1687.0,
-      "transacoes": 1048,
-      "linhas": 1375
+      "valor_liquido": 41877.0,
+      "itens": 1688.0,
+      "transacoes": 1049,
+      "linhas": 1376
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 30156.0,
-      "itens": 1238.0,
-      "transacoes": 807,
-      "linhas": 1048
+      "valor_liquido": 30174.0,
+      "itens": 1239.0,
+      "transacoes": 808,
+      "linhas": 1049
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 12001.0,
-      "itens": 480.0,
-      "transacoes": 299,
-      "linhas": 386
+      "valor_liquido": 12022.0,
+      "itens": 481.0,
+      "transacoes": 300,
+      "linhas": 387
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -589,19 +589,19 @@
     },
     {
       "_hora": "2026-09-02T22",
-      "valor_liquido": 2953.0,
-      "itens": 145.0,
-      "transacoes": 91,
-      "linhas": 114
+      "valor_liquido": 3010.0,
+      "itens": 148.0,
+      "transacoes": 94,
+      "linhas": 117
     }
   ],
   "por_dia": [
     {
       "_dia": "2026-09-02",
-      "valor_liquido": 84221.0,
-      "itens": 3415.0,
-      "transacoes": 2164,
-      "linhas": 2819
+      "valor_liquido": 84278.0,
+      "itens": 3418.0,
+      "transacoes": 2167,
+      "linhas": 2822
     }
   ]
 }
