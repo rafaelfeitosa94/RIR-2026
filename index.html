@@ -496,7 +496,7 @@ function render(){
   renderKpis(totais, somar(vendaRef), somar(vendaAnt), anterior, referencia);
   renderHora(F, vendaRef, vendaAnt, anterior, referencia);
   renderDia(F, vendaTodas);
-  renderMeta(F, ativos);
+  renderMeta(F);
   renderRanking(F, ativos, totais.v);
   renderDonuts();
 
@@ -654,13 +654,20 @@ function renderDia(F, linhas){
 }
 
 // ------------------------------------------------------------------- meta
-function renderMeta(F, ativos){
+function renderMeta(F){
   const marcas = F.marcas;
-  // Realizado por (dia, marca), respeitando os filtros de palco/marca.
+  // Realizado por (dia, marca) atribuindo a marca pelo PRODUTO (de-para), e não
+  // pelo terminal: uma venda que saiu no PDV da marca errada conta para a marca
+  // certa. Bebidas e produtos fora do de-para seguem o ponto (marcaDaLinha).
+  // Usa F.produto (tem a dimensão de produto); o total bate com F.venda porque
+  // ambos somam o valor_total do produto — recarga/ativação não entram.
+  // Pontos filtrados só por PALCO: filtrar por marca aqui reassinaria pelo
+  // terminal e brigaria com a reatribuição por produto (a marca vira coluna).
+  const palcoOk = i => !sel.palcos.size || sel.palcos.has(F.palcos[F.ponto_palco[i]]);
   const real = {};
-  F.venda.filter(l => ativos.has(l[2])).forEach(l => {
-    const d = F.dias[l[0]], m = marcas[F.ponto_marca[l[2]]];
-    (real[d] || (real[d] = {}))[m] = (real[d][m] || 0) + l[3];
+  F.produto.filter(l => palcoOk(l[2])).forEach(l => {
+    const d = F.dias[l[0]], m = marcaDaLinha(F, l);
+    (real[d] || (real[d] = {}))[m] = (real[d][m] || 0) + l[4];
   });
 
   const dias = F.dias.filter(d => sel.dias.size ? sel.dias.has(d) : true);
