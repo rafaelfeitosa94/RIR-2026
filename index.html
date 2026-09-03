@@ -216,6 +216,18 @@
     </div>
 
     <div class="card">
+      <h2>Atingimento da meta</h2>
+      <div class="dica" id="dicaGauge">realizado sobre a meta do recorte</div>
+      <div id="gMeta"></div>
+    </div>
+
+    <div class="card">
+      <h2>Venda por palco (%)</h2>
+      <div class="dica" id="dicaPalco">participação de cada palco no faturamento</div>
+      <div id="gPalco"></div>
+    </div>
+
+    <div class="card">
       <h2>Forma de pagamento</h2>
       <div class="dica">faturamento por forma</div>
       <div id="gPagamento"></div>
@@ -411,6 +423,83 @@ function render(){
   renderMeta(F, ativos);
   renderRanking(F, ativos, totais.v);
   renderDonuts();
+
+  // Gauge e palco usam a base "marca + dia, TODOS os palcos": a meta não tem
+  // dimensão de palco, e o gráfico de palco perderia o sentido se o próprio
+  // filtro de palco o reduzisse a uma fatia só.
+  const marcasSel = sel.marcas.size ? [...sel.marcas] : F.marcas;
+  const diasSel   = sel.dias.size ? [...sel.dias] : F.dias;
+  const marcaDoPonto = l => F.marcas[F.ponto_marca[l[2]]];
+  const baseMD = F.venda.filter(l =>
+    (!sel.dias.size  || sel.dias.has(F.dias[l[0]])) &&
+    (!sel.marcas.size || sel.marcas.has(marcaDoPonto(l))));
+
+  const metaTotal = diasSel.reduce((t,d) =>
+    t + marcasSel.reduce((s,m) => s + ((F.metas[d]||{})[m]||0), 0), 0);
+  const realizadoMD = baseMD.reduce((s,l) => s + l[3], 0);
+  renderGaugeMeta(realizadoMD, metaTotal);
+  renderPalco(F, baseMD);
+}
+
+// ApexCharts pinta no canvas e nem sempre resolve var(--x); então lê-se o
+// valor computado e passa-se a cor/hex concreta.
+function cssVar(nome){
+  return getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+}
+
+function renderGaugeMeta(realizado, meta){
+  const p = meta ? realizado / meta * 100 : 0;
+  const cor = p >= 100 ? cssVar('--positivo') : p >= 70 ? '#FEB019' : '#FF4560';
+
+  document.getElementById('dicaGauge').textContent = meta
+    ? `${moeda(realizado)} de ${moeda(meta)}`
+    : 'sem meta cadastrada para este recorte';
+
+  desenhar('gMeta', {
+    chart:{type:'radialBar', height:300, offsetY:-10},
+    plotOptions:{radialBar:{
+      startAngle:-90, endAngle:90, offsetY:10,
+      hollow:{size:'60%'},
+      track:{background:cssVar('--trilho'), strokeWidth:'97%', margin:6},
+      dataLabels:{
+        name:{show:true, offsetY:22, color:cssVar('--txt2'), fontSize:'12px'},
+        // A barra enche no máx. 100% (arco não passa da meia-lua), mas o
+        // rótulo mostra o atingimento real, mesmo acima de 100%.
+        value:{offsetY:-14, fontSize:'30px', fontWeight:700,
+               color:cssVar('--txt'), formatter:()=> pct(p)}}}},
+    fill:{colors:[cor]},
+    stroke:{lineCap:'round'},
+    colors:[cor],
+    labels:['da meta'],
+  }, [Math.min(p, 100)]);
+}
+
+function renderPalco(F, linhas){
+  const porPalco = {};
+  linhas.forEach(l => {
+    const nome = F.palcos[F.ponto_palco[l[2]]];
+    porPalco[nome] = (porPalco[nome] || 0) + l[3];
+  });
+  const nomes = Object.keys(porPalco).filter(n => porPalco[n] > 0);
+  const total = nomes.reduce((s,n) => s + porPalco[n], 0);
+
+  document.getElementById('dicaPalco').textContent = sel.palcos.size
+    ? 'divisão entre todos os palcos (ignora o filtro de palco)'
+    : 'participação de cada palco no faturamento';
+
+  desenhar('gPalco', {
+    chart:{type:'donut', height:300},
+    // Semicírculo: começa em -90 e vai a 90; o offset e o padding negativo
+    // sobem o desenho para a metade de baixo (vazia) não deixar buraco.
+    plotOptions:{pie:{startAngle:-90, endAngle:90, offsetY:20,
+                      donut:{size:'62%'}}},
+    grid:{padding:{bottom:-90}},
+    labels:nomes,
+    colors:['#008FFB','#FEB019','#00E396','#775DD0'],
+    dataLabels:{enabled:true, formatter:v => v.toFixed(0)+'%'},
+    legend:{position:'bottom', offsetY:-10},
+    tooltip:{y:{formatter:v => moeda(v) + ' (' + (total?(v/total*100):0).toFixed(1) + '%)'}},
+  }, nomes.map(n => +porPalco[n].toFixed(2)));
 }
 
 function renderKpis(sel_, ref, ant, anterior, referencia){
