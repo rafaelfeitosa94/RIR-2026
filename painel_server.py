@@ -168,9 +168,34 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(ESTADO.snapshot)
         if rota == "/api/stream":
             return self._sse()
+        if self._asset(rota):
+            return
 
         self._cabecalho(404, "text/plain; charset=utf-8", 9)
         self.wfile.write(b"nao achei")
+
+    # Serve assets estáticos da pasta (logo, ícones). No GitHub Pages isso é
+    # automático; aqui o servidor precisa fazer à mão. Restrito a extensões
+    # conhecidas e a nomes simples, para não virar leitura arbitrária de disco.
+    _TIPOS = {".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg",
+              ".svg": "image/svg+xml", ".ico": "image/x-icon",
+              ".webp": "image/webp", ".gif": "image/gif"}
+
+    def _asset(self, rota):
+        nome = rota.lstrip("/")
+        ext = os.path.splitext(nome)[1].lower()
+        # Sem barras nem "..": só arquivos da própria pasta.
+        if ext not in self._TIPOS or "/" in nome or "\\" in nome or ".." in nome:
+            return False
+        try:
+            with open(nome, "rb") as arquivo:
+                corpo = arquivo.read()
+        except OSError:
+            return False
+        self._cabecalho(200, self._TIPOS[ext], len(corpo),
+                        {"Cache-Control": "no-store"})
+        self.wfile.write(corpo)
+        return True
 
     def do_POST(self):
         if self.path.split("?")[0] == "/api/atualizar":
