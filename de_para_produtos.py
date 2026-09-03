@@ -4,19 +4,17 @@ De-para de PRODUTO -> MARCA, da planilha "DE-PARA MARCAS.xlsx" da operacao.
 Por que existe: durante o evento algumas vendas saem por terminais da marca
 errada (problema operacional de PDV). Como o produto identifica a marca sem
 ambiguidade - um MANE BURGUER e do Mane mesmo que passe no terminal do
-Espetto - o ranking usa esta tabela em vez do ponto de venda.
+Espetto - o ranking e a tabela de meta usam esta tabela em vez do ponto.
 
 BEBIDAS NAO ENTRAM AQUI de proposito: sao vendidas por todas as marcas, entao
 seguem a marca do ponto de venda, como pedido pela operacao.
 
 Produto que nao estiver nesta tabela tambem cai na marca do ponto de venda.
-Isso vale para as bebidas (correto) e para qualquer produto novo que a
-planilha ainda nao cubra (a corrigir - ver AUSENTES no README).
 
 Gerado a partir da planilha; para atualizar, regenere em vez de editar a mao.
 """
 
-# 33 produtos com marca definida pelo item (todos Comida).
+# 49 produtos com marca definida pelo item.
 DE_PARA_PRODUTO_MARCA = {
     '(C)1CARN+BT+RB': 'Espetto',
     '(C)2.ESP.CARNE +BT': 'Espetto',
@@ -33,9 +31,25 @@ DE_PARA_PRODUTO_MARCA = {
     'AMERIC.FISH+BT': 'Sirene',
     'AMERICAN FISH': 'Sirene',
     'BATATA CRINKLE': 'Sirene',
+    'BATATA CRINKLE SIRENE': 'Sirene',
     'BATATA MANE': 'Mané',
     'BATATA PORCO': 'Mané',
+    'CB 1 ESP CARN BTRB SEM COPO': 'Espetto',
+    'CB 1 ESP CARNBTRB COPO': 'Espetto',
+    'CB 1 ESP CARNE + BT': 'Espetto',
+    'CB 1 ESP CARNE+1FRANGO+BT': 'Espetto',
+    'CB 1 ESP FRAN+BT+RB COPO': 'Espetto',
+    'CB 1 ESP FRANGO + BT': 'Espetto',
+    'CB 1 SAND CARNE + BT': 'Espetto',
+    'CB 1 SAND FRANGO + BT': 'Espetto',
+    'CB 2 ESPS CARNE + BT': 'Espetto',
+    'CB 2 ESPS FRANGO + BT': 'Espetto',
+    'CB FISH&CHIPS + RED BULL COPO': 'Sirene',
+    'CB MANE BURGUER + BATATA': 'Mané',
+    'CB PIPOCA DE PORCO + 2 CHOP': 'Mané',
     'CB PIPOCA+2CHOP': 'Mané',
+    'CBAMERICAN FISH + BATATA': 'Sirene',
+    'COMBO SALAD FISH + BATATA': 'Sirene',
     'ESP.CARNE+BT': 'Espetto',
     'ESP.FRANGO+BT': 'Espetto',
     'ESPETO DE CARNE': 'Espetto',
