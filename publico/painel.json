@@ -1,6 +1,90 @@
 {
   "feed": [
     {
+      "id": 220063508,
+      "hora": "14:41:56",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Zig Cashless",
+      "cancelamento": false
+    },
+    {
+      "id": 220063513,
+      "hora": "14:41:47",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220063493,
+      "hora": "14:41:36",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 52.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220063460,
+      "hora": "14:41:00",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "COMBO SALAD FISH + BATATA",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 69.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 220063440,
+      "hora": "14:40:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220063370,
+      "hora": "14:40:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220063371,
+      "hora": "14:40:03",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 5,
+      "valor": -115.0,
+      "operacao": "Cancelamento de Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": true
+    },
+    {
       "id": 220063358,
       "hora": "14:39:51",
       "ponto": "SUN.A.ESPETTO",
@@ -10,6 +94,18 @@
       "valor": 23.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220063366,
+      "hora": "14:39:41",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 2,
+      "quantidade": 3,
+      "valor": 55.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
       "cancelamento": false
     },
     {
@@ -202,102 +298,6 @@
       "valor": 23.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220063058,
-      "hora": "14:36:03",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 74.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220063039,
-      "hora": "14:36:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 5,
-      "valor": 115.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220063026,
-      "hora": "14:35:49",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 7.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220063004,
-      "hora": "14:35:32",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 41.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220063024,
-      "hora": "14:35:28",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220063003,
-      "hora": "14:35:25",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220062964,
-      "hora": "14:35:05",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220062991,
-      "hora": "14:35:03",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
