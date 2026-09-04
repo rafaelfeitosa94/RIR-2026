@@ -864,6 +864,7 @@ function renderDonuts(){
     labels:pag.map(p => p['Forma de Pagamento']),
     legend:{position:'bottom'},
     plotOptions:{pie:{donut:{size:'62%'}}},
+    dataLabels:{enabled:true, formatter:v => v.toFixed(0)+'%'},
     tooltip:{y:{formatter:v => moeda(v)}},
   }, pag.map(p => +p.valor_liquido.toFixed(2)));
 
@@ -874,6 +875,7 @@ function renderDonuts(){
     colors:[CORES[1], CORES[2], CORES[3]],
     legend:{position:'bottom'},
     plotOptions:{pie:{donut:{size:'62%'}}},
+    dataLabels:{enabled:true, formatter:v => v.toFixed(0)+'%'},
     tooltip:{y:{formatter:v => moeda(v)}},
   }, cat.map(c => +c.valor_liquido.toFixed(2)));
 }
