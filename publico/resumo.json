@@ -1,37 +1,37 @@
 {
-  "atualizado_em": "2026-09-04T17:08:13",
+  "atualizado_em": "2026-09-04T17:10:16",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 3035,
-    "transacoes_venda": 3010,
+    "transacoes": 3052,
+    "transacoes_venda": 3027,
     "transacoes_cancelamento": 25,
-    "itens": 4822.0,
-    "valor_liquido": 119204.0,
-    "valor_bruto_vendas": 120486.0,
+    "itens": 4846.0,
+    "valor_liquido": 119716.0,
+    "valor_bruto_vendas": 120998.0,
     "valor_cancelado": 1282.0,
-    "ultima_transacao": "2026-09-04T17:07:45"
+    "ultima_transacao": "2026-09-04T17:09:40"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 82322.0,
-      "itens": 3351.0,
-      "transacoes": 2094,
-      "linhas": 2752
+      "valor_liquido": 82747.0,
+      "itens": 3371.0,
+      "transacoes": 2108,
+      "linhas": 2768
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 18764.0,
-      "itens": 751.0,
-      "transacoes": 489,
-      "linhas": 636
+      "valor_liquido": 18810.0,
+      "itens": 753.0,
+      "transacoes": 490,
+      "linhas": 637
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
-      "valor_liquido": 10764.0,
-      "itens": 440.0,
-      "transacoes": 286,
-      "linhas": 373
+      "valor_liquido": 10805.0,
+      "itens": 442.0,
+      "transacoes": 288,
+      "linhas": 375
     },
     {
       "Nome do Ponto": "MUN.A.SIRENE.AEB05",
@@ -44,17 +44,17 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK",
-      "valor_liquido": 34523.0,
-      "itens": 1501.0,
-      "transacoes": 1131,
-      "linhas": 1131
+      "valor_liquido": 34730.0,
+      "itens": 1510.0,
+      "transacoes": 1137,
+      "linhas": 1137
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 14814.0,
-      "itens": 823.0,
-      "transacoes": 616,
-      "linhas": 616
+      "valor_liquido": 14940.0,
+      "itens": 830.0,
+      "transacoes": 623,
+      "linhas": 623
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -79,10 +79,10 @@
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "valor_liquido": 4582.0,
-      "itens": 79.0,
-      "transacoes": 78,
-      "linhas": 78
+      "valor_liquido": 4640.0,
+      "itens": 80.0,
+      "transacoes": 79,
+      "linhas": 79
     },
     {
       "Produto": "CB 1 SAND CARNE + BT",
@@ -114,17 +114,17 @@
     },
     {
       "Produto": "FRITAS",
-      "valor_liquido": 2600.0,
-      "itens": 130.0,
-      "transacoes": 120,
-      "linhas": 120
+      "valor_liquido": 2620.0,
+      "itens": 131.0,
+      "transacoes": 121,
+      "linhas": 121
     },
     {
       "Produto": "LAGUN IPA",
-      "valor_liquido": 1708.0,
-      "itens": 61.0,
-      "transacoes": 54,
-      "linhas": 54
+      "valor_liquido": 1736.0,
+      "itens": 62.0,
+      "transacoes": 55,
+      "linhas": 55
     },
     {
       "Produto": "ESPETO FRANGO",
@@ -156,10 +156,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 1372.0,
-      "itens": 196.0,
-      "transacoes": 155,
-      "linhas": 155
+      "valor_liquido": 1393.0,
+      "itens": 199.0,
+      "transacoes": 157,
+      "linhas": 157
     },
     {
       "Produto": "CB 2 ESPS FRANGO + BT",
@@ -246,6 +246,13 @@
       "linhas": 14
     },
     {
+      "Produto": "MIXED GIN TO",
+      "valor_liquido": 598.0,
+      "itens": 23.0,
+      "transacoes": 18,
+      "linhas": 18
+    },
+    {
       "Produto": "CB 1 SAND FRANGO + BT",
       "valor_liquido": 594.0,
       "itens": 11.0,
@@ -258,13 +265,6 @@
       "itens": 21.0,
       "transacoes": 21,
       "linhas": 21
-    },
-    {
-      "Produto": "MIXED GIN TO",
-      "valor_liquido": 546.0,
-      "itens": 21.0,
-      "transacoes": 17,
-      "linhas": 17
     },
     {
       "Produto": "PIPOCA PORCO",
@@ -508,47 +508,47 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 70638.0,
-      "itens": 3590.0,
-      "transacoes": 2599,
-      "linhas": 2900
+      "valor_liquido": 71072.0,
+      "itens": 3612.0,
+      "transacoes": 2615,
+      "linhas": 2917
     },
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 48566.0,
-      "itens": 1232.0,
-      "transacoes": 982,
-      "linhas": 1081
+      "valor_liquido": 48644.0,
+      "itens": 1234.0,
+      "transacoes": 984,
+      "linhas": 1083
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 60164.0,
-      "itens": 2398.0,
-      "transacoes": 1485,
-      "linhas": 1964
+      "valor_liquido": 60415.0,
+      "itens": 2409.0,
+      "transacoes": 1491,
+      "linhas": 1971
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 41974.0,
-      "itens": 1735.0,
-      "transacoes": 1124,
-      "linhas": 1455
+      "valor_liquido": 42190.0,
+      "itens": 1745.0,
+      "transacoes": 1132,
+      "linhas": 1464
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 16071.0,
-      "itens": 647.0,
-      "transacoes": 400,
-      "linhas": 527
+      "valor_liquido": 16098.0,
+      "itens": 649.0,
+      "transacoes": 402,
+      "linhas": 529
     },
     {
       "Forma de Pagamento": "Zig Cashless",
-      "valor_liquido": 995.0,
-      "itens": 42.0,
-      "transacoes": 26,
-      "linhas": 35
+      "valor_liquido": 1013.0,
+      "itens": 43.0,
+      "transacoes": 27,
+      "linhas": 36
     }
   ],
   "por_hora": [
@@ -925,10 +925,10 @@
     },
     {
       "_hora": "2026-09-04T17",
-      "valor_liquido": 2465.0,
-      "itens": 98.0,
-      "transacoes": 59,
-      "linhas": 82
+      "valor_liquido": 2977.0,
+      "itens": 122.0,
+      "transacoes": 76,
+      "linhas": 101
     }
   ],
   "por_dia": [
@@ -941,10 +941,10 @@
     },
     {
       "_dia": "2026-09-04",
-      "valor_liquido": 34694.0,
-      "itens": 1391.0,
-      "transacoes": 860,
-      "linhas": 1151
+      "valor_liquido": 35206.0,
+      "itens": 1415.0,
+      "transacoes": 877,
+      "linhas": 1170
     }
   ]
 }
