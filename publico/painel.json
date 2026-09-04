@@ -1,6 +1,90 @@
 {
   "feed": [
     {
+      "id": 220065925,
+      "hora": "15:08:00",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB MANE BURGUER + BATATA",
+      "outros_produtos": 2,
+      "quantidade": 6,
+      "valor": 215.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065900,
+      "hora": "15:07:47",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 46.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065884,
+      "hora": "15:07:41",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065860,
+      "hora": "15:07:26",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "LAGUN IPA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 28.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065841,
+      "hora": "15:07:17",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065821,
+      "hora": "15:07:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220065804,
+      "hora": "15:07:02",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220065675,
       "hora": "15:05:34",
       "ponto": "MUN.A.MANE.AEB04",
@@ -215,90 +299,6 @@
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
-    },
-    {
-      "id": 220065294,
-      "hora": "15:02:14",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 62.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220065275,
-      "hora": "15:02:04",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "RB TROPICAL",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 35.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220065329,
-      "hora": "15:01:45",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220065216,
-      "hora": "15:01:26",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "HEINEKEN 0.0",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220065198,
-      "hora": "15:01:16",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 72.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220065187,
-      "hora": "15:01:13",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 108.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220065192,
-      "hora": "15:01:06",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 2,
-      "quantidade": 9,
-      "valor": -170.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
     }
   ]
 }
