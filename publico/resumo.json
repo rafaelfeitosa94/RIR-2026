@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-09-04T14:05:33",
+  "atualizado_em": "2026-09-04T14:07:36",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 2176,
-    "transacoes_venda": 2159,
+    "transacoes": 2178,
+    "transacoes_venda": 2161,
     "transacoes_cancelamento": 17,
-    "itens": 3432.0,
-    "valor_liquido": 84533.0,
-    "valor_bruto_vendas": 85235.0,
+    "itens": 3436.0,
+    "valor_liquido": 84674.0,
+    "valor_bruto_vendas": 85376.0,
     "valor_cancelado": 702.0,
-    "ultima_transacao": "2026-09-04T14:04:30"
+    "ultima_transacao": "2026-09-04T14:06:12"
   },
   "por_ponto": [
     {
@@ -21,10 +21,10 @@
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 15889.0,
-      "itens": 637.0,
-      "transacoes": 414,
-      "linhas": 541
+      "valor_liquido": 16030.0,
+      "itens": 641.0,
+      "transacoes": 416,
+      "linhas": 545
     },
     {
       "Nome do Ponto": "MUN.A.SIRENE.AEB05",
@@ -86,10 +86,10 @@
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
-      "valor_liquido": 2808.0,
-      "itens": 52.0,
-      "transacoes": 44,
-      "linhas": 44
+      "valor_liquido": 2862.0,
+      "itens": 53.0,
+      "transacoes": 45,
+      "linhas": 45
     },
     {
       "Produto": "COCA COLA",
@@ -100,10 +100,10 @@
     },
     {
       "Produto": "COCA ZERO",
-      "valor_liquido": 2512.0,
-      "itens": 157.0,
-      "transacoes": 147,
-      "linhas": 147
+      "valor_liquido": 2528.0,
+      "itens": 158.0,
+      "transacoes": 148,
+      "linhas": 148
     },
     {
       "Produto": "FRITAS",
@@ -204,18 +204,18 @@
       "linhas": 22
     },
     {
+      "Produto": "CBAMERICAN FISH + BATATA",
+      "valor_liquido": 495.0,
+      "itens": 9.0,
+      "transacoes": 9,
+      "linhas": 9
+    },
+    {
       "Produto": "FISH CHIPS",
       "valor_liquido": 480.0,
       "itens": 12.0,
       "transacoes": 11,
       "linhas": 11
-    },
-    {
-      "Produto": "CBAMERICAN FISH + BATATA",
-      "valor_liquido": 440.0,
-      "itens": 8.0,
-      "transacoes": 8,
-      "linhas": 8
     },
     {
       "Produto": "PIPOCA PORCO",
@@ -442,14 +442,14 @@
       "linhas": 3
     },
     {
-      "Produto": "FANTA GUA 0",
-      "valor_liquido": 16.0,
-      "itens": 1.0,
-      "transacoes": 1,
-      "linhas": 1
+      "Produto": "FANTA GUARA",
+      "valor_liquido": 32.0,
+      "itens": 2.0,
+      "transacoes": 2,
+      "linhas": 2
     },
     {
-      "Produto": "FANTA GUARA",
+      "Produto": "FANTA GUA 0",
       "valor_liquido": 16.0,
       "itens": 1.0,
       "transacoes": 1,
@@ -473,17 +473,17 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 49963.0,
-      "itens": 2542.0,
-      "transacoes": 1847,
-      "linhas": 2044
+      "valor_liquido": 49995.0,
+      "itens": 2544.0,
+      "transacoes": 1849,
+      "linhas": 2046
     },
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 34570.0,
-      "itens": 890.0,
-      "transacoes": 718,
-      "linhas": 787
+      "valor_liquido": 34679.0,
+      "itens": 892.0,
+      "transacoes": 720,
+      "linhas": 789
     }
   ],
   "por_forma_pagamento": [
@@ -496,17 +496,17 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 30287.0,
-      "itens": 1245.0,
-      "transacoes": 812,
-      "linhas": 1053
+      "valor_liquido": 30358.0,
+      "itens": 1247.0,
+      "transacoes": 813,
+      "linhas": 1055
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 12040.0,
-      "itens": 482.0,
-      "transacoes": 301,
-      "linhas": 388
+      "valor_liquido": 12110.0,
+      "itens": 484.0,
+      "transacoes": 302,
+      "linhas": 390
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -869,10 +869,10 @@
     },
     {
       "_hora": "2026-09-04T14",
-      "valor_liquido": 23.0,
-      "itens": 1.0,
-      "transacoes": 1,
-      "linhas": 1
+      "valor_liquido": 164.0,
+      "itens": 5.0,
+      "transacoes": 3,
+      "linhas": 5
     }
   ],
   "por_dia": [
@@ -885,10 +885,10 @@
     },
     {
       "_dia": "2026-09-04",
-      "valor_liquido": 23.0,
-      "itens": 1.0,
-      "transacoes": 1,
-      "linhas": 1
+      "valor_liquido": 164.0,
+      "itens": 5.0,
+      "transacoes": 3,
+      "linhas": 5
     }
   ]
 }
