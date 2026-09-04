@@ -1,37 +1,37 @@
 {
-  "atualizado_em": "2026-09-04T18:12:08",
+  "atualizado_em": "2026-09-04T18:14:13",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 3648,
-    "transacoes_venda": 3620,
+    "transacoes": 3667,
+    "transacoes_venda": 3639,
     "transacoes_cancelamento": 28,
-    "itens": 5839.0,
-    "valor_liquido": 145089.0,
-    "valor_bruto_vendas": 146528.0,
+    "itens": 5868.0,
+    "valor_liquido": 145800.0,
+    "valor_bruto_vendas": 147239.0,
     "valor_cancelado": 1439.0,
-    "ultima_transacao": "2026-09-04T18:11:36"
+    "ultima_transacao": "2026-09-04T18:13:32"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 100914.0,
-      "itens": 4098.0,
-      "transacoes": 2531,
-      "linhas": 3356
+      "valor_liquido": 101411.0,
+      "itens": 4121.0,
+      "transacoes": 2547,
+      "linhas": 3374
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 23397.0,
-      "itens": 925.0,
-      "transacoes": 602,
-      "linhas": 783
+      "valor_liquido": 23563.0,
+      "itens": 929.0,
+      "transacoes": 604,
+      "linhas": 785
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
-      "valor_liquido": 13424.0,
-      "itens": 536.0,
-      "transacoes": 349,
-      "linhas": 457
+      "valor_liquido": 13472.0,
+      "itens": 538.0,
+      "transacoes": 350,
+      "linhas": 459
     },
     {
       "Nome do Ponto": "MUN.A.SIRENE.AEB05",
@@ -44,31 +44,31 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK",
-      "valor_liquido": 40710.0,
-      "itens": 1770.0,
-      "transacoes": 1318,
-      "linhas": 1318
+      "valor_liquido": 40871.0,
+      "itens": 1777.0,
+      "transacoes": 1323,
+      "linhas": 1323
     },
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 18522.0,
-      "itens": 1029.0,
-      "transacoes": 775,
-      "linhas": 775
+      "valor_liquido": 18720.0,
+      "itens": 1040.0,
+      "transacoes": 783,
+      "linhas": 783
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
-      "valor_liquido": 10092.0,
-      "itens": 174.0,
-      "transacoes": 164,
-      "linhas": 164
+      "valor_liquido": 10150.0,
+      "itens": 175.0,
+      "transacoes": 165,
+      "linhas": 165
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 7750.0,
-      "itens": 310.0,
-      "transacoes": 228,
-      "linhas": 228
+      "valor_liquido": 7850.0,
+      "itens": 314.0,
+      "transacoes": 231,
+      "linhas": 231
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -79,10 +79,10 @@
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "valor_liquido": 6438.0,
-      "itens": 111.0,
-      "transacoes": 109,
-      "linhas": 109
+      "valor_liquido": 6554.0,
+      "itens": 113.0,
+      "transacoes": 110,
+      "linhas": 110
     },
     {
       "Produto": "CB 1 SAND CARNE + BT",
@@ -93,10 +93,10 @@
     },
     {
       "Produto": "COCA ZERO",
-      "valor_liquido": 4416.0,
-      "itens": 276.0,
-      "transacoes": 254,
-      "linhas": 254
+      "valor_liquido": 4432.0,
+      "itens": 277.0,
+      "transacoes": 255,
+      "linhas": 255
     },
     {
       "Produto": "COCA COLA",
@@ -184,24 +184,24 @@
     },
     {
       "Produto": "HEINEKEN ULT",
-      "valor_liquido": 1357.0,
-      "itens": 59.0,
+      "valor_liquido": 1380.0,
+      "itens": 60.0,
+      "transacoes": 49,
+      "linhas": 49
+    },
+    {
+      "Produto": "RB ZERO",
+      "valor_liquido": 1113.0,
+      "itens": 53.0,
       "transacoes": 48,
       "linhas": 48
     },
     {
-      "Produto": "RB ZERO",
-      "valor_liquido": 1092.0,
-      "itens": 52.0,
-      "transacoes": 47,
-      "linhas": 47
-    },
-    {
       "Produto": "HEINEKEN ULT RT",
-      "valor_liquido": 972.0,
-      "itens": 54.0,
-      "transacoes": 47,
-      "linhas": 47
+      "valor_liquido": 990.0,
+      "itens": 55.0,
+      "transacoes": 48,
+      "linhas": 48
     },
     {
       "Produto": "HEINEKEN 0.0",
@@ -515,40 +515,40 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 85032.0,
-      "itens": 4326.0,
-      "transacoes": 3105,
-      "linhas": 3479
+      "valor_liquido": 85469.0,
+      "itens": 4348.0,
+      "transacoes": 3122,
+      "linhas": 3496
     },
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 60057.0,
-      "itens": 1513.0,
-      "transacoes": 1207,
-      "linhas": 1337
+      "valor_liquido": 60331.0,
+      "itens": 1520.0,
+      "transacoes": 1212,
+      "linhas": 1342
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 76516.0,
-      "itens": 3032.0,
-      "transacoes": 1839,
-      "linhas": 2470
+      "valor_liquido": 76992.0,
+      "itens": 3051.0,
+      "transacoes": 1852,
+      "linhas": 2484
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 48583.0,
-      "itens": 2002.0,
-      "transacoes": 1309,
-      "linhas": 1685
+      "valor_liquido": 48754.0,
+      "itens": 2009.0,
+      "transacoes": 1313,
+      "linhas": 1691
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 18334.0,
-      "itens": 738.0,
-      "transacoes": 459,
-      "linhas": 605
+      "valor_liquido": 18398.0,
+      "itens": 741.0,
+      "transacoes": 461,
+      "linhas": 607
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -939,10 +939,10 @@
     },
     {
       "_hora": "2026-09-04T18",
-      "valor_liquido": 5557.0,
-      "itens": 216.0,
-      "transacoes": 138,
-      "linhas": 177
+      "valor_liquido": 6268.0,
+      "itens": 245.0,
+      "transacoes": 157,
+      "linhas": 199
     }
   ],
   "por_dia": [
@@ -955,10 +955,10 @@
     },
     {
       "_dia": "2026-09-04",
-      "valor_liquido": 60579.0,
-      "itens": 2408.0,
-      "transacoes": 1473,
-      "linhas": 1986
+      "valor_liquido": 61290.0,
+      "itens": 2437.0,
+      "transacoes": 1492,
+      "linhas": 2008
     }
   ]
 }
