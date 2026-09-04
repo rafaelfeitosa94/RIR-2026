@@ -147,6 +147,7 @@ COL_VALOR = COLUNAS_TRANSACAO["valor"]
 COL_VALOR_TOTAL = COLUNAS_TRANSACAO["valor_total"]
 COL_QUANTIDADE = COLUNAS_TRANSACAO["quantidade"]
 COL_OPERACAO = COLUNAS_TRANSACAO["operacao"]
+COL_OPERADOR = COLUNAS_TRANSACAO["operador"]
 COL_PONTO = COLUNAS_TRANSACAO["nome_ponto"]
 COL_PRODUTO = COLUNAS_TRANSACAO["produto"]
 COL_CATEGORIA = COLUNAS_TRANSACAO["categoria_produto"]
@@ -256,7 +257,8 @@ def montar_fatos(df):
     """
     vazio = {"dias": [], "pontos": [], "produtos": [], "marcas": [], "palcos": [],
              "ponto_marca": [], "ponto_palco": [], "produto_marca": [],
-             "venda": [], "produto": [], "metas": METAS}
+             "venda": [], "produto": [], "operadores": [], "operador": [],
+             "metas": METAS}
     if df.empty:
         return vazio
 
@@ -314,6 +316,21 @@ def montar_fatos(df):
         marca = DE_PARA_PRODUTO_MARCA.get(nome)
         produto_marca.append(marcas.index(marca) if marca in marcas else -1)
 
+    # Fato de operador: [dia, ponto, operador, valor, itens, transacoes].
+    # Keyed por ponto tambem para o painel filtrar por palco/marca (e caso um
+    # operador atue em mais de um ponto ao longo do evento).
+    operadores = sorted(base[COL_OPERADOR].dropna().astype(str).unique())
+    i_operador = {v: i for i, v in enumerate(operadores)}
+    base["_op"] = base[COL_OPERADOR].astype(str)
+    ope = (base.groupby(["_dia", "_ponto", "_op"])
+               .agg(v=("_v", "sum"), q=("_q", "sum"), t=(COL_ID, "nunique"))
+               .reset_index())
+    operador_linhas = [[i_dia[d], i_ponto[p], i_operador[o],
+                        round(float(v), 2), float(q), int(t)]
+                       for d, p, o, v, q, t in zip(
+                           ope["_dia"], ope["_ponto"], ope["_op"],
+                           ope["v"], ope["q"], ope["t"])]
+
     return {
         "dias": dias,
         "pontos": pontos,
@@ -325,6 +342,8 @@ def montar_fatos(df):
         "ponto_palco": [palcos.index(marcas_por_ponto[p][1]) for p in pontos],
         "venda": venda_linhas,
         "produto": prod_linhas,
+        "operadores": operadores,
+        "operador": operador_linhas,
         "metas": METAS,
     }
 

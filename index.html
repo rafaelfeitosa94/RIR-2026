@@ -235,23 +235,6 @@
       <div id="gDia"></div>
     </div>
 
-    <div class="card largo">
-      <h2>Meta por marca e dia</h2>
-      <div class="dica" id="dicaMeta">realizado sobre a meta de faturamento de cada dia</div>
-      <div class="rolar" id="meta"></div>
-    </div>
-
-    <div class="card largo">
-      <div class="cabeca">
-        <div>
-          <h2>Ranking de produtos</h2>
-          <div class="dica" id="dicaRank">participação sobre o faturamento do recorte</div>
-        </div>
-        <select id="fHora"></select>
-      </div>
-      <div class="rolar" id="ranking"></div>
-    </div>
-
     <div class="card">
       <h2>Atingimento da meta</h2>
       <div class="dica" id="dicaGauge">realizado sobre a meta do recorte</div>
@@ -274,6 +257,29 @@
       <h2>Categoria</h2>
       <div class="dica">comida x bebida</div>
       <div id="gCategoria"></div>
+    </div>
+
+    <div class="card largo">
+      <h2>Meta por marca e dia</h2>
+      <div class="dica" id="dicaMeta">realizado sobre a meta de faturamento de cada dia</div>
+      <div class="rolar" id="meta"></div>
+    </div>
+
+    <div class="card largo">
+      <div class="cabeca">
+        <div>
+          <h2>Ranking de produtos</h2>
+          <div class="dica" id="dicaRank">participação sobre o faturamento do recorte</div>
+        </div>
+        <select id="fHora"></select>
+      </div>
+      <div class="rolar" id="ranking"></div>
+    </div>
+
+    <div class="card largo">
+      <h2>Vendas por operador</h2>
+      <div class="dica" id="dicaOperador">operadores por ordem de faturamento</div>
+      <div class="rolar" id="operador"></div>
     </div>
 
     <div class="card largo">
@@ -498,6 +504,7 @@ function render(){
   renderDia(F, vendaTodas);
   renderMeta(F);
   renderRanking(F, ativos, totais.v);
+  renderOperador(F, ativos);
   renderDonuts();
 
   // Gauge e palco usam a base "marca + dia, TODOS os palcos": a meta não tem
@@ -799,6 +806,50 @@ function renderRanking(F, ativos, faturamentoTotal){
         <td><span class="tagm">${it.marca}</span>${it.outrasMarcas
               ? `<span class="mais" title="também vendido em outras marcas">+${it.outrasMarcas}</span>` : ''}</td>
         <td class="num">${num(it.q)}</td>
+        <td class="num">${moeda(it.v)}</td>
+        <td class="num">${pct(p)}<div class="barra"><i style="width:${Math.max(p,0)}%"></i></div></td>
+      </tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderOperador(F, ativos){
+  // Operador pertence a um ponto, então a marca/palco do filtro vale pelo ponto
+  // (ativos já aplica palco+marca). Fato = [dia, ponto, operador, valor, itens, transacoes].
+  const linhas = (F.operador || []).filter(l =>
+    ativos.has(l[1]) && (!sel.dias.size || sel.dias.has(F.dias[l[0]])));
+
+  const agg = {};
+  linhas.forEach(l => {
+    const a = agg[l[2]] || (agg[l[2]] = {v:0, itens:0, t:0, ponto:l[1]});
+    a.v += l[3]; a.itens += l[4]; a.t += l[5];
+  });
+
+  const itens = Object.entries(agg)
+    .map(([i,a]) => ({op:F.operadores[i], ...a}))
+    .sort((a,b) => b.v - a.v);
+  const total = itens.reduce((s,i) => s + i.v, 0);
+
+  document.getElementById('dicaOperador').textContent =
+    `${itens.length} operadores · total ${moeda(total)}`;
+
+  if(!itens.length){
+    document.getElementById('operador').innerHTML =
+      '<div class="vazio">nenhuma venda neste recorte</div>';
+    return;
+  }
+
+  document.getElementById('operador').innerHTML = `
+    <table><thead><tr>
+      <th class="num">#</th><th>Operador</th><th>Ponto</th>
+      <th class="num">Transações</th><th class="num">Faturamento</th><th class="num">Part. (%)</th>
+    </tr></thead><tbody>` +
+    itens.map((it,i) => {
+      const p = total ? it.v/total*100 : 0;
+      return `<tr>
+        <td class="num">${i+1}</td>
+        <td>${it.op}</td>
+        <td>${F.pontos[it.ponto]}</td>
+        <td class="num">${num(it.t)}</td>
         <td class="num">${moeda(it.v)}</td>
         <td class="num">${pct(p)}<div class="barra"><i style="width:${Math.max(p,0)}%"></i></div></td>
       </tr>`;
