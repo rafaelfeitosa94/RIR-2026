@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-05T03:28:30",
+  "atualizado_em": "2026-09-05T03:30:39",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 13884,
-    "transacoes_venda": 13829,
+    "transacoes": 13886,
+    "transacoes_venda": 13831,
     "transacoes_cancelamento": 55,
-    "itens": 23728.0,
-    "valor_liquido": 581738.0,
-    "valor_bruto_vendas": 584880.0,
+    "itens": 23731.0,
+    "valor_liquido": 581781.0,
+    "valor_bruto_vendas": 584923.0,
     "valor_cancelado": 3142.0,
-    "ultima_transacao": "2026-09-05T03:28:00"
+    "ultima_transacao": "2026-09-05T03:29:54"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 258463.0,
-      "itens": 9987.0,
-      "transacoes": 5937,
-      "linhas": 8278
+      "valor_liquido": 258506.0,
+      "itens": 9990.0,
+      "transacoes": 5939,
+      "linhas": 8280
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -44,10 +44,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 120708.0,
-      "itens": 6706.0,
-      "transacoes": 4740,
-      "linhas": 4740
+      "valor_liquido": 120744.0,
+      "itens": 6708.0,
+      "transacoes": 4741,
+      "linhas": 4741
     },
     {
       "Produto": "CHOPE HNK",
@@ -142,10 +142,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 9814.0,
-      "itens": 1402.0,
-      "transacoes": 1020,
-      "linhas": 1020
+      "valor_liquido": 9821.0,
+      "itens": 1403.0,
+      "transacoes": 1021,
+      "linhas": 1021
     },
     {
       "Produto": "ESPETO FRANGO",
@@ -557,10 +557,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 297060.0,
-      "itens": 16661.0,
-      "transacoes": 11234,
-      "linhas": 12945
+      "valor_liquido": 297103.0,
+      "itens": 16664.0,
+      "transacoes": 11236,
+      "linhas": 12947
     },
     {
       "Categoria Produto": "Comida",
@@ -580,10 +580,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 180817.0,
-      "itens": 7568.0,
-      "transacoes": 4577,
-      "linhas": 6224
+      "valor_liquido": 180860.0,
+      "itens": 7571.0,
+      "transacoes": 4579,
+      "linhas": 6226
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1044,10 +1044,10 @@
     },
     {
       "_hora": "2026-09-05T03",
-      "valor_liquido": 3194.0,
-      "itens": 135.0,
-      "transacoes": 85,
-      "linhas": 106
+      "valor_liquido": 3237.0,
+      "itens": 138.0,
+      "transacoes": 87,
+      "linhas": 108
     }
   ],
   "por_dia": [
@@ -1067,10 +1067,10 @@
     },
     {
       "_dia": "2026-09-05",
-      "valor_liquido": 94890.0,
-      "itens": 4699.0,
-      "transacoes": 2749,
-      "linhas": 3556
+      "valor_liquido": 94933.0,
+      "itens": 4702.0,
+      "transacoes": 2751,
+      "linhas": 3558
     }
   ]
 }
