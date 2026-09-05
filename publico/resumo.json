@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-05T03:34:55",
+  "atualizado_em": "2026-09-05T03:37:02",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 13895,
-    "transacoes_venda": 13840,
+    "transacoes": 13897,
+    "transacoes_venda": 13842,
     "transacoes_cancelamento": 55,
-    "itens": 23746.0,
-    "valor_liquido": 582163.0,
-    "valor_bruto_vendas": 585305.0,
+    "itens": 23748.0,
+    "valor_liquido": 582213.0,
+    "valor_bruto_vendas": 585355.0,
     "valor_cancelado": 3142.0,
-    "ultima_transacao": "2026-09-05T03:34:10"
+    "ultima_transacao": "2026-09-05T03:35:36"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 258888.0,
-      "itens": 10005.0,
-      "transacoes": 5948,
-      "linhas": 8293
+      "valor_liquido": 258938.0,
+      "itens": 10007.0,
+      "transacoes": 5950,
+      "linhas": 8295
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -65,10 +65,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 35275.0,
-      "itens": 1411.0,
-      "transacoes": 1046,
-      "linhas": 1046
+      "valor_liquido": 35325.0,
+      "itens": 1413.0,
+      "transacoes": 1048,
+      "linhas": 1048
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
@@ -564,10 +564,10 @@
     },
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 284903.0,
-      "itens": 7073.0,
-      "transacoes": 5589,
-      "linhas": 6201
+      "valor_liquido": 284953.0,
+      "itens": 7075.0,
+      "transacoes": 5591,
+      "linhas": 6203
     }
   ],
   "por_forma_pagamento": [
@@ -580,10 +580,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 181057.0,
-      "itens": 7578.0,
-      "transacoes": 4583,
-      "linhas": 6232
+      "valor_liquido": 181107.0,
+      "itens": 7580.0,
+      "transacoes": 4585,
+      "linhas": 6234
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1044,10 +1044,10 @@
     },
     {
       "_hora": "2026-09-05T03",
-      "valor_liquido": 3619.0,
-      "itens": 153.0,
-      "transacoes": 96,
-      "linhas": 121
+      "valor_liquido": 3669.0,
+      "itens": 155.0,
+      "transacoes": 98,
+      "linhas": 123
     }
   ],
   "por_dia": [
@@ -1067,10 +1067,10 @@
     },
     {
       "_dia": "2026-09-05",
-      "valor_liquido": 95315.0,
-      "itens": 4717.0,
-      "transacoes": 2760,
-      "linhas": 3571
+      "valor_liquido": 95365.0,
+      "itens": 4719.0,
+      "transacoes": 2762,
+      "linhas": 3573
     }
   ]
 }
