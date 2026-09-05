@@ -665,16 +665,28 @@ function renderMeta(F){
   const marcas = F.marcas;
   // Realizado por (dia, marca) atribuindo a marca pelo PRODUTO (de-para), e não
   // pelo terminal: uma venda que saiu no PDV da marca errada conta para a marca
-  // certa. Bebidas e produtos fora do de-para seguem o ponto (marcaDaLinha).
-  // Usa F.produto (tem a dimensão de produto); o total bate com F.venda porque
-  // ambos somam o valor_total do produto — recarga/ativação não entram.
-  // Pontos filtrados só por PALCO: filtrar por marca aqui reassinaria pelo
-  // terminal e brigaria com a reatribuição por produto (a marca vira coluna).
+  // certa. Comida com de-para vai 100% para a marca do item.
+  //
+  // BEBIDA (produto fora do de-para) é vendida de forma aleatória por qualquer
+  // ponto, então SÓ NA META o faturamento dela é rateado por uma regra fixa:
+  // 70% Espetto, 20% Mané, 10% Sirene. (No ranking a bebida segue o ponto.)
+  //
+  // Usa F.produto; o total bate com F.venda (ambos somam valor_total; o rateio
+  // 70/20/10 preserva a soma). Pontos filtrados só por PALCO — filtrar por
+  // marca aqui reassinaria pelo terminal e brigaria com a reatribuição.
+  const RATEIO_BEBIDA = {"Espetto": 0.70, "Mané": 0.20, "Sirene": 0.10};
   const palcoOk = i => !sel.palcos.size || sel.palcos.has(F.palcos[F.ponto_palco[i]]);
   const real = {};
   F.produto.filter(l => palcoOk(l[2])).forEach(l => {
-    const d = F.dias[l[0]], m = marcaDaLinha(F, l);
-    (real[d] || (real[d] = {}))[m] = (real[d][m] || 0) + l[4];
+    const dia = real[F.dias[l[0]]] || (real[F.dias[l[0]]] = {});
+    const idx = F.produto_marca ? F.produto_marca[l[3]] : -1;
+    if(idx >= 0){
+      const m = F.marcas[idx];                 // comida: 100% para a marca do item
+      dia[m] = (dia[m] || 0) + l[4];
+    }else{
+      for(const m in RATEIO_BEBIDA)            // bebida: rateio fixo 70/20/10
+        dia[m] = (dia[m] || 0) + l[4] * RATEIO_BEBIDA[m];
+    }
   });
 
   const dias = F.dias.filter(d => sel.dias.size ? sel.dias.has(d) : true);
@@ -725,9 +737,10 @@ function renderMeta(F){
     </tbody></table>`;
 
   const geral = soma(totalMeta, visiveis);
-  document.getElementById('dicaMeta').textContent = geral
+  document.getElementById('dicaMeta').textContent = (geral
     ? `meta do recorte ${moeda(geral)} · realizado ${pct(soma(totalReal,visiveis)/geral*100)}`
-    : 'sem meta cadastrada para este recorte';
+    : 'sem meta cadastrada para este recorte')
+    + ' · bebidas rateadas 70% Espetto / 20% Mané / 10% Sirene';
 }
 
 // Marca de uma linha de produto. O de-para da operação manda: uma venda que
