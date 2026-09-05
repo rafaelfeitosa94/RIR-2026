@@ -148,6 +148,18 @@ COL_VALOR_TOTAL = COLUNAS_TRANSACAO["valor_total"]
 COL_QUANTIDADE = COLUNAS_TRANSACAO["quantidade"]
 COL_OPERACAO = COLUNAS_TRANSACAO["operacao"]
 COL_OPERADOR = COLUNAS_TRANSACAO["operador"]
+
+# Dia do caixa: abre as 12:00 e vai ate as 05:00 do dia seguinte. Deslocar o
+# timestamp em -5h faz a data cair no dia de ABERTURA - a virada do dia passa
+# de meia-noite para 05:00. Assim uma venda de madrugada (00:00-05:00) conta
+# para o dia do show que comecou no meio-dia anterior, e nao para o calendario
+# seguinte (que no RIR costuma ser dia sem evento/sem meta).
+DESLOCAMENTO_DIA_CAIXA = pd.Timedelta(hours=5)
+
+
+def dia_caixa(serie_datas):
+    """Serie de datas -> rotulo YYYY-MM-DD do dia do caixa (janela 12h->05h)."""
+    return (serie_datas - DESLOCAMENTO_DIA_CAIXA).dt.strftime("%Y-%m-%d")
 COL_PONTO = COLUNAS_TRANSACAO["nome_ponto"]
 COL_PRODUTO = COLUNAS_TRANSACAO["produto"]
 COL_CATEGORIA = COLUNAS_TRANSACAO["categoria_produto"]
@@ -182,7 +194,7 @@ def montar_resumo(df):
     df["_valor_liquido"] = df[COL_VALOR_TOTAL].fillna(0) * sinal
     df["_qtd_liquida"] = df[COL_QUANTIDADE].fillna(0).astype(float) * sinal
     df["_hora"] = df[COL_REALIZACAO].dt.strftime("%Y-%m-%dT%H")
-    df["_dia"] = df[COL_REALIZACAO].dt.strftime("%Y-%m-%d")
+    df["_dia"] = dia_caixa(df[COL_REALIZACAO])
 
     def agrupar(coluna, cronologico=False):
         g = (df.groupby(coluna, dropna=True)
@@ -266,7 +278,7 @@ def montar_fatos(df):
     sinal = _sinal(base)
     base["_v"] = base[COL_VALOR_TOTAL].fillna(0) * sinal
     base["_q"] = base[COL_QUANTIDADE].fillna(0).astype(float) * sinal
-    base["_dia"] = base[COL_REALIZACAO].dt.strftime("%Y-%m-%d")
+    base["_dia"] = dia_caixa(base[COL_REALIZACAO])
     base["_hora"] = base[COL_REALIZACAO].dt.hour
     base["_ponto"] = base[COL_PONTO].fillna(MARCA_PADRAO)
 
