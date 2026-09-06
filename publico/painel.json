@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 220620013,
+      "hora": "14:32:29",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 1,
+      "quantidade": 4,
+      "valor": 96.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220620006,
+      "hora": "14:32:25",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "SAND CARNE",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 56.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220619933,
+      "hora": "14:32:25",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220619798,
+      "hora": "14:32:01",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220619546,
+      "hora": "14:31:09",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220619607,
+      "hora": "14:30:58",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 26.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220619093,
       "hora": "14:29:56",
       "ponto": "SUN.A.ESPETTO",
@@ -217,18 +289,6 @@
       "cancelamento": false
     },
     {
-      "id": 220615701,
-      "hora": "14:19:21",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 220615707,
       "hora": "14:19:21",
       "ponto": "SUN.A.ESPETTO",
@@ -238,66 +298,6 @@
       "valor": 23.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220614959,
-      "hora": "14:16:40",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 650401,
-      "hora": "14:16:38",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK 1ª COMPRA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220614893,
-      "hora": "14:16:27",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": 95.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220614611,
-      "hora": "14:15:30",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "HEINEKEN ULT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220614480,
-      "hora": "14:14:58",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
