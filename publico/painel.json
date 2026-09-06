@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 220590137,
+      "hora": "03:23:43",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220590141,
+      "hora": "03:23:40",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": -25.0,
+      "operacao": "Cancelamento de Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": true
+    },
+    {
+      "id": 220590113,
+      "hora": "03:22:43",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 40.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220590119,
+      "hora": "03:22:42",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220590111,
+      "hora": "03:22:33",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220590100,
       "hora": "03:21:51",
       "ponto": "SUN.A.ESPETTO",
@@ -236,66 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220589959,
-      "hora": "03:16:17",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220589938,
-      "hora": "03:16:15",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SAND CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 40.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220589948,
-      "hora": "03:16:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SAND CARNE",
-      "outros_produtos": 1,
-      "quantidade": 5,
-      "valor": 156.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220589933,
-      "hora": "03:15:57",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 7.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220589918,
-      "hora": "03:15:24",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
