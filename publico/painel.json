@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 650429,
+      "hora": "14:22:12",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "RED BULL 1A COMPRA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Retirada de produto",
+      "pagamento": "",
+      "cancelamento": false
+    },
+    {
+      "id": 650427,
+      "hora": "14:21:58",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "CHOPE HNK 1ª COMPRA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Retirada de produto",
+      "pagamento": "",
+      "cancelamento": false
+    },
+    {
+      "id": 220616459,
+      "hora": "14:21:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 220615853,
       "hora": "14:20:00",
       "ponto": "SUN.A.ESPETTO",
@@ -262,42 +298,6 @@
       "valor": 16.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220590336,
-      "hora": "03:32:12",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": -50.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
-    },
-    {
-      "id": 220590331,
-      "hora": "03:32:09",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220590326,
-      "hora": "03:31:50",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
