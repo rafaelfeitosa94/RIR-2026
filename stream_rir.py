@@ -105,24 +105,38 @@ COLUNAS_PESSOAIS = [
     COLUNAS_TRANSACAO["email_cliente"],
 ]
 
-# De-para do ponto de venda -> (marca, palco).
+# Ponto -> (marca, palco) DEDUZIDOS DO NOME, e nao de um mapa fixo. O PDV cria
+# nomes novos ao longo do evento (ex.: "MUN.A.ANTE MANE.AEB04", os pontos de
+# venda antecipada), entao um mapa fixo deixava esses caindo em "Outros".
 #
-# ATENCAO a grafia: o PDV tem 'SUN.A.ESPETTO' (dois T, o ponto que mais vende)
-# e tambem 'SUN.A.ESPETO' (um T, com pouquissimas linhas). Os dois entram como
-# Espetto/Sunset - mapear so um deixaria de fora a maior parte do faturamento
-# do palco Sunset.
-DE_PARA_PONTOS = {
-    "MUN.A.SIRENE.AEB05": ("Sirene", "Mundo"),
-    "MUN.A.ESPETTO.AEB03": ("Espetto", "Mundo"),
-    "MUN.A.MANE.AEB04": ("Mané", "Mundo"),
-    "SUN.A.ESPETTO": ("Espetto", "Sunset"),
-    "SUN.A.ESPETO": ("Espetto", "Sunset"),
-}
-
-# Ponto que aparecer no dado sem estar no de-para cai aqui, em vez de sumir
-# silenciosamente do painel.
+# Regra: o PREFIXO define o palco (SUN=Sunset, MUN=Mundo) e a DESCRICAO define
+# a marca (ESPETTO/ESPETO, MANE, SIRENE).
 MARCA_PADRAO = "Outros"
 PALCO_PADRAO = "Outros"
+
+
+def marca_palco_do_ponto(nome):
+    """(marca, palco) a partir do nome do ponto. Ver regra acima."""
+    n = (nome or "").upper()
+
+    if n.startswith("SUN"):
+        palco = "Sunset"
+    elif n.startswith("MUN"):
+        palco = "Mundo"
+    else:
+        palco = PALCO_PADRAO
+
+    # ESPET pega ESPETTO (dois T) e ESPETO (um T), as duas grafias do PDV.
+    if "ESPET" in n:
+        marca = "Espetto"
+    elif "MANE" in n or "MANÉ" in n:
+        marca = "Mané"
+    elif "SIRENE" in n:
+        marca = "Sirene"
+    else:
+        marca = MARCA_PADRAO
+
+    return marca, palco
 
 # Meta de faturamento por dia e marca (planilha da operacao).
 #
@@ -283,8 +297,7 @@ def montar_fatos(df):
     base["_ponto"] = base[COL_PONTO].fillna(MARCA_PADRAO)
 
     pontos = sorted(base["_ponto"].unique())
-    marcas_por_ponto = {p: DE_PARA_PONTOS.get(p, (MARCA_PADRAO, PALCO_PADRAO))
-                        for p in pontos}
+    marcas_por_ponto = {p: marca_palco_do_ponto(p) for p in pontos}
     # As marcas do de-para tambem entram: um produto pode ser reatribuido a
     # uma marca que ainda nao vendeu em nenhum ponto proprio.
     marcas = sorted({m for m, _ in marcas_por_ponto.values()}
