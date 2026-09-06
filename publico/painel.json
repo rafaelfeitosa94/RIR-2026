@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 650387,
+      "hora": "03:27:58",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Retirada de produto",
+      "pagamento": "",
+      "cancelamento": false
+    },
+    {
+      "id": 650386,
+      "hora": "03:27:50",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Retirada de produto",
+      "pagamento": "",
+      "cancelamento": false
+    },
+    {
+      "id": 220590195,
+      "hora": "03:26:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 220590175,
       "hora": "03:25:15",
       "ponto": "SUN.A.ESPETTO",
@@ -262,42 +298,6 @@
       "valor": 65.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220589993,
-      "hora": "03:17:44",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SAND CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 56.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220589975,
-      "hora": "03:17:25",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 56.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220589963,
-      "hora": "03:17:11",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 7.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
       "cancelamento": false
     }
   ]
