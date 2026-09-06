@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-06T03:35:36",
+  "atualizado_em": "2026-09-06T03:37:47",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 24957,
-    "transacoes_venda": 24870,
+    "transacoes": 24959,
+    "transacoes_venda": 24872,
     "transacoes_cancelamento": 87,
-    "itens": 41070.0,
-    "valor_liquido": 1006129.0,
-    "valor_bruto_vendas": 1010930.0,
+    "itens": 41072.0,
+    "valor_liquido": 1006209.0,
+    "valor_bruto_vendas": 1011010.0,
     "valor_cancelado": 4801.0,
-    "ultima_transacao": "2026-09-06T03:35:03"
+    "ultima_transacao": "2026-09-06T03:36:34"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 425015.0,
-      "itens": 16278.0,
-      "transacoes": 9850,
-      "linhas": 13655
+      "valor_liquido": 425095.0,
+      "itens": 16280.0,
+      "transacoes": 9852,
+      "linhas": 13657
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -128,10 +128,10 @@
     },
     {
       "Produto": "SAND CARNE",
-      "valor_liquido": 29320.0,
-      "itens": 733.0,
-      "transacoes": 630,
-      "linhas": 630
+      "valor_liquido": 29400.0,
+      "itens": 735.0,
+      "transacoes": 632,
+      "linhas": 632
     },
     {
       "Produto": "MANE BURGUER",
@@ -655,10 +655,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 512707.0,
-      "itens": 12702.0,
-      "transacoes": 10195,
-      "linhas": 11246
+      "valor_liquido": 512787.0,
+      "itens": 12704.0,
+      "transacoes": 10197,
+      "linhas": 11248
     },
     {
       "Categoria Produto": "Bebida",
@@ -671,17 +671,17 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 573226.0,
-      "itens": 22874.0,
-      "transacoes": 13353,
-      "linhas": 18559
+      "valor_liquido": 573266.0,
+      "itens": 22875.0,
+      "transacoes": 13354,
+      "linhas": 18560
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 322618.0,
-      "itens": 13393.0,
-      "transacoes": 8276,
-      "linhas": 11172
+      "valor_liquido": 322658.0,
+      "itens": 13394.0,
+      "transacoes": 8277,
+      "linhas": 11173
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1317,10 +1317,10 @@
     },
     {
       "_hora": "2026-09-06T03",
-      "valor_liquido": 4121.0,
-      "itens": 151.0,
-      "transacoes": 106,
-      "linhas": 138
+      "valor_liquido": 4201.0,
+      "itens": 153.0,
+      "transacoes": 108,
+      "linhas": 140
     }
   ],
   "por_dia": [
@@ -1340,10 +1340,10 @@
     },
     {
       "_dia": "2026-09-05",
-      "valor_liquido": 423150.0,
-      "itens": 17283.0,
-      "transacoes": 11041,
-      "linhas": 14659
+      "valor_liquido": 423230.0,
+      "itens": 17285.0,
+      "transacoes": 11043,
+      "linhas": 14661
     }
   ]
 }
