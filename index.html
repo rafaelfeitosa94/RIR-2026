@@ -287,16 +287,17 @@
     </div>
 
     <div class="card largo">
-      <h2>Vendas por operador</h2>
-      <div class="dica" id="dicaOperador">operadores por ordem de faturamento</div>
-      <div class="rolar" id="operador"></div>
+      <h2>Horário de pico por produto</h2>
+      <div class="insight" id="insight"></div>
+      <div class="insight" id="insightBebida"></div>
+      <div class="dica">distribuição das vendas de cada produto ao longo do dia (itens por hora)</div>
+      <div class="rolar" id="pico"></div>
     </div>
 
     <div class="card largo">
-      <h2>Horário de pico por produto</h2>
-      <div class="insight" id="insight"></div>
-      <div class="dica">distribuição das vendas de cada produto ao longo do dia (itens por hora)</div>
-      <div class="rolar" id="pico"></div>
+      <h2>Vendas por operador</h2>
+      <div class="dica" id="dicaOperador">operadores por ordem de faturamento</div>
+      <div class="rolar" id="operador"></div>
     </div>
 
     <div class="card largo">
@@ -925,14 +926,28 @@ function renderPico(F, ativos){
     if(totHora[pico] > 0){ h = pico; mapa = vendasNaHora(h); }
   }
   const ins = document.getElementById('insight');
+  const insB = document.getElementById('insightBebida');
   const ids = Object.keys(mapa);
+  const hh = String(h).padStart(2,'0');
   if(ids.length){
     const topId = ids.reduce((a,b) => mapa[a] >= mapa[b] ? a : b);
-    ins.innerHTML = `Nesse horário (<b>${String(h).padStart(2,'0')}h</b>) o produto ` +
+    ins.innerHTML = `Nesse horário (<b>${hh}h</b>) o produto ` +
       `<b>${F.produtos[topId]}</b> costuma ser a <b>${cat(topId) || 'opção'}</b> ` +
       `de maior demanda do público.`;
+
+    // Segundo insight, só para comidas.
+    const idsCom = ids.filter(i => cat(i) === 'Comida');
+    if(idsCom.length){
+      const topC = idsCom.reduce((a,b) => mapa[a] >= mapa[b] ? a : b);
+      insB.hidden = false;
+      insB.innerHTML = `Nesse horário (<b>${hh}h</b>) a comida mais vendida ` +
+        `costuma ser <b>${F.produtos[topC]}</b>.`;
+    }else{
+      insB.hidden = true;
+    }
   }else{
     ins.textContent = 'Ainda sem vendas para gerar o insight de horário.';
+    insB.hidden = true;
   }
 
   // ---- tabela com sparkline por hora ----
