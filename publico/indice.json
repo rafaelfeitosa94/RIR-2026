@@ -1,6 +1,6 @@
 {
   "codigo_evento": 38049,
-  "atualizado_em": "2026-09-05T21:07:24",
+  "atualizado_em": "2026-09-06T02:40:35",
   "periodo": {
     "inicio": "2026-09-02T00:00:00",
     "fim": "2026-09-15T00:00:00"
@@ -208,6 +208,48 @@
       "arquivo": "horas/2026-09-05T19.json",
       "linhas": 1449,
       "transacoes": 1099,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-05T20",
+      "arquivo": "horas/2026-09-05T20.json",
+      "linhas": 1685,
+      "transacoes": 1258,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-05T21",
+      "arquivo": "horas/2026-09-05T21.json",
+      "linhas": 845,
+      "transacoes": 658,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-05T22",
+      "arquivo": "horas/2026-09-05T22.json",
+      "linhas": 1055,
+      "transacoes": 781,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-05T23",
+      "arquivo": "horas/2026-09-05T23.json",
+      "linhas": 1602,
+      "transacoes": 1156,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-06T00",
+      "arquivo": "horas/2026-09-06T00.json",
+      "linhas": 835,
+      "transacoes": 643,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-06T01",
+      "arquivo": "horas/2026-09-06T01.json",
+      "linhas": 543,
+      "transacoes": 465,
       "definitiva": true
     }
   ],
