@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-06T13:52:21",
+  "atualizado_em": "2026-09-06T13:54:32",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 24959,
-    "transacoes_venda": 24872,
+    "transacoes": 24960,
+    "transacoes_venda": 24873,
     "transacoes_cancelamento": 87,
-    "itens": 41072.0,
-    "valor_liquido": 1006209.0,
-    "valor_bruto_vendas": 1011010.0,
+    "itens": 41073.0,
+    "valor_liquido": 1006263.0,
+    "valor_bruto_vendas": 1011064.0,
     "valor_cancelado": 4801.0,
-    "ultima_transacao": "2026-09-06T03:36:34"
+    "ultima_transacao": "2026-09-06T13:53:57"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 425095.0,
-      "itens": 16280.0,
-      "transacoes": 9852,
-      "linhas": 13657
+      "valor_liquido": 425149.0,
+      "itens": 16281.0,
+      "transacoes": 9853,
+      "linhas": 13658
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -114,10 +114,10 @@
     },
     {
       "Produto": "CB 1 SAND CARNE + BT",
-      "valor_liquido": 44820.0,
-      "itens": 830.0,
-      "transacoes": 718,
-      "linhas": 718
+      "valor_liquido": 44874.0,
+      "itens": 831.0,
+      "transacoes": 719,
+      "linhas": 719
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
@@ -655,10 +655,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 512787.0,
-      "itens": 12704.0,
-      "transacoes": 10197,
-      "linhas": 11248
+      "valor_liquido": 512841.0,
+      "itens": 12705.0,
+      "transacoes": 10198,
+      "linhas": 11249
     },
     {
       "Categoria Produto": "Bebida",
@@ -671,10 +671,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 573266.0,
-      "itens": 22875.0,
-      "transacoes": 13354,
-      "linhas": 18560
+      "valor_liquido": 573320.0,
+      "itens": 22876.0,
+      "transacoes": 13355,
+      "linhas": 18561
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -1321,6 +1321,76 @@
       "itens": 153.0,
       "transacoes": 108,
       "linhas": 140
+    },
+    {
+      "_hora": "2026-09-06T04",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T05",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T06",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T07",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T08",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T09",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T10",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T11",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T12",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-06T13",
+      "valor_liquido": 54.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ],
   "por_dia": [
@@ -1344,6 +1414,13 @@
       "itens": 17285.0,
       "transacoes": 11043,
       "linhas": 14661
+    },
+    {
+      "_dia": "2026-09-06",
+      "valor_liquido": 54.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ]
 }

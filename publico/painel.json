@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 220609757,
+      "hora": "13:53:57",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220590406,
       "hora": "03:36:34",
       "ponto": "SUN.A.ESPETTO",
@@ -287,18 +299,6 @@
       "operacao": "Cancelamento de Ficha",
       "pagamento": "PIX Integrado",
       "cancelamento": true
-    },
-    {
-      "id": 220590113,
-      "hora": "03:22:43",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SAND CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 40.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
     }
   ]
 }
