@@ -139,6 +139,16 @@
                      font-weight:600;font-family:inherit;cursor:pointer}
   .msel-acoes button:hover{border-color:var(--azul);color:var(--azul)}
 
+  /* Faixa de insight (frase de destaque acima da tabela de pico) */
+  .insight{background:rgba(0,143,251,.08);border:1px solid var(--linha);
+           border-left:3px solid var(--azul);border-radius:8px;padding:10px 13px;
+           margin-bottom:10px;font-size:13px;line-height:1.45}
+  .insight b{color:var(--azul)}
+  /* mini gráfico de barras por hora (sparkline inline) */
+  .spark{display:flex;align-items:flex-end;gap:1px;height:30px;width:170px}
+  .spark span{flex:1;background:var(--trilho);border-radius:1px;min-height:1px}
+  .spark span.pico{background:var(--azul)}
+
   .tema{display:flex;gap:6px;margin-bottom:16px}
   .tema button{flex:1;padding:7px 8px;border-radius:8px;cursor:pointer;font-size:12px;
                font-weight:600;font-family:inherit;border:1px solid var(--linha);
@@ -280,6 +290,13 @@
       <h2>Vendas por operador</h2>
       <div class="dica" id="dicaOperador">operadores por ordem de faturamento</div>
       <div class="rolar" id="operador"></div>
+    </div>
+
+    <div class="card largo">
+      <h2>Horário de pico por produto</h2>
+      <div class="insight" id="insight"></div>
+      <div class="dica">distribuição das vendas de cada produto ao longo do dia (itens por hora)</div>
+      <div class="rolar" id="pico"></div>
     </div>
 
     <div class="card largo">
@@ -505,6 +522,7 @@ function render(){
   renderMeta(F);
   renderRanking(F, ativos, totais.v);
   renderOperador(F, ativos);
+  renderPico(F, ativos);
   renderDonuts();
 
   // Gauge e palco usam a base "marca + dia, TODOS os palcos": a meta não tem
@@ -866,6 +884,81 @@ function renderOperador(F, ativos){
         <td class="num">${moeda(it.v)}</td>
         <td class="num">${pct(p)}<div class="barra"><i style="width:${Math.max(p,0)}%"></i></div></td>
       </tr>`;
+    }).join('') + '</tbody></table>';
+}
+
+function renderPico(F, ativos){
+  // Mesmos filtros do ranking: palco (ponto), marca (de-para do produto), dia.
+  // Sem filtro de hora - esta tabela é justamente sobre a distribuição horária.
+  const marcaOk = l => !sel.marcas.size || sel.marcas.has(marcaDaLinha(F, l));
+  const palcoOk = i => !sel.palcos.size || sel.palcos.has(F.palcos[F.ponto_palco[i]]);
+  const linhas = (F.produto || []).filter(l =>
+    palcoOk(l[2]) && marcaOk(l) && (!sel.dias.size || sel.dias.has(F.dias[l[0]])));
+
+  const cat = i => (F.produto_categoria || [])[i] || '';
+
+  // Por produto: itens vendidos por hora (l[5]=quantidade) + total.
+  const porProd = {};
+  linhas.forEach(l => {
+    const a = porProd[l[3]] || (porProd[l[3]] = {horas:new Array(24).fill(0), tot:0});
+    a.horas[l[1]] += l[5]; a.tot += l[5];
+  });
+  const itens = Object.entries(porProd)
+    .map(([i,a]) => ({nome:F.produtos[i], cat:cat(i), ...a}))
+    .filter(x => x.tot > 0)
+    .sort((a,b) => b.tot - a.tot);
+
+  // ---- insight: produto de maior demanda na hora atual ----
+  const vendasNaHora = h => {
+    const m = {};
+    linhas.filter(l => l[1] === h).forEach(l => m[l[3]] = (m[l[3]]||0) + l[5]);
+    return m;
+  };
+  let h = new Date().getHours();
+  let mapa = vendasNaHora(h);
+  if(!Object.keys(mapa).length){
+    // Sem venda na hora atual (ex.: fora do horário do evento): usa a hora de
+    // maior movimento do recorte, para o insight não ficar vazio.
+    const totHora = new Array(24).fill(0);
+    linhas.forEach(l => totHora[l[1]] += l[5]);
+    const pico = totHora.indexOf(Math.max(...totHora));
+    if(totHora[pico] > 0){ h = pico; mapa = vendasNaHora(h); }
+  }
+  const ins = document.getElementById('insight');
+  const ids = Object.keys(mapa);
+  if(ids.length){
+    const topId = ids.reduce((a,b) => mapa[a] >= mapa[b] ? a : b);
+    ins.innerHTML = `Nesse horário (<b>${String(h).padStart(2,'0')}h</b>) o produto ` +
+      `<b>${F.produtos[topId]}</b> costuma ser a <b>${cat(topId) || 'opção'}</b> ` +
+      `de maior demanda do público.`;
+  }else{
+    ins.textContent = 'Ainda sem vendas para gerar o insight de horário.';
+  }
+
+  // ---- tabela com sparkline por hora ----
+  if(!itens.length){
+    document.getElementById('pico').innerHTML =
+      '<div class="vazio">sem vendas neste recorte</div>';
+    return;
+  }
+  const spark = arr => {
+    const max = Math.max(...arr, 1);
+    const pico = arr.indexOf(Math.max(...arr));
+    return '<div class="spark">' + arr.map((v,i) =>
+      `<span class="${i===pico && v>0 ? 'pico':''}" style="height:${Math.round(v/max*100)}%"` +
+      ` title="${String(i).padStart(2,'0')}h: ${num(v)} itens"></span>`).join('') + '</div>';
+  };
+  document.getElementById('pico').innerHTML = `
+    <table><thead><tr>
+      <th>Produto</th><th>Categoria</th><th>Vendas por hora (00h → 23h)</th>
+      <th class="num">Hora pico</th><th class="num">Itens</th>
+    </tr></thead><tbody>` +
+    itens.map(it => {
+      const pico = it.horas.indexOf(Math.max(...it.horas));
+      return `<tr>
+        <td>${it.nome}</td><td>${it.cat || '—'}</td><td>${spark(it.horas)}</td>
+        <td class="num">${String(pico).padStart(2,'0')}h</td>
+        <td class="num">${num(it.tot)}</td></tr>`;
     }).join('') + '</tbody></table>';
 }
 

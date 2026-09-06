@@ -209,6 +209,8 @@ def montar_resumo(df):
     df["_qtd_liquida"] = df[COL_QUANTIDADE].fillna(0).astype(float) * sinal
     df["_hora"] = df[COL_REALIZACAO].dt.strftime("%Y-%m-%dT%H")
     df["_dia"] = dia_caixa(df[COL_REALIZACAO])
+    # Forma de pagamento em branco = retirada de produto (sem cobranca no ato).
+    df[COL_PAGAMENTO] = (df[COL_PAGAMENTO].fillna("").replace("", "Retirada de produto"))
 
     def agrupar(coluna, cronologico=False):
         g = (df.groupby(coluna, dropna=True)
@@ -283,6 +285,7 @@ def montar_fatos(df):
     """
     vazio = {"dias": [], "pontos": [], "produtos": [], "marcas": [], "palcos": [],
              "ponto_marca": [], "ponto_palco": [], "produto_marca": [],
+             "produto_categoria": [],
              "venda": [], "produto": [], "operadores": [], "operador": [],
              "metas": METAS}
     if df.empty:
@@ -341,6 +344,12 @@ def montar_fatos(df):
         marca = DE_PARA_PRODUTO_MARCA.get(nome)
         produto_marca.append(marcas.index(marca) if marca in marcas else -1)
 
+    # Categoria (Comida/Bebida) de cada produto, para o insight de horario de
+    # pico. Primeira categoria nao-nula vista para o produto.
+    cat_map = (com_produto.groupby(COL_PRODUTO)[COL_CATEGORIA]
+                          .first().to_dict())
+    produto_categoria = [cat_map.get(nome) or "" for nome in produtos]
+
     # Fato de operador: [dia, ponto, operador, valor, itens, transacoes].
     # Keyed por ponto tambem para o painel filtrar por palco/marca (e caso um
     # operador atue em mais de um ponto ao longo do evento).
@@ -361,6 +370,7 @@ def montar_fatos(df):
         "pontos": pontos,
         "produtos": produtos,
         "produto_marca": produto_marca,
+        "produto_categoria": produto_categoria,
         "marcas": marcas,
         "palcos": palcos,
         "ponto_marca": [marcas.index(marcas_por_ponto[p][0]) for p in pontos],
