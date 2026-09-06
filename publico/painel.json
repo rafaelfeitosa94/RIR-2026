@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 220613907,
+      "hora": "14:12:16",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220613311,
       "hora": "14:10:44",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220590175,
-      "hora": "03:25:15",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
