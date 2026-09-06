@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-06T14:36:03",
+  "atualizado_em": "2026-09-06T14:38:13",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 25007,
-    "transacoes_venda": 24920,
+    "transacoes": 25010,
+    "transacoes_venda": 24923,
     "transacoes_cancelamento": 87,
-    "itens": 41135.0,
-    "valor_liquido": 1007805.0,
-    "valor_bruto_vendas": 1012606.0,
+    "itens": 41141.0,
+    "valor_liquido": 1007974.0,
+    "valor_bruto_vendas": 1012775.0,
     "valor_cancelado": 4801.0,
-    "ultima_transacao": "2026-09-06T14:35:17"
+    "ultima_transacao": "2026-09-06T14:37:15"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 426361.0,
-      "itens": 16328.0,
-      "transacoes": 9889,
-      "linhas": 13700
+      "valor_liquido": 426530.0,
+      "itens": 16334.0,
+      "transacoes": 9892,
+      "linhas": 13705
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -79,10 +79,10 @@
     },
     {
       "Produto": "CHOPE HNK",
-      "valor_liquido": 96554.0,
-      "itens": 4198.0,
-      "transacoes": 3149,
-      "linhas": 3149
+      "valor_liquido": 96577.0,
+      "itens": 4199.0,
+      "transacoes": 3150,
+      "linhas": 3150
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -100,10 +100,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 57750.0,
-      "itens": 2310.0,
-      "transacoes": 1774,
-      "linhas": 1774
+      "valor_liquido": 57800.0,
+      "itens": 2312.0,
+      "transacoes": 1775,
+      "linhas": 1775
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -128,10 +128,10 @@
     },
     {
       "Produto": "SAND CARNE",
-      "valor_liquido": 29480.0,
-      "itens": 737.0,
-      "transacoes": 634,
-      "linhas": 634
+      "valor_liquido": 29560.0,
+      "itens": 739.0,
+      "transacoes": 636,
+      "linhas": 636
     },
     {
       "Produto": "MANE BURGUER",
@@ -142,10 +142,10 @@
     },
     {
       "Produto": "COCA ZERO",
-      "valor_liquido": 23264.0,
-      "itens": 1454.0,
-      "transacoes": 1337,
-      "linhas": 1337
+      "valor_liquido": 23280.0,
+      "itens": 1455.0,
+      "transacoes": 1338,
+      "linhas": 1338
     },
     {
       "Produto": "FRITAS",
@@ -655,33 +655,33 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 513586.0,
-      "itens": 12728.0,
-      "transacoes": 10218,
-      "linhas": 11269
+      "valor_liquido": 513716.0,
+      "itens": 12732.0,
+      "transacoes": 10221,
+      "linhas": 11272
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 494219.0,
-      "itens": 28407.0,
-      "transacoes": 19898,
-      "linhas": 22639
+      "valor_liquido": 494258.0,
+      "itens": 28409.0,
+      "transacoes": 19900,
+      "linhas": 22641
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 574085.0,
-      "itens": 22905.0,
-      "transacoes": 13376,
-      "linhas": 18588
+      "valor_liquido": 574191.0,
+      "itens": 22909.0,
+      "transacoes": 13378,
+      "linhas": 18591
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 323259.0,
-      "itens": 13420.0,
-      "transacoes": 8297,
-      "linhas": 11196
+      "valor_liquido": 323322.0,
+      "itens": 13422.0,
+      "transacoes": 8298,
+      "linhas": 11198
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1394,10 +1394,10 @@
     },
     {
       "_hora": "2026-09-06T14",
-      "valor_liquido": 1531.0,
-      "itens": 61.0,
-      "transacoes": 46,
-      "linhas": 56
+      "valor_liquido": 1700.0,
+      "itens": 67.0,
+      "transacoes": 49,
+      "linhas": 61
     }
   ],
   "por_dia": [
@@ -1424,10 +1424,10 @@
     },
     {
       "_dia": "2026-09-06",
-      "valor_liquido": 1596.0,
-      "itens": 63.0,
-      "transacoes": 48,
-      "linhas": 58
+      "valor_liquido": 1765.0,
+      "itens": 69.0,
+      "transacoes": 51,
+      "linhas": 63
     }
   ]
 }
