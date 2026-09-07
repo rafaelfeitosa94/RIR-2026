@@ -54,6 +54,10 @@ POLL_TIMEOUT = 1500      # espera total pelo CSV ficar pronto (EmProcessamento).
                          # instantanea e ja passou de 10 min sob carga) e cresce
                          # com o evento; folga evita perder o ciclo por pouco.
 POLL_INTERVALO = 20      # segundos entre tentativas de DownloadFile
+# Tentativas seguidas com o MESMO arquivo valido porem sem linhas ate concluir
+# que o export saiu vazio. 15 x 20s = ~5 min, acima da geracao assincrona
+# conhecida (~4 min), entao nao corta uma geracao real pela metade.
+PARADO_MAX = 15
 
 # De-para do cabecalho -> nome interno (destino) usado no DataFrame. So as
 # colunas que o painel usa; o resto e ignorado. O CSV usa "Transacao" (sem ID)
@@ -398,6 +402,11 @@ def buscar_relatorio(sessao, inicio, fim):
                          headers={"X-Requested-With": "XMLHttpRequest",
                                   "Referer": BASE,
                                   "Origin": "https://www.netpdv.com"})
+    # Diagnostico: o proprio relatorio trouxe linhas para este periodo? Se vier
+    # 0, o export tambem sairia vazio e o problema esta no FILTRO, nao no export.
+    # (O ProcessReport devolve so a 1a pagina; serve como indicador de "tem dado".)
+    ids = len(re.findall(r">\s*22\d{7}\s*<", r.text))
+    print(f"  relatorio: {len(r.text):,} bytes, ~{ids} transacao(oes) na 1a pagina")
     return r.text
 
 
@@ -458,6 +467,8 @@ def exportar_csv(sessao):
     inicio = time.monotonic()
     limite = inicio + POLL_TIMEOUT
     tentativa = 0
+    assinatura_anterior = None
+    parado = 0
     while time.monotonic() < limite:
         tentativa += 1
         d = sessao.get(URL_DOWNLOAD, timeout=TIMEOUT,
@@ -465,16 +476,40 @@ def exportar_csv(sessao):
                                "contentType": ""},
                        headers={"Referer": BASE})
         decorrido = int(time.monotonic() - inicio)
-        if d.status_code == 200 and _tem_dados(d.content):
-            print(f"  CSV pronto na tentativa {tentativa} em {decorrido}s "
-                  f"({len(d.content):,} bytes)")
-            return d.content
-        print(f"  tentativa {tentativa} ({decorrido}s): ainda em processamento...")
+        bruto = d.content or b""
+        formato = ("xlsx" if _eh_xlsx(bruto)
+                   else "csv" if b"Transa" in bruto[:2000] else "outro")
+
+        if d.status_code == 200 and _tem_dados(bruto):
+            print(f"  arquivo pronto na tentativa {tentativa} em {decorrido}s "
+                  f"({len(bruto):,} bytes, {formato})")
+            return bruto
+
+        # Diagnostico: distingue "servidor ainda nao gerou" de "gerou VAZIO".
+        print(f"  tentativa {tentativa} ({decorrido}s): HTTP {d.status_code}, "
+              f"{len(bruto):,} bytes, {formato} - sem linhas de dados ainda")
+
+        # Guarda de estagnacao: se o MESMO arquivo (status+tamanho) volta varias
+        # vezes seguidas e ele ja e um arquivo valido porem sem linhas, o export
+        # saiu vazio e nao vai encher - nao adianta esperar o timeout inteiro.
+        assinatura = (d.status_code, len(bruto), formato)
+        if assinatura == assinatura_anterior:
+            parado += 1
+        else:
+            parado = 0
+            assinatura_anterior = assinatura
+        if parado >= PARADO_MAX and formato in ("xlsx", "csv"):
+            raise RuntimeError(
+                f"export saiu VAZIO: mesmo arquivo {formato} de {len(bruto):,} "
+                f"bytes sem linhas em {parado + 1} tentativas seguidas "
+                f"({decorrido}s). O relatorio provavelmente nao retornou dados "
+                f"para o periodo pedido.")
+
         time.sleep(POLL_INTERVALO)
 
     # RuntimeError (nao SystemExit) para ser NAO-fatal: coletar_online captura,
     # mantem o cache/semente e publica o que ja tem, em vez de derrubar o ciclo.
-    raise RuntimeError(f"CSV nao ficou pronto em {POLL_TIMEOUT}s "
+    raise RuntimeError(f"arquivo nao ficou pronto em {POLL_TIMEOUT}s "
                        f"({tentativa} tentativas).")
 
 
