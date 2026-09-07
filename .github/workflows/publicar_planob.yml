@@ -52,15 +52,21 @@ jobs:
             ciclo=$((ciclo + 1))
             echo "::group::ciclo $ciclo - $(date '+%H:%M:%S')"
 
-            python coletor_planob.py || echo "coleta falhou neste ciclo"
-
-            git add publico/planob
-            if git diff --cached --quiet; then
-              echo "nada mudou"
+            # A coleta pode falhar (API/login/retorno vazio) sem derrubar o
+            # laco. Se nao gerou a pasta, so espera o proximo ciclo.
+            if python coletor_planob.py; then
+              if [ -d publico/planob ]; then
+                git add publico/planob
+                if git diff --cached --quiet; then
+                  echo "nada mudou"
+                else
+                  git commit -q -m "plano B $(date '+%Y-%m-%d %H:%M:%S')"
+                  git pull --rebase --autostash -q origin main || true
+                  git push -q || echo "push falhou - tenta no proximo ciclo"
+                fi
+              fi
             else
-              git commit -q -m "plano B $(date '+%Y-%m-%d %H:%M:%S')"
-              git pull --rebase --autostash -q origin main || true
-              git push -q || echo "push falhou - tenta no proximo ciclo"
+              echo "coleta falhou neste ciclo (ver mensagem acima)"
             fi
 
             echo "::endgroup::"
