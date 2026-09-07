@@ -317,10 +317,19 @@ def buscar_relatorio(sessao, inicio, fim):
     return r.text
 
 
+def _eh_xlsx(raw):
+    """O export as vezes vem em XLSX (preferencia da conta no BackOffice) em vez
+    de CSV. XLSX e um zip, comeca com a assinatura PK\\x03\\x04."""
+    return bool(raw) and raw[:4] == b"PK\x03\x04"
+
+
 def _tem_dados(raw):
-    """True se o CSV baixado ja tem pelo menos uma linha de transacao."""
+    """True se o download ja e o arquivo pronto (CSV com linha de transacao, ou
+    um XLSX)."""
     if not raw or len(raw) < 900:            # so o cabecalho (~824 bytes)
         return False
+    if _eh_xlsx(raw):                        # xlsx pronto - evita polling ate o timeout
+        return True
     return re.search(rb"(?m)^22\d{7};", raw) is not None
 
 
@@ -354,8 +363,10 @@ def exportar_csv(sessao):
         print(f"  tentativa {tentativa} ({decorrido}s): ainda em processamento...")
         time.sleep(POLL_INTERVALO)
 
-    raise SystemExit(f"CSV nao ficou pronto em {POLL_TIMEOUT}s "
-                     f"({tentativa} tentativas).")
+    # RuntimeError (nao SystemExit) para ser NAO-fatal: coletar_online captura,
+    # mantem o cache/semente e publica o que ja tem, em vez de derrubar o ciclo.
+    raise RuntimeError(f"CSV nao ficou pronto em {POLL_TIMEOUT}s "
+                       f"({tentativa} tentativas).")
 
 
 # O export do BackOffice corta em 30.000 transacoes (mantendo as MAIS ANTIGAS).
@@ -395,6 +406,12 @@ def _coletar_intervalo(sessao, inicio, fim):
     for chunk in range(1, MAX_CHUNKS + 1):
         buscar_relatorio(sessao, inicio, fim)
         raw = exportar_csv(sessao)
+        if _eh_xlsx(raw):
+            print("  AVISO: o export veio em XLSX, nao CSV (preferencia da conta "
+                  "no BackOffice). O parser atual so le CSV - publicando o "
+                  "cache/semente. Reconfigure o export para CSV, ou envie um "
+                  ".xlsx de amostra para adicionar o leitor.")
+            break
         df = parse_csv(raw)
         n = int(df[col_id].nunique()) if not df.empty else 0
         print(f"  pedaco {chunk} (desde {inicio:%d/%m %H:%M}): "
