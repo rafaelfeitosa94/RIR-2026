@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 220939254,
+      "hora": "02:28:45",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220939226,
+      "hora": "02:28:22",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220939221,
+      "hora": "02:28:19",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 50.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Zig Cashless",
+      "cancelamento": false
+    },
+    {
+      "id": 220939198,
+      "hora": "02:27:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220939150,
+      "hora": "02:27:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED GIN TO RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 42.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 220939109,
       "hora": "02:26:23",
       "ponto": "SUN.A.ESPETTO",
@@ -238,66 +298,6 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 669220,
-      "hora": "02:20:15",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "COCA COLA 1A COMPRA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220938650,
-      "hora": "02:19:57",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP FRANGO + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 669219,
-      "hora": "02:19:56",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "COCA COLA 1A COMPRA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220938588,
-      "hora": "02:19:26",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 669213,
-      "hora": "02:19:12",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "RED BULL RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
       "cancelamento": false
     }
   ]
