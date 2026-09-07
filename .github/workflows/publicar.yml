@@ -39,6 +39,7 @@ jobs:
       # O runner roda em UTC. Sem isto, datetime.now() adianta 3h: o coletor
       # pediria horas futuras e fecharia hora que ainda esta vendendo.
       TZ: America/Sao_Paulo
+      PYTHONUNBUFFERED: "1"  # log ao vivo (senao o Python bufferiza em bloco)
       ZIG_TOKEN_PARCEIRO: ${{ secrets.ZIG_TOKEN_PARCEIRO }}
       ZIG_CODIGO_EVENTO: ${{ secrets.ZIG_CODIGO_EVENTO }}
       INTERVALO_S: 120       # segundos entre publicacoes

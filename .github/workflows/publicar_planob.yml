@@ -28,6 +28,10 @@ jobs:
 
     env:
       TZ: America/Sao_Paulo
+      # Sem isto o Python faz buffer de bloco: os prints do coletor (login,
+      # periodo, tentativas do export) so aparecem no log quando enchem ~8KB
+      # ou o processo termina - o ciclo parece vazio mesmo rodando.
+      PYTHONUNBUFFERED: "1"
       NETPDV_LOGIN: ${{ secrets.NETPDV_LOGIN }}
       NETPDV_SENHA: ${{ secrets.NETPDV_SENHA }}
       INTERVALO_S: 300          # 5 min entre coletas (o relatorio ja demora ~4)
