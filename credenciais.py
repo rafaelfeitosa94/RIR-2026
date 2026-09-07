@@ -21,9 +21,19 @@ import os
 
 ARQ_CREDENCIAIS = "credenciais.json"
 
+# Codigo do evento e fixo do RIR26; serve de fallback quando as credenciais da
+# Zig nao estao presentes (ex.: o coletor do Plano B importa stream_rir so pelas
+# funcoes de agregacao e NAO usa a API da Zig).
+CODIGO_EVENTO_PADRAO = 38049
+
 
 def carregar():
-    """Devolve (token_parceiro, codigo_evento). Encerra com erro claro se faltar."""
+    """(token_parceiro, codigo_evento). NAO trava no import.
+
+    O token pode vir vazio quando so as funcoes de agregacao sao usadas (Plano
+    B). Quem realmente chama a API da Zig valida o token na hora e reporta a
+    falta - ver exigir_token().
+    """
     token = os.environ.get("ZIG_TOKEN_PARCEIRO")
     evento = os.environ.get("ZIG_CODIGO_EVENTO")
 
@@ -35,18 +45,20 @@ def carregar():
                 dados = json.load(arquivo)
             token = token or dados.get("token_parceiro")
             evento = evento or dados.get("codigo_evento")
-        except FileNotFoundError:
-            raise SystemExit(
-                f"Credenciais nao encontradas. Crie {ARQ_CREDENCIAIS} com\n"
-                '  {"token_parceiro": "...", "codigo_evento": 12345}\n'
-                "ou defina ZIG_TOKEN_PARCEIRO e ZIG_CODIGO_EVENTO no ambiente.")
-        except ValueError as e:
-            raise SystemExit(f"{ARQ_CREDENCIAIS} nao e um JSON valido: {e}")
+        except (FileNotFoundError, ValueError):
+            pass
 
-    if not token or not evento:
-        raise SystemExit("token_parceiro ou codigo_evento ausente nas credenciais.")
+    return (token or ""), int(evento) if evento else CODIGO_EVENTO_PADRAO
 
-    return token, int(evento)
+
+def exigir_token():
+    """Garante que ha token da Zig; usar antes de chamar a API. Erro claro se falta."""
+    if not TOKEN_PARCEIRO:
+        raise SystemExit(
+            f"Credenciais da Zig ausentes. Crie {ARQ_CREDENCIAIS} com\n"
+            '  {"token_parceiro": "...", "codigo_evento": 12345}\n'
+            "ou defina ZIG_TOKEN_PARCEIRO e ZIG_CODIGO_EVENTO no ambiente.")
+    return TOKEN_PARCEIRO
 
 
 TOKEN_PARCEIRO, CODIGO_EVENTO = carregar()

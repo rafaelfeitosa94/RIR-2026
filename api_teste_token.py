@@ -85,6 +85,9 @@ def gerar_token(token_parceiro, codigo_evento=CODIGO_EVENTO, url=URL_PROD,
 
     Retorna o dict de 'dados' em caso de sucesso, ou None.
     """
+    if not token_parceiro:
+        from credenciais import exigir_token
+        exigir_token()  # erro claro em vez de bater na API sem token
     estrategias = ["post_json", "post_form", "post_query", "post_header", "get_query"]
 
     for estrategia in estrategias:
