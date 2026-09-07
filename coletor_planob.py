@@ -221,10 +221,15 @@ def login(sessao):
 
 
 def buscar_relatorio(sessao):
-    """POST no ProcessReport com o filtro Tempo integral e devolve o HTML."""
+    """POST no ProcessReport com o filtro Tempo integral e devolve o HTML.
+
+    Periodo explicito desde 02/09/2026 00:00 ate amanha, e field-tempo-integral=1
+    (o mesmo "Tempo integral" da tela) para o relatorio trazer o evento inteiro.
+    """
     fim = datetime.now() + timedelta(days=1)
     periodo = (f"{S.EVENTO_INICIO.strftime('%d/%m/%Y %H:%M')} - "
                f"{fim.strftime('%d/%m/%Y %H:%M')}")
+    print(f"  periodo: {periodo}")
     dados = [
         ("id", str(CODIGO_EVENTO)),
         ("report", "lista_transacao"),
@@ -253,7 +258,12 @@ def coletar_online():
     sessao = requests.Session()
     sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
     login(sessao)
-    return parse_relatorio(buscar_relatorio(sessao))
+    doc = buscar_relatorio(sessao)
+    print(f"  HTML recebido: {len(doc):,} bytes")
+    df = parse_relatorio(doc)
+    print(f"  linhas parseadas: {len(df)} | "
+          f"transacoes: {df[COL['transacao_id']].nunique() if not df.empty else 0}")
+    return df
 
 
 def main():
