@@ -3,6 +3,10 @@
 # infla o repositorio e nao serve para nada no app.
 dados_rir2026/
 
+# Cache do Plano B (uniao das transacoes ja coletadas): local / cache do
+# Actions, nunca no repositorio.
+dados_planob/
+
 # Exportacoes locais: nao vao para o repositorio (binario, cresce a cada
 # exportacao e o app do Lovable le os JSONs, nao a planilha).
 *.csv

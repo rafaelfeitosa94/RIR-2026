@@ -45,6 +45,17 @@ jobs:
       - name: Instalar dependencias
         run: pip install --quiet requests pandas
 
+      # Cache da uniao de transacoes ja coletadas. Sem ele, cada execucao
+      # recomecaria do zero (coleta completa lenta); com ele, so a fatia
+      # recente e exportada por ciclo. Perder o cache so deixa uma execucao
+      # lenta (re-seed), nao perde dado.
+      - name: Restaurar cache do Plano B
+        uses: actions/cache/restore@v4
+        with:
+          path: dados_planob
+          key: planob-${{ github.run_id }}
+          restore-keys: planob-
+
       - name: Publicar Plano B em laco
         run: |
           git config user.name  "github-actions[bot]"
@@ -76,6 +87,13 @@ jobs:
             echo "::endgroup::"
             sleep "$INTERVALO_S"
           done
+
+      - name: Salvar cache do Plano B
+        if: always()
+        uses: actions/cache/save@v4
+        with:
+          path: dados_planob
+          key: planob-${{ github.run_id }}
 
       - name: Encadear a proxima execucao
         if: always()

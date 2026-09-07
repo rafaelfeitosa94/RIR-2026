@@ -364,25 +364,28 @@ def exportar_csv(sessao):
 CAP_EXPORT = 30000
 MAX_CHUNKS = 25          # trava de seguranca (>750k transacoes)
 
+# Cache local (persiste no cache do Actions, gitignored): guarda a uniao das
+# transacoes ja coletadas para que cada ciclo exporte so a FATIA RECENTE em vez
+# do evento inteiro - o export do BackOffice fica lento sob carga e cresce com
+# o evento, entao pedir tudo a cada ciclo e caro. Ver coletar_online.
+PASTA_CACHE = "dados_planob"
+ARQ_CACHE = "transacoes.pkl"
+# Quanto reexportar para tras do ultimo horario ja em cache, a cada ciclo -
+# cobre transacoes que chegaram fora de ordem / a virada do caixa e cicatriza
+# um rabo incompleto do ciclo anterior. A sobreposicao e deduplicada.
+SOBREPOSICAO = timedelta(hours=3)
 
-def coletar_online():
-    """Coleta o evento inteiro contornando o teto de 30k por exportacao.
 
-    Exporta a partir do inicio do evento; se o pedaco veio no teto (truncado),
-    continua a partir da ultima transacao vista e junta tudo. Cada pedaco vai
-    ate agora, entao o dia corrente sempre entra. Dedup e por TRANSACAO inteira
-    (nao por linha) - uma transacao nunca se divide entre pedacos porque todas
-    as suas linhas tem o mesmo horario.
+def _coletar_intervalo(sessao, inicio, fim):
+    """Exporta [inicio, fim] contornando o teto de 30k, devolve o DataFrame.
+
+    Exporta a partir de `inicio`; se o pedaco veio no teto (truncado), continua
+    a partir da ultima transacao vista e junta tudo, ate `fim`. Dedup por
+    TRANSACAO inteira (nao por linha) - uma transacao nunca se divide entre
+    pedacos porque todas as suas linhas tem o mesmo horario.
     """
-    sessao = requests.Session()
-    sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
-    login(sessao)
-
-    fim = datetime.now() + timedelta(minutes=5)
-    inicio = S.EVENTO_INICIO
     col_id = COL["transacao_id"]
     col_dh = COL["data_hora_realizacao"]
-
     partes = []
     vistos = set()
     for chunk in range(1, MAX_CHUNKS + 1):
@@ -421,8 +424,73 @@ def coletar_online():
     if not partes:
         return pd.DataFrame()
     df = pd.concat(partes, ignore_index=True)
-    print(f"  total juntado: {len(df)} linhas | "
+    print(f"  intervalo: {len(df)} linhas | "
           f"{df[col_id].nunique()} transacoes em {len(partes)} pedaco(s)")
+    return df
+
+
+def carregar_cache(pasta):
+    """Uniao das transacoes ja coletadas (DataFrame). Vazio se nao houver/falhar."""
+    caminho = os.path.join(pasta, ARQ_CACHE)
+    try:
+        return pd.read_pickle(caminho)
+    except Exception:                 # ausente, corrompido ou pandas incompativel
+        return pd.DataFrame()
+
+
+def salvar_cache(pasta, df):
+    os.makedirs(pasta, exist_ok=True)
+    df.to_pickle(os.path.join(pasta, ARQ_CACHE))
+
+
+def coletar_online(pasta=PASTA_CACHE):
+    """Coleta incremental: reaproveita o cache e exporta so a fatia recente.
+
+    1o ciclo (cache vazio): coleta o evento inteiro (lento, uma vez).
+    Ciclos seguintes: exporta [ultimo_horario - SOBREPOSICAO, agora], funde no
+    cache substituindo as transacoes reexportadas pela versao fresca e grava.
+    Falha na fatia recente NAO derruba o ciclo: publica o que ja ha em cache
+    (fica desatualizado, nunca com furo).
+    """
+    col_id = COL["transacao_id"]
+    col_dh = COL["data_hora_realizacao"]
+
+    cache = carregar_cache(pasta)
+    fim = datetime.now() + timedelta(minutes=5)
+    if cache.empty:
+        desde = S.EVENTO_INICIO
+        print("cache vazio: coleta completa (pode demorar nesta 1a vez)")
+    else:
+        cmax = cache[col_dh].max()
+        desde = (S.EVENTO_INICIO if pd.isna(cmax)
+                 else (cmax - SOBREPOSICAO).to_pydatetime())
+        print(f"cache: {len(cache)} linhas / {cache[col_id].nunique()} transacoes "
+              f"ate {cmax}; coletando desde {desde:%d/%m %H:%M}")
+
+    sessao = requests.Session()
+    sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
+    login(sessao)
+    try:
+        novos = _coletar_intervalo(sessao, desde, fim)
+    except Exception as e:
+        print(f"  fatia recente falhou ({type(e).__name__}: {e}) - "
+              f"publicando o cache atual")
+        novos = pd.DataFrame()
+
+    if novos.empty:
+        return cache            # nada novo: publica o cache (vazio => nada)
+
+    # Funde: substitui no cache as transacoes que o intervalo re-trouxe pela
+    # versao fresca e mantem o resto.
+    if cache.empty:
+        df = novos
+    else:
+        ids_novos = set(novos[col_id].unique())
+        base = cache[~cache[col_id].isin(ids_novos)]
+        df = pd.concat([base, novos], ignore_index=True)
+
+    salvar_cache(pasta, df)
+    print(f"  total em cache: {len(df)} linhas | {df[col_id].nunique()} transacoes")
     return df
 
 
