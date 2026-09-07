@@ -2,24 +2,28 @@
 Plano B: coleta as transacoes do RIR 2026 pelo BackOffice da netpdv, para quando
 a API de relatorios cai (tem caido ~20:30-02:00 durante o evento).
 
-Fonte: POST https://www.netpdv.com/backoffice/Relatorio/ProcessReport
-  form-urlencoded, report=lista_transacao, id=38049, field-tempo-integral=1,
-  field-periodo=<dd/mm/aaaa HH:MM - dd/mm/aaaa HH:MM>, e demais filtros vazios.
-  Header X-Requested-With: XMLHttpRequest. Resposta = HTML com a tabela (45
-  colunas), quebrada em varias <table> - juntamos todas as linhas.
+Fonte: EXPORT CSV do BackOffice (o relatorio na tela pagina em ~419 paginas via
+GetListaTransacoesPage; o ProcessReport so devolve a 1a pagina). O caminho que
+traz TUDO e o export, em 3 passos, na mesma sessao logada:
+  1. POST /Relatorio/ProcessReport  - monta o relatorio/filtro na sessao
+     (report=lista_transacao, id=38049, field-tempo-integral=1, field-periodo).
+  2. POST /Relatorio/ExportTransacao - dispara a geracao do CSV; responde
+     {data:{FilePathName:"...\\EmProcessamento\\<guid>.csv", FileName:"..."}}.
+  3. GET  /Relatorio/DownloadFile?filePathName=&fileName=&contentType= - baixa.
+     A geracao e assincrona (~4 min); poll ate o CSV vir com linhas de dados.
 
-O HTML traz o MESMO conteudo da API, entao depois de parsear reaproveitamos
-montar_fatos / montar_resumo / montar_feed do stream_rir e gravamos os JSONs
-em publico/planob/. O painel (index.html) tem o botao Principal/Plano B que
-so troca a base de publico/ para publico/planob/.
+O CSV vem em cp1252, separador ';', com ~13 linhas de cabecalho do relatorio
+antes da linha de colunas ("Transacao;Data Realizacao;..."). Mesmo conteudo da
+API, entao reaproveitamos montar_fatos/montar_resumo/montar_feed do stream_rir
+e gravamos os JSONs em publico/planob/. O painel (index.html) tem o botao
+Principal/Plano B que so troca a base de publico/ para publico/planob/.
 
 Credenciais do BackOffice: fora do codigo (env NETPDV_LOGIN/NETPDV_SENHA ou
 credenciais.json {"netpdv_login":"...","netpdv_senha":"..."}). Nunca commitar.
 
 Uso:
-    python coletor_planob.py                 # loga, coleta e grava os JSONs
-    python coletor_planob.py --html arq.html # parseia um HTML salvo (teste offline)
-    python coletor_planob.py --uma-vez       # (padrao ja e uma passada)
+    python coletor_planob.py                # loga, exporta o CSV e grava os JSONs
+    python coletor_planob.py --csv arq.csv  # parseia um CSV salvo (teste offline)
 """
 
 import argparse
@@ -27,6 +31,7 @@ import html as _html
 import json
 import os
 import re
+import time
 from datetime import datetime, timedelta
 
 import pandas as pd
@@ -38,15 +43,21 @@ import stream_rir as S
 # ---------------------------------------------------------------- endpoints
 BASE = "https://www.netpdv.com/backoffice"
 URL_RELATORIO = f"{BASE}/Relatorio/ProcessReport"
+URL_EXPORT = f"{BASE}/Relatorio/ExportTransacao"     # dispara a geracao do CSV
+URL_DOWNLOAD = f"{BASE}/Relatorio/DownloadFile"      # baixa o CSV pronto
 
 CODIGO_EVENTO = S.CODIGO_EVENTO
 PASTA_PLANOB = os.path.join(S.PASTA_PUBLICO, "planob")
-TIMEOUT = 300  # o relatorio leva ~4 min para responder
+TIMEOUT = 300            # o ProcessReport leva ~4 min para responder
+POLL_TIMEOUT = 600       # espera total pelo CSV ficar pronto (EmProcessamento)
+POLL_INTERVALO = 20      # segundos entre tentativas de DownloadFile
 
-# De-para do cabecalho HTML -> nome interno (destino) usado no DataFrame.
-# So mapeamos as colunas que o painel usa; o resto do relatorio e ignorado.
+# De-para do cabecalho -> nome interno (destino) usado no DataFrame. So as
+# colunas que o painel usa; o resto e ignorado. O CSV usa "Transacao" (sem ID)
+# e o HTML usava "Transacao ID" - as duas entram.
 COL = COLUNAS_TRANSACAO
 DE_PARA_COLUNAS = {
+    "transacao": COL["transacao_id"],
     "transacao id": COL["transacao_id"],
     "data realizacao": COL["data_hora_realizacao"],
     "operacao": COL["operacao"],
@@ -110,18 +121,22 @@ def parse_relatorio(doc):
             if reg.get(COL["transacao_id"]):
                 linhas.append(reg)
 
-    df = pd.DataFrame(linhas)
+    return _finalizar(pd.DataFrame(linhas))
+
+
+def _finalizar(df):
+    """Converte tipos, assina cancelamentos e completa colunas ausentes."""
     if df.empty:
         return df
 
-    # ---- conversoes ----
     df[COL["data_hora_realizacao"]] = pd.to_datetime(
         df[COL["data_hora_realizacao"]], format="%d/%m/%Y %H:%M:%S", errors="coerce")
 
     def num_br(serie):
         # "1.234,56" -> 1234.56 ; "" -> NaN
         return pd.to_numeric(
-            serie.str.replace(".", "", regex=False).str.replace(",", ".", regex=False),
+            serie.astype(str).str.replace(".", "", regex=False)
+                             .str.replace(",", ".", regex=False),
             errors="coerce")
 
     valor_total = num_br(df[COL["valor_total"]]).fillna(0.0)
@@ -135,12 +150,44 @@ def parse_relatorio(doc):
     df[COL["quantidade"]] = (pd.to_numeric(df[COL["quantidade"]], errors="coerce")
                              .astype("Int64"))
 
-    # Colunas que o painel espera existir mas o relatorio nao traz (documento e
-    # e-mail do cliente sao removidos na publicacao mesmo; aqui ficam vazios).
+    # Colunas que o painel espera existir mas o relatorio nao traz.
     for k in ("documento_cliente", "email_cliente"):
         df[COL[k]] = None
 
     return df
+
+
+def parse_csv(raw):
+    """CSV do export (bytes cp1252, separador ';') -> DataFrame de destino.
+
+    O arquivo tem ~13 linhas de cabecalho do relatorio; a linha de colunas e a
+    que comeca com 'Transacao;'. Da linha seguinte em diante sao os dados.
+    """
+    import csv as _csv
+    texto = raw.decode("cp1252", errors="replace") if isinstance(raw, bytes) else raw
+    linhas = texto.splitlines()
+
+    # acha a linha de cabecalho das colunas
+    i_cab = next((i for i, l in enumerate(linhas)
+                  if _norm(l.split(";", 1)[0]) == "transacao"), None)
+    if i_cab is None:
+        return pd.DataFrame()
+
+    colunas = [_norm(c) for c in linhas[i_cab].split(";")]
+    leitor = _csv.reader(linhas[i_cab + 1:], delimiter=";")
+    registros = []
+    for campos in leitor:
+        if len(campos) < len(colunas):
+            continue
+        reg = {}
+        for cab, val in zip(colunas, campos):
+            destino = DE_PARA_COLUNAS.get(cab)
+            if destino:
+                reg[destino] = val.strip()
+        if reg.get(COL["transacao_id"]):
+            registros.append(reg)
+
+    return _finalizar(pd.DataFrame(registros))
 
 
 # --------------------------------------------------------------- publicacao
@@ -254,13 +301,50 @@ def buscar_relatorio(sessao):
     return r.text
 
 
+def _tem_dados(raw):
+    """True se o CSV baixado ja tem pelo menos uma linha de transacao."""
+    if not raw or len(raw) < 900:            # so o cabecalho (~824 bytes)
+        return False
+    return re.search(rb"(?m)^22\d{7};", raw) is not None
+
+
+def exportar_csv(sessao):
+    """Dispara ExportTransacao e faz polling do DownloadFile ate o CSV ficar
+    pronto (sai da pasta EmProcessamento). Devolve os bytes do CSV."""
+    r = sessao.post(URL_EXPORT, timeout=TIMEOUT,
+                    headers={"X-Requested-With": "XMLHttpRequest", "Referer": BASE})
+    r.raise_for_status()
+    data = r.json().get("data") or {}
+    caminho = data.get("FilePathName")
+    nome = data.get("FileName", "Lista de Transacoes.csv")
+    if not caminho:
+        raise SystemExit(f"ExportTransacao nao devolveu FilePathName: {r.text[:200]}")
+    print(f"  export disparado: {nome}")
+
+    limite = time.monotonic() + POLL_TIMEOUT
+    tentativa = 0
+    while time.monotonic() < limite:
+        tentativa += 1
+        d = sessao.get(URL_DOWNLOAD, timeout=TIMEOUT,
+                       params={"filePathName": caminho, "fileName": nome,
+                               "contentType": ""},
+                       headers={"Referer": BASE})
+        if d.status_code == 200 and _tem_dados(d.content):
+            print(f"  CSV pronto na tentativa {tentativa} ({len(d.content):,} bytes)")
+            return d.content
+        print(f"  tentativa {tentativa}: ainda em processamento...")
+        time.sleep(POLL_INTERVALO)
+
+    raise SystemExit("CSV nao ficou pronto dentro do tempo limite.")
+
+
 def coletar_online():
     sessao = requests.Session()
     sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
     login(sessao)
-    doc = buscar_relatorio(sessao)
-    print(f"  HTML recebido: {len(doc):,} bytes")
-    df = parse_relatorio(doc)
+    buscar_relatorio(sessao)          # monta o relatorio/filtro na sessao
+    raw = exportar_csv(sessao)        # dispara o export e espera ficar pronto
+    df = parse_csv(raw)
     print(f"  linhas parseadas: {len(df)} | "
           f"transacoes: {df[COL['transacao_id']].nunique() if not df.empty else 0}")
     return df
@@ -268,11 +352,14 @@ def coletar_online():
 
 def main():
     parser = argparse.ArgumentParser(description="Plano B: coleta via BackOffice netpdv.")
-    parser.add_argument("--html", help="parseia um HTML salvo (teste offline, sem login)")
+    parser.add_argument("--csv", help="parseia um CSV salvo (teste offline, sem login)")
+    parser.add_argument("--html", help="parseia um HTML do ProcessReport (teste offline)")
     parser.add_argument("--pasta", default=PASTA_PLANOB, help="pasta de saida dos JSONs")
     args = parser.parse_args()
 
-    if args.html:
+    if args.csv:
+        df = parse_csv(open(args.csv, "rb").read())
+    elif args.html:
         with open(args.html, encoding="utf-8") as f:
             df = parse_relatorio(f.read())
     else:
