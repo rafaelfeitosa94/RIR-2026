@@ -450,9 +450,32 @@ def _tem_dados(raw):
     return re.search(rb"(?m)^22\d{7};", raw) is not None
 
 
+def _caminhos_download(caminho):
+    """Caminhos a tentar no DownloadFile, em ordem.
+
+    O ExportTransacao devolve o arquivo dentro de ...\\Uploads\\EmProcessamento\\.
+    Enquanto gera, essa rota serve um placeholder; quando a geracao TERMINA o
+    arquivo SAI dessa pasta e passa a viver no diretorio pai - e a rota antiga
+    responde 200 com 0 bytes. Por isso tentamos tambem o caminho sem o
+    segmento EmProcessamento.
+    """
+    candidatos = [caminho]
+    for sep in ("\\", "/"):
+        alvo = f"EmProcessamento{sep}"
+        pos = caminho.lower().find(alvo.lower())
+        if pos >= 0:
+            candidatos.append(caminho[:pos] + caminho[pos + len(alvo):])
+    vistos, saida = set(), []
+    for c in candidatos:
+        if c not in vistos:
+            vistos.add(c)
+            saida.append(c)
+    return saida
+
+
 def exportar_csv(sessao):
-    """Dispara ExportTransacao e faz polling do DownloadFile ate o CSV ficar
-    pronto (sai da pasta EmProcessamento). Devolve os bytes do CSV."""
+    """Dispara ExportTransacao e faz polling do DownloadFile ate o arquivo ficar
+    pronto. Devolve os bytes (CSV ou XLSX)."""
     r = _post_resiliente(sessao, URL_EXPORT, timeout=TIMEOUT,
                          headers={"X-Requested-With": "XMLHttpRequest",
                                   "Referer": BASE})
@@ -464,6 +487,10 @@ def exportar_csv(sessao):
         raise RuntimeError(f"ExportTransacao nao devolveu FilePathName: {r.text[:200]}")
     print(f"  export disparado: {nome}")
 
+    candidatos = _caminhos_download(caminho)
+    if len(candidatos) > 1:
+        print(f"  caminhos tentados: EmProcessamento e pasta final")
+
     inicio = time.monotonic()
     limite = inicio + POLL_TIMEOUT
     tentativa = 0
@@ -471,22 +498,30 @@ def exportar_csv(sessao):
     parado = 0
     while time.monotonic() < limite:
         tentativa += 1
-        d = sessao.get(URL_DOWNLOAD, timeout=TIMEOUT,
-                       params={"filePathName": caminho, "fileName": nome,
-                               "contentType": ""},
-                       headers={"Referer": BASE})
+        melhor = (0, b"", "")
+        for cand in candidatos:
+            d = sessao.get(URL_DOWNLOAD, timeout=TIMEOUT,
+                           params={"filePathName": cand, "fileName": nome,
+                                   "contentType": ""},
+                           headers={"Referer": BASE})
+            bruto = d.content or b""
+            decorrido = int(time.monotonic() - inicio)
+            if d.status_code == 200 and _tem_dados(bruto):
+                onde = "EmProcessamento" if cand == caminho else "pasta final"
+                print(f"  arquivo pronto na tentativa {tentativa} em {decorrido}s "
+                      f"({len(bruto):,} bytes, "
+                      f"{'xlsx' if _eh_xlsx(bruto) else 'csv'}, {onde})")
+                return bruto
+            if len(bruto) > len(melhor[1]):
+                melhor = (d.status_code, bruto, cand)
+
         decorrido = int(time.monotonic() - inicio)
-        bruto = d.content or b""
+        status, bruto, _ = melhor
         formato = ("xlsx" if _eh_xlsx(bruto)
                    else "csv" if b"Transa" in bruto[:2000] else "outro")
 
-        if d.status_code == 200 and _tem_dados(bruto):
-            print(f"  arquivo pronto na tentativa {tentativa} em {decorrido}s "
-                  f"({len(bruto):,} bytes, {formato})")
-            return bruto
-
         # Diagnostico: distingue "servidor ainda nao gerou" de "gerou VAZIO".
-        print(f"  tentativa {tentativa} ({decorrido}s): HTTP {d.status_code}, "
+        print(f"  tentativa {tentativa} ({decorrido}s): HTTP {status}, "
               f"{len(bruto):,} bytes, {formato} - sem linhas de dados ainda")
 
         # Guarda de estagnacao: se o MESMO arquivo (status+tamanho) volta varias
