@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 220940410,
+      "hora": "02:52:49",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "HEINEKEN ULT RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 220940372,
       "hora": "02:51:12",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220939819,
-      "hora": "02:38:24",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
