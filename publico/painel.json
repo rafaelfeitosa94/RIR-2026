@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 220940239,
+      "hora": "02:47:38",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 50.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940216,
+      "hora": "02:47:04",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940213,
+      "hora": "02:46:42",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 56.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220940157,
       "hora": "02:45:31",
       "ponto": "SUN.A.ESPETTO",
@@ -260,42 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669286,
-      "hora": "02:36:36",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669285,
-      "hora": "02:36:19",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669284,
-      "hora": "02:36:08",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK 1ª COMPRA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
       "operacao": "Retirada de produto",
       "pagamento": "",
       "cancelamento": false
