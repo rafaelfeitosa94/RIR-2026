@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-07T03:00:59",
+  "atualizado_em": "2026-09-07T03:03:15",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 39581,
-    "transacoes_venda": 39446,
+    "transacoes": 39586,
+    "transacoes_venda": 39451,
     "transacoes_cancelamento": 135,
-    "itens": 66559.0,
-    "valor_liquido": 1667701.0,
-    "valor_bruto_vendas": 1676293.0,
+    "itens": 66564.0,
+    "valor_liquido": 1667796.0,
+    "valor_bruto_vendas": 1676388.0,
     "valor_cancelado": 8592.0,
-    "ultima_transacao": "2026-09-07T02:58:11"
+    "ultima_transacao": "2026-09-07T03:01:46"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 655377.0,
-      "itens": 24165.0,
-      "transacoes": 14361,
-      "linhas": 20378
+      "valor_liquido": 655472.0,
+      "itens": 24170.0,
+      "transacoes": 14366,
+      "linhas": 20383
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -72,10 +72,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 280962.0,
-      "itens": 15609.0,
-      "transacoes": 10943,
-      "linhas": 10943
+      "valor_liquido": 281016.0,
+      "itens": 15612.0,
+      "transacoes": 10946,
+      "linhas": 10946
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -86,10 +86,10 @@
     },
     {
       "Produto": "CHOPE HNK",
-      "valor_liquido": 127650.0,
-      "itens": 5550.0,
-      "transacoes": 4188,
-      "linhas": 4188
+      "valor_liquido": 127673.0,
+      "itens": 5551.0,
+      "transacoes": 4189,
+      "linhas": 4189
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
@@ -205,10 +205,10 @@
     },
     {
       "Produto": "HEINEKEN ULT RT",
-      "valor_liquido": 17118.0,
-      "itens": 951.0,
-      "transacoes": 710,
-      "linhas": 710
+      "valor_liquido": 17136.0,
+      "itens": 952.0,
+      "transacoes": 711,
+      "linhas": 711
     },
     {
       "Produto": "MIEXD VODKA RT",
@@ -662,26 +662,26 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 788641.0,
-      "itens": 45045.0,
-      "transacoes": 31092,
-      "linhas": 35678
+      "valor_liquido": 788736.0,
+      "itens": 45050.0,
+      "transacoes": 31097,
+      "linhas": 35683
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 954622.0,
-      "itens": 37183.0,
-      "transacoes": 21023,
-      "linhas": 29840
+      "valor_liquido": 954699.0,
+      "itens": 37187.0,
+      "transacoes": 21027,
+      "linhas": 29844
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 529691.0,
-      "itens": 21275.0,
-      "transacoes": 12655,
-      "linhas": 17475
+      "valor_liquido": 529709.0,
+      "itens": 21276.0,
+      "transacoes": 12656,
+      "linhas": 17476
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1482,6 +1482,13 @@
       "itens": 251.0,
       "transacoes": 177,
       "linhas": 219
+    },
+    {
+      "_hora": "2026-09-07T03",
+      "valor_liquido": 95.0,
+      "itens": 5.0,
+      "transacoes": 5,
+      "linhas": 5
     }
   ],
   "por_dia": [
@@ -1508,10 +1515,10 @@
     },
     {
       "_dia": "2026-09-06",
-      "valor_liquido": 661492.0,
-      "itens": 25487.0,
-      "transacoes": 14622,
-      "linhas": 20552
+      "valor_liquido": 661587.0,
+      "itens": 25492.0,
+      "transacoes": 14627,
+      "linhas": 20557
     }
   ]
 }
