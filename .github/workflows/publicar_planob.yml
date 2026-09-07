@@ -43,7 +43,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Instalar dependencias
-        run: pip install --quiet requests pandas
+        run: pip install --quiet requests pandas openpyxl
 
       # Cache da uniao de transacoes ja coletadas. Sem ele, cada execucao
       # recomecaria do zero (coleta completa lenta); com ele, so a fatia

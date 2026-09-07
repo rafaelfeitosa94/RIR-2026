@@ -136,7 +136,7 @@ def _finalizar(df):
     # vazio ou "-----"), com o total da transacao, ALEM das linhas por produto.
     # A API so devolve os produtos; somar as duas dobra o faturamento. Ficamos
     # so com as linhas de produto real, como a API.
-    prod = df[COL["produto"]].fillna("").str.strip()
+    prod = df[COL["produto"]].fillna("").astype(str).str.strip()
     resumo = prod.eq("") | prod.str.fullmatch(r"[-–—\s]+")
     if resumo.any():
         print(f"  linhas de resumo descartadas (sem produto): {int(resumo.sum())}")
@@ -144,11 +144,19 @@ def _finalizar(df):
     if df.empty:
         return df
 
-    df[COL["data_hora_realizacao"]] = pd.to_datetime(
-        df[COL["data_hora_realizacao"]], format="%d/%m/%Y %H:%M:%S", errors="coerce")
+    # Data: CSV traz string BR ("dd/mm/aaaa HH:MM:SS"); o XLSX pode trazer
+    # datetime nativo. Tenta o formato BR e, se tudo virar NaT (caso XLSX),
+    # cai para a interpretacao geral.
+    dh = df[COL["data_hora_realizacao"]]
+    conv = pd.to_datetime(dh, format="%d/%m/%Y %H:%M:%S", errors="coerce")
+    if conv.isna().all() and dh.notna().any():
+        conv = pd.to_datetime(dh, errors="coerce")
+    df[COL["data_hora_realizacao"]] = conv
 
     def num_br(serie):
-        # "1.234,56" -> 1234.56 ; "" -> NaN
+        # XLSX ja traz numero nativo; CSV traz string BR "1.234,56" -> 1234.56.
+        if pd.api.types.is_numeric_dtype(serie):
+            return pd.to_numeric(serie, errors="coerce")
         return pd.to_numeric(
             serie.astype(str).str.replace(".", "", regex=False)
                              .str.replace(",", ".", regex=False),
@@ -203,6 +211,50 @@ def parse_csv(raw):
             registros.append(reg)
 
     return _finalizar(pd.DataFrame(registros))
+
+
+def parse_xlsx(raw):
+    """XLSX do export -> DataFrame de destino. Mesmo layout do CSV: ~13 linhas
+    de cabecalho do relatorio, a linha de colunas comeca em 'Transacao', e 45
+    colunas por linha (celulas separadas). As celulas vem com tipo NATIVO
+    (numero/datetime/texto); _finalizar trata os dois casos (nativo x string BR).
+    """
+    import io
+    import openpyxl
+    wb = openpyxl.load_workbook(io.BytesIO(raw), data_only=True)
+    ws = wb.active
+    linhas = list(ws.iter_rows(min_row=1, max_row=ws.max_row, values_only=True))
+
+    i_cab = next((i for i, row in enumerate(linhas)
+                  if row and row[0] is not None
+                  and _norm(str(row[0])) == "transacao"), None)
+    if i_cab is None:
+        return pd.DataFrame()
+
+    colunas = [_norm(str(c)) if c is not None else "" for c in linhas[i_cab]]
+    registros = []
+    for row in linhas[i_cab + 1:]:
+        reg = {}
+        for cab, val in zip(colunas, row):
+            destino = DE_PARA_COLUNAS.get(cab)
+            if destino and val is not None:
+                reg[destino] = val
+        if reg.get(COL["transacao_id"]) not in (None, ""):
+            registros.append(reg)
+
+    df = pd.DataFrame(registros)
+    if df.empty:
+        return df
+    # transacao_id vira str (pode vir int/float do xlsx) para casar com o CSV,
+    # a semente e o cache nas comparacoes por transacao.
+    df[COL["transacao_id"]] = (df[COL["transacao_id"]].astype(str)
+                               .str.replace(r"\.0$", "", regex=True))
+    return _finalizar(df)
+
+
+def _parse_export(raw):
+    """Roteia o download pelo formato real: XLSX (assinatura zip PK) ou CSV."""
+    return parse_xlsx(raw) if _eh_xlsx(raw) else parse_csv(raw)
 
 
 # --------------------------------------------------------------- publicacao
@@ -406,15 +458,10 @@ def _coletar_intervalo(sessao, inicio, fim):
     for chunk in range(1, MAX_CHUNKS + 1):
         buscar_relatorio(sessao, inicio, fim)
         raw = exportar_csv(sessao)
-        if _eh_xlsx(raw):
-            print("  AVISO: o export veio em XLSX, nao CSV (preferencia da conta "
-                  "no BackOffice). O parser atual so le CSV - publicando o "
-                  "cache/semente. Reconfigure o export para CSV, ou envie um "
-                  ".xlsx de amostra para adicionar o leitor.")
-            break
-        df = parse_csv(raw)
+        df = _parse_export(raw)          # le CSV ou XLSX conforme o formato real
         n = int(df[col_id].nunique()) if not df.empty else 0
-        print(f"  pedaco {chunk} (desde {inicio:%d/%m %H:%M}): "
+        print(f"  pedaco {chunk} (desde {inicio:%d/%m %H:%M}) "
+              f"[{'xlsx' if _eh_xlsx(raw) else 'csv'}]: "
               f"{len(df)} linhas, {n} transacoes")
 
         if df.empty:
