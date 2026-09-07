@@ -334,6 +334,35 @@ def login(sessao):
         raise SystemExit("Login recusado - verifique NETPDV_LOGIN/NETPDV_SENHA.")
 
 
+def _post_resiliente(sessao, url, *, tentativas=4, espera=15, **kwargs):
+    """POST que repete em erro transitorio (5xx / conexao / timeout).
+
+    O BackOffice retorna 500 de forma intermitente, sobretudo a noite (~20:30-
+    02:00). Um blip nao deve derrubar o ciclo inteiro. Erros 4xx (request ruim)
+    e o esgotamento das tentativas propagam - coletar_online captura e publica
+    o cache/semente.
+    """
+    ultimo = None
+    nome = url.rsplit("/", 1)[-1]
+    for tentativa in range(1, tentativas + 1):
+        try:
+            r = sessao.post(url, **kwargs)
+            if 500 <= r.status_code < 600:
+                raise requests.HTTPError(f"{r.status_code} {r.reason}", response=r)
+            r.raise_for_status()
+            return r
+        except (requests.HTTPError, requests.ConnectionError, requests.Timeout) as e:
+            ultimo = e
+            status = getattr(getattr(e, "response", None), "status_code", None)
+            if isinstance(e, requests.HTTPError) and status and status < 500:
+                raise                              # 4xx nao adianta repetir
+            if tentativa < tentativas:
+                print(f"  {nome}: {type(e).__name__} ({status or 'rede'}) - "
+                      f"tentativa {tentativa}/{tentativas}, repetindo em {espera}s")
+                time.sleep(espera)
+    raise ultimo
+
+
 def buscar_relatorio(sessao, inicio, fim):
     """POST no ProcessReport com o filtro Tempo integral e devolve o HTML.
 
@@ -362,10 +391,10 @@ def buscar_relatorio(sessao, inicio, fim):
         ("fields[]", "field-pedidos="),
         ("fields[]", "field-tipo-relatorio-transacao=1"),
     ]
-    r = sessao.post(URL_RELATORIO, data=dados, timeout=TIMEOUT,
-                    headers={"X-Requested-With": "XMLHttpRequest",
-                             "Referer": BASE, "Origin": "https://www.netpdv.com"})
-    r.raise_for_status()
+    r = _post_resiliente(sessao, URL_RELATORIO, data=dados, timeout=TIMEOUT,
+                         headers={"X-Requested-With": "XMLHttpRequest",
+                                  "Referer": BASE,
+                                  "Origin": "https://www.netpdv.com"})
     return r.text
 
 
@@ -412,14 +441,15 @@ def _tem_dados(raw):
 def exportar_csv(sessao):
     """Dispara ExportTransacao e faz polling do DownloadFile ate o CSV ficar
     pronto (sai da pasta EmProcessamento). Devolve os bytes do CSV."""
-    r = sessao.post(URL_EXPORT, timeout=TIMEOUT,
-                    headers={"X-Requested-With": "XMLHttpRequest", "Referer": BASE})
-    r.raise_for_status()
+    r = _post_resiliente(sessao, URL_EXPORT, timeout=TIMEOUT,
+                         headers={"X-Requested-With": "XMLHttpRequest",
+                                  "Referer": BASE})
     data = r.json().get("data") or {}
     caminho = data.get("FilePathName")
     nome = data.get("FileName", "Lista de Transacoes.csv")
     if not caminho:
-        raise SystemExit(f"ExportTransacao nao devolveu FilePathName: {r.text[:200]}")
+        # nao-fatal: coletar_online captura e publica o cache/semente
+        raise RuntimeError(f"ExportTransacao nao devolveu FilePathName: {r.text[:200]}")
     print(f"  export disparado: {nome}")
 
     inicio = time.monotonic()
