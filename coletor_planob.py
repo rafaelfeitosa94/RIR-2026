@@ -188,17 +188,36 @@ def _credenciais():
     return login, senha
 
 
-def login(sessao):
-    """Autentica no BackOffice e deixa a sessao pronta para o ProcessReport.
+URL_LOGIN = f"{BASE}/Authentication/Login"
 
-    IMPLEMENTACAO PENDENTE: o HAR foi capturado com o usuario ja logado, entao
-    o request de login nao esta nele. Assim que capturarmos o POST de login
-    (URL + nomes dos campos), este metodo faz o GET inicial (cookies/tokens) e
-    o POST das credenciais. Ate la, so o modo --html (offline) funciona.
+
+def login(sessao):
+    """Autentica no BackOffice (ASP.NET anti-forgery).
+
+    Fluxo: GET na pagina de login para pegar o cookie e o campo oculto
+    __RequestVerificationToken; POST com vchLoginUsuario/vchSenha + o token.
+    O cookie de sessao fica na propria sessao para o ProcessReport seguinte.
     """
-    raise NotImplementedError(
-        "Login do BackOffice ainda nao mapeado - capturar o POST de login. "
-        "Enquanto isso use: python coletor_planob.py --html <arquivo.html>")
+    login_usuario, senha = _credenciais()
+
+    r = sessao.get(URL_LOGIN, timeout=60)
+    r.raise_for_status()
+    m = re.search(
+        r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', r.text)
+    if not m:
+        raise SystemExit("Nao achei o __RequestVerificationToken na pagina de login.")
+
+    r = sessao.post(URL_LOGIN, timeout=60, allow_redirects=True,
+                    headers={"Referer": URL_LOGIN,
+                             "Origin": "https://www.netpdv.com"},
+                    data={"__RequestVerificationToken": m.group(1),
+                          "vchLoginUsuario": login_usuario,
+                          "vchSenha": senha})
+    r.raise_for_status()
+
+    # Sucesso sai da tela de login; se ainda houver campo de senha, falhou.
+    if 'type="password"' in r.text and "vchSenha" in r.text:
+        raise SystemExit("Login recusado - verifique NETPDV_LOGIN/NETPDV_SENHA.")
 
 
 def buscar_relatorio(sessao):

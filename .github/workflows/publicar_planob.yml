@@ -1,0 +1,79 @@
+name: Publicar Plano B (BackOffice)
+
+# Fonte alternativa para quando a API da Zig cai (~20:30-02:00). Loga no
+# BackOffice netpdv, baixa o relatorio lista_transacao (Tempo integral),
+# gera publico/planob/*.json e commita. O painel tem o toggle Principal/Plano B.
+#
+# Roda em laco proprio (como o publicar.yml): o relatorio leva ~4 min e o
+# alvo e atualizar a cada ~5 min. Duas execucoes nao se atropelam pelo
+# concurrency.
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"     # rede de seguranca (schedule do Actions atrasa)
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: publicar-planob
+  cancel-in-progress: false
+
+jobs:
+  planob:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+
+    env:
+      TZ: America/Sao_Paulo
+      NETPDV_LOGIN: ${{ secrets.NETPDV_LOGIN }}
+      NETPDV_SENHA: ${{ secrets.NETPDV_SENHA }}
+      INTERVALO_S: 300          # 5 min entre coletas (o relatorio ja demora ~4)
+      DURACAO_S: 19800          # 5h30 de laco, com folga ate o teto de 6h
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Instalar dependencias
+        run: pip install --quiet requests pandas
+
+      - name: Publicar Plano B em laco
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          fim=$(( $(date +%s) + DURACAO_S ))
+          ciclo=0
+          while [ "$(date +%s)" -lt "$fim" ]; do
+            ciclo=$((ciclo + 1))
+            echo "::group::ciclo $ciclo - $(date '+%H:%M:%S')"
+
+            python coletor_planob.py || echo "coleta falhou neste ciclo"
+
+            git add publico/planob
+            if git diff --cached --quiet; then
+              echo "nada mudou"
+            else
+              git commit -q -m "plano B $(date '+%Y-%m-%d %H:%M:%S')"
+              git pull --rebase --autostash -q origin main || true
+              git push -q || echo "push falhou - tenta no proximo ciclo"
+            fi
+
+            echo "::endgroup::"
+            sleep "$INTERVALO_S"
+          done
+
+      - name: Encadear a proxima execucao
+        if: always()
+        env:
+          GH_TOKEN: ${{ secrets.PAT_CHAIN }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo "PAT_CHAIN nao configurado - a proxima execucao virá do cron."
+            exit 0
+          fi
+          gh workflow run publicar_planob.yml --repo "${{ github.repository }}"
