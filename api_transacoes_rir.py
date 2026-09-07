@@ -413,6 +413,19 @@ def coletar(pasta, refazer=False, renovar_sempre=True, url=URL_PROD,
     arq_ambulantes = os.path.join(pasta, JSONL_AMBULANTES)
 
     concluidas = set() if refazer else carregar_estado(arq_estado)
+
+    # Cicatriza buracos: reabre horas marcadas concluidas que estao VAZIAS no
+    # armazenamento (finalizadas enquanto a API estava fora). Horas com dados
+    # continuam concluidas - nao sao re-baixadas, entao nao ha inchaco.
+    if concluidas and not refazer:
+        com_dados = {r.get("_fatia") for r in
+                     ler_jsonl(arq_transacoes, "transacao_id")}
+        vazias = concluidas - com_dados
+        if vazias:
+            print(f"reabrindo {len(vazias)} hora(s) finalizada(s) vazia(s) "
+                  f"(buraco de API): serao re-coletadas")
+            concluidas -= vazias
+
     agora = datetime.now()
     pendentes = horas_a_baixar(EVENTO_INICIO, EVENTO_FIM, concluidas, agora)
 
@@ -475,9 +488,10 @@ def coletar(pasta, refazer=False, renovar_sempre=True, url=URL_PROD,
             n_transacoes += len(transacoes)
             n_ambulantes += len(ambulantes)
 
-            # Hora ainda "quente" nao entra no estado: precisa ser rebaixada
-            # na proxima execucao para pegar lancamentos atrasados.
-            if definitiva:
+            # So finaliza uma hora que ja fechou E veio com transacoes. Se
+            # veio vazia (API instavel, ou hora sem venda), fica pendente e e
+            # re-coletada nos proximos ciclos - evita finalizar um buraco.
+            if definitiva and transacoes:
                 concluidas.add(chave)
                 salvar_estado(arq_estado, concluidas)
 
