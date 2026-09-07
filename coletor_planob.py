@@ -318,28 +318,28 @@ def login(sessao):
     """
     login_usuario, senha = _credenciais()
 
-    r = sessao.get(URL_LOGIN, timeout=60)
-    r.raise_for_status()
+    # O BackOffice tambem devolve 500 intermitente no proprio login (~20:30-
+    # 02:00), entao as duas chamadas repetem em erro transitorio.
+    r = _req_resiliente(sessao, URL_LOGIN, metodo="get", timeout=60)
     m = re.search(
         r'name="__RequestVerificationToken"[^>]*value="([^"]+)"', r.text)
     if not m:
-        raise SystemExit("Nao achei o __RequestVerificationToken na pagina de login.")
+        raise RuntimeError("Nao achei o __RequestVerificationToken na pagina de login.")
 
-    r = sessao.post(URL_LOGIN, timeout=60, allow_redirects=True,
-                    headers={"Referer": URL_LOGIN,
-                             "Origin": "https://www.netpdv.com"},
-                    data={"__RequestVerificationToken": m.group(1),
-                          "vchLoginUsuario": login_usuario,
-                          "vchSenha": senha})
-    r.raise_for_status()
+    r = _req_resiliente(sessao, URL_LOGIN, timeout=60, allow_redirects=True,
+                        headers={"Referer": URL_LOGIN,
+                                 "Origin": "https://www.netpdv.com"},
+                        data={"__RequestVerificationToken": m.group(1),
+                              "vchLoginUsuario": login_usuario,
+                              "vchSenha": senha})
 
     # Sucesso sai da tela de login; se ainda houver campo de senha, falhou.
     if 'type="password"' in r.text and "vchSenha" in r.text:
         raise SystemExit("Login recusado - verifique NETPDV_LOGIN/NETPDV_SENHA.")
 
 
-def _post_resiliente(sessao, url, *, tentativas=4, espera=15, **kwargs):
-    """POST que repete em erro transitorio (5xx / conexao / timeout).
+def _req_resiliente(sessao, url, *, metodo="post", tentativas=4, espera=15, **kwargs):
+    """Requisicao que repete em erro transitorio (5xx / conexao / timeout).
 
     O BackOffice retorna 500 de forma intermitente, sobretudo a noite (~20:30-
     02:00). Um blip nao deve derrubar o ciclo inteiro. Erros 4xx (request ruim)
@@ -350,7 +350,7 @@ def _post_resiliente(sessao, url, *, tentativas=4, espera=15, **kwargs):
     nome = url.rsplit("/", 1)[-1]
     for tentativa in range(1, tentativas + 1):
         try:
-            r = sessao.post(url, **kwargs)
+            r = getattr(sessao, metodo)(url, **kwargs)
             if 500 <= r.status_code < 600:
                 raise requests.HTTPError(f"{r.status_code} {r.reason}", response=r)
             r.raise_for_status()
@@ -398,7 +398,7 @@ def buscar_relatorio(sessao, inicio, fim):
         ("fields[]", "field-pedidos="),
         ("fields[]", "field-tipo-relatorio-transacao=1"),
     ]
-    r = _post_resiliente(sessao, URL_RELATORIO, data=dados, timeout=TIMEOUT,
+    r = _req_resiliente(sessao, URL_RELATORIO, data=dados, timeout=TIMEOUT,
                          headers={"X-Requested-With": "XMLHttpRequest",
                                   "Referer": BASE,
                                   "Origin": "https://www.netpdv.com"})
@@ -476,7 +476,7 @@ def _caminhos_download(caminho):
 def exportar_csv(sessao):
     """Dispara ExportTransacao e faz polling do DownloadFile ate o arquivo ficar
     pronto. Devolve os bytes (CSV ou XLSX)."""
-    r = _post_resiliente(sessao, URL_EXPORT, timeout=TIMEOUT,
+    r = _req_resiliente(sessao, URL_EXPORT, timeout=TIMEOUT,
                          headers={"X-Requested-With": "XMLHttpRequest",
                                   "Referer": BASE})
     data = r.json().get("data") or {}
@@ -688,11 +688,15 @@ def coletar_online(pasta=PASTA_CACHE):
 
     sessao = requests.Session()
     sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
-    login(sessao)
+    # login TAMBEM dentro do try: o BackOffice devolve 500 no proprio login
+    # durante a instabilidade noturna, e isso derrubava o ciclo inteiro mesmo
+    # havendo semente/cache para publicar. Credencial recusada/ausente lanca
+    # SystemExit (nao e Exception), entao continua falhando alto - como deve.
     try:
+        login(sessao)
         novos = _coletar_intervalo(sessao, desde, fim)
     except Exception as e:
-        print(f"  fatia recente falhou ({type(e).__name__}: {e}) - "
+        print(f"  coleta da fatia recente falhou ({type(e).__name__}: {e}) - "
               f"publicando o cache atual")
         novos = pd.DataFrame()
 
