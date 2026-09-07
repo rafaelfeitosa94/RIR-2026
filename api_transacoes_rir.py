@@ -352,6 +352,41 @@ def salvar_estado(caminho, horas_concluidas):
                   arquivo, indent=2)
 
 
+# ------------------------------------------------ re-coleta forcada (heal)
+# Arquivo versionado no repositorio. Quando a versao dele for maior que a ja
+# aplicada nesta maquina/runner, as horas listadas sao removidas do estado e
+# re-coletadas UMA vez. Serve para cicatrizar horas finalizadas com dado
+# PARCIAL (a API estava instavel quando fecharam) - essas nao entram na
+# reabertura automatica de horas vazias porque ja tem algum dado.
+ARQ_FORCAR = "forcar_recoleta.json"        # no repositorio (versionado)
+ARQ_FORCAR_APLICADO = "forcar_aplicado.json"  # na pasta de dados (cache)
+
+
+def carregar_forcar():
+    """(versao, horas) do pedido de re-coleta forcada; (0, set()) se nao houver."""
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), ARQ_FORCAR)
+    try:
+        with open(caminho, encoding="utf-8") as arquivo:
+            dados = json.load(arquivo)
+        return int(dados.get("versao", 0)), set(dados.get("horas", []))
+    except (FileNotFoundError, ValueError):
+        return 0, set()
+
+
+def forcar_versao_aplicada(pasta):
+    caminho = os.path.join(pasta, ARQ_FORCAR_APLICADO)
+    try:
+        with open(caminho, encoding="utf-8") as arquivo:
+            return int(json.load(arquivo).get("versao", 0))
+    except (FileNotFoundError, ValueError):
+        return 0
+
+
+def marcar_forcar_aplicada(pasta, versao):
+    with open(os.path.join(pasta, ARQ_FORCAR_APLICADO), "w", encoding="utf-8") as a:
+        json.dump({"versao": versao}, a)
+
+
 # ------------------------------------------------------------------- jsonl
 def acrescentar_jsonl(caminho, registros, hora):
     """Acrescenta os registros da hora, carimbando de qual fatia vieram."""
@@ -425,6 +460,17 @@ def coletar(pasta, refazer=False, renovar_sempre=True, url=URL_PROD,
             print(f"reabrindo {len(vazias)} hora(s) finalizada(s) vazia(s) "
                   f"(buraco de API): serao re-coletadas")
             concluidas -= vazias
+
+    # Re-coleta forcada (heal de horas com dado PARCIAL). Aplica uma vez por
+    # versao: remove as horas do estado para que voltem a ser baixadas.
+    if not refazer:
+        f_versao, f_horas = carregar_forcar()
+        if f_versao > forcar_versao_aplicada(pasta) and f_horas:
+            alvo = f_horas & concluidas
+            print(f"re-coleta forcada v{f_versao}: reabrindo {len(alvo)} "
+                  f"hora(s) com dado parcial para cicatrizar")
+            concluidas -= f_horas
+            marcar_forcar_aplicada(pasta, f_versao)
 
     agora = datetime.now()
     pendentes = horas_a_baixar(EVENTO_INICIO, EVENTO_FIM, concluidas, agora)
