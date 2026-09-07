@@ -370,6 +370,10 @@ MAX_CHUNKS = 25          # trava de seguranca (>750k transacoes)
 # o evento, entao pedir tudo a cada ciclo e caro. Ver coletar_online.
 PASTA_CACHE = "dados_planob"
 ARQ_CACHE = "transacoes.pkl"
+# Semente versionada no repositorio: um export completo do BackOffice ja
+# parseado (sem PII) para o 1o ciclo NAO precisar refazer a coleta inteira do
+# zero. So e usada quando nao ha cache; a partir dai o cache assume.
+ARQ_SEED = "seed_planob.csv.gz"
 # Quanto reexportar para tras do ultimo horario ja em cache, a cada ciclo -
 # cobre transacoes que chegaram fora de ordem / a virada do caixa e cicatriza
 # um rabo incompleto do ciclo anterior. A sobreposicao e deduplicada.
@@ -443,6 +447,24 @@ def salvar_cache(pasta, df):
     df.to_pickle(os.path.join(pasta, ARQ_CACHE))
 
 
+def carregar_seed():
+    """Semente do repositorio (export completo ja parseado) -> DataFrame.
+
+    Vazio se nao houver. Recoere os tipos que o CSV nao preserva; NAO passa por
+    _finalizar (os sinais de cancelamento ja estao gravados no arquivo).
+    """
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), ARQ_SEED)
+    if not os.path.exists(caminho):
+        return pd.DataFrame()
+    df = pd.read_csv(caminho)
+    df[COL["transacao_id"]] = df[COL["transacao_id"]].astype(str)
+    df[COL["data_hora_realizacao"]] = pd.to_datetime(
+        df[COL["data_hora_realizacao"]], errors="coerce")
+    df[COL["quantidade"]] = (pd.to_numeric(df[COL["quantidade"]], errors="coerce")
+                             .astype("Int64"))
+    return df
+
+
 def coletar_online(pasta=PASTA_CACHE):
     """Coleta incremental: reaproveita o cache e exporta so a fatia recente.
 
@@ -456,10 +478,16 @@ def coletar_online(pasta=PASTA_CACHE):
     col_dh = COL["data_hora_realizacao"]
 
     cache = carregar_cache(pasta)
+    if cache.empty:
+        cache = carregar_seed()          # 1a vez: parte da semente do repo
+        if not cache.empty:
+            print(f"sem cache: usando a semente do repositorio "
+                  f"({len(cache)} linhas / {cache[col_id].nunique()} transacoes)")
+
     fim = datetime.now() + timedelta(minutes=5)
     if cache.empty:
         desde = S.EVENTO_INICIO
-        print("cache vazio: coleta completa (pode demorar nesta 1a vez)")
+        print("sem cache nem semente: coleta completa (pode demorar nesta 1a vez)")
     else:
         cmax = cache[col_dh].max()
         desde = (S.EVENTO_INICIO if pd.isna(cmax)
