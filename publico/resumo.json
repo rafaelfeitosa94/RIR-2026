@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-07T03:46:12",
+  "atualizado_em": "2026-09-07T03:48:27",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 39681,
-    "transacoes_venda": 39545,
+    "transacoes": 39682,
+    "transacoes_venda": 39546,
     "transacoes_cancelamento": 136,
-    "itens": 66704.0,
-    "valor_liquido": 1671240.0,
-    "valor_bruto_vendas": 1679850.0,
+    "itens": 66706.0,
+    "valor_liquido": 1671254.0,
+    "valor_bruto_vendas": 1679864.0,
     "valor_cancelado": 8610.0,
-    "ultima_transacao": "2026-09-07T03:43:15"
+    "ultima_transacao": "2026-09-07T03:45:36"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 658609.0,
-      "itens": 24292.0,
-      "transacoes": 14443,
-      "linhas": 20485
+      "valor_liquido": 658623.0,
+      "itens": 24294.0,
+      "transacoes": 14444,
+      "linhas": 20486
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -163,10 +163,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 26628.0,
-      "itens": 3804.0,
-      "transacoes": 2762,
-      "linhas": 2762
+      "valor_liquido": 26642.0,
+      "itens": 3806.0,
+      "transacoes": 2763,
+      "linhas": 2763
     },
     {
       "Produto": "ESPETO FRANGO",
@@ -662,19 +662,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 790226.0,
-      "itens": 45141.0,
-      "transacoes": 31167,
-      "linhas": 35758
+      "valor_liquido": 790240.0,
+      "itens": 45143.0,
+      "transacoes": 31168,
+      "linhas": 35759
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 956919.0,
-      "itens": 37273.0,
-      "transacoes": 21080,
-      "linhas": 29914
+      "valor_liquido": 956933.0,
+      "itens": 37275.0,
+      "transacoes": 21081,
+      "linhas": 29915
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -1485,10 +1485,10 @@
     },
     {
       "_hora": "2026-09-07T03",
-      "valor_liquido": 3539.0,
-      "itens": 145.0,
-      "transacoes": 100,
-      "linhas": 125
+      "valor_liquido": 3553.0,
+      "itens": 147.0,
+      "transacoes": 101,
+      "linhas": 126
     }
   ],
   "por_dia": [
@@ -1515,10 +1515,10 @@
     },
     {
       "_dia": "2026-09-06",
-      "valor_liquido": 665031.0,
-      "itens": 25632.0,
-      "transacoes": 14722,
-      "linhas": 20677
+      "valor_liquido": 665045.0,
+      "itens": 25634.0,
+      "transacoes": 14723,
+      "linhas": 20678
     }
   ]
 }
