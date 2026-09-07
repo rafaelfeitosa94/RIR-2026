@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 220941259,
+      "hora": "03:31:48",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 37.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220941245,
+      "hora": "03:30:17",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 1,
+      "quantidade": 4,
+      "valor": 86.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220941240,
+      "hora": "03:30:11",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC RT",
+      "outros_produtos": 0,
+      "quantidade": 3,
+      "valor": 63.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220941224,
       "hora": "03:29:09",
       "ponto": "SUN.A.ESPETTO",
@@ -253,18 +289,6 @@
       "cancelamento": false
     },
     {
-      "id": 220941077,
-      "hora": "03:20:05",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP FRANGO + BT",
-      "outros_produtos": 2,
-      "quantidade": 4,
-      "valor": 114.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 220941080,
       "hora": "03:20:05",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220941075,
-      "hora": "03:20:03",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS FRANGO + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220941071,
-      "hora": "03:19:46",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIXED MARAC RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
