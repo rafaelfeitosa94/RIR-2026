@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-07T14:02:17",
+  "atualizado_em": "2026-09-07T14:04:34",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 39690,
-    "transacoes_venda": 39554,
+    "transacoes": 39692,
+    "transacoes_venda": 39556,
     "transacoes_cancelamento": 136,
-    "itens": 66717.0,
-    "valor_liquido": 1671467.0,
-    "valor_bruto_vendas": 1680077.0,
+    "itens": 66719.0,
+    "valor_liquido": 1671512.0,
+    "valor_bruto_vendas": 1680122.0,
     "valor_cancelado": 8610.0,
-    "ultima_transacao": "2026-09-07T03:56:22"
+    "ultima_transacao": "2026-09-07T14:03:12"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 658836.0,
-      "itens": 24305.0,
-      "transacoes": 14452,
-      "linhas": 20496
+      "valor_liquido": 658881.0,
+      "itens": 24307.0,
+      "transacoes": 14454,
+      "linhas": 20498
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -100,10 +100,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 92050.0,
-      "itens": 3682.0,
-      "transacoes": 2777,
-      "linhas": 2777
+      "valor_liquido": 92075.0,
+      "itens": 3683.0,
+      "transacoes": 2778,
+      "linhas": 2778
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -142,10 +142,10 @@
     },
     {
       "Produto": "FRITAS",
-      "valor_liquido": 34380.0,
-      "itens": 1719.0,
-      "transacoes": 1558,
-      "linhas": 1558
+      "valor_liquido": 34400.0,
+      "itens": 1720.0,
+      "transacoes": 1559,
+      "linhas": 1559
     },
     {
       "Produto": "COCA ZERO",
@@ -655,10 +655,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 881054.0,
-      "itens": 21564.0,
-      "transacoes": 16837,
-      "linhas": 18770
+      "valor_liquido": 881099.0,
+      "itens": 21566.0,
+      "transacoes": 16839,
+      "linhas": 18772
     },
     {
       "Categoria Produto": "Bebida",
@@ -671,17 +671,17 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 957012.0,
-      "itens": 37280.0,
-      "transacoes": 21086,
-      "linhas": 29920
+      "valor_liquido": 957037.0,
+      "itens": 37281.0,
+      "transacoes": 21087,
+      "linhas": 29921
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 530418.0,
-      "itens": 21305.0,
-      "transacoes": 12674,
-      "linhas": 17502
+      "valor_liquido": 530438.0,
+      "itens": 21306.0,
+      "transacoes": 12675,
+      "linhas": 17503
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -1489,6 +1489,83 @@
       "itens": 158.0,
       "transacoes": 109,
       "linhas": 136
+    },
+    {
+      "_hora": "2026-09-07T04",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T05",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T06",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T07",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T08",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T09",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T10",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T11",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T12",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T13",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-07T14",
+      "valor_liquido": 45.0,
+      "itens": 2.0,
+      "transacoes": 2,
+      "linhas": 2
     }
   ],
   "por_dia": [
@@ -1519,6 +1596,13 @@
       "itens": 25645.0,
       "transacoes": 14731,
       "linhas": 20688
+    },
+    {
+      "_dia": "2026-09-07",
+      "valor_liquido": 45.0,
+      "itens": 2.0,
+      "transacoes": 2,
+      "linhas": 2
     }
   ]
 }
