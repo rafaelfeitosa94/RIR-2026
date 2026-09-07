@@ -168,11 +168,33 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(ESTADO.snapshot)
         if rota == "/api/stream":
             return self._sse()
+        # JSONs publicados (ex.: a fonte Plano B em publico/planob/*.json).
+        if rota.startswith("/publico/") and rota.endswith(".json"):
+            return self._publico(rota)
         if self._asset(rota):
             return
 
         self._cabecalho(404, "text/plain; charset=utf-8", 9)
         self.wfile.write(b"nao achei")
+
+    def _publico(self, rota):
+        # rota = /publico/...; serve do disco com guarda contra path traversal.
+        rel = rota.lstrip("/")
+        caminho = os.path.normpath(rel)
+        if ".." in caminho.split(os.sep) or not caminho.startswith("publico"):
+            self._cabecalho(404, "text/plain; charset=utf-8", 9)
+            self.wfile.write(b"nao achei")
+            return
+        try:
+            with open(caminho, "rb") as arquivo:
+                corpo = arquivo.read()
+        except OSError:
+            self._cabecalho(404, "text/plain; charset=utf-8", 9)
+            self.wfile.write(b"nao achei")
+            return
+        self._cabecalho(200, "application/json; charset=utf-8", len(corpo),
+                        {"Cache-Control": "no-store"})
+        self.wfile.write(corpo)
 
     # Serve assets estáticos da pasta (logo, ícones). No GitHub Pages isso é
     # automático; aqui o servidor precisa fazer à mão. Restrito a extensões

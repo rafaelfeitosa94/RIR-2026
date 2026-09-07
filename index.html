@@ -192,6 +192,12 @@
     <button id="temaEscuro">☾ Escuro</button>
   </div>
 
+  <h3>Fonte dos dados</h3>
+  <div class="tema fonte">
+    <button id="fontePrincipal" class="on">Principal</button>
+    <button id="fontePlanoB">Plano B</button>
+  </div>
+
   <h3>Palco</h3>
   <div class="opcoes" id="fPalco"></div>
 
@@ -1039,22 +1045,32 @@ function selo(texto, offline){
   document.getElementById('bolinha').classList.toggle('off', offline);
 }
 
+// FONTE dos dados: 'principal' (API da Zig) ou 'planob' (BackOffice netpdv).
+// O Plano B é sempre estático (publico/planob/), gerado por outro coletor.
+let fonte = 'principal';
+let servidorDisponivel = false;
+let sseFonte = null, intervaloEstatico = null;
+
+const baseFonte = () => fonte === 'planob' ? 'publico/planob/' : 'publico/';
+
 // Modo 1 - servidor local (painel_server.py): SSE empurra cada snapshot.
+// Só se aplica ao Principal (o Plano B não passa pelo servidor).
 function modoServidor(){
-  const fonte = new EventSource('/api/stream');
-  fonte.onopen    = () => selo('ao vivo', false);
-  fonte.onmessage = e  => aplicar(JSON.parse(e.data));
-  fonte.onerror   = () => selo('reconectando…', true);   // reconecta sozinho
+  modoAtual = 'servidor';
+  sseFonte = new EventSource('/api/stream');
+  sseFonte.onopen    = () => selo('ao vivo', false);
+  sseFonte.onmessage = e  => aplicar(JSON.parse(e.data));
+  sseFonte.onerror   = () => selo('reconectando…', true);   // reconecta sozinho
 }
 
-// Modo 2 - GitHub Pages: sem servidor, só arquivo estático.
+// Modo 2 - arquivos estáticos (GitHub Pages, ou o Plano B em qualquer caso).
 const INTERVALO_ESTATICO = 60000;
 async function buscarEstatico(){
-  const t = Date.now();                       // fura o cache do CDN do Pages
+  const base = baseFonte(), t = Date.now();   // ?t= fura o cache do CDN
   const [resumo, painel, fatos] = await Promise.all([
-    fetch(`publico/resumo.json?t=${t}`).then(r => r.json()),
-    fetch(`publico/painel.json?t=${t}`).then(r => r.json()).catch(() => ({feed:[]})),
-    fetch(`publico/fatos.json?t=${t}`).then(r => r.json()).catch(() => null),
+    fetch(`${base}resumo.json?t=${t}`).then(r => r.json()),
+    fetch(`${base}painel.json?t=${t}`).then(r => r.json()).catch(() => ({feed:[]})),
+    fetch(`${base}fatos.json?t=${t}`).then(r => r.json()).catch(() => null),
   ]);
   const ultima = resumo.totais?.ultima_transacao;
   return {
@@ -1065,14 +1081,38 @@ async function buscarEstatico(){
   };
 }
 async function modoEstatico(){
+  modoAtual = 'estatico';
   ligarLinkDePublicacao();
+  const rotulo = fonte === 'planob' ? 'Plano B' : 'publicado';
   const ciclo = async () => {
-    try{ aplicar(await buscarEstatico()); selo('publicado', false); }
-    catch(e){ selo('sem dados', true); }
+    try{ aplicar(await buscarEstatico()); selo(rotulo, false); }
+    catch(e){ selo(fonte === 'planob' ? 'Plano B sem dados' : 'sem dados', true); }
   };
   await ciclo();
-  setInterval(ciclo, INTERVALO_ESTATICO);
+  intervaloEstatico = setInterval(ciclo, INTERVALO_ESTATICO);
 }
+
+// Liga/desliga os feeds ao trocar de fonte.
+function pararFeeds(){
+  if(sseFonte){ sseFonte.close(); sseFonte = null; }
+  if(intervaloEstatico){ clearInterval(intervaloEstatico); intervaloEstatico = null; }
+}
+function carregarFonte(){
+  pararFeeds();
+  selo('carregando…', true);
+  // Principal usa SSE quando há servidor; Plano B é sempre estático.
+  if(fonte === 'principal' && servidorDisponivel) modoServidor();
+  else modoEstatico();
+}
+function trocarFonte(nova){
+  if(nova === fonte) return;
+  fonte = nova;
+  document.getElementById('fontePrincipal').classList.toggle('on', nova === 'principal');
+  document.getElementById('fontePlanoB').classList.toggle('on', nova === 'planob');
+  carregarFonte();
+}
+document.getElementById('fontePrincipal').onclick = () => trocarFonte('principal');
+document.getElementById('fontePlanoB').onclick   = () => trocarFonte('planob');
 
 // ------------------------------------------------------- atualizar agora
 // No modo servidor o botão acorda o laço de coleta (chama a API da Zig na
@@ -1124,11 +1164,11 @@ async function atualizarAgora(){
 }
 document.getElementById('btnAtualizar').onclick = atualizarAgora;
 
-// Descobre o modo: se /api/snapshot responde, há servidor; senão, é estático.
+// Descobre se há servidor local (para o Principal usar SSE) e inicia a fonte.
 fetch('/api/snapshot')
   .then(r => { if(!r.ok) throw 0; return r.json(); })
-  .then(s => { modoAtual='servidor'; if(!s.vazio) aplicar(s); modoServidor(); })
-  .catch(modoEstatico);
+  .then(s => { servidorDisponivel = true; if(!s.vazio) aplicar(s); carregarFonte(); })
+  .catch(() => { servidorDisponivel = false; carregarFonte(); });
 </script>
 </body>
 </html>
