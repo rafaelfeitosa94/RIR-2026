@@ -1,6 +1,54 @@
 {
   "feed": [
     {
+      "id": 220940157,
+      "hora": "02:45:31",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940140,
+      "hora": "02:45:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940128,
+      "hora": "02:45:00",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940145,
+      "hora": "02:44:58",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 220940073,
       "hora": "02:43:29",
       "ponto": "SUN.A.ESPETTO",
@@ -250,54 +298,6 @@
       "valor": 23.0,
       "operacao": "Retirada de produto",
       "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220939718,
-      "hora": "02:36:07",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220939585,
-      "hora": "02:33:36",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARN BTRB SEM COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 53.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220939552,
-      "hora": "02:33:18",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220939541,
-      "hora": "02:33:12",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
