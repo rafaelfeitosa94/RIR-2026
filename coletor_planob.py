@@ -279,14 +279,15 @@ def login(sessao):
         raise SystemExit("Login recusado - verifique NETPDV_LOGIN/NETPDV_SENHA.")
 
 
-def buscar_relatorio(sessao):
+def buscar_relatorio(sessao, inicio, fim):
     """POST no ProcessReport com o filtro Tempo integral e devolve o HTML.
 
-    Periodo explicito desde 02/09/2026 00:00 ate amanha, e field-tempo-integral=1
-    (o mesmo "Tempo integral" da tela) para o relatorio trazer o evento inteiro.
+    Recebe o intervalo (inicio, fim) para poder fatiar a coleta: o export do
+    BackOffice corta em ~30.000 transacoes, entao pedimos o evento em pedacos
+    (ver coletar_online). field-tempo-integral=1 e o mesmo "Tempo integral" da
+    tela (todas as horas do dia), NAO significa ignorar o periodo.
     """
-    fim = datetime.now() + timedelta(days=1)
-    periodo = (f"{S.EVENTO_INICIO.strftime('%d/%m/%Y %H:%M')} - "
+    periodo = (f"{inicio.strftime('%d/%m/%Y %H:%M')} - "
                f"{fim.strftime('%d/%m/%Y %H:%M')}")
     print(f"  periodo: {periodo}")
     dados = [
@@ -350,15 +351,71 @@ def exportar_csv(sessao):
     raise SystemExit("CSV nao ficou pronto dentro do tempo limite.")
 
 
+# O export do BackOffice corta em 30.000 transacoes (mantendo as MAIS ANTIGAS).
+# Como o evento inteiro ja passa disso, uma exportacao unica perde os dias
+# recentes - justo quando o Plano B e necessario. Coletamos entao em pedacos.
+CAP_EXPORT = 30000
+MAX_CHUNKS = 25          # trava de seguranca (>750k transacoes)
+
+
 def coletar_online():
+    """Coleta o evento inteiro contornando o teto de 30k por exportacao.
+
+    Exporta a partir do inicio do evento; se o pedaco veio no teto (truncado),
+    continua a partir da ultima transacao vista e junta tudo. Cada pedaco vai
+    ate agora, entao o dia corrente sempre entra. Dedup e por TRANSACAO inteira
+    (nao por linha) - uma transacao nunca se divide entre pedacos porque todas
+    as suas linhas tem o mesmo horario.
+    """
     sessao = requests.Session()
     sessao.headers["User-Agent"] = "Mozilla/5.0 (RIR26 PlanoB)"
     login(sessao)
-    buscar_relatorio(sessao)          # monta o relatorio/filtro na sessao
-    raw = exportar_csv(sessao)        # dispara o export e espera ficar pronto
-    df = parse_csv(raw)
-    print(f"  linhas parseadas: {len(df)} | "
-          f"transacoes: {df[COL['transacao_id']].nunique() if not df.empty else 0}")
+
+    fim = datetime.now() + timedelta(minutes=5)
+    inicio = S.EVENTO_INICIO
+    col_id = COL["transacao_id"]
+    col_dh = COL["data_hora_realizacao"]
+
+    partes = []
+    vistos = set()
+    for chunk in range(1, MAX_CHUNKS + 1):
+        buscar_relatorio(sessao, inicio, fim)
+        raw = exportar_csv(sessao)
+        df = parse_csv(raw)
+        n = int(df[col_id].nunique()) if not df.empty else 0
+        print(f"  pedaco {chunk} (desde {inicio:%d/%m %H:%M}): "
+              f"{len(df)} linhas, {n} transacoes")
+
+        if df.empty:
+            break
+
+        novos = df[~df[col_id].isin(vistos)]
+        if not novos.empty:
+            partes.append(novos)
+            vistos.update(df[col_id].unique())
+
+        # Abaixo do teto: chegou ate o fim do periodo - terminou.
+        if n < CAP_EXPORT:
+            break
+
+        # Truncou no teto: continua a partir da ultima transacao deste pedaco.
+        ultimo = df[col_dh].max()
+        if pd.isna(ultimo):
+            break
+        novo_inicio = (ultimo - timedelta(minutes=1)).to_pydatetime()
+        if novo_inicio <= inicio or novos.empty:
+            # Nao avancou (ou nada novo veio): evita laco infinito. Se isso
+            # ocorre no 1o corte, o filtro de periodo pode nao estar sendo
+            # respeitado - o log acima ajuda a diagnosticar.
+            print("  aviso: coleta nao avancou; parando para nao repetir")
+            break
+        inicio = novo_inicio
+
+    if not partes:
+        return pd.DataFrame()
+    df = pd.concat(partes, ignore_index=True)
+    print(f"  total juntado: {len(df)} linhas | "
+          f"{df[col_id].nunique()} transacoes em {len(partes)} pedaco(s)")
     return df
 
 
