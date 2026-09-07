@@ -366,10 +366,13 @@ def _post_resiliente(sessao, url, *, tentativas=4, espera=15, **kwargs):
 def buscar_relatorio(sessao, inicio, fim):
     """POST no ProcessReport com o filtro Tempo integral e devolve o HTML.
 
-    Recebe o intervalo (inicio, fim) para poder fatiar a coleta: o export do
-    BackOffice corta em ~30.000 transacoes, entao pedimos o evento em pedacos
-    (ver coletar_online). field-tempo-integral=1 e o mesmo "Tempo integral" da
-    tela (todas as horas do dia), NAO significa ignorar o periodo.
+    Recebe o intervalo (inicio, fim) para filtrar a coleta pelo field-periodo.
+
+    IMPORTANTE: field-tempo-integral=0. Com =1 ("Tempo integral" da tela) o
+    relatorio varre TODO o historico de vendas ignorando o periodo - e o que
+    causava o 500 (peso) e fazia o export sempre comecar em 02/09 e bater no
+    teto de 30k pegando as transacoes mais antigas. Desligado, o relatorio
+    respeita [inicio, fim], entao a fatia recente fica leve e rapida.
     """
     periodo = (f"{inicio.strftime('%d/%m/%Y %H:%M')} - "
                f"{fim.strftime('%d/%m/%Y %H:%M')}")
@@ -381,7 +384,7 @@ def buscar_relatorio(sessao, inicio, fim):
         ("fields[]", "field-clienteData="),
         ("fields[]", "field-formatacao=1"),
         ("fields[]", "field-pontos="),
-        ("fields[]", "field-tempo-integral=1"),
+        ("fields[]", "field-tempo-integral=0"),
         ("fields[]", "field-operador="),
         ("fields[]", "field-terminal="),
         ("fields[]", "field-forma-pagamento="),
