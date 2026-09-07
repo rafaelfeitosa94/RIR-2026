@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220941368,
+      "hora": "03:43:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 14.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220941353,
+      "hora": "03:41:07",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220941328,
       "hora": "03:38:05",
       "ponto": "SUN.A.ESPETTO",
@@ -274,30 +298,6 @@
       "valor": 18.0,
       "operacao": "Retirada de produto",
       "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669375,
-      "hora": "03:26:02",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220941162,
-      "hora": "03:25:54",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
