@@ -49,7 +49,10 @@ URL_DOWNLOAD = f"{BASE}/Relatorio/DownloadFile"      # baixa o CSV pronto
 CODIGO_EVENTO = S.CODIGO_EVENTO
 PASTA_PLANOB = os.path.join(S.PASTA_PUBLICO, "planob")
 TIMEOUT = 300            # o ProcessReport leva ~4 min para responder
-POLL_TIMEOUT = 600       # espera total pelo CSV ficar pronto (EmProcessamento)
+POLL_TIMEOUT = 1500      # espera total pelo CSV ficar pronto (EmProcessamento).
+                         # 25 min: a geracao no BackOffice varia muito (ja veio
+                         # instantanea e ja passou de 10 min sob carga) e cresce
+                         # com o evento; folga evita perder o ciclo por pouco.
 POLL_INTERVALO = 20      # segundos entre tentativas de DownloadFile
 
 # De-para do cabecalho -> nome interno (destino) usado no DataFrame. So as
@@ -334,7 +337,8 @@ def exportar_csv(sessao):
         raise SystemExit(f"ExportTransacao nao devolveu FilePathName: {r.text[:200]}")
     print(f"  export disparado: {nome}")
 
-    limite = time.monotonic() + POLL_TIMEOUT
+    inicio = time.monotonic()
+    limite = inicio + POLL_TIMEOUT
     tentativa = 0
     while time.monotonic() < limite:
         tentativa += 1
@@ -342,13 +346,16 @@ def exportar_csv(sessao):
                        params={"filePathName": caminho, "fileName": nome,
                                "contentType": ""},
                        headers={"Referer": BASE})
+        decorrido = int(time.monotonic() - inicio)
         if d.status_code == 200 and _tem_dados(d.content):
-            print(f"  CSV pronto na tentativa {tentativa} ({len(d.content):,} bytes)")
+            print(f"  CSV pronto na tentativa {tentativa} em {decorrido}s "
+                  f"({len(d.content):,} bytes)")
             return d.content
-        print(f"  tentativa {tentativa}: ainda em processamento...")
+        print(f"  tentativa {tentativa} ({decorrido}s): ainda em processamento...")
         time.sleep(POLL_INTERVALO)
 
-    raise SystemExit("CSV nao ficou pronto dentro do tempo limite.")
+    raise SystemExit(f"CSV nao ficou pronto em {POLL_TIMEOUT}s "
+                     f"({tentativa} tentativas).")
 
 
 # O export do BackOffice corta em 30.000 transacoes (mantendo as MAIS ANTIGAS).
