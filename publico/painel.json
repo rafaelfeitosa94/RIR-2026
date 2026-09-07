@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220939310,
+      "hora": "02:29:32",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 220939281,
+      "hora": "02:28:51",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220939254,
       "hora": "02:28:45",
       "ponto": "SUN.A.ESPETTO",
@@ -10,6 +34,18 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220939266,
+      "hora": "02:28:44",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
       "cancelamento": false
     },
     {
@@ -260,42 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220938719,
-      "hora": "02:21:08",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220938754,
-      "hora": "02:20:48",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220938658,
-      "hora": "02:20:21",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
