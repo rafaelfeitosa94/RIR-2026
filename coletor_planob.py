@@ -375,13 +375,37 @@ def _eh_xlsx(raw):
     return bool(raw) and raw[:4] == b"PK\x03\x04"
 
 
+def _xlsx_tem_linhas(raw):
+    """True se o XLSX ja tem pelo menos UMA linha de dados abaixo do cabecalho.
+
+    O BackOffice devolve na hora um XLSX vazio (so cabecalho) enquanto ainda
+    gera o relatorio; sem esta checagem o polling agarraria esse placeholder.
+    Sai no 1o dado encontrado, entao e barato mesmo no arquivo cheio.
+    """
+    import io
+    import openpyxl
+    try:
+        ws = openpyxl.load_workbook(io.BytesIO(raw), data_only=True).active
+        achou_cab = False
+        for row in ws.iter_rows(min_row=1, max_row=ws.max_row, values_only=True):
+            c0 = row[0] if row else None
+            if achou_cab:
+                if c0 not in (None, ""):
+                    return True
+            elif c0 is not None and _norm(str(c0)) == "transacao":
+                achou_cab = True
+        return False
+    except Exception:
+        return False
+
+
 def _tem_dados(raw):
-    """True se o download ja e o arquivo pronto (CSV com linha de transacao, ou
-    um XLSX)."""
+    """True quando o download ja e o arquivo PRONTO E COM DADOS (nao o
+    placeholder vazio que o BackOffice serve enquanto gera). Vale p/ CSV e XLSX."""
     if not raw or len(raw) < 900:            # so o cabecalho (~824 bytes)
         return False
-    if _eh_xlsx(raw):                        # xlsx pronto - evita polling ate o timeout
-        return True
+    if _eh_xlsx(raw):
+        return _xlsx_tem_linhas(raw)
     return re.search(rb"(?m)^22\d{7};", raw) is not None
 
 
