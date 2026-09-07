@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220939585,
+      "hora": "02:33:36",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARN BTRB SEM COPO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 53.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220939552,
+      "hora": "02:33:18",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220939539,
       "hora": "02:33:12",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220938875,
-      "hora": "02:23:14",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220938856,
-      "hora": "02:23:00",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
