@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-07T02:56:28",
+  "atualizado_em": "2026-09-07T02:58:43",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 39572,
-    "transacoes_venda": 39437,
+    "transacoes": 39580,
+    "transacoes_venda": 39445,
     "transacoes_cancelamento": 135,
-    "itens": 66550.0,
-    "valor_liquido": 1667475.0,
-    "valor_bruto_vendas": 1676067.0,
+    "itens": 66558.0,
+    "valor_liquido": 1667681.0,
+    "valor_bruto_vendas": 1676273.0,
     "valor_cancelado": 8592.0,
-    "ultima_transacao": "2026-09-07T02:55:36"
+    "ultima_transacao": "2026-09-07T02:57:59"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 655259.0,
-      "itens": 24162.0,
-      "transacoes": 14358,
-      "linhas": 20375
+      "valor_liquido": 655357.0,
+      "itens": 24164.0,
+      "transacoes": 14360,
+      "linhas": 20377
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -49,10 +49,10 @@
     },
     {
       "Nome do Ponto": "SUN.A.ANTE ESPETTO",
-      "valor_liquido": 11620.0,
-      "itens": 684.0,
-      "transacoes": 684,
-      "linhas": 684
+      "valor_liquido": 11728.0,
+      "itens": 690.0,
+      "transacoes": 690,
+      "linhas": 690
     },
     {
       "Nome do Ponto": "MUN.A.ANTE ESPETTO.AEB03",
@@ -121,17 +121,17 @@
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "valor_liquido": 62756.0,
-      "itens": 1082.0,
-      "transacoes": 1032,
-      "linhas": 1032
+      "valor_liquido": 62814.0,
+      "itens": 1083.0,
+      "transacoes": 1033,
+      "linhas": 1033
     },
     {
       "Produto": "SAND CARNE",
-      "valor_liquido": 57520.0,
-      "itens": 1438.0,
-      "transacoes": 1216,
-      "linhas": 1216
+      "valor_liquido": 57560.0,
+      "itens": 1439.0,
+      "transacoes": 1217,
+      "linhas": 1217
     },
     {
       "Produto": "MANE BURGUER",
@@ -177,10 +177,10 @@
     },
     {
       "Produto": "CHOPE HNK RETORNANDO COPO",
-      "valor_liquido": 23436.0,
-      "itens": 1302.0,
-      "transacoes": 1302,
-      "linhas": 1302
+      "valor_liquido": 23544.0,
+      "itens": 1308.0,
+      "transacoes": 1308,
+      "linhas": 1308
     },
     {
       "Produto": "COCA ZERO RT",
@@ -655,26 +655,26 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 878942.0,
-      "itens": 21511.0,
-      "transacoes": 16794,
-      "linhas": 18721
+      "valor_liquido": 879040.0,
+      "itens": 21513.0,
+      "transacoes": 16796,
+      "linhas": 18723
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 788533.0,
-      "itens": 45039.0,
-      "transacoes": 31086,
-      "linhas": 35672
+      "valor_liquido": 788641.0,
+      "itens": 45045.0,
+      "transacoes": 31092,
+      "linhas": 35678
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 954504.0,
-      "itens": 37180.0,
-      "transacoes": 21020,
-      "linhas": 29837
+      "valor_liquido": 954602.0,
+      "itens": 37182.0,
+      "transacoes": 21022,
+      "linhas": 29839
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -692,10 +692,10 @@
     },
     {
       "Forma de Pagamento": "Retirada de produto",
-      "valor_liquido": 44467.0,
-      "itens": 2602.0,
-      "transacoes": 2602,
-      "linhas": 2602
+      "valor_liquido": 44575.0,
+      "itens": 2608.0,
+      "transacoes": 2608,
+      "linhas": 2608
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -1478,10 +1478,10 @@
     },
     {
       "_hora": "2026-09-07T02",
-      "valor_liquido": 6338.0,
-      "itens": 242.0,
-      "transacoes": 168,
-      "linhas": 210
+      "valor_liquido": 6544.0,
+      "itens": 250.0,
+      "transacoes": 176,
+      "linhas": 218
     }
   ],
   "por_dia": [
@@ -1508,10 +1508,10 @@
     },
     {
       "_dia": "2026-09-06",
-      "valor_liquido": 661266.0,
-      "itens": 25478.0,
-      "transacoes": 14613,
-      "linhas": 20543
+      "valor_liquido": 661472.0,
+      "itens": 25486.0,
+      "transacoes": 14621,
+      "linhas": 20551
     }
   ]
 }
