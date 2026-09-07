@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 220941459,
+      "hora": "03:56:22",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED MARAC RT",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220941454,
+      "hora": "03:53:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220941431,
       "hora": "03:51:48",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 4,
       "valor": 86.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220941240,
-      "hora": "03:30:11",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIXED MARAC RT",
-      "outros_produtos": 0,
-      "quantidade": 3,
-      "valor": 63.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 220941224,
-      "hora": "03:29:09",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SAND CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 51.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
