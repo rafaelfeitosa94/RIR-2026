@@ -1,0 +1,187 @@
+{
+  "atualizado_em": "2026-09-07T15:54:23",
+  "codigo_evento": 38049,
+  "totais": {
+    "transacoes": 10,
+    "transacoes_venda": 6,
+    "transacoes_cancelamento": 4,
+    "itens": 11.0,
+    "valor_liquido": 86.0,
+    "valor_bruto_vendas": 162.0,
+    "valor_cancelado": 76.0,
+    "ultima_transacao": "2026-09-02T16:15:08"
+  },
+  "por_ponto": [
+    {
+      "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
+      "valor_liquido": 70.0,
+      "itens": 4.0,
+      "transacoes": 3,
+      "linhas": 3
+    },
+    {
+      "Nome do Ponto": "SUN.A.ESPETTO",
+      "valor_liquido": 16.0,
+      "itens": 3.0,
+      "transacoes": 3,
+      "linhas": 3
+    },
+    {
+      "Nome do Ponto": "MUN.A.MANE.AEB04",
+      "valor_liquido": 0.0,
+      "itens": 2.0,
+      "transacoes": 2,
+      "linhas": 2
+    },
+    {
+      "Nome do Ponto": "MUN.A.SIRENE.AEB05",
+      "valor_liquido": 0.0,
+      "itens": 2.0,
+      "transacoes": 2,
+      "linhas": 2
+    }
+  ],
+  "por_produto": [
+    {
+      "Produto": "-----------------",
+      "valor_liquido": 70.0,
+      "itens": 2.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "ESPETO DE CARNE",
+      "valor_liquido": 25.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "BATATA MANE",
+      "valor_liquido": 20.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "BATATA CRINKLE",
+      "valor_liquido": 20.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "COCA ZERO",
+      "valor_liquido": 16.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "COCA COLA RT",
+      "valor_liquido": 11.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "(C)COCA COLA RT",
+      "valor_liquido": -11.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "(C)BATATA CRINKLE",
+      "valor_liquido": -20.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "(C)BATATA MANE",
+      "valor_liquido": -20.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "Produto": "(C)ESPETO DE CARNE",
+      "valor_liquido": -25.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    }
+  ],
+  "por_categoria": [
+    {
+      "Categoria Produto": "Bebida",
+      "valor_liquido": 86.0,
+      "itens": 5.0,
+      "transacoes": 4,
+      "linhas": 4
+    },
+    {
+      "Categoria Produto": "Comida",
+      "valor_liquido": 0.0,
+      "itens": 6.0,
+      "transacoes": 6,
+      "linhas": 6
+    }
+  ],
+  "por_forma_pagamento": [
+    {
+      "Forma de Pagamento": "Cartao Debito",
+      "valor_liquido": 86.0,
+      "itens": 11.0,
+      "transacoes": 10,
+      "linhas": 10
+    }
+  ],
+  "por_hora": [
+    {
+      "_hora": "2026-09-02T12",
+      "valor_liquido": 25.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
+    },
+    {
+      "_hora": "2026-09-02T13",
+      "valor_liquido": -25.0,
+      "itens": 7.0,
+      "transacoes": 7,
+      "linhas": 7
+    },
+    {
+      "_hora": "2026-09-02T14",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-02T15",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-02T16",
+      "valor_liquido": 86.0,
+      "itens": 3.0,
+      "transacoes": 2,
+      "linhas": 2
+    }
+  ],
+  "por_dia": [
+    {
+      "_dia": "2026-09-02",
+      "valor_liquido": 86.0,
+      "itens": 11.0,
+      "transacoes": 10,
+      "linhas": 10
+    }
+  ]
+}
