@@ -129,6 +129,18 @@ def _finalizar(df):
     if df.empty:
         return df
 
+    # O relatorio do BackOffice inclui LINHAS DE RESUMO da comanda (Produto
+    # vazio ou "-----"), com o total da transacao, ALEM das linhas por produto.
+    # A API so devolve os produtos; somar as duas dobra o faturamento. Ficamos
+    # so com as linhas de produto real, como a API.
+    prod = df[COL["produto"]].fillna("").str.strip()
+    resumo = prod.eq("") | prod.str.fullmatch(r"[-–—\s]+")
+    if resumo.any():
+        print(f"  linhas de resumo descartadas (sem produto): {int(resumo.sum())}")
+    df = df[~resumo].copy()
+    if df.empty:
+        return df
+
     df[COL["data_hora_realizacao"]] = pd.to_datetime(
         df[COL["data_hora_realizacao"]], format="%d/%m/%Y %H:%M:%S", errors="coerce")
 
