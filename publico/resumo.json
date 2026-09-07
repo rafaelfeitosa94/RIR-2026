@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-09-07T14:11:24",
+  "atualizado_em": "2026-09-07T14:13:41",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 39692,
-    "transacoes_venda": 39556,
+    "transacoes": 39693,
+    "transacoes_venda": 39557,
     "transacoes_cancelamento": 136,
-    "itens": 66719.0,
-    "valor_liquido": 1671512.0,
-    "valor_bruto_vendas": 1680122.0,
+    "itens": 66722.0,
+    "valor_liquido": 1671597.0,
+    "valor_bruto_vendas": 1680207.0,
     "valor_cancelado": 8610.0,
-    "ultima_transacao": "2026-09-07T14:03:12"
+    "ultima_transacao": "2026-09-07T14:12:30"
   },
   "por_ponto": [
     {
@@ -21,10 +21,10 @@
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 625907.0,
-      "itens": 26185.0,
-      "transacoes": 14770,
-      "linhas": 20427
+      "valor_liquido": 625992.0,
+      "itens": 26188.0,
+      "transacoes": 14771,
+      "linhas": 20430
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
@@ -100,10 +100,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 92075.0,
-      "itens": 3683.0,
-      "transacoes": 2778,
-      "linhas": 2778
+      "valor_liquido": 92100.0,
+      "itens": 3684.0,
+      "transacoes": 2779,
+      "linhas": 2779
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -198,10 +198,10 @@
     },
     {
       "Produto": "COCA COLA RT",
-      "valor_liquido": 17611.0,
-      "itens": 1601.0,
-      "transacoes": 1476,
-      "linhas": 1476
+      "valor_liquido": 17622.0,
+      "itens": 1602.0,
+      "transacoes": 1477,
+      "linhas": 1477
     },
     {
       "Produto": "HEINEKEN ULT RT",
@@ -309,6 +309,13 @@
       "linhas": 306
     },
     {
+      "Produto": "BATATA PORCO",
+      "valor_liquido": 8281.0,
+      "itens": 169.0,
+      "transacoes": 168,
+      "linhas": 168
+    },
+    {
       "Produto": "LAGUN IPA RT",
       "valor_liquido": 8280.0,
       "itens": 360.0,
@@ -321,13 +328,6 @@
       "itens": 393.0,
       "transacoes": 354,
       "linhas": 354
-    },
-    {
-      "Produto": "BATATA PORCO",
-      "valor_liquido": 8232.0,
-      "itens": 168.0,
-      "transacoes": 167,
-      "linhas": 167
     },
     {
       "Produto": "CHOP LAG IPA RT",
@@ -655,26 +655,26 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 881099.0,
-      "itens": 21566.0,
-      "transacoes": 16839,
-      "linhas": 18772
+      "valor_liquido": 881173.0,
+      "itens": 21568.0,
+      "transacoes": 16840,
+      "linhas": 18774
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 790413.0,
-      "itens": 45153.0,
-      "transacoes": 31176,
-      "linhas": 35768
+      "valor_liquido": 790424.0,
+      "itens": 45154.0,
+      "transacoes": 31177,
+      "linhas": 35769
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 957037.0,
-      "itens": 37281.0,
-      "transacoes": 21087,
-      "linhas": 29921
+      "valor_liquido": 957122.0,
+      "itens": 37284.0,
+      "transacoes": 21088,
+      "linhas": 29924
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -1562,10 +1562,10 @@
     },
     {
       "_hora": "2026-09-07T14",
-      "valor_liquido": 45.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
+      "valor_liquido": 130.0,
+      "itens": 5.0,
+      "transacoes": 3,
+      "linhas": 5
     }
   ],
   "por_dia": [
@@ -1599,10 +1599,10 @@
     },
     {
       "_dia": "2026-09-07",
-      "valor_liquido": 45.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
+      "valor_liquido": 130.0,
+      "itens": 5.0,
+      "transacoes": 3,
+      "linhas": 5
     }
   ]
 }
