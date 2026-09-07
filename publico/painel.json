@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 220941008,
+      "hora": "03:15:41",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220941000,
+      "hora": "03:15:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND FRANGO + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 65.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940994,
+      "hora": "03:15:01",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP FRANGO + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 55.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940995,
+      "hora": "03:14:56",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 220940974,
+      "hora": "03:13:57",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 220940959,
       "hora": "03:13:08",
       "ponto": "SUN.A.ESPETTO",
@@ -205,18 +265,6 @@
       "cancelamento": false
     },
     {
-      "id": 220940849,
-      "hora": "03:07:32",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 7.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 669358,
       "hora": "03:07:32",
       "ponto": "SUN.A.ANTE ESPETTO",
@@ -229,6 +277,18 @@
       "cancelamento": false
     },
     {
+      "id": 220940849,
+      "hora": "03:07:32",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220940844,
       "hora": "03:07:31",
       "ponto": "SUN.A.ESPETTO",
@@ -238,66 +298,6 @@
       "valor": 58.0,
       "operacao": "Compra Ficha",
       "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 669357,
-      "hora": "03:07:24",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "SCHWEPPES RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669356,
-      "hora": "03:07:04",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "SCHWEPPES RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220940838,
-      "hora": "03:07:02",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 220940847,
-      "hora": "03:07:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 220940787,
-      "hora": "03:04:59",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS FRANGO + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
