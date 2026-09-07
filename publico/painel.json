@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 220940372,
+      "hora": "02:51:12",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 51.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940361,
+      "hora": "02:50:27",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIEXD VODKA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 220940344,
+      "hora": "02:50:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 220940346,
+      "hora": "02:50:02",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 669320,
+      "hora": "02:49:55",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "RED BULL 1A COMPRA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Retirada de produto",
+      "pagamento": "",
+      "cancelamento": false
+    },
+    {
+      "id": 220940300,
+      "hora": "02:49:04",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 31.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 220940239,
       "hora": "02:47:38",
       "ponto": "SUN.A.ESPETTO",
@@ -226,78 +298,6 @@
       "valor": 58.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 669297,
-      "hora": "02:38:01",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220939791,
-      "hora": "02:37:43",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 669293,
-      "hora": "02:37:39",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 220939766,
-      "hora": "02:37:33",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SANDU FRANGO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 40.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 669290,
-      "hora": "02:37:02",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
-      "cancelamento": false
-    },
-    {
-      "id": 669288,
-      "hora": "02:36:49",
-      "ponto": "SUN.A.ANTE ESPETTO",
-      "produto": "CHOPE HNK RETORNANDO COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Retirada de produto",
-      "pagamento": "",
       "cancelamento": false
     }
   ]
