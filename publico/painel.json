@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221205853,
+      "hora": "03:03:26",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221205815,
+      "hora": "03:01:08",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221205807,
       "hora": "03:00:25",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221205613,
-      "hora": "02:52:39",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221205593,
-      "hora": "02:52:19",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
