@@ -179,6 +179,27 @@ COL_PRODUTO = COLUNAS_TRANSACAO["produto"]
 COL_CATEGORIA = COLUNAS_TRANSACAO["categoria_produto"]
 COL_PAGAMENTO = COLUNAS_TRANSACAO["forma_pagamento"]
 
+# Operacoes que NAO sao venda. No fluxo de ficha/copo o dinheiro entra em
+# "Compra Ficha"; a "Retirada de produto" e apenas a ENTREGA do que ja foi pago
+# - por isso vem sem forma de pagamento. Somar as duas DUPLICA o faturamento.
+# O relatorio "Vendas Consolidado" do BackOffice tambem as exclui: sem elas o
+# painel bate com o relatorio (a diferenca cai de R$ 58 mil para 0,16%).
+# Comecaram a aparecer em 05/09/2026 15:00 - ate o dia 04 os numeros batiam.
+OPERACOES_NAO_VENDA = ("retirada de produto",)
+
+
+def somente_vendas(df):
+    """Sem as operacoes que nao sao venda (ver OPERACOES_NAO_VENDA).
+
+    Aplicado no inicio de montar_resumo/montar_fatos/montar_feed, entao vale
+    para o Principal E para o Plano B, que reaproveitam essas funcoes.
+    """
+    if df.empty or COL_OPERACAO not in df.columns:
+        return df
+    op = df[COL_OPERACAO].fillna("").astype(str).str.strip().str.lower()
+    fora = op.isin(OPERACOES_NAO_VENDA)
+    return df[~fora].copy() if fora.any() else df
+
 
 # ---------------------------------------------------------------- agregacao
 def _sinal(df):
@@ -194,6 +215,7 @@ def _sinal(df):
 
 def montar_resumo(df):
     """KPIs agregados, com cancelamentos abatidos corretamente."""
+    df = somente_vendas(df)
     if df.empty:
         return {
             "atualizado_em": datetime.now().isoformat(timespec="seconds"),
@@ -283,6 +305,7 @@ def montar_fatos(df):
     Os campos vao como indices das listas de dimensao (mesmo padrao dos
     outros dashboards do BI) para o arquivo nao inchar com texto repetido.
     """
+    df = somente_vendas(df)
     vazio = {"dias": [], "pontos": [], "produtos": [], "marcas": [], "palcos": [],
              "ponto_marca": [], "ponto_palco": [], "produto_marca": [],
              "produto_categoria": [],
@@ -391,6 +414,7 @@ def montar_feed(df, limite=LIMITE_FEED):
     lado do valor total faria parecer que aquele item custou a venda inteira -
     por isso vem 'outros_produtos' para o front marcar um "+N".
     """
+    df = somente_vendas(df)
     if df.empty:
         return []
 
