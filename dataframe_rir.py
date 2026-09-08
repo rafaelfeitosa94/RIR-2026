@@ -202,9 +202,35 @@ def _montar(registros, campos_pai, mapa_colunas, converter_tipos):
 
 
 # ------------------------------------------------------------------ leitura
+ARQ_EXCLUSAO = "excluir_transacoes.json"
+
+
+def carregar_exclusoes():
+    """IDs de transacao que a fonte Principal deve ignorar (conjunto de str).
+
+    Lista versionada no repositorio, para valer tambem no runner do Actions.
+    Existe para reverter o backfill dos dias 04/05 sem apagar dado bruto:
+    esvaziar `transacao_ids` desfaz a exclusao. Ver o campo `motivo` do arquivo.
+    """
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)), ARQ_EXCLUSAO)
+    try:
+        with open(caminho, encoding="utf-8") as arquivo:
+            return {str(i) for i in json.load(arquivo).get("transacao_ids", [])}
+    except (FileNotFoundError, ValueError):
+        return set()
+
+
 def carregar_transacoes(pasta=PASTA_DADOS, converter_tipos=True):
     """DataFrame das transacoes, uma linha por produto, colunas renomeadas."""
     registros = ler_jsonl(os.path.join(pasta, JSONL_TRANSACOES), "transacao_id")
+    excluidos = carregar_exclusoes()
+    if excluidos:
+        antes = len(registros)
+        registros = [r for r in registros
+                     if str(r.get("transacao_id")) not in excluidos]
+        if antes != len(registros):
+            print(f"  exclusoes aplicadas: {antes - len(registros)} linha(s) "
+                  f"de {len(excluidos)} transacao(oes) em {ARQ_EXCLUSAO}")
     return _montar(registros, CAMPOS_TRANSACAO, COLUNAS_TRANSACAO, converter_tipos)
 
 
