@@ -713,7 +713,9 @@ fetch('clima.json?t=' + Date.now())
   .catch(() => {});
 
 const ICONE_CLIMA = d => /forte/.test(d) ? '⛈'
-                       : /chuva/.test(d) ? '☔'
+                       : /moderada/.test(d) ? '🌧️'
+                       : /leve/.test(d) ? '🌦️'
+                       : /chuva/.test(d) ? '🌧️'
                        : /limpo/.test(d) ? '☀'
                        : /nublado/.test(d) ? '☁'
                        : '⛅';
