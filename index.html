@@ -712,7 +712,9 @@ fetch('clima.json?t=' + Date.now())
   .then(c => { if(c) CLIMA = c; })
   .catch(() => {});
 
-const ICONE_CLIMA = d => /forte/.test(d) ? '⛈'
+// Os testes de intensidade vem ANTES do /chuva/ generico, senao ele
+// capturaria todas primeiro e todas ficariam com o mesmo icone.
+const ICONE_CLIMA = d => /densa|forte/.test(d) ? '⛈️'
                        : /moderada/.test(d) ? '🌧️'
                        : /leve/.test(d) ? '🌦️'
                        : /chuva/.test(d) ? '🌧️'

@@ -1,5 +1,5 @@
 {
- "fonte": "leituras de 3 em 3h (Rio de Janeiro); hora usa a leitura mais proxima, dia usa a janela do caixa 12h->05h com a descricao predominante",
+ "fonte": "leituras de 3 em 3h (Rio de Janeiro). Dia = janela de operacao do caixa (12:00 as 05:00 do seguinte), com a descricao que mais se repete entre as leituras da janela. Hora = leitura mais proxima; horarios repetidos usam a media da sensacao e a descricao mais frequente (empate -> a predominante do dia).",
  "hora": {
   "2026-09-02T00": {
    "t": 23.3,
@@ -11,15 +11,15 @@
   },
   "2026-09-02T02": {
    "t": 21.3,
-   "d": "chuva forte"
+   "d": "chuva moderada"
   },
   "2026-09-02T03": {
    "t": 21.3,
-   "d": "chuva forte"
+   "d": "chuva moderada"
   },
   "2026-09-02T04": {
    "t": 21.3,
-   "d": "chuva forte"
+   "d": "chuva moderada"
   },
   "2026-09-02T05": {
    "t": 21.3,
@@ -71,63 +71,63 @@
   },
   "2026-09-02T17": {
    "t": 21.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-02T18": {
    "t": 21.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-02T19": {
    "t": 21.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-02T20": {
    "t": 21.3,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-02T21": {
    "t": 21.3,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-02T22": {
    "t": 21.3,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-02T23": {
    "t": 20.0,
-   "d": "algumas nuvens"
+   "d": "chuva leve"
   },
   "2026-09-03T00": {
    "t": 20.0,
-   "d": "algumas nuvens"
+   "d": "chuva leve"
   },
   "2026-09-03T01": {
    "t": 20.0,
-   "d": "algumas nuvens"
+   "d": "chuva leve"
   },
   "2026-09-03T02": {
    "t": 19.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T03": {
    "t": 19.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T04": {
    "t": 19.8,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T05": {
    "t": 19.5,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T06": {
    "t": 19.5,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T07": {
    "t": 19.5,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-03T08": {
    "t": 18.8,
@@ -275,39 +275,39 @@
   },
   "2026-09-04T20": {
    "t": 28.2,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-04T21": {
    "t": 28.2,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-04T22": {
    "t": 28.2,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-04T23": {
    "t": 25.7,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-05T00": {
    "t": 25.7,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-05T01": {
    "t": 25.7,
-   "d": "chuva leve"
+   "d": "céu limpo"
   },
   "2026-09-05T02": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "céu limpo"
   },
   "2026-09-05T03": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "céu limpo"
   },
   "2026-09-05T04": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "céu limpo"
   },
   "2026-09-05T05": {
    "t": 21.8,
@@ -323,75 +323,75 @@
   },
   "2026-09-05T08": {
    "t": 21.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T09": {
    "t": 21.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T10": {
    "t": 21.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T11": {
    "t": 26.6,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T12": {
    "t": 26.6,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T13": {
    "t": 26.6,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T14": {
    "t": 26.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T15": {
    "t": 26.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T16": {
    "t": 26.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T17": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T18": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T19": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-05T20": {
    "t": 23.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-05T21": {
    "t": 23.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-05T22": {
    "t": 23.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-05T23": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-06T00": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-06T01": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-06T02": {
    "t": 25.8,
@@ -443,51 +443,51 @@
   },
   "2026-09-06T14": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-06T15": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-06T16": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-06T17": {
    "t": 18.5,
-   "d": "chuva moderada"
+   "d": "chuva densa"
   },
   "2026-09-06T18": {
    "t": 18.5,
-   "d": "chuva moderada"
+   "d": "chuva densa"
   },
   "2026-09-06T19": {
    "t": 18.5,
-   "d": "chuva moderada"
+   "d": "chuva densa"
   },
   "2026-09-06T20": {
    "t": 18.7,
-   "d": "chuva leve"
+   "d": "chuva densa"
   },
   "2026-09-06T21": {
    "t": 18.7,
-   "d": "chuva leve"
+   "d": "chuva densa"
   },
   "2026-09-06T22": {
    "t": 18.7,
-   "d": "chuva leve"
+   "d": "chuva densa"
   },
   "2026-09-06T23": {
    "t": 16.9,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-07T00": {
    "t": 16.9,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-07T01": {
    "t": 16.9,
-   "d": "chuva leve"
+   "d": "chuva moderada"
   },
   "2026-09-07T02": {
    "t": 20.5,
@@ -503,15 +503,15 @@
   },
   "2026-09-07T05": {
    "t": 19.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-07T06": {
    "t": 19.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-07T07": {
    "t": 19.3,
-   "d": "chuva moderada"
+   "d": "chuva leve"
   },
   "2026-09-07T08": {
    "t": 18.4,
@@ -527,63 +527,63 @@
   },
   "2026-09-07T11": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T12": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T13": {
    "t": 18.2,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T14": {
    "t": 17.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T15": {
    "t": 17.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T16": {
    "t": 17.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T17": {
    "t": 16.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T18": {
    "t": 16.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T19": {
    "t": 16.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-07T20": {
    "t": 16.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T21": {
    "t": 16.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T22": {
    "t": 16.6,
-   "d": "chuva moderada"
+   "d": "nublado"
   },
   "2026-09-07T23": {
    "t": 16.3,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-08T00": {
    "t": 16.3,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-08T01": {
    "t": 16.3,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-08T02": {
    "t": 17.7,
@@ -599,27 +599,27 @@
   },
   "2026-09-08T05": {
    "t": 18.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T06": {
    "t": 18.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T07": {
    "t": 18.4,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T08": {
    "t": 19.7,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T09": {
    "t": 19.7,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T10": {
    "t": 19.7,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-08T11": {
    "t": 21.7,
@@ -671,63 +671,63 @@
   },
   "2026-09-08T23": {
    "t": 21.5,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T00": {
    "t": 21.5,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T01": {
    "t": 21.5,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T02": {
    "t": 20.3,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T03": {
    "t": 20.3,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T04": {
    "t": 20.3,
-   "d": "nuvens dispersas"
+   "d": "nublado"
   },
   "2026-09-09T05": {
    "t": 20.0,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-09T06": {
    "t": 20.0,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-09T07": {
    "t": 20.0,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-09T08": {
    "t": 20.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T09": {
    "t": 20.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T10": {
    "t": 20.8,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T11": {
    "t": 23.9,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T12": {
    "t": 23.9,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T13": {
    "t": 23.9,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-09T14": {
    "t": 22.4,
@@ -767,51 +767,51 @@
   },
   "2026-09-09T23": {
    "t": 21.9,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T00": {
    "t": 21.9,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T01": {
    "t": 21.9,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T02": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T03": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T04": {
    "t": 23.4,
-   "d": "nublado"
+   "d": "chuva densa"
   },
   "2026-09-10T05": {
    "t": 21.5,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T06": {
    "t": 21.5,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T07": {
    "t": 21.5,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T08": {
    "t": 22.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T09": {
    "t": 22.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T10": {
    "t": 22.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T11": {
    "t": 24.2,
@@ -827,15 +827,15 @@
   },
   "2026-09-10T14": {
    "t": 25.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T15": {
    "t": 25.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T16": {
    "t": 25.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T17": {
    "t": 24.6,
@@ -851,75 +851,75 @@
   },
   "2026-09-10T20": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T21": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T22": {
    "t": 24.3,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-10T23": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T00": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T01": {
    "t": 23.2,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T02": {
    "t": 22.3,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-11T03": {
    "t": 22.3,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-11T04": {
    "t": 22.3,
-   "d": "nuvens dispersas"
+   "d": "chuva leve"
   },
   "2026-09-11T05": {
    "t": 22.1,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T06": {
    "t": 22.1,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T07": {
    "t": 22.1,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T08": {
    "t": 22.0,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T09": {
    "t": 22.0,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T10": {
    "t": 22.0,
-   "d": "nublado"
+   "d": "chuva leve"
   },
   "2026-09-11T11": {
    "t": 24.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-11T12": {
    "t": 24.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-11T13": {
    "t": 24.5,
-   "d": "chuva leve"
+   "d": "nublado"
   },
   "2026-09-11T14": {
    "t": 25.6,
@@ -1007,27 +1007,27 @@
   },
   "2026-09-12T11": {
    "t": 26.4,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T12": {
    "t": 26.4,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T13": {
    "t": 26.4,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T14": {
    "t": 26.9,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T15": {
    "t": 26.9,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T16": {
    "t": 26.9,
-   "d": "céu limpo"
+   "d": "chuva leve"
   },
   "2026-09-12T17": {
    "t": 22.6,
@@ -1207,60 +1207,65 @@
   }
  },
  "dia": {
+  "2026-09-01": {
+   "t": 22.5,
+   "d": "chuva moderada",
+   "n": 5
+  },
   "2026-09-02": {
-   "t": 21.2,
+   "t": 20.9,
    "d": "chuva leve",
-   "n": 6
+   "n": 14
   },
   "2026-09-03": {
-   "t": 23.8,
+   "t": 23.5,
    "d": "céu limpo",
-   "n": 6
+   "n": 7
   },
   "2026-09-04": {
-   "t": 27.9,
+   "t": 26.4,
    "d": "céu limpo",
-   "n": 6
+   "n": 12
   },
   "2026-09-05": {
-   "t": 25.0,
-   "d": "nublado",
-   "n": 6
+   "t": 25.1,
+   "d": "chuva leve",
+   "n": 17
   },
   "2026-09-06": {
    "t": 18.9,
    "d": "chuva moderada",
-   "n": 6
+   "n": 12
   },
   "2026-09-07": {
-   "t": 17.2,
-   "d": "chuva leve",
-   "n": 6
+   "t": 17.1,
+   "d": "nublado",
+   "n": 10
   },
   "2026-09-08": {
    "t": 20.6,
    "d": "nublado",
-   "n": 6
+   "n": 15
   },
   "2026-09-09": {
-   "t": 22.6,
-   "d": "nublado",
-   "n": 6
+   "t": 22.5,
+   "d": "chuva densa",
+   "n": 15
   },
   "2026-09-10": {
-   "t": 24.0,
-   "d": "nublado",
-   "n": 6
+   "t": 23.9,
+   "d": "chuva leve",
+   "n": 16
   },
   "2026-09-11": {
    "t": 25.6,
-   "d": "céu limpo",
-   "n": 6
+   "d": "nublado",
+   "n": 11
   },
   "2026-09-12": {
-   "t": 22.8,
+   "t": 24.6,
    "d": "chuva leve",
-   "n": 6
+   "n": 11
   },
   "2026-09-13": {
    "t": 19.0,
