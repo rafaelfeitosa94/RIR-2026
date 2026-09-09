@@ -171,11 +171,27 @@ class Handler(BaseHTTPRequestHandler):
         # JSONs publicados (ex.: a fonte Plano B em publico/planob/*.json).
         if rota.startswith("/publico/") and rota.endswith(".json"):
             return self._publico(rota)
+        # Clima (arquivo estatico do repositorio, usado nos tooltips). Rota
+        # EXPLICITA e nao ".json generico da pasta": a raiz tem credenciais.json.
+        if rota == "/clima.json":
+            return self._arquivo("clima.json", "application/json; charset=utf-8")
         if self._asset(rota):
             return
 
         self._cabecalho(404, "text/plain; charset=utf-8", 9)
         self.wfile.write(b"nao achei")
+
+    def _arquivo(self, nome, tipo):
+        """Serve UM arquivo nomeado no codigo (nunca vindo da rota)."""
+        try:
+            with open(nome, "rb") as arquivo:
+                corpo = arquivo.read()
+        except OSError:
+            self._cabecalho(404, "text/plain; charset=utf-8", 9)
+            self.wfile.write(b"nao achei")
+            return
+        self._cabecalho(200, tipo, len(corpo), {"Cache-Control": "no-store"})
+        self.wfile.write(corpo)
 
     def _publico(self, rota):
         # rota = /publico/...; serve do disco com guarda contra path traversal.

@@ -136,6 +136,13 @@
      3 colunas no topo - ver a media query. */
   .filtros{display:block}
 
+  /* Rodape de clima dentro do tooltip do ApexCharts. Usa as cores do tema:
+     o tooltip herda o fundo do Apex, entao aqui so a faixa e o texto. */
+  .tt-clima{padding:6px 10px;border-top:1px solid rgba(128,140,170,.28);
+            font-size:11.5px;line-height:1.5}
+  .tt-clima div{white-space:nowrap}
+  .tt-clima .tt-dia{opacity:.75;margin-right:4px}
+
   /* Faixa de insight (frase de destaque acima da tabela de pico) */
   .insight{background:rgba(0,143,251,.08);border:1px solid var(--linha);
            border-left:3px solid var(--azul);border-radius:8px;padding:10px 13px;
@@ -694,6 +701,48 @@ function renderKpis(sel_, ref, ant, anterior, referencia){
   }).join('');
 }
 
+// --------------------------------------------------------------- clima
+// Leituras de 3 em 3h do Rio (arquivo estatico no repositorio). Servem so para
+// CONTEXTO no tooltip: explicam por que uma noite vendeu menos que a outra.
+// `hora` ja vem preenchida hora a hora (cada hora usa a leitura mais proxima) e
+// `dia` agrega pela janela do caixa (12h->05h), com a descricao predominante.
+let CLIMA = {hora:{}, dia:{}};
+fetch('clima.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
+  .then(c => { if(c) CLIMA = c; })
+  .catch(() => {});
+
+const ICONE_CLIMA = d => /forte/.test(d) ? '⛈'
+                       : /chuva/.test(d) ? '☔'
+                       : /limpo/.test(d) ? '☀'
+                       : /nublado/.test(d) ? '☁'
+                       : '⛅';
+
+function textoClima(c){
+  if(!c) return '';
+  return `${ICONE_CLIMA(c.d)} ${c.d} · ${c.t.toFixed(1).replace('.', ',')}°C`;
+}
+
+// Monta o tooltip com a mesma marcacao do ApexCharts (herda tema/estilo) e
+// acrescenta o rodape de clima.
+function ttHtml(titulo, itens, climas){
+  const linhas = itens.map(it => `
+    <div class="apexcharts-tooltip-series-group apexcharts-active" style="display:flex">
+      <span class="apexcharts-tooltip-marker" style="background-color:${it.cor}"></span>
+      <div class="apexcharts-tooltip-text">
+        <div class="apexcharts-tooltip-y-group">
+          <span class="apexcharts-tooltip-text-y-label">${it.nome}: </span>
+          <span class="apexcharts-tooltip-text-y-value">${it.valor}</span>
+        </div>
+      </div>
+    </div>`).join('');
+  const uteis = (climas || []).filter(c => c && c.txt);
+  const rodape = uteis.length ? `<div class="tt-clima">` + uteis.map(c =>
+      `<div>${c.rotulo ? `<span class="tt-dia">${c.rotulo}</span>` : ''}${c.txt}</div>`
+    ).join('') + `</div>` : '';
+  return `<div class="apexcharts-tooltip-title">${titulo}</div>${linhas}${rodape}`;
+}
+
 function renderHora(F, hoje, ontem, anterior, referencia){
   const rotulos = Array.from({length:24}, (_,h) => String(h).padStart(2,'0')+'h');
   const nome = referencia ? referencia.split('-').reverse().join('/') : 'Período';
@@ -712,7 +761,21 @@ function renderHora(F, hoje, ontem, anterior, referencia){
     fill:{type:'gradient', gradient:{shadeIntensity:1, opacityFrom:[.4,.05], opacityTo:[.05,0], stops:[0,90,100]}},
     markers:{size:0, hover:{size:5}},
     legend:{position:'top', horizontalAlign:'right'},
-    tooltip:{y:{formatter:v => moeda(v)}},
+    // Tooltip com o clima DAQUELA hora, um por dia da comparacao: e o que
+    // explica uma noite ter vendido menos que a outra.
+    tooltip:{ custom: ({series, dataPointIndex, w}) => {
+      const itens = series.map((sr,i) => ({
+        cor: w.globals.colors[i], nome: w.globals.seriesNames[i],
+        valor: moeda(sr[dataPointIndex]) }));
+      const climas = [referencia, anterior].slice(0, series.length).map(d => {
+        if(!d) return null;
+        const c = CLIMA.hora[d + 'T' + String(dataPointIndex).padStart(2,'0')];
+        return c ? {rotulo: series.length > 1
+                      ? d.split('-').reverse().slice(0,2).join('/') : '',
+                    txt: textoClima(c)} : null;
+      });
+      return ttHtml(rotulos[dataPointIndex], itens, climas);
+    }},
   }, series);
 }
 
@@ -742,7 +805,19 @@ function renderDia(F, linhas){
     colors:[CORES[1], CORES[3]],
     markers:{size:[5,0], hover:{size:7}},
     legend:{position:'top', horizontalAlign:'right'},
-    tooltip:{y:{formatter:v => moeda(v)}},
+    // Tooltip com o clima do dia: descricao PREDOMINANTE na janela do caixa
+    // (12h->05h) e a media da sensacao termica nessa janela.
+    tooltip:{ custom: ({series, dataPointIndex, w}) => {
+      const itens = series.map((sr,i) => ({
+        cor: w.globals.colors[i], nome: w.globals.seriesNames[i],
+        valor: moeda(sr[dataPointIndex]) }));
+      const c = CLIMA.dia[dias[dataPointIndex]];
+      // Titulo igual ao rotulo do eixo x: w.globals.labels devolve o INDICE
+      // num grafico de linha com categorias, nao a categoria em si.
+      const titulo = dias[dataPointIndex].split('-').reverse().slice(0,2).join('/');
+      return ttHtml(titulo, itens,
+                    [c ? {rotulo:'', txt: textoClima(c) + ' (predominante)'} : null]);
+    }},
   }, series);
 }
 
