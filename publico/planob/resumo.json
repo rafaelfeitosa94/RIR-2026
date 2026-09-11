@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-11T14:05:18",
+  "atualizado_em": "2026-09-11T14:10:26",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 49699,
-    "transacoes_venda": 49512,
+    "transacoes": 49702,
+    "transacoes_venda": 49515,
     "transacoes_cancelamento": 187,
-    "itens": 91161.0,
-    "valor_liquido": 2297962.0,
-    "valor_bruto_vendas": 2309744.0,
+    "itens": 91170.0,
+    "valor_liquido": 2298147.0,
+    "valor_bruto_vendas": 2309929.0,
     "valor_cancelado": 11782.0,
-    "ultima_transacao": "2026-09-11T13:52:54"
+    "ultima_transacao": "2026-09-11T14:09:21"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 927744.0,
-      "itens": 34496.0,
-      "transacoes": 19469,
-      "linhas": 25520
+      "valor_liquido": 927929.0,
+      "itens": 34505.0,
+      "transacoes": 19472,
+      "linhas": 25523
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -114,10 +114,10 @@
     },
     {
       "Produto": "COCA COLA",
-      "valor_liquido": 59471.0,
-      "itens": 3073.0,
-      "transacoes": 2292,
-      "linhas": 2292
+      "valor_liquido": 59656.0,
+      "itens": 3082.0,
+      "transacoes": 2295,
+      "linhas": 2295
     },
     {
       "Produto": "MANE BURGUER",
@@ -942,10 +942,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1104286.0,
-      "itens": 59735.0,
-      "transacoes": 36250,
-      "linhas": 40845
+      "valor_liquido": 1104471.0,
+      "itens": 59744.0,
+      "transacoes": 36253,
+      "linhas": 40848
     }
   ],
   "por_forma_pagamento": [
@@ -958,10 +958,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 732874.0,
-      "itens": 29638.0,
-      "transacoes": 16730,
-      "linhas": 21561
+      "valor_liquido": 733059.0,
+      "itens": 29647.0,
+      "transacoes": 16733,
+      "linhas": 21564
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2504,6 +2504,13 @@
       "itens": 4.0,
       "transacoes": 3,
       "linhas": 3
+    },
+    {
+      "_hora": "2026-09-11T14",
+      "valor_liquido": 185.0,
+      "itens": 9.0,
+      "transacoes": 3,
+      "linhas": 3
     }
   ],
   "por_dia": [
@@ -2544,10 +2551,10 @@
     },
     {
       "_dia": "2026-09-11",
-      "valor_liquido": 89.0,
-      "itens": 4.0,
-      "transacoes": 3,
-      "linhas": 3
+      "valor_liquido": 274.0,
+      "itens": 13.0,
+      "transacoes": 6,
+      "linhas": 6
     }
   ]
 }
