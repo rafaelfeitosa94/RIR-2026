@@ -42,7 +42,10 @@ jobs:
       PYTHONUNBUFFERED: "1"  # log ao vivo (senao o Python bufferiza em bloco)
       ZIG_TOKEN_PARCEIRO: ${{ secrets.ZIG_TOKEN_PARCEIRO }}
       ZIG_CODIGO_EVENTO: ${{ secrets.ZIG_CODIGO_EVENTO }}
-      INTERVALO_S: 120       # segundos entre publicacoes
+      # Espera ENTRE ciclos - o ciclo total e isto + o tempo de trabalho
+      # (coleta + montagem + push), que hoje roda em ~90s. Com 120 o ciclo
+      # dava ~3,5 min; com 60 fica em ~2,5 min, a cadencia que o painel tinha.
+      INTERVALO_S: 60        # segundos entre publicacoes
       DURACAO_S: 19800       # 5h30 de laco, com folga ate o teto de 6h
 
     steps:
