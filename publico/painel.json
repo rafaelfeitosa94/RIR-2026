@@ -1,6 +1,102 @@
 {
   "feed": [
     {
+      "id": 221272828,
+      "hora": "17:30:05",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 2,
+      "quantidade": 3,
+      "valor": 69.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272768,
+      "hora": "17:29:47",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272575,
+      "hora": "17:29:18",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272590,
+      "hora": "17:29:15",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 2,
+      "quantidade": 3,
+      "valor": -88.0,
+      "operacao": "Cancelamento de Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": true
+    },
+    {
+      "id": 221272562,
+      "hora": "17:29:13",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 124.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272555,
+      "hora": "17:29:09",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CB MANE BURGUER + BATATA",
+      "outros_produtos": 3,
+      "quantidade": 5,
+      "valor": 180.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272622,
+      "hora": "17:29:08",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272545,
+      "hora": "17:29:01",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221272428,
       "hora": "17:28:49",
       "ponto": "MUN.A.MANE.AEB04",
@@ -61,18 +157,6 @@
       "cancelamento": false
     },
     {
-      "id": 221272239,
-      "hora": "17:28:18",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 221272323,
       "hora": "17:28:18",
       "ponto": "SUN.A.ESPETTO",
@@ -80,6 +164,18 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221272239,
+      "hora": "17:28:18",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
@@ -202,102 +298,6 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221271967,
-      "hora": "17:26:59",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221271845,
-      "hora": "17:26:58",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 3,
-      "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221271810,
-      "hora": "17:26:48",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221271789,
-      "hora": "17:26:45",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "MANE BURGUER",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": -65.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
-    },
-    {
-      "id": 221271703,
-      "hora": "17:26:34",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RB ZERO",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221271763,
-      "hora": "17:26:33",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221271760,
-      "hora": "17:26:26",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "PIPOCA PORCO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 45.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221271714,
-      "hora": "17:26:26",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
