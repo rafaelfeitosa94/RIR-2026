@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 221260878,
+      "hora": "16:49:04",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 32.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221260941,
+      "hora": "16:48:58",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221260845,
+      "hora": "16:48:48",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 74.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221260745,
+      "hora": "16:48:31",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 7.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221260715,
+      "hora": "16:48:17",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221260673,
       "hora": "16:48:09",
       "ponto": "SUN.A.ESPETTO",
@@ -236,66 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259496,
-      "hora": "16:43:05",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 4,
-      "valor": 100.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221259389,
-      "hora": "16:42:50",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 55.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259314,
-      "hora": "16:42:40",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259236,
-      "hora": "16:42:22",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259217,
-      "hora": "16:42:20",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 41.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
