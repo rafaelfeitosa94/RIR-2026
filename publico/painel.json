@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221259651,
+      "hora": "16:44:08",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221259496,
+      "hora": "16:43:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 4,
+      "valor": 100.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221259389,
       "hora": "16:42:50",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221258332,
-      "hora": "16:39:03",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CB MANE BURGUER + BATATA",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 70.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221258308,
-      "hora": "16:39:00",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 70.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
