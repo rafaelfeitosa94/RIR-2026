@@ -420,6 +420,70 @@ def ler_jsonl(caminho, campo_id):
     return list(unicos.values()) + sem_id
 
 
+def compactar_jsonl(caminho, campo_id, fator=1.3):
+    """Reescreve o .jsonl sem as copias repetidas. Devolve (antes, depois) ou None.
+
+    POR QUE PRECISA: a hora corrente e re-baixada INTEIRA a cada ciclo, entao um
+    laco de 5h30 reanexa a mesma hora mais de cem vezes. O arquivo chega a ter
+    ~30 copias de cada transacao; como todo ciclo rele e deduplica o arquivo
+    todo, o ciclo vai ficando lento. Medido: 1,73 GB -> 54 MB, 32x menor.
+
+    Mantem a ULTIMA ocorrencia de cada id, na ordem da primeira aparicao - e o
+    mesmo resultado que ler_jsonl entrega, entao compactar nao muda numero
+    nenhum. O `_fatia` tambem se preserva: ele e a hora da propria transacao e
+    nao muda entre as copias, entao a reabertura de horas vazias continua vendo
+    as mesmas horas.
+
+    So compacta quando compensa (linhas > fator * unicos). Escreve num temporario
+    e so entao troca: se algo falhar no meio, o arquivo original fica intacto.
+    """
+    if not os.path.exists(caminho):
+        return None
+
+    unicos, sem_id, total = {}, [], 0
+    try:
+        with open(caminho, encoding="utf-8") as arquivo:
+            for linha in arquivo:
+                linha = linha.strip()
+                if not linha:
+                    continue
+                total += 1
+                chave = json.loads(linha).get(campo_id)
+                if chave is None:
+                    sem_id.append(linha)
+                else:
+                    unicos[chave] = linha          # a ultima vence, como no ler_jsonl
+    except (OSError, ValueError):
+        return None
+
+    manter = len(unicos) + len(sem_id)
+    if not manter or total <= fator * manter:
+        return None                                # ainda nao compensa
+
+    tmp = caminho + ".tmp"
+    try:
+        with open(tmp, "w", encoding="utf-8", newline="\n") as saida:
+            for linha in unicos.values():
+                saida.write(linha + "\n")
+            for linha in sem_id:
+                saida.write(linha + "\n")
+        # Confere antes de trocar: linha a mais ou a menos aborta a compactacao.
+        with open(tmp, encoding="utf-8") as conf:
+            escritas = sum(1 for l in conf if l.strip())
+        if escritas != manter:
+            os.remove(tmp)
+            return None
+        os.replace(tmp, caminho)                   # troca atomica
+    except OSError:
+        try:
+            os.remove(tmp)
+        except OSError:
+            pass
+        return None
+
+    return total, manter
+
+
 # ------------------------------------------------------------------ coleta
 def horas_a_baixar(inicio, fim, concluidas, agora):
     """Fatias de 1h que faltam: nada no futuro, nada ja concluido.
@@ -446,6 +510,18 @@ def coletar(pasta, refazer=False, renovar_sempre=True, url=URL_PROD,
     arq_estado = os.path.join(pasta, ARQ_ESTADO)
     arq_transacoes = os.path.join(pasta, JSONL_TRANSACOES)
     arq_ambulantes = os.path.join(pasta, JSONL_AMBULANTES)
+
+    # Compacta ANTES de qualquer leitura: a hora corrente e reanexada inteira a
+    # cada ciclo, entao o arquivo incha e todo ciclo fica mais lento (ele rele e
+    # deduplica o arquivo todo, duas vezes por ciclo). Compactar e transparente:
+    # mantem a ultima ocorrencia de cada id, exatamente como o ler_jsonl faria.
+    for arq, campo in ((arq_transacoes, "transacao_id"),
+                       (arq_ambulantes, "movimento_ambulante_id")):
+        r = compactar_jsonl(arq, campo)
+        if r:
+            antes, depois = r
+            print(f"compactado {os.path.basename(arq)}: "
+                  f"{antes:,} -> {depois:,} linhas ({antes/depois:.1f}x)")
 
     concluidas = set() if refazer else carregar_estado(arq_estado)
 

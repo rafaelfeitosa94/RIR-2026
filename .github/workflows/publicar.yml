@@ -9,7 +9,7 @@ name: Publicar vendas RIR 2026
 # 30 ou 60 minutos - inutil para acompanhar venda ao vivo.
 #
 # Entao, em vez de 288 execucoes por dia, esta workflow abre UMA execucao que
-# fica viva publicando a cada 2 minutos ate perto do limite de 6 horas por job,
+# fica viva publicando a cada ~1 minuto ate perto do limite de 6 horas por job,
 # e no fim dispara a proxima. Repositorio publico tem minutos de Actions
 # ilimitados, entao isso nao consome cota.
 
@@ -42,10 +42,11 @@ jobs:
       PYTHONUNBUFFERED: "1"  # log ao vivo (senao o Python bufferiza em bloco)
       ZIG_TOKEN_PARCEIRO: ${{ secrets.ZIG_TOKEN_PARCEIRO }}
       ZIG_CODIGO_EVENTO: ${{ secrets.ZIG_CODIGO_EVENTO }}
-      # Espera ENTRE ciclos - o ciclo total e isto + o tempo de trabalho
-      # (coleta + montagem + push), que hoje roda em ~90s. Com 120 o ciclo
-      # dava ~3,5 min; com 60 fica em ~2,5 min, a cadencia que o painel tinha.
-      INTERVALO_S: 60        # segundos entre publicacoes
+      # Espera ENTRE ciclos - o ciclo total e isto + o tempo de trabalho.
+      # O trabalho era ~90s porque cada ciclo relia e deduplicava um .jsonl
+      # inchado de copias; com a compactacao automatica ele cai muito, entao
+      # 30s de espera deixa o ciclo perto de 1 min.
+      INTERVALO_S: 30        # segundos entre publicacoes
       DURACAO_S: 19800       # 5h30 de laco, com folga ate o teto de 6h
 
     steps:
