@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 221261235,
+      "hora": "16:50:09",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 55.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221261222,
+      "hora": "16:50:04",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 221261174,
+      "hora": "16:50:00",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 1,
+      "quantidade": 4,
+      "valor": 44.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221261075,
+      "hora": "16:49:32",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221261033,
+      "hora": "16:49:31",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221261053,
+      "hora": "16:49:22",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 48.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221260878,
       "hora": "16:49:04",
       "ponto": "SUN.A.ESPETTO",
@@ -226,78 +298,6 @@
       "valor": 30.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259941,
-      "hora": "16:45:08",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FANTA GUARA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259951,
-      "hora": "16:44:59",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 3,
-      "quantidade": 5,
-      "valor": 175.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221259923,
-      "hora": "16:44:57",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259842,
-      "hora": "16:44:50",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB MANE BURGUER + BATATA",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": -94.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
-    },
-    {
-      "id": 221259806,
-      "hora": "16:44:37",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221259651,
-      "hora": "16:44:08",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
