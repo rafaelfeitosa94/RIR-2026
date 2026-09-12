@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 221419739,
+      "hora": "02:43:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOP LAG IPA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419718,
+      "hora": "02:42:54",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FANTA GUA 0 RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419729,
+      "hora": "02:42:47",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 27.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419701,
+      "hora": "02:42:35",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419698,
+      "hora": "02:42:25",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419703,
+      "hora": "02:42:20",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 2,
+      "quantidade": 3,
+      "valor": 76.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221419658,
       "hora": "02:42:02",
       "ponto": "SUN.A.ESPETTO",
@@ -10,6 +82,18 @@
       "valor": 20.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221419692,
+      "hora": "02:41:51",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
       "cancelamento": false
     },
     {
@@ -212,90 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419511,
-      "hora": "02:39:39",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419568,
-      "hora": "02:39:38",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP FRANGO + BT",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": 67.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221419510,
-      "hora": "02:39:36",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419506,
-      "hora": "02:39:36",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419504,
-      "hora": "02:39:28",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 40.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419493,
-      "hora": "02:39:18",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419483,
-      "hora": "02:39:14",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 69.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
