@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T14:25:44",
+  "atualizado_em": "2026-09-12T14:26:50",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59685,
-    "transacoes_venda": 59475,
+    "transacoes": 59687,
+    "transacoes_venda": 59477,
     "transacoes_cancelamento": 210,
-    "itens": 111740.0,
-    "valor_liquido": 2759575.0,
-    "valor_bruto_vendas": 2772824.0,
+    "itens": 111745.0,
+    "valor_liquido": 2759700.0,
+    "valor_bruto_vendas": 2772949.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T14:25:15"
+    "ultima_transacao": "2026-09-12T14:25:57"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1110467.0,
-      "itens": 41305.0,
-      "transacoes": 23399,
-      "linhas": 34548
+      "valor_liquido": 1110592.0,
+      "itens": 41310.0,
+      "transacoes": 23401,
+      "linhas": 34550
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -58,10 +58,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 191100.0,
-      "itens": 7644.0,
-      "transacoes": 5118,
-      "linhas": 5118
+      "valor_liquido": 191225.0,
+      "itens": 7649.0,
+      "transacoes": 5120,
+      "linhas": 5120
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
@@ -571,10 +571,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1569014.0,
-      "itens": 39244.0,
-      "transacoes": 29153,
-      "linhas": 32988
+      "valor_liquido": 1569139.0,
+      "itens": 39249.0,
+      "transacoes": 29155,
+      "linhas": 32990
     },
     {
       "Categoria Produto": "Bebida",
@@ -587,10 +587,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 1608309.0,
-      "itens": 64017.0,
-      "transacoes": 33299,
-      "linhas": 49636
+      "valor_liquido": 1608434.0,
+      "itens": 64022.0,
+      "transacoes": 33301,
+      "linhas": 49638
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2311,10 +2311,10 @@
     },
     {
       "_hora": "2026-09-12T14",
-      "valor_liquido": 2094.0,
-      "itens": 68.0,
-      "transacoes": 41,
-      "linhas": 58
+      "valor_liquido": 2219.0,
+      "itens": 73.0,
+      "transacoes": 43,
+      "linhas": 60
     }
   ],
   "por_dia": [
@@ -2362,10 +2362,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 2151.0,
-      "itens": 71.0,
-      "transacoes": 42,
-      "linhas": 60
+      "valor_liquido": 2276.0,
+      "itens": 76.0,
+      "transacoes": 44,
+      "linhas": 62
     }
   ]
 }
