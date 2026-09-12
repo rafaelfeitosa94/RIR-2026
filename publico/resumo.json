@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T03:29:15",
+  "atualizado_em": "2026-09-12T03:30:40",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59634,
-    "transacoes_venda": 59424,
+    "transacoes": 59635,
+    "transacoes_venda": 59425,
     "transacoes_cancelamento": 210,
-    "itens": 111653.0,
-    "valor_liquido": 2757088.0,
-    "valor_bruto_vendas": 2770337.0,
+    "itens": 111654.0,
+    "valor_liquido": 2757109.0,
+    "valor_bruto_vendas": 2770358.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T03:28:25"
+    "ultima_transacao": "2026-09-12T03:28:58"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1108230.0,
-      "itens": 41225.0,
-      "transacoes": 23353,
-      "linhas": 34486
+      "valor_liquido": 1108251.0,
+      "itens": 41226.0,
+      "transacoes": 23354,
+      "linhas": 34487
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -219,10 +219,10 @@
     },
     {
       "Produto": "MIXED MARAC RT",
-      "valor_liquido": 19320.0,
-      "itens": 920.0,
-      "transacoes": 682,
-      "linhas": 682
+      "valor_liquido": 19341.0,
+      "itens": 921.0,
+      "transacoes": 683,
+      "linhas": 683
     },
     {
       "Produto": "CHOP LAG IPA RT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1189643.0,
-      "itens": 72447.0,
-      "transacoes": 46039,
-      "linhas": 54721
+      "valor_liquido": 1189664.0,
+      "itens": 72448.0,
+      "transacoes": 46040,
+      "linhas": 54722
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 903167.0,
-      "itens": 37541.0,
-      "transacoes": 20720,
-      "linhas": 29969
+      "valor_liquido": 903188.0,
+      "itens": 37542.0,
+      "transacoes": 20721,
+      "linhas": 29970
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2234,10 +2234,10 @@
     },
     {
       "_hora": "2026-09-12T03",
-      "valor_liquido": 2243.0,
-      "itens": 88.0,
-      "transacoes": 60,
-      "linhas": 76
+      "valor_liquido": 2264.0,
+      "itens": 89.0,
+      "transacoes": 61,
+      "linhas": 77
     }
   ],
   "por_dia": [
@@ -2278,10 +2278,10 @@
     },
     {
       "_dia": "2026-09-11",
-      "valor_liquido": 459215.0,
-      "itens": 21478.0,
-      "transacoes": 9938,
-      "linhas": 15790
+      "valor_liquido": 459236.0,
+      "itens": 21479.0,
+      "transacoes": 9939,
+      "linhas": 15791
     }
   ]
 }
