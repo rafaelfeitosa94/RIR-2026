@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 221441874,
+      "hora": "14:43:48",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 65.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441852,
+      "hora": "14:43:42",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 40.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441865,
+      "hora": "14:43:37",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RB CEREJA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441703,
+      "hora": "14:43:15",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441691,
+      "hora": "14:43:12",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221441604,
       "hora": "14:42:52",
       "ponto": "SUN.A.ESPETTO",
@@ -61,6 +121,18 @@
       "cancelamento": false
     },
     {
+      "id": 221441683,
+      "hora": "14:42:21",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 55.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221441529,
       "hora": "14:42:19",
       "ponto": "SUN.A.ESPETTO",
@@ -97,18 +169,6 @@
       "cancelamento": false
     },
     {
-      "id": 221441324,
-      "hora": "14:41:35",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
       "id": 221441302,
       "hora": "14:41:35",
       "ponto": "SUN.A.ESPETTO",
@@ -118,6 +178,18 @@
       "valor": 70.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441324,
+      "hora": "14:41:35",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
       "cancelamento": false
     },
     {
@@ -224,78 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 3,
       "valor": 90.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440722,
-      "hora": "14:39:11",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 2,
-      "quantidade": 4,
-      "valor": 111.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440780,
-      "hora": "14:39:09",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 107.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221440707,
-      "hora": "14:39:06",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 57.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440590,
-      "hora": "14:38:41",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440562,
-      "hora": "14:38:30",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "RB TROPICAL RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440486,
-      "hora": "14:38:14",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
