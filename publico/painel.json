@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 221420103,
+      "hora": "02:52:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 69.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420099,
+      "hora": "02:51:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FANTA GUA 0 RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420098,
+      "hora": "02:51:54",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420084,
+      "hora": "02:51:34",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 22.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420073,
+      "hora": "02:50:56",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221420060,
       "hora": "02:50:33",
       "ponto": "SUN.A.ESPETTO",
@@ -236,66 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 7.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 221419875,
-      "hora": "02:45:54",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 221419877,
-      "hora": "02:45:45",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARN BTRB SEM COPO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 53.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419855,
-      "hora": "02:45:21",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 221419847,
-      "hora": "02:45:09",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221419837,
-      "hora": "02:45:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Zig Cashless",
       "cancelamento": false

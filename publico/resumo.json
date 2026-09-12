@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T02:51:04",
+  "atualizado_em": "2026-09-12T02:52:29",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59541,
-    "transacoes_venda": 59331,
+    "transacoes": 59546,
+    "transacoes_venda": 59336,
     "transacoes_cancelamento": 210,
-    "itens": 111518.0,
-    "valor_liquido": 2753875.0,
-    "valor_bruto_vendas": 2767124.0,
+    "itens": 111525.0,
+    "valor_liquido": 2753999.0,
+    "valor_bruto_vendas": 2767248.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T02:50:33"
+    "ultima_transacao": "2026-09-12T02:52:05"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1105017.0,
-      "itens": 41090.0,
-      "transacoes": 23260,
-      "linhas": 34368
+      "valor_liquido": 1105141.0,
+      "itens": 41097.0,
+      "transacoes": 23265,
+      "linhas": 34374
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -93,10 +93,10 @@
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "valor_liquido": 112984.0,
-      "itens": 1948.0,
-      "transacoes": 1841,
-      "linhas": 1841
+      "valor_liquido": 113042.0,
+      "itens": 1949.0,
+      "transacoes": 1842,
+      "linhas": 1842
     },
     {
       "Produto": "SAND CARNE",
@@ -149,17 +149,17 @@
     },
     {
       "Produto": "COCA ZERO RT",
-      "valor_liquido": 40447.0,
-      "itens": 3677.0,
-      "transacoes": 3292,
-      "linhas": 3292
+      "valor_liquido": 40480.0,
+      "itens": 3680.0,
+      "transacoes": 3294,
+      "linhas": 3294
     },
     {
       "Produto": "COCA COLA RT",
-      "valor_liquido": 37807.0,
-      "itens": 3437.0,
-      "transacoes": 3087,
-      "linhas": 3087
+      "valor_liquido": 37829.0,
+      "itens": 3439.0,
+      "transacoes": 3089,
+      "linhas": 3089
     },
     {
       "Produto": "RED BULL",
@@ -499,10 +499,10 @@
     },
     {
       "Produto": "FANTA GUA 0 RT",
-      "valor_liquido": 1617.0,
-      "itens": 147.0,
-      "transacoes": 141,
-      "linhas": 141
+      "valor_liquido": 1628.0,
+      "itens": 148.0,
+      "transacoes": 142,
+      "linhas": 142
     },
     {
       "Produto": "SAND CHURRAS",
@@ -571,26 +571,26 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1565160.0,
-      "itens": 39138.0,
-      "transacoes": 29073,
-      "linhas": 32900
+      "valor_liquido": 1565218.0,
+      "itens": 39139.0,
+      "transacoes": 29074,
+      "linhas": 32901
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1188715.0,
-      "itens": 72380.0,
-      "transacoes": 45986,
-      "linhas": 54662
+      "valor_liquido": 1188781.0,
+      "itens": 72386.0,
+      "transacoes": 45991,
+      "linhas": 54667
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 1605828.0,
-      "itens": 63920.0,
-      "transacoes": 33241,
-      "linhas": 49558
+      "valor_liquido": 1605952.0,
+      "itens": 63927.0,
+      "transacoes": 33246,
+      "linhas": 49564
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2227,10 +2227,10 @@
     },
     {
       "_hora": "2026-09-12T02",
-      "valor_liquido": 23690.0,
-      "itens": 1412.0,
-      "transacoes": 639,
-      "linhas": 973
+      "valor_liquido": 23814.0,
+      "itens": 1419.0,
+      "transacoes": 644,
+      "linhas": 979
     }
   ],
   "por_dia": [
@@ -2271,10 +2271,10 @@
     },
     {
       "_dia": "2026-09-11",
-      "valor_liquido": 456002.0,
-      "itens": 21343.0,
-      "transacoes": 9845,
-      "linhas": 15672
+      "valor_liquido": 456126.0,
+      "itens": 21350.0,
+      "transacoes": 9850,
+      "linhas": 15678
     }
   ]
 }
