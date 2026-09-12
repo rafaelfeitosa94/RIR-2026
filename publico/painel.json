@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221420527,
+      "hora": "03:20:02",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420526,
+      "hora": "03:19:09",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221420514,
       "hora": "03:17:44",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 2,
       "quantidade": 3,
       "valor": 81.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420390,
-      "hora": "03:06:13",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420380,
-      "hora": "03:05:28",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 54.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
