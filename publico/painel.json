@@ -1,13 +1,13 @@
 {
   "feed": [
     {
-      "id": 221435856,
-      "hora": "14:16:21",
+      "id": 221435953,
+      "hora": "14:16:56",
       "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
+      "produto": "COCA ZERO",
       "outros_produtos": 0,
       "quantidade": 1,
-      "valor": 58.0,
+      "valor": 16.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
@@ -22,6 +22,18 @@
       "valor": 23.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221435856,
+      "hora": "14:16:21",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
       "cancelamento": false
     },
     {
@@ -286,18 +298,6 @@
       "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420552,
-      "hora": "03:27:30",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
       "cancelamento": false
     }
   ]
