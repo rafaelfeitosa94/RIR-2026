@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221420529,
+      "hora": "03:20:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420528,
+      "hora": "03:20:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 32.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221420527,
       "hora": "03:20:02",
       "ponto": "SUN.A.ESPETTO",
@@ -241,18 +265,6 @@
       "cancelamento": false
     },
     {
-      "id": 221420431,
-      "hora": "03:08:06",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO FRANGO",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 46.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
       "id": 221420434,
       "hora": "03:08:06",
       "ponto": "SUN.A.ESPETTO",
@@ -265,6 +277,18 @@
       "cancelamento": false
     },
     {
+      "id": 221420431,
+      "hora": "03:08:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 46.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221420417,
       "hora": "03:07:34",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420397,
-      "hora": "03:06:23",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420398,
-      "hora": "03:06:22",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": 81.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
