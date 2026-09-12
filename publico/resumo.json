@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T14:20:17",
+  "atualizado_em": "2026-09-12T14:21:21",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59660,
-    "transacoes_venda": 59450,
+    "transacoes": 59662,
+    "transacoes_venda": 59452,
     "transacoes_cancelamento": 210,
-    "itens": 111698.0,
-    "valor_liquido": 2758268.0,
-    "valor_bruto_vendas": 2771517.0,
+    "itens": 111700.0,
+    "valor_liquido": 2758307.0,
+    "valor_bruto_vendas": 2771556.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T14:19:39"
+    "ultima_transacao": "2026-09-12T14:20:38"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1109410.0,
-      "itens": 41270.0,
-      "transacoes": 23379,
-      "linhas": 34519
+      "valor_liquido": 1109449.0,
+      "itens": 41272.0,
+      "transacoes": 23381,
+      "linhas": 34521
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -72,10 +72,10 @@
     },
     {
       "Produto": "CHOPE HNK",
-      "valor_liquido": 178411.0,
-      "itens": 7757.0,
-      "transacoes": 5932,
-      "linhas": 5932
+      "valor_liquido": 178434.0,
+      "itens": 7758.0,
+      "transacoes": 5933,
+      "linhas": 5933
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -212,10 +212,10 @@
     },
     {
       "Produto": "RED BULL RT",
-      "valor_liquido": 19840.0,
-      "itens": 1240.0,
-      "transacoes": 1050,
-      "linhas": 1050
+      "valor_liquido": 19856.0,
+      "itens": 1241.0,
+      "transacoes": 1051,
+      "linhas": 1051
     },
     {
       "Produto": "MIXED MARAC RT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1190064.0,
-      "itens": 72470.0,
-      "transacoes": 46055,
-      "linhas": 54738
+      "valor_liquido": 1190103.0,
+      "itens": 72472.0,
+      "transacoes": 46057,
+      "linhas": 54740
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 903698.0,
-      "itens": 37560.0,
-      "transacoes": 20731,
-      "linhas": 29982
+      "valor_liquido": 903737.0,
+      "itens": 37562.0,
+      "transacoes": 20733,
+      "linhas": 29984
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2311,10 +2311,10 @@
     },
     {
       "_hora": "2026-09-12T14",
-      "valor_liquido": 787.0,
-      "itens": 26.0,
-      "transacoes": 16,
-      "linhas": 22
+      "valor_liquido": 826.0,
+      "itens": 28.0,
+      "transacoes": 18,
+      "linhas": 24
     }
   ],
   "por_dia": [
@@ -2362,10 +2362,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 844.0,
-      "itens": 29.0,
-      "transacoes": 17,
-      "linhas": 24
+      "valor_liquido": 883.0,
+      "itens": 31.0,
+      "transacoes": 19,
+      "linhas": 26
     }
   ]
 }
