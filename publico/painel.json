@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 221437455,
+      "hora": "14:25:15",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIXED GIN TO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 26.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221437424,
+      "hora": "14:25:07",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221437401,
+      "hora": "14:24:59",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221437344,
+      "hora": "14:24:46",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 2,
+      "quantidade": 4,
+      "valor": 140.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221437340,
+      "hora": "14:24:43",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 119.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221437226,
       "hora": "14:24:07",
       "ponto": "SUN.A.ESPETTO",
@@ -236,66 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221436350,
-      "hora": "14:19:39",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221436247,
-      "hora": "14:19:05",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 221436268,
-      "hora": "14:18:52",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOP LAG IPA",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 56.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221436241,
-      "hora": "14:18:46",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 4,
-      "valor": 124.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221435953,
-      "hora": "14:16:56",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
