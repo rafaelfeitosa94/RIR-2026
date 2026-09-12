@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 221420291,
+      "hora": "02:59:39",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420276,
+      "hora": "02:59:15",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221420275,
+      "hora": "02:59:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221420270,
       "hora": "02:58:57",
       "ponto": "SUN.A.ESPETTO",
@@ -260,42 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 51.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420141,
-      "hora": "02:53:20",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420129,
-      "hora": "02:52:53",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 41.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420122,
-      "hora": "02:52:43",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 22.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
