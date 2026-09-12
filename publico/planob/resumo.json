@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T13:37:18",
+  "atualizado_em": "2026-09-12T13:42:32",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59643,
-    "transacoes_venda": 59433,
+    "transacoes": 59644,
+    "transacoes_venda": 59434,
     "transacoes_cancelamento": 210,
-    "itens": 112771.0,
-    "valor_liquido": 2757424.0,
-    "valor_bruto_vendas": 2770673.0,
+    "itens": 112774.0,
+    "valor_liquido": 2757481.0,
+    "valor_bruto_vendas": 2770730.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T03:36:17"
+    "ultima_transacao": "2026-09-12T13:38:03"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1108566.0,
-      "itens": 41851.0,
-      "transacoes": 23362,
-      "linhas": 29413
+      "valor_liquido": 1108623.0,
+      "itens": 41854.0,
+      "transacoes": 23363,
+      "linhas": 29414
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -93,8 +93,8 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 109595.0,
-      "itens": 10934.0,
+      "valor_liquido": 109571.0,
+      "itens": 10932.0,
       "transacoes": 5277,
       "linhas": 5277
     },
@@ -149,10 +149,10 @@
     },
     {
       "Produto": "COCA COLA RT",
-      "valor_liquido": 55561.0,
-      "itens": 3493.0,
-      "transacoes": 2426,
-      "linhas": 2426
+      "valor_liquido": 55642.0,
+      "itens": 3498.0,
+      "transacoes": 2427,
+      "linhas": 2427
     },
     {
       "Produto": "ESPETO FRANGO",
@@ -942,19 +942,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1352818.0,
-      "itens": 74491.0,
-      "transacoes": 42935,
-      "linhas": 47530
+      "valor_liquido": 1352875.0,
+      "itens": 74494.0,
+      "transacoes": 42936,
+      "linhas": 47531
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 1607242.0,
-      "itens": 64658.0,
-      "transacoes": 33281,
-      "linhas": 42119
+      "valor_liquido": 1607299.0,
+      "itens": 64661.0,
+      "transacoes": 33282,
+      "linhas": 42120
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2602,6 +2602,76 @@
       "itens": 104.0,
       "transacoes": 69,
       "linhas": 69
+    },
+    {
+      "_hora": "2026-09-12T04",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T05",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T06",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T07",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T08",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T09",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T10",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T11",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T12",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-12T13",
+      "valor_liquido": 57.0,
+      "itens": 3.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ],
   "por_dia": [
@@ -2646,6 +2716,13 @@
       "itens": 21614.0,
       "transacoes": 9947,
       "linhas": 9947
+    },
+    {
+      "_dia": "2026-09-12",
+      "valor_liquido": 57.0,
+      "itens": 3.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ]
 }
