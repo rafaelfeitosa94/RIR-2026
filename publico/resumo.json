@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T14:07:52",
+  "atualizado_em": "2026-09-12T14:08:59",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59645,
-    "transacoes_venda": 59435,
+    "transacoes": 59646,
+    "transacoes_venda": 59436,
     "transacoes_cancelamento": 210,
-    "itens": 111673.0,
-    "valor_liquido": 2757504.0,
-    "valor_bruto_vendas": 2770753.0,
+    "itens": 111675.0,
+    "valor_liquido": 2757574.0,
+    "valor_bruto_vendas": 2770823.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T14:04:47"
+    "ultima_transacao": "2026-09-12T14:07:47"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1108646.0,
-      "itens": 41245.0,
-      "transacoes": 23364,
-      "linhas": 34498
+      "valor_liquido": 1108716.0,
+      "itens": 41247.0,
+      "transacoes": 23365,
+      "linhas": 34500
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -86,10 +86,10 @@
     },
     {
       "Produto": "CB 1 SAND CARNE + BT",
-      "valor_liquido": 131166.0,
-      "itens": 2429.0,
-      "transacoes": 2090,
-      "linhas": 2090
+      "valor_liquido": 131220.0,
+      "itens": 2430.0,
+      "transacoes": 2091,
+      "linhas": 2091
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
@@ -121,10 +121,10 @@
     },
     {
       "Produto": "COCA COLA",
-      "valor_liquido": 69904.0,
-      "itens": 4369.0,
-      "transacoes": 3837,
-      "linhas": 3837
+      "valor_liquido": 69920.0,
+      "itens": 4370.0,
+      "transacoes": 3838,
+      "linhas": 3838
     },
     {
       "Produto": "COCA ZERO",
@@ -571,17 +571,17 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1567709.0,
-      "itens": 39216.0,
-      "transacoes": 29131,
-      "linhas": 32965
+      "valor_liquido": 1567763.0,
+      "itens": 39217.0,
+      "transacoes": 29132,
+      "linhas": 32966
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1189795.0,
-      "itens": 72457.0,
-      "transacoes": 46045,
-      "linhas": 54727
+      "valor_liquido": 1189811.0,
+      "itens": 72458.0,
+      "transacoes": 46046,
+      "linhas": 54728
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 903360.0,
-      "itens": 37550.0,
-      "transacoes": 20723,
-      "linhas": 29972
+      "valor_liquido": 903430.0,
+      "itens": 37552.0,
+      "transacoes": 20724,
+      "linhas": 29974
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2311,10 +2311,10 @@
     },
     {
       "_hora": "2026-09-12T14",
-      "valor_liquido": 23.0,
-      "itens": 1.0,
-      "transacoes": 1,
-      "linhas": 1
+      "valor_liquido": 93.0,
+      "itens": 3.0,
+      "transacoes": 2,
+      "linhas": 3
     }
   ],
   "por_dia": [
@@ -2362,10 +2362,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 80.0,
-      "itens": 4.0,
-      "transacoes": 2,
-      "linhas": 3
+      "valor_liquido": 150.0,
+      "itens": 6.0,
+      "transacoes": 3,
+      "linhas": 5
     }
   ]
 }

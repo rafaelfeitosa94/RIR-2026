@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221434754,
+      "hora": "14:07:47",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 70.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221434424,
       "hora": "14:04:47",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420539,
-      "hora": "03:23:02",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 116.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
       "cancelamento": false
     }
   ]
