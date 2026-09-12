@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221420562,
+      "hora": "03:33:00",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221420561,
       "hora": "03:32:41",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 32.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221420527,
-      "hora": "03:20:02",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
