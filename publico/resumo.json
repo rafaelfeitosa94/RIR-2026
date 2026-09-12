@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T14:08:59",
+  "atualizado_em": "2026-09-12T14:10:04",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59646,
-    "transacoes_venda": 59436,
+    "transacoes": 59647,
+    "transacoes_venda": 59437,
     "transacoes_cancelamento": 210,
-    "itens": 111675.0,
-    "valor_liquido": 2757574.0,
-    "valor_bruto_vendas": 2770823.0,
+    "itens": 111676.0,
+    "valor_liquido": 2757628.0,
+    "valor_bruto_vendas": 2770877.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T14:07:47"
+    "ultima_transacao": "2026-09-12T14:08:27"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1108716.0,
-      "itens": 41247.0,
-      "transacoes": 23365,
-      "linhas": 34500
+      "valor_liquido": 1108770.0,
+      "itens": 41248.0,
+      "transacoes": 23366,
+      "linhas": 34501
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -86,10 +86,10 @@
     },
     {
       "Produto": "CB 1 SAND CARNE + BT",
-      "valor_liquido": 131220.0,
-      "itens": 2430.0,
-      "transacoes": 2091,
-      "linhas": 2091
+      "valor_liquido": 131274.0,
+      "itens": 2431.0,
+      "transacoes": 2092,
+      "linhas": 2092
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
@@ -571,10 +571,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1567763.0,
-      "itens": 39217.0,
-      "transacoes": 29132,
-      "linhas": 32966
+      "valor_liquido": 1567817.0,
+      "itens": 39218.0,
+      "transacoes": 29133,
+      "linhas": 32967
     },
     {
       "Categoria Produto": "Bebida",
@@ -587,10 +587,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 1607299.0,
-      "itens": 63983.0,
-      "transacoes": 33282,
-      "linhas": 49610
+      "valor_liquido": 1607353.0,
+      "itens": 63984.0,
+      "transacoes": 33283,
+      "linhas": 49611
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2311,10 +2311,10 @@
     },
     {
       "_hora": "2026-09-12T14",
-      "valor_liquido": 93.0,
-      "itens": 3.0,
-      "transacoes": 2,
-      "linhas": 3
+      "valor_liquido": 147.0,
+      "itens": 4.0,
+      "transacoes": 3,
+      "linhas": 4
     }
   ],
   "por_dia": [
@@ -2362,10 +2362,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 150.0,
-      "itens": 6.0,
-      "transacoes": 3,
-      "linhas": 5
+      "valor_liquido": 204.0,
+      "itens": 7.0,
+      "transacoes": 4,
+      "linhas": 6
     }
   ]
 }
