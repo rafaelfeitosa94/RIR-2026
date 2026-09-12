@@ -1,6 +1,54 @@
 {
   "feed": [
     {
+      "id": 221441302,
+      "hora": "14:41:35",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 70.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441324,
+      "hora": "14:41:35",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441330,
+      "hora": "14:41:28",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "COCA ZERO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221441350,
+      "hora": "14:41:26",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 32.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221440976,
       "hora": "14:40:01",
       "ponto": "SUN.A.ESPETTO",
@@ -250,54 +298,6 @@
       "valor": 55.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221439930,
-      "hora": "14:36:10",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 55.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221439915,
-      "hora": "14:36:04",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221439987,
-      "hora": "14:36:04",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 74.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221440106,
-      "hora": "14:36:03",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "MANE BURGUER",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 56.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
       "cancelamento": false
     }
   ]
