@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221420514,
+      "hora": "03:17:44",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 45.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221420510,
       "hora": "03:17:27",
       "ponto": "SUN.A.ESPETTO",
@@ -76,7 +88,7 @@
       "id": 221420497,
       "hora": "03:15:25",
       "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
+      "produto": "ESPETO FRANGO",
       "outros_produtos": 2,
       "quantidade": 3,
       "valor": 61.0,
@@ -284,18 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 54.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420378,
-      "hora": "03:05:22",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
