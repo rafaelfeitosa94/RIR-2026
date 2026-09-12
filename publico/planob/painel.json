@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221434754,
+      "hora": "14:07:47",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 70.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221434424,
+      "hora": "14:04:47",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221432539,
       "hora": "13:38:03",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221420539,
-      "hora": "03:23:02",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "2.ESP.CARNE +BT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 116.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 221420536,
-      "hora": "03:22:02",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
