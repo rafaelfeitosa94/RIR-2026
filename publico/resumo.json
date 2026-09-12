@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-12T03:03:50",
+  "atualizado_em": "2026-09-12T03:05:16",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 59585,
-    "transacoes_venda": 59375,
+    "transacoes": 59587,
+    "transacoes_venda": 59377,
     "transacoes_cancelamento": 210,
-    "itens": 111581.0,
-    "valor_liquido": 2755228.0,
-    "valor_bruto_vendas": 2768477.0,
+    "itens": 111583.0,
+    "valor_liquido": 2755283.0,
+    "valor_bruto_vendas": 2768532.0,
     "valor_cancelado": 13249.0,
-    "ultima_transacao": "2026-09-12T03:03:15"
+    "ultima_transacao": "2026-09-12T03:04:17"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1106370.0,
-      "itens": 41153.0,
-      "transacoes": 23304,
-      "linhas": 34422
+      "valor_liquido": 1106425.0,
+      "itens": 41155.0,
+      "transacoes": 23306,
+      "linhas": 34424
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -170,10 +170,10 @@
     },
     {
       "Produto": "CB 1 ESP FRANGO + BT",
-      "valor_liquido": 27963.0,
-      "itens": 717.0,
-      "transacoes": 696,
-      "linhas": 696
+      "valor_liquido": 28002.0,
+      "itens": 718.0,
+      "transacoes": 697,
+      "linhas": 697
     },
     {
       "Produto": "CBAMERICAN FISH + BATATA",
@@ -393,18 +393,18 @@
       "linhas": 320
     },
     {
+      "Produto": "FANTA GUARA",
+      "valor_liquido": 6176.0,
+      "itens": 386.0,
+      "transacoes": 345,
+      "linhas": 345
+    },
+    {
       "Produto": "HEINEKEN 0.0 RT",
       "valor_liquido": 6174.0,
       "itens": 343.0,
       "transacoes": 295,
       "linhas": 295
-    },
-    {
-      "Produto": "FANTA GUARA",
-      "valor_liquido": 6160.0,
-      "itens": 385.0,
-      "transacoes": 344,
-      "linhas": 344
     },
     {
       "Produto": "MIXED SPRITZ",
@@ -571,26 +571,26 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1566085.0,
-      "itens": 39165.0,
-      "transacoes": 29094,
-      "linhas": 32924
+      "valor_liquido": 1566124.0,
+      "itens": 39166.0,
+      "transacoes": 29095,
+      "linhas": 32925
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1189143.0,
-      "itens": 72416.0,
-      "transacoes": 46012,
-      "linhas": 54692
+      "valor_liquido": 1189159.0,
+      "itens": 72417.0,
+      "transacoes": 46013,
+      "linhas": 54693
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 1606451.0,
-      "itens": 63950.0,
-      "transacoes": 33261,
-      "linhas": 49582
+      "valor_liquido": 1606467.0,
+      "itens": 63951.0,
+      "transacoes": 33262,
+      "linhas": 49583
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -601,10 +601,10 @@
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 218961.0,
-      "itens": 8951.0,
-      "transacoes": 4941,
-      "linhas": 7144
+      "valor_liquido": 219000.0,
+      "itens": 8952.0,
+      "transacoes": 4942,
+      "linhas": 7145
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -2234,10 +2234,10 @@
     },
     {
       "_hora": "2026-09-12T03",
-      "valor_liquido": 383.0,
-      "itens": 16.0,
-      "transacoes": 11,
-      "linhas": 12
+      "valor_liquido": 438.0,
+      "itens": 18.0,
+      "transacoes": 13,
+      "linhas": 14
     }
   ],
   "por_dia": [
@@ -2278,10 +2278,10 @@
     },
     {
       "_dia": "2026-09-11",
-      "valor_liquido": 457355.0,
-      "itens": 21406.0,
-      "transacoes": 9889,
-      "linhas": 15726
+      "valor_liquido": 457410.0,
+      "itens": 21408.0,
+      "transacoes": 9891,
+      "linhas": 15728
     }
   ]
 }
