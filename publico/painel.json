@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 221937901,
+      "hora": "17:22:37",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 37.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937848,
+      "hora": "17:22:36",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937910,
+      "hora": "17:22:30",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "COCA COLA",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937764,
+      "hora": "17:22:28",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RB TROPICAL RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937522,
+      "hora": "17:21:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 41.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937536,
+      "hora": "17:21:38",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RB TROPICAL RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": -32.0,
+      "operacao": "Cancelamento de Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": true
+    },
+    {
       "id": 221937333,
       "hora": "17:21:19",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -37,18 +109,6 @@
       "cancelamento": false
     },
     {
-      "id": 221937229,
-      "hora": "17:21:06",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 221937395,
       "hora": "17:21:06",
       "ponto": "SUN.A.ESPETTO",
@@ -58,6 +118,18 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221937229,
+      "hora": "17:21:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
       "cancelamento": false
     },
     {
@@ -226,78 +298,6 @@
       "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936575,
-      "hora": "17:19:37",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936505,
-      "hora": "17:19:33",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "HEINEKEN ULT RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936562,
-      "hora": "17:19:31",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936500,
-      "hora": "17:19:21",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936444,
-      "hora": "17:19:20",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221936407,
-      "hora": "17:19:16",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": 90.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
