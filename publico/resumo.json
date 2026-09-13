@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-13T03:34:56",
+  "atualizado_em": "2026-09-13T03:36:45",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 74368,
-    "transacoes_venda": 74122,
+    "transacoes": 74369,
+    "transacoes_venda": 74123,
     "transacoes_cancelamento": 246,
-    "itens": 140125.0,
-    "valor_liquido": 3458350.0,
-    "valor_bruto_vendas": 3473905.0,
+    "itens": 140127.0,
+    "valor_liquido": 3458386.0,
+    "valor_bruto_vendas": 3473941.0,
     "valor_cancelado": 15555.0,
-    "ultima_transacao": "2026-09-13T03:32:03"
+    "ultima_transacao": "2026-09-13T03:35:42"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1393482.0,
-      "itens": 51765.0,
-      "transacoes": 29069,
-      "linhas": 43356
+      "valor_liquido": 1393518.0,
+      "itens": 51767.0,
+      "transacoes": 29070,
+      "linhas": 43357
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -44,10 +44,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 529164.0,
-      "itens": 29398.0,
-      "transacoes": 19986,
-      "linhas": 19986
+      "valor_liquido": 529200.0,
+      "itens": 29400.0,
+      "transacoes": 19987,
+      "linhas": 19987
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1478881.0,
-      "itens": 90878.0,
-      "transacoes": 57496,
-      "linhas": 68763
+      "valor_liquido": 1478917.0,
+      "itens": 90880.0,
+      "transacoes": 57497,
+      "linhas": 68764
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1121432.0,
-      "itens": 46557.0,
-      "transacoes": 25543,
-      "linhas": 37215
+      "valor_liquido": 1121468.0,
+      "itens": 46559.0,
+      "transacoes": 25544,
+      "linhas": 37216
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2402,10 +2402,10 @@
     },
     {
       "_hora": "2026-09-13T03",
-      "valor_liquido": 2229.0,
-      "itens": 107.0,
-      "transacoes": 70,
-      "linhas": 88
+      "valor_liquido": 2265.0,
+      "itens": 109.0,
+      "transacoes": 71,
+      "linhas": 89
     }
   ],
   "por_dia": [
@@ -2453,10 +2453,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 700926.0,
-      "itens": 28456.0,
-      "transacoes": 14725,
-      "linhas": 22521
+      "valor_liquido": 700962.0,
+      "itens": 28458.0,
+      "transacoes": 14726,
+      "linhas": 22522
     }
   ]
 }
