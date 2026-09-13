@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221829530,
+      "hora": "03:42:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221829528,
+      "hora": "03:42:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 3,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221829525,
       "hora": "03:41:23",
       "ponto": "SUN.A.ESPETTO",
@@ -274,30 +298,6 @@
       "valor": 104.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829304,
-      "hora": "03:16:23",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829302,
-      "hora": "03:15:56",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP FRANGO + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
       "cancelamento": false
     }
   ]
