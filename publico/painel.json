@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221861996,
+      "hora": "14:13:11",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 84.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221861309,
       "hora": "14:09:55",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829353,
-      "hora": "03:18:44",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
