@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-13T03:36:45",
+  "atualizado_em": "2026-09-13T03:38:32",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 74369,
-    "transacoes_venda": 74123,
+    "transacoes": 74370,
+    "transacoes_venda": 74124,
     "transacoes_cancelamento": 246,
-    "itens": 140127.0,
-    "valor_liquido": 3458386.0,
-    "valor_bruto_vendas": 3473941.0,
+    "itens": 140128.0,
+    "valor_liquido": 3458407.0,
+    "valor_bruto_vendas": 3473962.0,
     "valor_cancelado": 15555.0,
-    "ultima_transacao": "2026-09-13T03:35:42"
+    "ultima_transacao": "2026-09-13T03:37:15"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1393518.0,
-      "itens": 51767.0,
-      "transacoes": 29070,
-      "linhas": 43357
+      "valor_liquido": 1393539.0,
+      "itens": 51768.0,
+      "transacoes": 29071,
+      "linhas": 43358
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -170,10 +170,10 @@
     },
     {
       "Produto": "RED BULL",
-      "valor_liquido": 35511.0,
-      "itens": 1691.0,
-      "transacoes": 1556,
-      "linhas": 1556
+      "valor_liquido": 35532.0,
+      "itens": 1692.0,
+      "transacoes": 1557,
+      "linhas": 1557
     },
     {
       "Produto": "CBAMERICAN FISH + BATATA",
@@ -578,19 +578,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1478917.0,
-      "itens": 90880.0,
-      "transacoes": 57497,
-      "linhas": 68764
+      "valor_liquido": 1478938.0,
+      "itens": 90881.0,
+      "transacoes": 57498,
+      "linhas": 68765
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2036090.0,
-      "itens": 81238.0,
-      "transacoes": 41977,
-      "linhas": 63110
+      "valor_liquido": 2036111.0,
+      "itens": 81239.0,
+      "transacoes": 41978,
+      "linhas": 63111
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2402,10 +2402,10 @@
     },
     {
       "_hora": "2026-09-13T03",
-      "valor_liquido": 2265.0,
-      "itens": 109.0,
-      "transacoes": 71,
-      "linhas": 89
+      "valor_liquido": 2286.0,
+      "itens": 110.0,
+      "transacoes": 72,
+      "linhas": 90
     }
   ],
   "por_dia": [
@@ -2453,10 +2453,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 700962.0,
-      "itens": 28458.0,
-      "transacoes": 14726,
-      "linhas": 22522
+      "valor_liquido": 700983.0,
+      "itens": 28459.0,
+      "transacoes": 14727,
+      "linhas": 22523
     }
   ]
 }
