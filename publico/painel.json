@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221860900,
+      "hora": "14:07:36",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 40.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221860091,
       "hora": "14:03:24",
       "ponto": "MUN.A.MANE.AEB04",
@@ -284,18 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829343,
-      "hora": "03:18:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 89.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
