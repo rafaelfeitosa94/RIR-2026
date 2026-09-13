@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-13T03:23:26",
+  "atualizado_em": "2026-09-13T03:25:27",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 74359,
-    "transacoes_venda": 74113,
+    "transacoes": 74360,
+    "transacoes_venda": 74114,
     "transacoes_cancelamento": 246,
-    "itens": 140107.0,
-    "valor_liquido": 3458087.0,
-    "valor_bruto_vendas": 3473642.0,
+    "itens": 140111.0,
+    "valor_liquido": 3458115.0,
+    "valor_bruto_vendas": 3473670.0,
     "valor_cancelado": 15555.0,
-    "ultima_transacao": "2026-09-13T03:20:38"
+    "ultima_transacao": "2026-09-13T03:24:51"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1393219.0,
-      "itens": 51747.0,
-      "transacoes": 29060,
-      "linhas": 43344
+      "valor_liquido": 1393247.0,
+      "itens": 51751.0,
+      "transacoes": 29061,
+      "linhas": 43345
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -114,10 +114,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 95137.0,
-      "itens": 13591.0,
-      "transacoes": 8110,
-      "linhas": 8110
+      "valor_liquido": 95165.0,
+      "itens": 13595.0,
+      "transacoes": 8111,
+      "linhas": 8111
     },
     {
       "Produto": "COCA COLA",
@@ -578,19 +578,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1478618.0,
-      "itens": 90860.0,
-      "transacoes": 57487,
-      "linhas": 68751
+      "valor_liquido": 1478646.0,
+      "itens": 90864.0,
+      "transacoes": 57488,
+      "linhas": 68752
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2036008.0,
-      "itens": 81231.0,
-      "transacoes": 41974,
-      "linhas": 63107
+      "valor_liquido": 2036036.0,
+      "itens": 81235.0,
+      "transacoes": 41975,
+      "linhas": 63108
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2402,10 +2402,10 @@
     },
     {
       "_hora": "2026-09-13T03",
-      "valor_liquido": 1966.0,
-      "itens": 89.0,
-      "transacoes": 61,
-      "linhas": 76
+      "valor_liquido": 1994.0,
+      "itens": 93.0,
+      "transacoes": 62,
+      "linhas": 77
     }
   ],
   "por_dia": [
@@ -2453,10 +2453,10 @@
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 700663.0,
-      "itens": 28438.0,
-      "transacoes": 14716,
-      "linhas": 22509
+      "valor_liquido": 700691.0,
+      "itens": 28442.0,
+      "transacoes": 14717,
+      "linhas": 22510
     }
   ]
 }
