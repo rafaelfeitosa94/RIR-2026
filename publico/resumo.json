@@ -1,30 +1,30 @@
 {
-  "atualizado_em": "2026-09-13T17:16:11",
+  "atualizado_em": "2026-09-13T17:17:21",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 76031,
-    "transacoes_venda": 75781,
+    "transacoes": 76033,
+    "transacoes_venda": 75783,
     "transacoes_cancelamento": 250,
-    "itens": 142740.0,
-    "valor_liquido": 3529724.0,
-    "valor_bruto_vendas": 3545432.0,
+    "itens": 142743.0,
+    "valor_liquido": 3529774.0,
+    "valor_bruto_vendas": 3545482.0,
     "valor_cancelado": 15708.0,
-    "ultima_transacao": "2026-09-13T17:15:29"
+    "ultima_transacao": "2026-09-13T17:16:32"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1433984.0,
-      "itens": 53249.0,
-      "transacoes": 30009,
-      "linhas": 44664
+      "valor_liquido": 1434016.0,
+      "itens": 53251.0,
+      "transacoes": 30010,
+      "linhas": 44666
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 1363218.0,
-      "itens": 59202.0,
-      "transacoes": 29748,
-      "linhas": 43920
+      "valor_liquido": 1363236.0,
+      "itens": 59203.0,
+      "transacoes": 29749,
+      "linhas": 43921
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
@@ -44,10 +44,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 533862.0,
-      "itens": 29659.0,
-      "transacoes": 20186,
-      "linhas": 20186
+      "valor_liquido": 533880.0,
+      "itens": 29660.0,
+      "transacoes": 20187,
+      "linhas": 20187
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -184,10 +184,10 @@
     },
     {
       "Produto": "RED BULL RT",
-      "valor_liquido": 29216.0,
-      "itens": 1826.0,
-      "transacoes": 1523,
-      "linhas": 1523
+      "valor_liquido": 29232.0,
+      "itens": 1827.0,
+      "transacoes": 1524,
+      "linhas": 1524
     },
     {
       "Produto": "CB 2 ESPS FRANGO + BT",
@@ -443,10 +443,10 @@
     },
     {
       "Produto": "RB MELANCIA RT",
-      "valor_liquido": 4816.0,
-      "itens": 301.0,
-      "transacoes": 255,
-      "linhas": 255
+      "valor_liquido": 4832.0,
+      "itens": 302.0,
+      "transacoes": 256,
+      "linhas": 256
     },
     {
       "Produto": "RB CEREJA",
@@ -578,19 +578,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1508675.0,
-      "itens": 92510.0,
-      "transacoes": 58729,
-      "linhas": 70159
+      "valor_liquido": 1508725.0,
+      "itens": 92513.0,
+      "transacoes": 58731,
+      "linhas": 70162
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2075332.0,
-      "itens": 82658.0,
-      "transacoes": 42870,
-      "linhas": 64358
+      "valor_liquido": 2075382.0,
+      "itens": 82661.0,
+      "transacoes": 42872,
+      "linhas": 64361
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2500,10 +2500,10 @@
     },
     {
       "_hora": "2026-09-13T17",
-      "valor_liquido": 4121.0,
-      "itens": 163.0,
-      "transacoes": 106,
-      "linhas": 137
+      "valor_liquido": 4171.0,
+      "itens": 166.0,
+      "transacoes": 108,
+      "linhas": 140
     }
   ],
   "por_dia": [
@@ -2558,10 +2558,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 70971.0,
-      "itens": 2592.0,
-      "transacoes": 1653,
-      "linhas": 2274
+      "valor_liquido": 71021.0,
+      "itens": 2595.0,
+      "transacoes": 1655,
+      "linhas": 2277
     }
   ]
 }

@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221935189,
+      "hora": "17:16:32",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL RT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 32.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221934968,
+      "hora": "17:15:55",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221934783,
       "hora": "17:15:29",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 65.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221933670,
-      "hora": "17:12:58",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RB ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221933598,
-      "hora": "17:12:52",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 7.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
