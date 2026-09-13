@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 221867856,
+      "hora": "14:35:44",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221867931,
+      "hora": "14:35:41",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 69.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 221867703,
+      "hora": "14:35:19",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "HEINEKEN ULT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221867710,
+      "hora": "14:35:13",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 20.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221867593,
+      "hora": "14:35:03",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 54.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221867498,
+      "hora": "14:34:50",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221867430,
       "hora": "14:34:39",
       "ponto": "SUN.A.ESPETTO",
@@ -227,78 +299,6 @@
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
-    },
-    {
-      "id": 221866311,
-      "hora": "14:31:36",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 81.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221866231,
-      "hora": "14:31:24",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221866230,
-      "hora": "14:31:21",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 53.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221866211,
-      "hora": "14:31:21",
-      "ponto": "MUN.A.SIRENE.AEB05",
-      "produto": "AMERICAN FISH",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 90.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221866115,
-      "hora": "14:31:04",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "SANDU FRANGO",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 56.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221866102,
-      "hora": "14:31:03",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": -41.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
     }
   ]
 }
