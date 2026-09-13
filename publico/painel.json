@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 221926790,
+      "hora": "16:56:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 70.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221926534,
+      "hora": "16:55:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 221926488,
+      "hora": "16:55:05",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "HEINEKEN 0.0 RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221926069,
       "hora": "16:53:54",
       "ponto": "MUN.A.MANE.AEB04",
@@ -262,42 +298,6 @@
       "valor": 16.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221925227,
-      "hora": "16:51:47",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "MIXED SPRITZ",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 26.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221925142,
-      "hora": "16:51:43",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 46.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221925066,
-      "hora": "16:51:39",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "MIXED GIN TO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
