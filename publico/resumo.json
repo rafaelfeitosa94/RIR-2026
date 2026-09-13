@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-09-13T14:03:44",
+  "atualizado_em": "2026-09-13T14:04:54",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 74378,
-    "transacoes_venda": 74132,
+    "transacoes": 74379,
+    "transacoes_venda": 74133,
     "transacoes_cancelamento": 246,
-    "itens": 140148.0,
-    "valor_liquido": 3458753.0,
-    "valor_bruto_vendas": 3474308.0,
+    "itens": 140149.0,
+    "valor_liquido": 3458769.0,
+    "valor_bruto_vendas": 3474324.0,
     "valor_cancelado": 15555.0,
-    "ultima_transacao": "2026-09-13T03:45:12"
+    "ultima_transacao": "2026-09-13T14:03:24"
   },
   "por_ponto": [
     {
@@ -28,10 +28,10 @@
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
-      "valor_liquido": 540270.0,
-      "itens": 22015.0,
-      "transacoes": 11777,
-      "linhas": 17508
+      "valor_liquido": 540286.0,
+      "itens": 22016.0,
+      "transacoes": 11778,
+      "linhas": 17509
     },
     {
       "Nome do Ponto": "MUN.A.SIRENE.AEB05",
@@ -184,10 +184,10 @@
     },
     {
       "Produto": "RED BULL RT",
-      "valor_liquido": 28656.0,
-      "itens": 1791.0,
-      "transacoes": 1491,
-      "linhas": 1491
+      "valor_liquido": 28672.0,
+      "itens": 1792.0,
+      "transacoes": 1492,
+      "linhas": 1492
     },
     {
       "Produto": "CB 2 ESPS FRANGO + BT",
@@ -578,19 +578,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1479284.0,
-      "itens": 90901.0,
-      "transacoes": 57506,
-      "linhas": 68778
+      "valor_liquido": 1479300.0,
+      "itens": 90902.0,
+      "transacoes": 57507,
+      "linhas": 68779
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2036306.0,
-      "itens": 81250.0,
-      "transacoes": 41982,
-      "linhas": 63118
+      "valor_liquido": 2036322.0,
+      "itens": 81251.0,
+      "transacoes": 41983,
+      "linhas": 63119
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2406,6 +2406,83 @@
       "itens": 130.0,
       "transacoes": 80,
       "linhas": 103
+    },
+    {
+      "_hora": "2026-09-13T04",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T05",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T06",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T07",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T08",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T09",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T10",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T11",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T12",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T13",
+      "valor_liquido": 0.0,
+      "itens": 0.0,
+      "transacoes": 0,
+      "linhas": 0
+    },
+    {
+      "_hora": "2026-09-13T14",
+      "valor_liquido": 16.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ],
   "por_dia": [
@@ -2457,6 +2534,13 @@
       "itens": 28479.0,
       "transacoes": 14735,
       "linhas": 22536
+    },
+    {
+      "_dia": "2026-09-13",
+      "valor_liquido": 16.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ]
 }
