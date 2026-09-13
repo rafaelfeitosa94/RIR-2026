@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221864130,
+      "hora": "14:23:15",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221864053,
+      "hora": "14:22:44",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221863886,
       "hora": "14:21:59",
       "ponto": "SUN.A.ESPETTO",
@@ -172,7 +196,7 @@
       "id": 221863363,
       "hora": "14:19:16",
       "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
+      "produto": "RB MELANCIA",
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 42.0,
@@ -274,30 +298,6 @@
       "valor": 80.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221862787,
-      "hora": "14:17:03",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221862673,
-      "hora": "14:16:29",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
