@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-13T14:09:37",
+  "atualizado_em": "2026-09-13T14:10:49",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 74380,
-    "transacoes_venda": 74134,
+    "transacoes": 74381,
+    "transacoes_venda": 74135,
     "transacoes_cancelamento": 246,
-    "itens": 140150.0,
-    "valor_liquido": 3458809.0,
-    "valor_bruto_vendas": 3474364.0,
+    "itens": 140152.0,
+    "valor_liquido": 3458903.0,
+    "valor_bruto_vendas": 3474458.0,
     "valor_cancelado": 15555.0,
-    "ultima_transacao": "2026-09-13T14:07:36"
+    "ultima_transacao": "2026-09-13T14:09:55"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1393925.0,
-      "itens": 51789.0,
-      "transacoes": 29080,
-      "linhas": 43372
+      "valor_liquido": 1394019.0,
+      "itens": 51791.0,
+      "transacoes": 29081,
+      "linhas": 43374
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -254,10 +254,10 @@
     },
     {
       "Produto": "CB 1 SAND FRANGO + BT",
-      "valor_liquido": 17496.0,
-      "itens": 324.0,
-      "transacoes": 304,
-      "linhas": 304
+      "valor_liquido": 17550.0,
+      "itens": 325.0,
+      "transacoes": 305,
+      "linhas": 305
     },
     {
       "Produto": "COMBO SALAD FISH + BATATA",
@@ -324,10 +324,10 @@
     },
     {
       "Produto": "SANDU FRANGO",
-      "valor_liquido": 12040.0,
-      "itens": 301.0,
-      "transacoes": 291,
-      "linhas": 291
+      "valor_liquido": 12080.0,
+      "itens": 302.0,
+      "transacoes": 292,
+      "linhas": 292
     },
     {
       "Produto": "HEINEKEN ULT",
@@ -571,10 +571,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1979509.0,
-      "itens": 49248.0,
-      "transacoes": 36603,
-      "linhas": 41448
+      "valor_liquido": 1979603.0,
+      "itens": 49250.0,
+      "transacoes": 36604,
+      "linhas": 41450
     },
     {
       "Categoria Produto": "Bebida",
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1121583.0,
-      "itens": 46566.0,
-      "transacoes": 25547,
-      "linhas": 37221
+      "valor_liquido": 1121677.0,
+      "itens": 46568.0,
+      "transacoes": 25548,
+      "linhas": 37223
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2479,10 +2479,10 @@
     },
     {
       "_hora": "2026-09-13T14",
-      "valor_liquido": 56.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
+      "valor_liquido": 150.0,
+      "itens": 4.0,
+      "transacoes": 3,
+      "linhas": 4
     }
   ],
   "por_dia": [
@@ -2537,10 +2537,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 56.0,
-      "itens": 2.0,
-      "transacoes": 2,
-      "linhas": 2
+      "valor_liquido": 150.0,
+      "itens": 4.0,
+      "transacoes": 3,
+      "linhas": 4
     }
   ]
 }

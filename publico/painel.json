@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221861309,
+      "hora": "14:09:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND FRANGO + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 94.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221860900,
       "hora": "14:07:36",
       "ponto": "SUN.A.ESPETTO",
@@ -284,18 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 2,
       "valor": 32.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829349,
-      "hora": "03:18:17",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
