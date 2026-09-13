@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 221829520,
+      "hora": "03:39:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221829516,
+      "hora": "03:38:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "COCA ZERO",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 32.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221829514,
       "hora": "03:37:15",
       "ponto": "SUN.A.ESPETTO",
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 2,
       "valor": 14.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829282,
-      "hora": "03:15:17",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829277,
-      "hora": "03:15:13",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 43.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
