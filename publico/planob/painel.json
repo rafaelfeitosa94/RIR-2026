@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 221860091,
+      "hora": "14:03:24",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "RED BULL RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 16.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221829537,
       "hora": "03:45:12",
       "ponto": "SUN.A.ESPETTO",
@@ -280,22 +292,10 @@
       "id": 221829343,
       "hora": "03:18:01",
       "ponto": "SUN.A.ESPETTO",
-      "produto": "ESP.CARNE+BT",
+      "produto": "COCA ZERO RT",
       "outros_produtos": 0,
       "quantidade": 3,
       "valor": 89.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221829338,
-      "hora": "03:17:37",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 31.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
