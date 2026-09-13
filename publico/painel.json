@@ -1,6 +1,78 @@
 {
   "feed": [
     {
+      "id": 221932602,
+      "hora": "17:10:29",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221932616,
+      "hora": "17:10:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 51.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221932370,
+      "hora": "17:10:02",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "FRITAS",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221932282,
+      "hora": "17:09:54",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "MIXED SPRITZ RT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221932334,
+      "hora": "17:09:45",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221932549,
+      "hora": "17:09:44",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 221932106,
       "hora": "17:09:27",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -25,6 +97,18 @@
       "cancelamento": false
     },
     {
+      "id": 221932132,
+      "hora": "17:09:13",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 221932125,
       "hora": "17:09:13",
       "ponto": "SUN.A.ESPETTO",
@@ -37,15 +121,15 @@
       "cancelamento": false
     },
     {
-      "id": 221932132,
-      "hora": "17:09:13",
+      "id": 221932341,
+      "hora": "17:09:07",
       "ponto": "SUN.A.ESPETTO",
       "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 58.0,
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 74.0,
       "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
+      "pagamento": "Cartao Debito",
       "cancelamento": false
     },
     {
@@ -181,18 +265,6 @@
       "cancelamento": false
     },
     {
-      "id": 221931199,
-      "hora": "17:07:16",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIEXD VODKA RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 42.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 221931302,
       "hora": "17:07:16",
       "ponto": "MUN.A.MANE.AEB04",
@@ -200,6 +272,18 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 49.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221931199,
+      "hora": "17:07:16",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "MIEXD VODKA RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 42.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
@@ -214,90 +298,6 @@
       "valor": 42.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221931095,
-      "hora": "17:06:54",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB MANE BURGUER + BATATA",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 70.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221931050,
-      "hora": "17:06:42",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIEXD VODKA RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 42.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221931038,
-      "hora": "17:06:42",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 65.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221930879,
-      "hora": "17:06:25",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "BATATA MANE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": -20.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": true
-    },
-    {
-      "id": 221930794,
-      "hora": "17:05:49",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIXED MARAC RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 42.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221930834,
-      "hora": "17:05:44",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 46.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 221930540,
-      "hora": "17:05:22",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
