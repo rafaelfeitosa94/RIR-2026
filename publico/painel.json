@@ -1,6 +1,54 @@
 {
   "feed": [
     {
+      "id": 221936407,
+      "hora": "17:19:16",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
+      "outros_produtos": 2,
+      "quantidade": 3,
+      "valor": 90.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 221936398,
+      "hora": "17:19:15",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 14.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221936388,
+      "hora": "17:19:09",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 61.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 221936151,
+      "hora": "17:18:35",
+      "ponto": "MUN.A.MANE.AEB04",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 221935902,
       "hora": "17:18:08",
       "ponto": "MUN.A.MANE.AEB04",
@@ -248,54 +296,6 @@
       "outros_produtos": 2,
       "quantidade": 4,
       "valor": 121.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221934002,
-      "hora": "17:13:44",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 221934082,
-      "hora": "17:13:43",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 41.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221933979,
-      "hora": "17:13:42",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "MIXED MARAC",
-      "outros_produtos": 1,
-      "quantidade": 4,
-      "valor": 94.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 221933968,
-      "hora": "17:13:40",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "RED BULL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
