@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 222074834,
+      "hora": "00:19:37",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOP LAG IPA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222074775,
+      "hora": "00:19:06",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 34.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222074735,
       "hora": "00:18:53",
       "ponto": "SUN.A.ESPETTO",
@@ -85,6 +109,18 @@
       "cancelamento": false
     },
     {
+      "id": 222074517,
+      "hora": "00:17:16",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO FRANGO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222074508,
       "hora": "00:17:16",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -106,18 +142,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 222074517,
-      "hora": "00:17:16",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO FRANGO",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     },
     {
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222074172,
-      "hora": "00:14:50",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 69.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222074171,
-      "hora": "00:14:38",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 57.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false

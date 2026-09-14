@@ -1,30 +1,30 @@
 {
-  "atualizado_em": "2026-09-14T00:19:25",
+  "atualizado_em": "2026-09-14T00:20:40",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 80854,
-    "transacoes_venda": 80589,
+    "transacoes": 80856,
+    "transacoes_venda": 80591,
     "transacoes_cancelamento": 265,
-    "itens": 150385.0,
-    "valor_liquido": 3736103.0,
-    "valor_bruto_vendas": 3752505.0,
+    "itens": 150388.0,
+    "valor_liquido": 3736160.0,
+    "valor_bruto_vendas": 3752562.0,
     "valor_cancelado": 16402.0,
-    "ultima_transacao": "2026-09-14T00:18:53"
+    "ultima_transacao": "2026-09-14T00:19:37"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1517230.0,
-      "itens": 56287.0,
-      "transacoes": 31957,
-      "linhas": 47328
+      "valor_liquido": 1517253.0,
+      "itens": 56288.0,
+      "transacoes": 31958,
+      "linhas": 47329
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 1458230.0,
-      "itens": 62743.0,
-      "transacoes": 31944,
-      "linhas": 46930
+      "valor_liquido": 1458264.0,
+      "itens": 62745.0,
+      "transacoes": 31945,
+      "linhas": 46932
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
@@ -44,10 +44,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 554040.0,
-      "itens": 30780.0,
-      "transacoes": 21041,
-      "linhas": 21041
+      "valor_liquido": 554058.0,
+      "itens": 30781.0,
+      "transacoes": 21042,
+      "linhas": 21042
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -184,10 +184,10 @@
     },
     {
       "Produto": "RED BULL RT",
-      "valor_liquido": 30928.0,
-      "itens": 1933.0,
-      "transacoes": 1619,
-      "linhas": 1619
+      "valor_liquido": 30944.0,
+      "itens": 1934.0,
+      "transacoes": 1620,
+      "linhas": 1620
     },
     {
       "Produto": "CB 2 ESPS FRANGO + BT",
@@ -233,10 +233,10 @@
     },
     {
       "Produto": "CHOP LAG IPA RT",
-      "valor_liquido": 21367.0,
-      "itens": 929.0,
-      "transacoes": 748,
-      "linhas": 748
+      "valor_liquido": 21390.0,
+      "itens": 930.0,
+      "transacoes": 749,
+      "linhas": 749
     },
     {
       "Produto": "MIXED GIN TO RT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1575974.0,
-      "itens": 96656.0,
-      "transacoes": 61841,
-      "linhas": 73655
+      "valor_liquido": 1576031.0,
+      "itens": 96659.0,
+      "transacoes": 61843,
+      "linhas": 73658
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1214359.0,
-      "itens": 50032.0,
-      "transacoes": 27771,
-      "linhas": 40240
+      "valor_liquido": 1214416.0,
+      "itens": 50035.0,
+      "transacoes": 27773,
+      "linhas": 40243
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2549,10 +2549,10 @@
     },
     {
       "_hora": "2026-09-14T00",
-      "valor_liquido": 6414.0,
-      "itens": 257.0,
-      "transacoes": 161,
-      "linhas": 214
+      "valor_liquido": 6471.0,
+      "itens": 260.0,
+      "transacoes": 163,
+      "linhas": 217
     }
   ],
   "por_dia": [
@@ -2607,10 +2607,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 277350.0,
-      "itens": 10237.0,
-      "transacoes": 6476,
-      "linhas": 8876
+      "valor_liquido": 277407.0,
+      "itens": 10240.0,
+      "transacoes": 6478,
+      "linhas": 8879
     }
   ]
 }
