@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222081702,
+      "hora": "02:18:06",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222081689,
       "hora": "02:17:45",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 21.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081293,
-      "hora": "02:06:07",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
       "cancelamento": false
     }
   ]
