@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222082194,
+      "hora": "02:42:18",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "HEINEKEN ULT RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222082188,
       "hora": "02:41:53",
       "ponto": "SUN.A.ESPETTO",
@@ -286,18 +298,6 @@
       "valor": 100.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 222081961,
-      "hora": "02:29:33",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "FANTA GUARA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
