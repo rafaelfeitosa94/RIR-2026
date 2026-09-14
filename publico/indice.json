@@ -1,6 +1,6 @@
 {
   "codigo_evento": 38049,
-  "atualizado_em": "2026-09-13T22:29:34",
+  "atualizado_em": "2026-09-13T22:30:53",
   "periodo": {
     "inicio": "2026-09-02T00:00:00",
     "fim": "2026-09-15T00:00:00"
@@ -726,6 +726,13 @@
       "arquivo": "horas/2026-09-13T20.json",
       "linhas": 1196,
       "transacoes": 868,
+      "definitiva": true
+    },
+    {
+      "hora": "2026-09-13T21",
+      "arquivo": "horas/2026-09-13T21.json",
+      "linhas": 1163,
+      "transacoes": 849,
       "definitiva": true
     }
   ],
