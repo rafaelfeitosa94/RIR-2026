@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222079610,
+      "hora": "01:25:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222079581,
       "hora": "01:24:11",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -286,18 +298,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222079212,
-      "hora": "01:15:58",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
