@@ -1,6 +1,42 @@
 {
   "feed": [
     {
+      "id": 222081748,
+      "hora": "02:20:14",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222081743,
+      "hora": "02:20:05",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 57.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222081747,
+      "hora": "02:19:48",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 78.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
       "id": 222081702,
       "hora": "02:18:06",
       "ponto": "SUN.A.ESPETTO",
@@ -260,42 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081358,
-      "hora": "02:08:09",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 3,
-      "valor": 68.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081327,
-      "hora": "02:07:23",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081314,
-      "hora": "02:06:57",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 21.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
       "cancelamento": false
