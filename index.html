@@ -136,6 +136,55 @@
      3 colunas no topo - ver a media query. */
   .filtros{display:block}
 
+  /* ---------------------------------------------- pagina de resumo
+     Visao de apresentacao: numeros de insumo (espetos, kg de batata, litros
+     de chopp) sobre um mosaico de fotos do evento em baixa opacidade. */
+  #resumo{display:none;position:relative;margin-left:var(--sidebar);
+          padding:22px 26px 40px;min-height:100vh;overflow:hidden}
+  body.vista-resumo main{display:none}
+  body.vista-resumo #resumo{display:block}
+
+  /* Fotos espalhadas: decoracao pura, atras de tudo e sem capturar clique. */
+  .fotos{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0}
+  .fotos img{position:absolute;border-radius:14px;object-fit:cover;
+             opacity:.16;filter:saturate(1.1)}
+  :root:not([data-tema="claro"]) .fotos img{opacity:.13}
+  #resumo > *:not(.fotos){position:relative;z-index:1}
+
+  .r-topo h1{font-size:26px;margin:0 0 4px}
+  .r-periodo{color:var(--txt2);font-size:13px;margin-bottom:20px}
+  .r-periodo b{color:var(--azul)}
+
+  .r-grade{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:18px}
+  .r-card{background:color-mix(in srgb, var(--card) 88%, transparent);
+          border:1px solid var(--linha);border-radius:14px;padding:16px 18px;
+          backdrop-filter:blur(3px)}
+  .r-card h2{font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+             color:var(--txt2);margin:0 0 12px;font-weight:700}
+  .r-num{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;line-height:1.1}
+  .r-un{font-size:14px;font-weight:600;color:var(--txt2);margin-left:4px}
+  .r-linha{display:flex;justify-content:space-between;align-items:baseline;
+           gap:10px;padding:7px 0;border-top:1px solid var(--linha)}
+  .r-linha:first-of-type{border-top:none}
+  .r-linha span{color:var(--txt2);font-size:13px}
+  .r-linha b{font-variant-numeric:tabular-nums;font-size:15px}
+  .r-total{margin-top:10px;padding-top:10px;border-top:2px solid var(--linha)}
+
+  .r-insights{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .r-insight{background:color-mix(in srgb, var(--card) 88%, transparent);
+             border:1px solid var(--linha);border-left:4px solid var(--azul);
+             border-radius:12px;padding:14px 16px;backdrop-filter:blur(3px)}
+  .r-insight .r-marca{font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+                      color:var(--azul);font-weight:800;margin-bottom:5px}
+  .r-insight p{margin:0;font-size:15px;line-height:1.5}
+  .r-insight b{font-variant-numeric:tabular-nums}
+
+  @media(max-width:900px){
+    #resumo{margin-left:0;padding:16px}
+    .r-grade{grid-template-columns:1fr}
+    .r-insights{grid-template-columns:1fr}
+  }
+
   /* Rodape de clima dentro do tooltip do ApexCharts. Usa as cores do tema:
      o tooltip herda o fundo do Apex, entao aqui so a faixa e o texto. */
   .tt-clima{padding:6px 10px;border-top:1px solid rgba(128,140,170,.28);
@@ -205,6 +254,12 @@
   <div class="tema">
     <button id="temaClaro">☀ Claro</button>
     <button id="temaEscuro">☾ Escuro</button>
+  </div>
+
+  <h3>Visão</h3>
+  <div class="tema vista">
+    <button id="vistaPainel" class="on">Painel</button>
+    <button id="vistaResumo">Resumo</button>
   </div>
 
   <h3>Fonte dos dados</h3>
@@ -354,6 +409,18 @@
     </div>
   </div>
 </main>
+
+<section id="resumo">
+  <div class="fotos" id="fotos"></div>
+
+  <div class="r-topo">
+    <h1>RIR 2026 — Resumo de consumo</h1>
+    <div class="r-periodo" id="rPeriodo"></div>
+  </div>
+
+  <div class="r-grade" id="rCards"></div>
+  <div class="r-insights" id="rInsights"></div>
+</section>
 
 <script>
 const moeda = v => (v ?? 0).toLocaleString('pt-BR',{style:'currency',currency:'BRL'});
@@ -572,6 +639,9 @@ function render(){
   const F = DADOS.fatos;
   if(!filtrosMontados) montarFiltros(F);
 
+  // Na vista de resumo o painel esta escondido: nao ha por que montar graficos.
+  if(document.body.classList.contains('vista-resumo')){ renderResumo(F); return; }
+
   const ativos = pontosAtivos(F);
   const noPonto = l => ativos.has(l[2]);
   const noDia   = l => !sel.dias.size || sel.dias.has(F.dias[l[0]]);
@@ -746,6 +816,190 @@ function ttHtml(titulo, itens, climas){
     ).join('') + `</div>` : '';
   return `<div class="apexcharts-tooltip-title">${titulo}</div>${linhas}${rodape}`;
 }
+
+// ------------------------------------------------- resumo de consumo
+// Conta INSUMO, nao produto vendido: um combo de 2 espetos vale 2 espetos, e
+// a batata que vem dentro dele entra em kg. A receita de cada produto esta em
+// componentes.json, gerado da planilha da operacao (gerar_componentes.py).
+let COMPONENTES = {unidades:{}, produtos:{}};
+fetch('componentes.json?t=' + Date.now())
+  .then(r => r.ok ? r.json() : null)
+  .then(c => { if(c){ COMPONENTES = c; render(); } })
+  .catch(() => {});
+
+const normProd = t => (t || '').normalize('NFD').replace(/[̀-ͯ]/g, '')
+                        .toUpperCase().replace(/\s+/g, ' ').trim();
+
+// Posicoes fixas (e nao aleatorias de verdade) para o mosaico nao se
+// reorganizar a cada render nem empilhar duas fotos no mesmo canto.
+const FOTOS = [
+  {src:'fotos/foto1.jpg', top:'2%',  left:'58%', w:'34%', rot:'4deg'},
+  {src:'fotos/foto2.jpg', top:'30%', left:'2%',  w:'26%', rot:'-6deg'},
+  {src:'fotos/foto3.jpg', top:'56%', left:'62%', w:'30%', rot:'7deg'},
+  {src:'fotos/foto4.jpg', top:'70%', left:'8%',  w:'24%', rot:'-3deg'},
+  {src:'fotos/foto5.jpg', top:'6%',  left:'26%', w:'22%', rot:'9deg'},
+  {src:'fotos/foto6.jpg', top:'44%', left:'34%', w:'28%', rot:'-5deg'}
+];
+
+const CARDS_RESUMO = [
+  {titulo:'Espetos por sabor', itens:['ESPETO DE CARNE', 'ESPETO DE FRANGO']},
+  {titulo:'Batatas',           itens:['BATATA FRITA', 'BATATA CRINKLE']},
+  {titulo:'Chopp por marca',   itens:['CHOPP HEINEKEN', 'CHOPP LAGUNITAS']}
+];
+
+const MIUDAS = new Set(['DE', 'DA', 'DO', 'E', '&']);
+
+// Exibe a grafia ORIGINAL da planilha (com acento) - a chave normalizada sem
+// acento existe so para casar com o nome que vem do PDV.
+const rotuloComp = nome => ((COMPONENTES.rotulos || {})[nome] || nome).split(' ')
+  .map(p => MIUDAS.has(p.toUpperCase())
+              ? p.toLowerCase()
+              : p.charAt(0).toUpperCase() + p.slice(1).toLowerCase()).join(' ');
+
+// A planilha grava as marcas em caixa alta e sem acento; numa apresentacao
+// isso fica ruim.
+const ROTULO_MARCA = {'ESPETTO':'Espetto', 'MANE':'Mané', 'SIRENE':'Sirene',
+                      'REDBULL':'Red Bull', 'SOFT DRINK':'Soft Drink',
+                      'CHOPE':'Chope', 'MIXED':'Mixed', 'CERVEJAS':'Cervejas'};
+const rotuloMarca = m => ROTULO_MARCA[String(m).toUpperCase()] || rotuloComp(m);
+
+// UND nao leva casa decimal; KG e L levam uma - 3.658,6 kg le melhor que 3.659.
+function qtdTexto(valor, unidade){
+  const casas = unidade === 'UND' ? 0 : 1;
+  return valor.toLocaleString('pt-BR', {minimumFractionDigits:casas,
+                                        maximumFractionDigits:casas});
+}
+
+function periodoTexto(){
+  const n = sel.dias.size;
+  if(n === 0) return 'durante todo o evento';
+  if(n === 1) return 'no dia ' + [...sel.dias][0].split('-').reverse().slice(0,2).join('/');
+  return 'nos ' + n + ' dias selecionados';
+}
+
+// Soma os componentes a partir da tabela-fato de produto, com os MESMOS
+// filtros do painel (palco, marca, dia, hora).
+function somarComponentes(F){
+  const linhas = F.produto.filter(l =>
+    (!sel.palcos.size || sel.palcos.has(F.palcos[F.ponto_palco[l[2]]])) &&
+    (!sel.marcas.size || sel.marcas.has(marcaDaLinha(F, l))) &&
+    (!sel.dias.size || sel.dias.has(F.dias[l[0]])) &&
+    (sel.hora === '' || l[1] === +sel.hora));
+
+  const geral = {}, porMarca = {};
+  linhas.forEach(l => {
+    const info = COMPONENTES.produtos[normProd(F.produtos[l[3]])];
+    if(!info) return;
+    const marca = info.marca || 'Outros';
+    info.componentes.forEach(function(par){
+      const nome = par[0], fator = par[1];
+      const q = l[5] * fator;
+      const un = COMPONENTES.unidades[nome] || 'UND';
+      (geral[nome] || (geral[nome] = {q:0, un:un})).q += q;
+      const m = porMarca[marca] || (porMarca[marca] = {});
+      (m[nome] || (m[nome] = {q:0, un:un})).q += q;
+    });
+  });
+  return {geral:geral, porMarca:porMarca};
+}
+
+// Frase no formato pedido. Soma so o que compartilha a unidade do primeiro
+// colocado: misturar 23 mil unidades com 3 mil quilos daria um numero sem
+// significado nenhum.
+function fraseInsight(mapa, periodo){
+  const itens = Object.entries(mapa).sort((a, b) => b[1].q - a[1].q);
+  if(!itens.length) return null;
+  const un = itens[0][1].un;
+  const mesmos = itens.filter(par => par[1].un === un).slice(0, 3);
+  const total = mesmos.reduce((t, par) => t + par[1].q, 0);
+  const nomes = mesmos.map(par => rotuloComp(par[0])).join(' + ');
+  const sufixo = un === 'UND' ? '' : ' ' + un.toLowerCase();
+  return 'Foram vendidos <b>' + qtdTexto(total, un) + sufixo + '</b> de ' +
+         nomes + ' ' + periodo + '.';
+}
+
+function renderResumo(F){
+  const fotos = document.getElementById('fotos');
+  if(fotos && !fotos.children.length){
+    fotos.innerHTML = FOTOS.map(f =>
+      '<img src="' + f.src + '" alt="" loading="lazy" style="top:' + f.top +
+      ';left:' + f.left + ';width:' + f.w + ';transform:rotate(' + f.rot + ')">').join('');
+  }
+
+  const periodo = periodoTexto();
+  document.getElementById('rPeriodo').innerHTML =
+    'Consumo por insumo — <b>' + periodo + '</b>';
+
+  const somas = somarComponentes(F);
+  const geral = somas.geral, porMarca = somas.porMarca;
+
+  document.getElementById('rCards').innerHTML = CARDS_RESUMO.map(card => {
+    const linhas = card.itens.map(n => [n, geral[n]]).filter(par => par[1] && par[1].q > 0);
+    if(!linhas.length) return '';
+    const un = linhas[0][1].un;
+    const total = linhas.reduce((t, par) => t + par[1].q, 0);
+    const corpo = linhas.map(par =>
+      '<div class="r-linha"><span>' + rotuloComp(par[0]) + '</span><b>' +
+      qtdTexto(par[1].q, par[1].un) + ' <span class="r-un">' +
+      par[1].un.toLowerCase() + '</span></b></div>').join('');
+    return '<div class="r-card"><h2>' + card.titulo + '</h2>' +
+           '<div class="r-num">' + qtdTexto(total, un) +
+           '<span class="r-un">' + un.toLowerCase() + '</span></div>' +
+           '<div class="r-total">' + corpo + '</div></div>';
+  }).join('');
+
+  const cat = COMPONENTES.categorias || {}, sub = COMPONENTES.subcategorias || {};
+  const soma = mapa => Object.values(mapa).reduce((t, a) => t + a.q, 0);
+  const bloco = (titulo, frase) => '<div class="r-insight"><div class="r-marca">' +
+                                   titulo + '</div><p>' + frase + '</p></div>';
+  // Separa comida de bebida DENTRO da marca: o combo do Espetto carrega um
+  // Red Bull, que e bebida e nao pode entrar no insight de comida da marca.
+  const filtrar = (mapa, querBebida) => {
+    const saida = {};
+    Object.entries(mapa).forEach(par => {
+      if((cat[par[0]] === 'Bebida') === querBebida) saida[par[0]] = par[1];
+    });
+    return saida;
+  };
+
+  const blocos = Object.entries(porMarca)
+    .filter(par => !/^bebida/i.test(par[0]))
+    .map(par => [par[0], filtrar(par[1], false)])
+    .filter(par => soma(par[1]) > 0)
+    .sort((a, b) => soma(b[1]) - soma(a[1]))
+    .map(par => {
+      const f = fraseInsight(par[1], periodo);
+      return f ? bloco(rotuloMarca(par[0]), f) : '';
+    });
+
+  // Bebidas por subcategoria (CHOPE, REDBULL, SOFT DRINK...), somando de TODOS
+  // os produtos - inclusive a bebida que vem dentro de um combo de comida.
+  const porGrupo = {};
+  Object.values(porMarca).forEach(mapa =>
+    Object.entries(filtrar(mapa, true)).forEach(par => {
+      const g = sub[par[0]] || 'BEBIDAS';
+      const alvo = porGrupo[g] || (porGrupo[g] = {});
+      (alvo[par[0]] || (alvo[par[0]] = {q:0, un:par[1].un})).q += par[1].q;
+    }));
+  Object.entries(porGrupo).sort((a, b) => soma(b[1]) - soma(a[1])).forEach(par => {
+    const f = fraseInsight(par[1], periodo);
+    if(f) blocos.push(bloco(rotuloMarca(par[0]), f));
+  });
+
+  document.getElementById('rInsights').innerHTML = blocos.join('');
+}
+
+function trocarVista(v){
+  const resumo = v === 'resumo';
+  document.body.classList.toggle('vista-resumo', resumo);
+  document.getElementById('vistaPainel').classList.toggle('on', !resumo);
+  document.getElementById('vistaResumo').classList.toggle('on', resumo);
+  try{ localStorage.setItem('rir-vista', v); }catch(e){}
+  render();
+}
+document.getElementById('vistaPainel').onclick = () => trocarVista('painel');
+document.getElementById('vistaResumo').onclick = () => trocarVista('resumo');
+try{ if(localStorage.getItem('rir-vista') === 'resumo') trocarVista('resumo'); }catch(e){}
 
 function renderHora(F, hoje, ontem, anterior, referencia){
   const rotulos = Array.from({length:24}, (_,h) => String(h).padStart(2,'0')+'h');

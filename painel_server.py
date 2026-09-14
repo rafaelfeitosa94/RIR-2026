@@ -175,6 +175,8 @@ class Handler(BaseHTTPRequestHandler):
         # EXPLICITA e nao ".json generico da pasta": a raiz tem credenciais.json.
         if rota == "/clima.json":
             return self._arquivo("clima.json", "application/json; charset=utf-8")
+        if rota == "/componentes.json":
+            return self._arquivo("componentes.json", "application/json; charset=utf-8")
         if self._asset(rota):
             return
 
@@ -222,8 +224,12 @@ class Handler(BaseHTTPRequestHandler):
     def _asset(self, rota):
         nome = rota.lstrip("/")
         ext = os.path.splitext(nome)[1].lower()
-        # Sem barras nem "..": só arquivos da própria pasta.
-        if ext not in self._TIPOS or "/" in nome or "\\" in nome or ".." in nome:
+        # Só arquivos da própria pasta ou da subpasta fotos/ (o mosaico do
+        # resumo). Nada de ".." nem de outras subpastas.
+        if (ext not in self._TIPOS or ".." in nome
+                or "\\" in nome
+                or ("/" in nome and not nome.startswith("fotos/"))
+                or nome.count("/") > 1):
             return False
         try:
             with open(nome, "rb") as arquivo:

@@ -1,0 +1,1180 @@
+{
+ "unidades": {
+  "ESPETO DE CARNE": "UND",
+  "ESPETO DE FRANGO": "UND",
+  "BATATA CRINKLE": "KG",
+  "PIPOCA DE PORCO": "UND",
+  "CHOPP LAGUNITAS": "L",
+  "CHOPP HEINEKEN": "L",
+  "COCA COLA": "UND",
+  "COCA ZERO": "UND",
+  "FANTA GUARANA ZERO": "UND",
+  "FANTA GUARANA": "UND",
+  "FANTA LARANJA": "UND",
+  "FISH & CHIPS": "KG",
+  "HEINEKEN ZERO": "UND",
+  "HEINEKEN ULTIMATE": "UND",
+  "LAGUNITA": "UND",
+  "MIXED PINK": "UND",
+  "MIXED GIN TONICA": "UND",
+  "MIXED MARACUJA": "UND",
+  "MIXED SPRITZ": "UND",
+  "RED BULL CEREJA": "UND",
+  "RED BULL MELANCIA": "UND",
+  "RED BULL TROPICAL": "UND",
+  "RED BULL ZERO": "UND",
+  "RED BULL TRADICIONAL": "UND",
+  "BATATA FRITA": "KG",
+  "AMERICAN FISH": "UND",
+  "MANE BURGUER": "UND",
+  "SALAD FISH": "UND",
+  "AGUA CRYSTAL": "UND"
+ },
+ "categorias": {
+  "ESPETO DE FRANGO": "Comida",
+  "ESPETO DE CARNE": "Comida",
+  "BATATA FRITA": "Comida",
+  "RED BULL TRADICIONAL": "Bebida",
+  "AGUA CRYSTAL": "Bebida",
+  "AMERICAN FISH": "Comida",
+  "BATATA CRINKLE": "Comida",
+  "PIPOCA DE PORCO": "Comida",
+  "CHOPP HEINEKEN": "Bebida",
+  "CHOPP LAGUNITAS": "Bebida",
+  "COCA COLA": "Bebida",
+  "COCA ZERO": "Bebida",
+  "FANTA GUARANA ZERO": "Bebida",
+  "FANTA GUARANA": "Bebida",
+  "FANTA LARANJA": "Bebida",
+  "FISH & CHIPS": "Comida",
+  "HEINEKEN ZERO": "Bebida",
+  "HEINEKEN ULTIMATE": "Bebida",
+  "LAGUNITA": "Bebida",
+  "MANE BURGUER": "Comida",
+  "MIXED PINK": "Bebida",
+  "MIXED GIN TONICA": "Bebida",
+  "MIXED MARACUJA": "Bebida",
+  "MIXED SPRITZ": "Bebida",
+  "RED BULL CEREJA": "Bebida",
+  "RED BULL MELANCIA": "Bebida",
+  "RED BULL TROPICAL": "Bebida",
+  "RED BULL ZERO": "Bebida",
+  "SALAD FISH": "Comida"
+ },
+ "subcategorias": {
+  "AGUA CRYSTAL": "SOFT DRINK",
+  "CHOPP LAGUNITAS": "CHOPE",
+  "CHOPP HEINEKEN": "CHOPE",
+  "COCA COLA": "SOFT DRINK",
+  "COCA ZERO": "SOFT DRINK",
+  "FANTA GUARANA ZERO": "SOFT DRINK",
+  "FANTA GUARANA": "SOFT DRINK",
+  "FANTA LARANJA": "SOFT DRINK",
+  "HEINEKEN ZERO": "CERVEJAS",
+  "HEINEKEN ULTIMATE": "CERVEJAS",
+  "LAGUNITA": "CERVEJAS",
+  "MIXED PINK": "MIXED",
+  "MIXED GIN TONICA": "MIXED",
+  "MIXED MARACUJA": "MIXED",
+  "MIXED SPRITZ": "MIXED",
+  "RED BULL CEREJA": "REDBULL",
+  "RED BULL MELANCIA": "REDBULL",
+  "RED BULL TROPICAL": "REDBULL",
+  "RED BULL ZERO": "REDBULL",
+  "RED BULL TRADICIONAL": "REDBULL"
+ },
+ "rotulos": {
+  "ESPETO DE FRANGO": "ESPETO DE FRANGO",
+  "ESPETO DE CARNE": "ESPETO DE CARNE",
+  "BATATA FRITA": "BATATA FRITA",
+  "AMERICAN FISH": "AMERICAN FISH",
+  "BATATA CRINKLE": "BATATA CRINKLE",
+  "RED BULL TRADICIONAL": "RED BULL TRADICIONAL",
+  "PIPOCA DE PORCO": "PIPOCA DE PORCO",
+  "CHOPP HEINEKEN": "CHOPP HEINEKEN",
+  "CHOPP LAGUNITAS": "CHOPP LAGUNITAS",
+  "COCA COLA": "COCA COLA",
+  "COCA ZERO": "COCA ZERO",
+  "FANTA GUARANA ZERO": "FANTA GUARANÁ ZERO",
+  "FANTA GUARANA": "FANTA GUARANÁ",
+  "FANTA LARANJA": "FANTA LARANJA",
+  "FISH & CHIPS": "FISH & CHIPS",
+  "HEINEKEN ZERO": "HEINEKEN ZERO",
+  "HEINEKEN ULTIMATE": "HEINEKEN ULTIMATE",
+  "LAGUNITA": "LAGUNITA",
+  "MANE BURGUER": "MANÉ BURGUER",
+  "MIXED PINK": "MIXED PINK",
+  "MIXED GIN TONICA": "MIXED GIN TONICA",
+  "MIXED MARACUJA": "MIXED MARACUJÁ",
+  "MIXED SPRITZ": "MIXED SPRITZ",
+  "RED BULL CEREJA": "RED BULL CEREJA",
+  "RED BULL MELANCIA": "RED BULL MELANCIA",
+  "RED BULL TROPICAL": "RED BULL TROPICAL",
+  "RED BULL ZERO": "RED BULL ZERO",
+  "SALAD FISH": "SALAD FISH"
+ },
+ "produtos": {
+  "1CARN+1FRAN+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "1CARN+BT+RB": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "1CARN+BT+RB+CP": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "1FRAN+BT+RB": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "1FRANG+BT+RB+CP": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "2.ESP.CARNE +BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     2.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "2.ESP.FRANG+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     2.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "AGUA CRYSTAL": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "AGUA CRYSTAL",
+     1.0
+    ]
+   ]
+  },
+  "AMERIC.FISH+BT": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "AMERICAN FISH",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "AMERICAN FISH": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "AMERICAN FISH",
+     1.0
+    ]
+   ]
+  },
+  "BAT.PORCO+RB": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "BAT.PORCO+RB+CP": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "BATATA CRINKLE": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ]
+   ]
+  },
+  "BATATA MANE": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ]
+   ]
+  },
+  "BATATA PORCO": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ]
+   ]
+  },
+  "CB PIPOCA+2CHOP": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "PIPOCA DE PORCO",
+     1.0
+    ],
+    [
+     "CHOPP HEINEKEN",
+     0.8
+    ]
+   ]
+  },
+  "CHOP LAG IPA": {
+   "marca": "Bebida / CHOPE",
+   "componentes": [
+    [
+     "CHOPP LAGUNITAS",
+     0.4
+    ]
+   ]
+  },
+  "CHOP LAG IPA RT": {
+   "marca": "Bebida / CHOPE",
+   "componentes": [
+    [
+     "CHOPP LAGUNITAS",
+     0.4
+    ]
+   ]
+  },
+  "CHOPE HNK": {
+   "marca": "Bebida / CHOPE",
+   "componentes": [
+    [
+     "CHOPP HEINEKEN",
+     0.4
+    ]
+   ]
+  },
+  "CHOPE HNK RT": {
+   "marca": "Bebida / CHOPE",
+   "componentes": [
+    [
+     "CHOPP HEINEKEN",
+     0.4
+    ]
+   ]
+  },
+  "COCA COLA": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "COCA COLA",
+     1.0
+    ]
+   ]
+  },
+  "COCA COLA RT": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "COCA COLA",
+     1.0
+    ]
+   ]
+  },
+  "COCA ZERO": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "COCA ZERO",
+     1.0
+    ]
+   ]
+  },
+  "COCA ZERO RT": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "COCA ZERO",
+     1.0
+    ]
+   ]
+  },
+  "ESP.CARNE+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "ESP.FRANGO+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "ESPETO DE CARNE": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ]
+   ]
+  },
+  "ESPETO FRANGO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ]
+   ]
+  },
+  "FANTA GUA 0": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA GUARANA ZERO",
+     1.0
+    ]
+   ]
+  },
+  "FANTA GUA 0 RT": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA GUARANA ZERO",
+     1.0
+    ]
+   ]
+  },
+  "FANTA GUARA": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA GUARANA",
+     1.0
+    ]
+   ]
+  },
+  "FANTA GUARA RT": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA GUARANA",
+     1.0
+    ]
+   ]
+  },
+  "FANTA LARAN": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA LARANJA",
+     1.0
+    ]
+   ]
+  },
+  "FANTA LARAN RT": {
+   "marca": "Bebida / SOFT DRINK",
+   "componentes": [
+    [
+     "FANTA LARANJA",
+     1.0
+    ]
+   ]
+  },
+  "FISH CHIPS": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "FISH & CHIPS",
+     0.16
+    ]
+   ]
+  },
+  "FISH&CHIP+RB": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "FISH & CHIPS",
+     0.16
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "FISH&CHIP+RB+CP": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "FISH & CHIPS",
+     0.16
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "FRITAS": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "HEINEKEN 0.0": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "HEINEKEN ZERO",
+     1.0
+    ]
+   ]
+  },
+  "HEINEKEN 0.0 RT": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "HEINEKEN ZERO",
+     1.0
+    ]
+   ]
+  },
+  "HEINEKEN ULT": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "HEINEKEN ULTIMATE",
+     1.0
+    ]
+   ]
+  },
+  "HEINEKEN ULT RT": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "HEINEKEN ULTIMATE",
+     1.0
+    ]
+   ]
+  },
+  "LAGUN IPA": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "LAGUNITA",
+     1.0
+    ]
+   ]
+  },
+  "LAGUN IPA RT": {
+   "marca": "Bebida / CERVEJAS",
+   "componentes": [
+    [
+     "LAGUNITA",
+     1.0
+    ]
+   ]
+  },
+  "MANE BURGUER": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "MANE BURGUER",
+     1.0
+    ]
+   ]
+  },
+  "MANE BURGUER+BT": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "MANE BURGUER",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "MIEXD VODKA RT": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED PINK",
+     1.0
+    ]
+   ]
+  },
+  "MIXED GIN TO": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED GIN TONICA",
+     1.0
+    ]
+   ]
+  },
+  "MIXED GIN TO RT": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED GIN TONICA",
+     1.0
+    ]
+   ]
+  },
+  "MIXED MARAC": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED MARACUJA",
+     1.0
+    ]
+   ]
+  },
+  "MIXED MARAC RT": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED MARACUJA",
+     1.0
+    ]
+   ]
+  },
+  "MIXED SPRITZ": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED SPRITZ",
+     1.0
+    ]
+   ]
+  },
+  "MIXED SPRITZ RT": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED SPRITZ",
+     1.0
+    ]
+   ]
+  },
+  "MIXED VODKA": {
+   "marca": "Bebida / MIXED",
+   "componentes": [
+    [
+     "MIXED PINK",
+     1.0
+    ]
+   ]
+  },
+  "PIPOCA PORCO": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "PIPOCA DE PORCO",
+     1.0
+    ]
+   ]
+  },
+  "PIPOCA+2CHOP CP": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "PIPOCA DE PORCO",
+     1.0
+    ],
+    [
+     "CHOPP HEINEKEN",
+     0.8
+    ]
+   ]
+  },
+  "RB CEREJA": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL CEREJA",
+     1.0
+    ]
+   ]
+  },
+  "RB CEREJA RT": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL CEREJA",
+     1.0
+    ]
+   ]
+  },
+  "RB MELANCIA": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL MELANCIA",
+     1.0
+    ]
+   ]
+  },
+  "RB MELANCIA RT": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL MELANCIA",
+     1.0
+    ]
+   ]
+  },
+  "RB TROPICAL": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL TROPICAL",
+     1.0
+    ]
+   ]
+  },
+  "RB TROPICAL RT": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL TROPICAL",
+     1.0
+    ]
+   ]
+  },
+  "RB ZERO": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL ZERO",
+     1.0
+    ]
+   ]
+  },
+  "RB ZERO RT": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL ZERO",
+     1.0
+    ]
+   ]
+  },
+  "RED BULL": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "RED BULL RT": {
+   "marca": "Bebida / REDBULL",
+   "componentes": [
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "SALAD FISH": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "SALAD FISH",
+     1.0
+    ]
+   ]
+  },
+  "SALAD.FISH+BT": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "SALAD FISH",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "SAND CARNE": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ]
+   ]
+  },
+  "SAND.CARNE+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "SAND.FRANGO+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "SANDU FRANGO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ]
+   ]
+  },
+  "CB 2 ESPS CARNE + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     2.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB 2 ESPS FRANGO + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     2.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB 1 ESP CARNE + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CB 1 ESP FRANGO + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CB 1 ESP CARNE+1FRANGO+BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CB 1 SAND CARNE + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CB 1 SAND FRANGO + BT": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CB MANE BURGUER + BATATA": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "MANE BURGUER",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "CBAMERICAN FISH + BATATA": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "AMERICAN FISH",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "COMBO SALAD FISH + BATATA": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "SALAD FISH",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ]
+   ]
+  },
+  "BATATA CRINKLE SIRENE": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ]
+   ]
+  },
+  "CB 1 ESP CARNBTRB COPO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB 1 ESP CARN BTRB SEM COPO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB 1 ESP FRAN+BT+RB COPO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB 1 ESP FRANBTRB SEM COPO": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE FRANGO",
+     1.0
+    ],
+    [
+     "BATATA FRITA",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB FISH&CHIPS + RED BULL": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "FISH & CHIPS",
+     0.16
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB FISH&CHIPS + RED BULL COPO": {
+   "marca": "SIRENE",
+   "componentes": [
+    [
+     "FISH & CHIPS",
+     0.16
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB PIPOCA DE PORCO + 2 CHOP": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "PIPOCA DE PORCO",
+     1.0
+    ],
+    [
+     "CHOPP HEINEKEN",
+     0.8
+    ]
+   ]
+  },
+  "CB PIPOCA PORCO + 2 CHOP CP": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "PIPOCA DE PORCO",
+     1.0
+    ],
+    [
+     "CHOPP HEINEKEN",
+     0.8
+    ]
+   ]
+  },
+  "CB BT PORQUINHO + RED BULL": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "CB BT PORQUINHO + RB COPO": {
+   "marca": "MANE",
+   "componentes": [
+    [
+     "BATATA CRINKLE",
+     0.2
+    ],
+    [
+     "RED BULL TRADICIONAL",
+     1.0
+    ]
+   ]
+  },
+  "SAND CHURRAS": {
+   "marca": "ESPETTO",
+   "componentes": [
+    [
+     "ESPETO DE CARNE",
+     1.0
+    ]
+   ]
+  }
+ }
+}
