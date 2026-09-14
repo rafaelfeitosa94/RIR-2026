@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 222080042,
+      "hora": "01:39:00",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CB 1 ESP CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222080033,
+      "hora": "01:38:50",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222080003,
       "hora": "01:37:43",
       "ponto": "SUN.A.ESPETTO",
@@ -37,18 +61,6 @@
       "cancelamento": false
     },
     {
-      "id": 222079988,
-      "hora": "01:37:18",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "COCA ZERO",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 222080007,
       "hora": "01:37:18",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -58,6 +70,18 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222079988,
+      "hora": "01:37:18",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "COCA ZERO",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
       "cancelamento": false
     },
     {
@@ -274,30 +298,6 @@
       "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 222079762,
-      "hora": "01:30:01",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222079755,
-      "hora": "01:29:56",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "AGUA CRYSTAL",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 14.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
