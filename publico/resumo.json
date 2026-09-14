@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-14T02:37:29",
+  "atualizado_em": "2026-09-14T02:38:41",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81406,
-    "transacoes_venda": 81137,
+    "transacoes": 81408,
+    "transacoes_venda": 81139,
     "transacoes_cancelamento": 269,
-    "itens": 151199.0,
-    "valor_liquido": 3754444.0,
-    "valor_bruto_vendas": 3771094.0,
+    "itens": 151201.0,
+    "valor_liquido": 3754489.0,
+    "valor_bruto_vendas": 3771139.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:36:50"
+    "ultima_transacao": "2026-09-14T02:37:19"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1524463.0,
-      "itens": 56581.0,
-      "transacoes": 32160,
-      "linhas": 47588
+      "valor_liquido": 1524508.0,
+      "itens": 56583.0,
+      "transacoes": 32162,
+      "linhas": 47590
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -65,10 +65,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 251950.0,
-      "itens": 10078.0,
-      "transacoes": 6899,
-      "linhas": 6899
+      "valor_liquido": 251975.0,
+      "itens": 10079.0,
+      "transacoes": 6900,
+      "linhas": 6900
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -128,10 +128,10 @@
     },
     {
       "Produto": "FRITAS",
-      "valor_liquido": 90840.0,
-      "itens": 4542.0,
-      "transacoes": 3997,
-      "linhas": 3997
+      "valor_liquido": 90860.0,
+      "itens": 4543.0,
+      "transacoes": 3998,
+      "linhas": 3998
     },
     {
       "Produto": "COCA ZERO",
@@ -571,10 +571,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 2168923.0,
-      "itens": 53972.0,
-      "transacoes": 40502,
-      "linhas": 45662
+      "valor_liquido": 2168968.0,
+      "itens": 53974.0,
+      "transacoes": 40504,
+      "linhas": 45664
     },
     {
       "Categoria Produto": "Bebida",
@@ -587,10 +587,10 @@
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2204305.0,
-      "itens": 87473.0,
-      "transacoes": 45887,
-      "linhas": 68478
+      "valor_liquido": 2204350.0,
+      "itens": 87475.0,
+      "transacoes": 45889,
+      "linhas": 68480
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2563,10 +2563,10 @@
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 3811.0,
-      "itens": 151.0,
-      "transacoes": 97,
-      "linhas": 118
+      "valor_liquido": 3856.0,
+      "itens": 153.0,
+      "transacoes": 99,
+      "linhas": 120
     }
   ],
   "por_dia": [
@@ -2621,10 +2621,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 295691.0,
-      "itens": 11051.0,
-      "transacoes": 7028,
-      "linhas": 9553
+      "valor_liquido": 295736.0,
+      "itens": 11053.0,
+      "transacoes": 7030,
+      "linhas": 9555
     }
   ]
 }
