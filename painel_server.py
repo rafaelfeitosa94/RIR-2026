@@ -112,8 +112,33 @@ def montar_snapshot(pasta=PASTA_DADOS):
     return _montar_snapshot(carregar_transacoes(pasta))
 
 
+def _publicar(pasta):
+    """Monta o snapshot do que ja esta em disco e entrega ao painel."""
+    snapshot = montar_snapshot(pasta)
+    ESTADO.publicar(snapshot)
+
+    atraso = snapshot.get("atraso_s")
+    marca = datetime.now().strftime("%H:%M:%S")
+    if snapshot["vazio"]:
+        print(f"[{marca}] sem transacoes ainda")
+    else:
+        t = snapshot["resumo"]["totais"]
+        print(f"[{marca}] {t['transacoes']} transacoes | "
+              f"R$ {t['valor_liquido']:,.2f} | dado de {atraso:.0f}s atras")
+
+
 def laco_coleta(intervalo, pasta, coletar_antes, renovar_token):
-    """Thread de fundo: atualiza da API e republica o snapshot."""
+    """Thread de fundo: atualiza da API e republica o snapshot.
+
+    Publica o que JA esta em disco ANTES da primeira coleta. Na ordem anterior
+    a coleta vinha primeiro, entao com a API lenta o painel ficava em branco
+    esperando por ela - mesmo havendo dado gravado e pronto para mostrar.
+    """
+    try:
+        _publicar(pasta)
+    except Exception as e:
+        print(f"[erro na carga inicial] {type(e).__name__}: {e}")
+
     while True:
         inicio = time.monotonic()
         try:
@@ -123,17 +148,7 @@ def laco_coleta(intervalo, pasta, coletar_antes, renovar_token):
                 with contextlib.redirect_stdout(io.StringIO()):
                     coletar(pasta, renovar_sempre=renovar_token)
 
-            snapshot = montar_snapshot(pasta)
-            ESTADO.publicar(snapshot)
-
-            atraso = snapshot.get("atraso_s")
-            marca = datetime.now().strftime("%H:%M:%S")
-            if snapshot["vazio"]:
-                print(f"[{marca}] sem transacoes ainda")
-            else:
-                t = snapshot["resumo"]["totais"]
-                print(f"[{marca}] {t['transacoes']} transacoes | "
-                      f"R$ {t['valor_liquido']:,.2f} | dado de {atraso:.0f}s atras")
+            _publicar(pasta)
         except Exception as e:
             print(f"[erro no ciclo] {type(e).__name__}: {e}")
 
