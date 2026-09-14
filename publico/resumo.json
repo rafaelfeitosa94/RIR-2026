@@ -1,30 +1,30 @@
 {
-  "atualizado_em": "2026-09-14T02:01:06",
+  "atualizado_em": "2026-09-14T02:02:20",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81311,
-    "transacoes_venda": 81042,
+    "transacoes": 81315,
+    "transacoes_venda": 81046,
     "transacoes_cancelamento": 269,
-    "itens": 151053.0,
-    "valor_liquido": 3750793.0,
-    "valor_bruto_vendas": 3767443.0,
+    "itens": 151061.0,
+    "valor_liquido": 3750945.0,
+    "valor_bruto_vendas": 3767595.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:00:15"
+    "ultima_transacao": "2026-09-14T02:01:36"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1521520.0,
-      "itens": 56466.0,
-      "transacoes": 32085,
-      "linhas": 47495
+      "valor_liquido": 1521614.0,
+      "itens": 56473.0,
+      "transacoes": 32088,
+      "linhas": 47499
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 1468156.0,
-      "itens": 63209.0,
-      "transacoes": 32258,
-      "linhas": 47307
+      "valor_liquido": 1468214.0,
+      "itens": 63210.0,
+      "transacoes": 32259,
+      "linhas": 47308
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
-      "valor_liquido": 374912.0,
-      "itens": 6464.0,
-      "transacoes": 6029,
-      "linhas": 6029
+      "valor_liquido": 374970.0,
+      "itens": 6465.0,
+      "transacoes": 6030,
+      "linhas": 6030
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
@@ -65,10 +65,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 251350.0,
-      "itens": 10054.0,
-      "transacoes": 6881,
-      "linhas": 6881
+      "valor_liquido": 251400.0,
+      "itens": 10056.0,
+      "transacoes": 6882,
+      "linhas": 6882
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -114,10 +114,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 98672.0,
-      "itens": 14096.0,
-      "transacoes": 8507,
-      "linhas": 8507
+      "valor_liquido": 98700.0,
+      "itens": 14100.0,
+      "transacoes": 8509,
+      "linhas": 8509
     },
     {
       "Produto": "COCA COLA",
@@ -436,10 +436,10 @@
     },
     {
       "Produto": "FANTA GUA 0",
-      "valor_liquido": 5856.0,
-      "itens": 366.0,
-      "transacoes": 342,
-      "linhas": 342
+      "valor_liquido": 5872.0,
+      "itens": 367.0,
+      "transacoes": 343,
+      "linhas": 343
     },
     {
       "Produto": "RB MELANCIA RT",
@@ -571,26 +571,26 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 2166281.0,
-      "itens": 53895.0,
-      "transacoes": 40443,
-      "linhas": 45600
+      "valor_liquido": 2166389.0,
+      "itens": 53898.0,
+      "transacoes": 40445,
+      "linhas": 45602
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1584512.0,
-      "itens": 97158.0,
-      "transacoes": 62207,
-      "linhas": 74063
+      "valor_liquido": 1584556.0,
+      "itens": 97163.0,
+      "transacoes": 62209,
+      "linhas": 74066
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2202803.0,
-      "itens": 87409.0,
-      "transacoes": 45846,
-      "linhas": 68429
+      "valor_liquido": 2202955.0,
+      "itens": 87417.0,
+      "transacoes": 45850,
+      "linhas": 68434
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2563,10 +2563,10 @@
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 160.0,
-      "itens": 5.0,
-      "transacoes": 2,
-      "linhas": 3
+      "valor_liquido": 312.0,
+      "itens": 13.0,
+      "transacoes": 6,
+      "linhas": 8
     }
   ],
   "por_dia": [
@@ -2621,10 +2621,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 292040.0,
-      "itens": 10905.0,
-      "transacoes": 6933,
-      "linhas": 9438
+      "valor_liquido": 292192.0,
+      "itens": 10913.0,
+      "transacoes": 6937,
+      "linhas": 9443
     }
   ]
 }
