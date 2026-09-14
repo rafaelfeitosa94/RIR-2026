@@ -1,6 +1,54 @@
 {
   "feed": [
     {
+      "id": 222077806,
+      "hora": "00:51:11",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "BATATA PORCO",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 49.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077808,
+      "hora": "00:51:07",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077778,
+      "hora": "00:50:42",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077767,
+      "hora": "00:50:24",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "MIXED GIN TO RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222077736,
       "hora": "00:50:02",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -46,6 +94,18 @@
       "valor": 36.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077759,
+      "hora": "00:49:09",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "MIXED GIN TO RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
       "cancelamento": false
     },
     {
@@ -236,66 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 40.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077525,
-      "hora": "00:46:45",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND FRANGO + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": -70.0,
-      "operacao": "Cancelamento de Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": true
-    },
-    {
-      "id": 222077512,
-      "hora": "00:46:34",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 65.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077477,
-      "hora": "00:45:58",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND FRANGO + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 70.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077464,
-      "hora": "00:45:50",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077449,
-      "hora": "00:45:29",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
