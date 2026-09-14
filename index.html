@@ -845,6 +845,14 @@ const FOTOS = [
 // porquinho" vira BATATA CRINKLE na receita - o mesmo componente de outros
 // pratos -, entao so da para conta-lo pelo produto vendido. Idem o fish &
 // chips, que na receita e peso (0,16 kg) e aqui interessa em porcoes.
+// Destaques que mostram cada item com o SEU proprio numero, em vez de somar.
+// Nas frases por marca o Mane sai como "Mane Burguer + Pipoca de Porco" num
+// total so; aqui a leitura e individual.
+const INSIGHTS_ITENS = [
+  {itens:['MANE BURGUER', 'PIPOCA DE PORCO']},
+  {itens:['AMERICAN FISH', 'SALAD FISH']}
+];
+
 const INSIGHTS_PRODUTO = [
   {titulo:'Fish & Chips',     re:/FISH ?& ?CHIP|FISH CHIPS/},
   {titulo:'Batata Porquinho', re:/PORQUINHO|BAT\.?PORCO|BATATA PORCO/}
@@ -986,6 +994,21 @@ function renderResumo(F){
                     .reduce((t, l) => t + l[5], 0);
     if(q > 0) blocos.push(bloco(cfg.titulo, 'Foram vendidas <b>' +
       qtdTexto(q, 'UND') + '</b> porções de ' + cfg.titulo + ' ' + periodo + '.'));
+  });
+
+  INSIGHTS_ITENS.forEach(cfg => {
+    const partes = cfg.itens.map(n => {
+      const a = geral[n];
+      if(!a || a.q <= 0) return null;
+      const suf = a.un === 'UND' ? '' : ' ' + a.un.toLowerCase();
+      return '<b>' + qtdTexto(a.q, a.un) + suf + '</b> de ' + rotuloComp(n);
+    }).filter(Boolean);
+    if(!partes.length) return;
+    const lista = partes.length > 1
+      ? partes.slice(0, -1).join(', ') + ' e ' + partes[partes.length - 1]
+      : partes[0];
+    blocos.push(bloco(cfg.itens.map(rotuloComp).join(' e '),
+                      'Foram vendidos ' + lista + ' ' + periodo + '.'));
   });
 
   // Bebidas por subcategoria (CHOPE, REDBULL, SOFT DRINK...), somando de TODOS
