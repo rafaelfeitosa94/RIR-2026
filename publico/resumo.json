@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-14T03:01:44",
+  "atualizado_em": "2026-09-14T03:02:57",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81417,
-    "transacoes_venda": 81148,
+    "transacoes": 81418,
+    "transacoes_venda": 81149,
     "transacoes_cancelamento": 269,
-    "itens": 151214.0,
-    "valor_liquido": 3754794.0,
-    "valor_bruto_vendas": 3771444.0,
+    "itens": 151215.0,
+    "valor_liquido": 3754812.0,
+    "valor_bruto_vendas": 3771462.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:57:48"
+    "ultima_transacao": "2026-09-14T03:01:19"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1524755.0,
-      "itens": 56595.0,
-      "transacoes": 32170,
-      "linhas": 47602
+      "valor_liquido": 1524773.0,
+      "itens": 56596.0,
+      "transacoes": 32171,
+      "linhas": 47603
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -212,10 +212,10 @@
     },
     {
       "Produto": "HEINEKEN ULT RT",
-      "valor_liquido": 26874.0,
-      "itens": 1493.0,
-      "transacoes": 1098,
-      "linhas": 1098
+      "valor_liquido": 26892.0,
+      "itens": 1494.0,
+      "transacoes": 1099,
+      "linhas": 1099
     },
     {
       "Produto": "MIXED MARAC RT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1585683.0,
-      "itens": 97236.0,
-      "transacoes": 62263,
-      "linhas": 74125
+      "valor_liquido": 1585701.0,
+      "itens": 97237.0,
+      "transacoes": 62264,
+      "linhas": 74126
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1220892.0,
-      "itens": 50327.0,
-      "transacoes": 27972,
-      "linhas": 40489
+      "valor_liquido": 1220910.0,
+      "itens": 50328.0,
+      "transacoes": 27973,
+      "linhas": 40490
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2567,6 +2567,13 @@
       "itens": 166.0,
       "transacoes": 108,
       "linhas": 133
+    },
+    {
+      "_hora": "2026-09-14T03",
+      "valor_liquido": 18.0,
+      "itens": 1.0,
+      "transacoes": 1,
+      "linhas": 1
     }
   ],
   "por_dia": [
@@ -2621,10 +2628,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 296041.0,
-      "itens": 11066.0,
-      "transacoes": 7039,
-      "linhas": 9568
+      "valor_liquido": 296059.0,
+      "itens": 11067.0,
+      "transacoes": 7040,
+      "linhas": 9569
     }
   ]
 }
