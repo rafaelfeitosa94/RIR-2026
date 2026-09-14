@@ -1,10 +1,22 @@
 {
   "feed": [
     {
+      "id": 222082328,
+      "hora": "02:55:25",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "HEINEKEN ULT RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222082318,
       "hora": "02:54:30",
       "ponto": "SUN.A.ESPETTO",
-      "produto": "RED BULL",
+      "produto": "MIXED MARAC RT",
       "outros_produtos": 1,
       "quantidade": 2,
       "valor": 42.0,
@@ -284,18 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 2,
       "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081979,
-      "hora": "02:30:24",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 116.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
