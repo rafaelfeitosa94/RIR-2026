@@ -1,6 +1,66 @@
 {
   "feed": [
     {
+      "id": 222077559,
+      "hora": "00:47:21",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 36.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077547,
+      "hora": "00:47:09",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "MANE BURGUER",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 40.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077545,
+      "hora": "00:47:09",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 21.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222077525,
+      "hora": "00:46:45",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND FRANGO + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": -70.0,
+      "operacao": "Cancelamento de Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": true
+    },
+    {
+      "id": 222077512,
+      "hora": "00:46:34",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 65.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222077477,
       "hora": "00:45:58",
       "ponto": "SUN.A.ESPETTO",
@@ -229,18 +289,6 @@
       "cancelamento": false
     },
     {
-      "id": 222077208,
-      "hora": "00:42:27",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 222077211,
       "hora": "00:42:27",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -248,54 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 21.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077223,
-      "hora": "00:42:26",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "RB ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 16.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077196,
-      "hora": "00:42:21",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 43.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222077271,
-      "hora": "00:42:03",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 222077158,
-      "hora": "00:41:48",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "COCA ZERO RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
