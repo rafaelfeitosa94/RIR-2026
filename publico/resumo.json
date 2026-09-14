@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-09-14T01:02:00",
+  "atualizado_em": "2026-09-14T01:03:13",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81117,
-    "transacoes_venda": 80848,
+    "transacoes": 81121,
+    "transacoes_venda": 80852,
     "transacoes_cancelamento": 269,
-    "itens": 150755.0,
-    "valor_liquido": 3744387.0,
-    "valor_bruto_vendas": 3761037.0,
+    "itens": 150759.0,
+    "valor_liquido": 3744462.0,
+    "valor_bruto_vendas": 3761112.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T01:01:15"
+    "ultima_transacao": "2026-09-14T01:02:41"
   },
   "por_ponto": [
     {
@@ -21,17 +21,17 @@
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 1463678.0,
-      "itens": 62996.0,
-      "transacoes": 32117,
-      "linhas": 47137
+      "valor_liquido": 1463728.0,
+      "itens": 62999.0,
+      "transacoes": 32120,
+      "linhas": 47140
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
-      "valor_liquido": 588058.0,
-      "itens": 23783.0,
-      "transacoes": 12900,
-      "linhas": 19037
+      "valor_liquido": 588083.0,
+      "itens": 23784.0,
+      "transacoes": 12901,
+      "linhas": 19038
     },
     {
       "Nome do Ponto": "MUN.A.SIRENE.AEB05",
@@ -44,10 +44,10 @@
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 556596.0,
-      "itens": 30922.0,
-      "transacoes": 21148,
-      "linhas": 21148
+      "valor_liquido": 556614.0,
+      "itens": 30923.0,
+      "transacoes": 21149,
+      "linhas": 21149
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
@@ -121,10 +121,10 @@
     },
     {
       "Produto": "COCA COLA",
-      "valor_liquido": 90688.0,
-      "itens": 5668.0,
-      "transacoes": 4981,
-      "linhas": 4981
+      "valor_liquido": 90720.0,
+      "itens": 5670.0,
+      "transacoes": 4983,
+      "linhas": 4983
     },
     {
       "Produto": "FRITAS",
@@ -149,10 +149,10 @@
     },
     {
       "Produto": "ESPETO FRANGO",
-      "valor_liquido": 60625.0,
-      "itens": 2425.0,
-      "transacoes": 2032,
-      "linhas": 2032
+      "valor_liquido": 60650.0,
+      "itens": 2426.0,
+      "transacoes": 2033,
+      "linhas": 2033
     },
     {
       "Produto": "COCA COLA RT",
@@ -571,33 +571,33 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 2163787.0,
-      "itens": 53827.0,
-      "transacoes": 40389,
-      "linhas": 45541
+      "valor_liquido": 2163812.0,
+      "itens": 53828.0,
+      "transacoes": 40390,
+      "linhas": 45542
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1580600.0,
-      "itens": 96928.0,
-      "transacoes": 62052,
-      "linhas": 73887
+      "valor_liquido": 1580650.0,
+      "itens": 96931.0,
+      "transacoes": 62055,
+      "linhas": 73890
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2199519.0,
-      "itens": 87254.0,
-      "transacoes": 45746,
-      "linhas": 68307
+      "valor_liquido": 2199535.0,
+      "itens": 87255.0,
+      "transacoes": 45747,
+      "linhas": 68308
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1217141.0,
-      "itens": 50160.0,
-      "transacoes": 27866,
-      "linhas": 40358
+      "valor_liquido": 1217200.0,
+      "itens": 50163.0,
+      "transacoes": 27869,
+      "linhas": 40361
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2556,10 +2556,10 @@
     },
     {
       "_hora": "2026-09-14T01",
-      "valor_liquido": 221.0,
-      "itens": 12.0,
-      "transacoes": 7,
-      "linhas": 8
+      "valor_liquido": 296.0,
+      "itens": 16.0,
+      "transacoes": 11,
+      "linhas": 12
     }
   ],
   "por_dia": [
@@ -2614,10 +2614,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 285634.0,
-      "itens": 10607.0,
-      "transacoes": 6739,
-      "linhas": 9203
+      "valor_liquido": 285709.0,
+      "itens": 10611.0,
+      "transacoes": 6743,
+      "linhas": 9207
     }
   ]
 }
