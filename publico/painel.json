@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222082350,
+      "hora": "02:57:48",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 56.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222082328,
       "hora": "02:55:25",
       "ponto": "SUN.A.ESPETTO",
@@ -284,18 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 58.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081989,
-      "hora": "02:30:53",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
