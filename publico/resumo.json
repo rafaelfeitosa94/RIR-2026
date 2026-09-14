@@ -1,15 +1,15 @@
 {
-  "atualizado_em": "2026-09-14T02:50:51",
+  "atualizado_em": "2026-09-14T02:52:04",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81413,
-    "transacoes_venda": 81144,
+    "transacoes": 81414,
+    "transacoes_venda": 81145,
     "transacoes_cancelamento": 269,
-    "itens": 151208.0,
-    "valor_liquido": 3754620.0,
-    "valor_bruto_vendas": 3771270.0,
+    "itens": 151209.0,
+    "valor_liquido": 3754678.0,
+    "valor_bruto_vendas": 3771328.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:49:03"
+    "ultima_transacao": "2026-09-14T02:51:19"
   },
   "por_ponto": [
     {
@@ -21,10 +21,10 @@
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
-      "valor_liquido": 1468864.0,
-      "itens": 63240.0,
-      "transacoes": 32278,
-      "linhas": 47329
+      "valor_liquido": 1468922.0,
+      "itens": 63241.0,
+      "transacoes": 32279,
+      "linhas": 47330
     },
     {
       "Nome do Ponto": "MUN.A.MANE.AEB04",
@@ -51,10 +51,10 @@
     },
     {
       "Produto": "CB 2 ESPS CARNE + BT",
-      "valor_liquido": 375376.0,
-      "itens": 6472.0,
-      "transacoes": 6036,
-      "linhas": 6036
+      "valor_liquido": 375434.0,
+      "itens": 6473.0,
+      "transacoes": 6037,
+      "linhas": 6037
     },
     {
       "Produto": "CB MANE BURGUER + BATATA",
@@ -571,10 +571,10 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 2169013.0,
-      "itens": 53976.0,
-      "transacoes": 40506,
-      "linhas": 45666
+      "valor_liquido": 2169071.0,
+      "itens": 53977.0,
+      "transacoes": 40507,
+      "linhas": 45667
     },
     {
       "Categoria Produto": "Bebida",
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1220736.0,
-      "itens": 50322.0,
-      "transacoes": 27969,
-      "linhas": 40484
+      "valor_liquido": 1220794.0,
+      "itens": 50323.0,
+      "transacoes": 27970,
+      "linhas": 40485
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2563,10 +2563,10 @@
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 3987.0,
-      "itens": 160.0,
-      "transacoes": 104,
-      "linhas": 127
+      "valor_liquido": 4045.0,
+      "itens": 161.0,
+      "transacoes": 105,
+      "linhas": 128
     }
   ],
   "por_dia": [
@@ -2621,10 +2621,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 295867.0,
-      "itens": 11060.0,
-      "transacoes": 7035,
-      "linhas": 9562
+      "valor_liquido": 295925.0,
+      "itens": 11061.0,
+      "transacoes": 7036,
+      "linhas": 9563
     }
   ]
 }
