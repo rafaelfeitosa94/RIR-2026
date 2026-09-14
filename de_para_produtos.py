@@ -27,7 +27,7 @@ DE_PARA_PRODUTO_MARCA = {
     'CB 1 ESP CARNE + BT':           'Espetto',
     'CB 1 ESP CARNE+1FRANGO+BT':     'Espetto',
     'CB 1 ESP FRAN+BT+RB COPO':      'Espetto',
-    'CB 1 ESP FRANBTRB SEM COPO':    'Mané',
+    'CB 1 ESP FRANBTRB SEM COPO':    'Espetto',
     'CB 1 ESP FRANGO + BT':          'Espetto',
     'CB 1 SAND CARNE + BT':          'Espetto',
     'CB 1 SAND FRANGO + BT':         'Espetto',

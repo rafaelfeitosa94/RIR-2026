@@ -17,6 +17,16 @@ SAIDA = "de_para_produtos.py"
 # vazio) e bebida compartilhada e nao entra.
 MARCAS_COMIDA = ("Espetto", "Mané", "Sirene")
 
+# Correcoes sobre o arquivo de origem, confirmadas com a operacao. Ficam AQUI,
+# e nao no de_para_produtos.py, para sobreviverem a proxima regeracao.
+#
+# CB 1 ESP FRANBTRB SEM COPO vinha como "Mané", mas e um combo de espeto de
+# frango - os irmaos dele (CB 1 ESP CARN BTRB SEM COPO e
+# CB 1 ESP FRAN+BT+RB COPO) ja estavam como Espetto.
+CORRECOES = {
+    "CB 1 ESP FRANBTRB SEM COPO": "Espetto",
+}
+
 CABECALHO = '''"""
 De-para de PRODUTO -> MARCA, exportado da operacao (PROD;MARCA).
 
@@ -47,6 +57,7 @@ def ler(caminho):
                 continue
             produto, _, marca = linha.partition(";")
             produto, marca = produto.strip(), marca.strip()
+            marca = CORRECOES.get(produto, marca)
             if produto and marca in MARCAS_COMIDA:
                 pares.append((produto, marca))
     return pares
