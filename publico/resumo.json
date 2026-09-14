@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-14T03:02:57",
+  "atualizado_em": "2026-09-14T03:04:08",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81418,
-    "transacoes_venda": 81149,
+    "transacoes": 81419,
+    "transacoes_venda": 81150,
     "transacoes_cancelamento": 269,
-    "itens": 151215.0,
-    "valor_liquido": 3754812.0,
-    "valor_bruto_vendas": 3771462.0,
+    "itens": 151217.0,
+    "valor_liquido": 3754856.0,
+    "valor_bruto_vendas": 3771506.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T03:01:19"
+    "ultima_transacao": "2026-09-14T03:02:13"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1524773.0,
-      "itens": 56596.0,
-      "transacoes": 32171,
-      "linhas": 47603
+      "valor_liquido": 1524817.0,
+      "itens": 56598.0,
+      "transacoes": 32172,
+      "linhas": 47605
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -338,10 +338,10 @@
     },
     {
       "Produto": "HEINEKEN ULT",
-      "valor_liquido": 12121.0,
-      "itens": 527.0,
-      "transacoes": 429,
-      "linhas": 429
+      "valor_liquido": 12144.0,
+      "itens": 528.0,
+      "transacoes": 430,
+      "linhas": 430
     },
     {
       "Produto": "AMERICAN FISH",
@@ -450,10 +450,10 @@
     },
     {
       "Produto": "RB CEREJA",
-      "valor_liquido": 4620.0,
-      "itens": 220.0,
-      "transacoes": 208,
-      "linhas": 208
+      "valor_liquido": 4641.0,
+      "itens": 221.0,
+      "transacoes": 209,
+      "linhas": 209
     },
     {
       "Produto": "FANTA GUARA RT",
@@ -578,10 +578,10 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1585701.0,
-      "itens": 97237.0,
-      "transacoes": 62264,
-      "linhas": 74126
+      "valor_liquido": 1585745.0,
+      "itens": 97239.0,
+      "transacoes": 62265,
+      "linhas": 74128
     }
   ],
   "por_forma_pagamento": [
@@ -594,10 +594,10 @@
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1220910.0,
-      "itens": 50328.0,
-      "transacoes": 27973,
-      "linhas": 40490
+      "valor_liquido": 1220954.0,
+      "itens": 50330.0,
+      "transacoes": 27974,
+      "linhas": 40492
     },
     {
       "Forma de Pagamento": "PIX Integrado",
@@ -2570,10 +2570,10 @@
     },
     {
       "_hora": "2026-09-14T03",
-      "valor_liquido": 18.0,
-      "itens": 1.0,
-      "transacoes": 1,
-      "linhas": 1
+      "valor_liquido": 62.0,
+      "itens": 3.0,
+      "transacoes": 2,
+      "linhas": 3
     }
   ],
   "por_dia": [
@@ -2628,10 +2628,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 296059.0,
-      "itens": 11067.0,
-      "transacoes": 7040,
-      "linhas": 9569
+      "valor_liquido": 296103.0,
+      "itens": 11069.0,
+      "transacoes": 7041,
+      "linhas": 9571
     }
   ]
 }
