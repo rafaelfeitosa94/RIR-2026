@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 222079414,
+      "hora": "01:19:52",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 83.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222079404,
+      "hora": "01:19:40",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "MIXED GIN TO RT",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 42.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222079384,
       "hora": "01:19:26",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -8,6 +32,18 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222079396,
+      "hora": "01:19:25",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
@@ -262,42 +298,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222079133,
-      "hora": "01:14:39",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO FRANGO",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222079146,
-      "hora": "01:14:31",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 50.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
-      "cancelamento": false
-    },
-    {
-      "id": 222079137,
-      "hora": "01:14:29",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "COCA COLA RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 11.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "PIX Integrado",
       "cancelamento": false
     }
   ]
