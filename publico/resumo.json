@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-14T02:39:54",
+  "atualizado_em": "2026-09-14T02:41:07",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81409,
-    "transacoes_venda": 81140,
+    "transacoes": 81410,
+    "transacoes_venda": 81141,
     "transacoes_cancelamento": 269,
-    "itens": 151202.0,
-    "valor_liquido": 3754507.0,
-    "valor_bruto_vendas": 3771157.0,
+    "itens": 151203.0,
+    "valor_liquido": 3754528.0,
+    "valor_bruto_vendas": 3771178.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:39:09"
+    "ultima_transacao": "2026-09-14T02:39:21"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1524526.0,
-      "itens": 56584.0,
-      "transacoes": 32163,
-      "linhas": 47591
+      "valor_liquido": 1524547.0,
+      "itens": 56585.0,
+      "transacoes": 32164,
+      "linhas": 47592
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -282,10 +282,10 @@
     },
     {
       "Produto": "RB ZERO",
-      "valor_liquido": 16884.0,
-      "itens": 804.0,
-      "transacoes": 740,
-      "linhas": 740
+      "valor_liquido": 16905.0,
+      "itens": 805.0,
+      "transacoes": 741,
+      "linhas": 741
     },
     {
       "Produto": "MIXED VODKA",
@@ -578,19 +578,19 @@
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1585539.0,
-      "itens": 97228.0,
-      "transacoes": 62257,
-      "linhas": 74117
+      "valor_liquido": 1585560.0,
+      "itens": 97229.0,
+      "transacoes": 62258,
+      "linhas": 74118
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2204350.0,
-      "itens": 87475.0,
-      "transacoes": 45889,
-      "linhas": 68480
+      "valor_liquido": 2204371.0,
+      "itens": 87476.0,
+      "transacoes": 45890,
+      "linhas": 68481
     },
     {
       "Forma de Pagamento": "Cartao Debito",
@@ -2563,10 +2563,10 @@
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 3874.0,
-      "itens": 154.0,
-      "transacoes": 100,
-      "linhas": 121
+      "valor_liquido": 3895.0,
+      "itens": 155.0,
+      "transacoes": 101,
+      "linhas": 122
     }
   ],
   "por_dia": [
@@ -2621,10 +2621,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 295754.0,
-      "itens": 11054.0,
-      "transacoes": 7031,
-      "linhas": 9556
+      "valor_liquido": 295775.0,
+      "itens": 11055.0,
+      "transacoes": 7032,
+      "linhas": 9557
     }
   ]
 }
