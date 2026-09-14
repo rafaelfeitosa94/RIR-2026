@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 222078876,
+      "hora": "01:09:15",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222078865,
+      "hora": "01:09:00",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
       "id": 222078863,
       "hora": "01:08:56",
       "ponto": "SUN.A.ESPETTO",
@@ -10,6 +34,18 @@
       "valor": 39.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222078864,
+      "hora": "01:08:40",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
       "cancelamento": false
     },
     {
@@ -133,18 +169,6 @@
       "cancelamento": false
     },
     {
-      "id": 222078761,
-      "hora": "01:06:55",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 65.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 222078771,
       "hora": "01:06:55",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -152,6 +176,18 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 23.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222078761,
+      "hora": "01:06:55",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "CB 1 SAND CARNE + BT",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 65.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
@@ -262,42 +298,6 @@
       "valor": 21.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222078623,
-      "hora": "01:04:09",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222078600,
-      "hora": "01:03:41",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222078576,
-      "hora": "01:03:41",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
       "cancelamento": false
     }
   ]
