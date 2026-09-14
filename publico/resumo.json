@@ -1,23 +1,23 @@
 {
-  "atualizado_em": "2026-09-14T02:10:54",
+  "atualizado_em": "2026-09-14T02:12:11",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81336,
-    "transacoes_venda": 81067,
+    "transacoes": 81340,
+    "transacoes_venda": 81071,
     "transacoes_cancelamento": 269,
-    "itens": 151090.0,
-    "valor_liquido": 3751517.0,
-    "valor_bruto_vendas": 3768167.0,
+    "itens": 151094.0,
+    "valor_liquido": 3751648.0,
+    "valor_bruto_vendas": 3768298.0,
     "valor_cancelado": 16650.0,
-    "ultima_transacao": "2026-09-14T02:09:48"
+    "ultima_transacao": "2026-09-14T02:10:59"
   },
   "por_ponto": [
     {
       "Nome do Ponto": "SUN.A.ESPETTO",
-      "valor_liquido": 1522068.0,
-      "itens": 56496.0,
-      "transacoes": 32104,
-      "linhas": 47516
+      "valor_liquido": 1522199.0,
+      "itens": 56500.0,
+      "transacoes": 32108,
+      "linhas": 47520
     },
     {
       "Nome do Ponto": "MUN.A.ESPETTO.AEB03",
@@ -65,10 +65,10 @@
     },
     {
       "Produto": "ESPETO DE CARNE",
-      "valor_liquido": 251575.0,
-      "itens": 10063.0,
-      "transacoes": 6887,
-      "linhas": 6887
+      "valor_liquido": 251625.0,
+      "itens": 10065.0,
+      "transacoes": 6889,
+      "linhas": 6889
     },
     {
       "Produto": "CB 1 ESP CARNE + BT",
@@ -93,10 +93,10 @@
     },
     {
       "Produto": "CB 1 ESP CARNE+1FRANGO+BT",
-      "valor_liquido": 160892.0,
-      "itens": 2774.0,
-      "transacoes": 2624,
-      "linhas": 2624
+      "valor_liquido": 160950.0,
+      "itens": 2775.0,
+      "transacoes": 2625,
+      "linhas": 2625
     },
     {
       "Produto": "SAND CARNE",
@@ -240,10 +240,10 @@
     },
     {
       "Produto": "CHOP LAG IPA RT",
-      "valor_liquido": 21482.0,
-      "itens": 934.0,
-      "transacoes": 753,
-      "linhas": 753
+      "valor_liquido": 21505.0,
+      "itens": 935.0,
+      "transacoes": 754,
+      "linhas": 754
     },
     {
       "Produto": "CB 1 ESP CARNBTRB COPO",
@@ -571,40 +571,40 @@
   "por_categoria": [
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 2166741.0,
-      "itens": 53911.0,
-      "transacoes": 40455,
-      "linhas": 45612
+      "valor_liquido": 2166849.0,
+      "itens": 53914.0,
+      "transacoes": 40458,
+      "linhas": 45615
     },
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1584776.0,
-      "itens": 97179.0,
-      "transacoes": 62221,
-      "linhas": 74078
+      "valor_liquido": 1584799.0,
+      "itens": 97180.0,
+      "transacoes": 62222,
+      "linhas": 74079
     }
   ],
   "por_forma_pagamento": [
     {
       "Forma de Pagamento": "Cartao Credito",
-      "valor_liquido": 2203166.0,
-      "itens": 87429.0,
-      "transacoes": 45859,
-      "linhas": 68443
+      "valor_liquido": 2203214.0,
+      "itens": 87431.0,
+      "transacoes": 45861,
+      "linhas": 68445
     },
     {
       "Forma de Pagamento": "Cartao Debito",
-      "valor_liquido": 1219733.0,
-      "itens": 50282.0,
-      "transacoes": 27943,
-      "linhas": 40450
+      "valor_liquido": 1219791.0,
+      "itens": 50283.0,
+      "transacoes": 27944,
+      "linhas": 40451
     },
     {
       "Forma de Pagamento": "PIX Integrado",
-      "valor_liquido": 293564.0,
-      "itens": 11864.0,
-      "transacoes": 6630,
-      "linhas": 9573
+      "valor_liquido": 293589.0,
+      "itens": 11865.0,
+      "transacoes": 6631,
+      "linhas": 9574
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -2563,10 +2563,10 @@
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 884.0,
-      "itens": 42.0,
-      "transacoes": 27,
-      "linhas": 30
+      "valor_liquido": 1015.0,
+      "itens": 46.0,
+      "transacoes": 31,
+      "linhas": 34
     }
   ],
   "por_dia": [
@@ -2621,10 +2621,10 @@
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 292764.0,
-      "itens": 10942.0,
-      "transacoes": 6958,
-      "linhas": 9465
+      "valor_liquido": 292895.0,
+      "itens": 10946.0,
+      "transacoes": 6962,
+      "linhas": 9469
     }
   ]
 }
