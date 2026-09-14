@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222080544,
+      "hora": "01:53:20",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CB 2 ESPS CARNE + BT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 58.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222080487,
       "hora": "01:52:35",
       "ponto": "SUN.A.ESPETTO",
@@ -10,6 +22,30 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Zig Cashless",
+      "cancelamento": false
+    },
+    {
+      "id": 222080514,
+      "hora": "01:52:31",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 39.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
+      "cancelamento": false
+    },
+    {
+      "id": 222080502,
+      "hora": "01:52:26",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "AGUA CRYSTAL",
+      "outros_produtos": 0,
+      "quantidade": 4,
+      "valor": 28.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Credito",
       "cancelamento": false
     },
     {
@@ -253,18 +289,6 @@
       "cancelamento": false
     },
     {
-      "id": 222080257,
-      "hora": "01:46:31",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 1 SAND CARNE + BT",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 65.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
       "id": 222080255,
       "hora": "01:46:31",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -274,30 +298,6 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222080251,
-      "hora": "01:46:30",
-      "ponto": "MUN.A.MANE.AEB04",
-      "produto": "CB 2 ESPS CARNE + BT",
-      "outros_produtos": 2,
-      "quantidade": 3,
-      "valor": 85.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222080252,
-      "hora": "01:46:29",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "BATATA CRINKLE SIRENE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
