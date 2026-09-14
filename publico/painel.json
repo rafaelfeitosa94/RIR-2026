@@ -1,6 +1,30 @@
 {
   "feed": [
     {
+      "id": 222080622,
+      "hora": "01:55:03",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 222080594,
+      "hora": "01:54:31",
+      "ponto": "MUN.A.ESPETTO.AEB03",
+      "produto": "COCA COLA RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 11.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222080544,
       "hora": "01:53:20",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -267,30 +291,6 @@
     {
       "id": 222080269,
       "hora": "01:46:47",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222080265,
-      "hora": "01:46:43",
-      "ponto": "MUN.A.ESPETTO.AEB03",
-      "produto": "CB 1 ESP CARNE + BT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 39.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222080255,
-      "hora": "01:46:31",
       "ponto": "MUN.A.ESPETTO.AEB03",
       "produto": "CHOPE HNK RT",
       "outros_produtos": 0,
