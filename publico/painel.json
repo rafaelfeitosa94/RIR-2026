@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222081514,
+      "hora": "02:11:51",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "SAND CARNE",
+      "outros_produtos": 1,
+      "quantidade": 3,
+      "valor": 91.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222081483,
       "hora": "02:10:59",
       "ponto": "SUN.A.ESPETTO",
@@ -20,6 +32,18 @@
       "outros_produtos": 0,
       "quantidade": 1,
       "valor": 25.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "PIX Integrado",
+      "cancelamento": false
+    },
+    {
+      "id": 222081509,
+      "hora": "02:10:54",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "ESPETO DE CARNE",
+      "outros_produtos": 0,
+      "quantidade": 2,
+      "valor": 50.0,
       "operacao": "Compra Ficha",
       "pagamento": "PIX Integrado",
       "cancelamento": false
@@ -272,30 +296,6 @@
       "outros_produtos": 0,
       "quantidade": 2,
       "valor": 36.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081113,
-      "hora": "02:01:40",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 20.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081031,
-      "hora": "02:01:36",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 2,
-      "valor": 50.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
       "cancelamento": false
