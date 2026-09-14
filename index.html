@@ -841,6 +841,15 @@ const FOTOS = [
   {src:'fotos/foto6.jpg', top:'44%', left:'34%', w:'28%', rot:'-5deg'}
 ];
 
+// Destaques contados no nivel do PRODUTO, e nao do componente. "Batata
+// porquinho" vira BATATA CRINKLE na receita - o mesmo componente de outros
+// pratos -, entao so da para conta-lo pelo produto vendido. Idem o fish &
+// chips, que na receita e peso (0,16 kg) e aqui interessa em porcoes.
+const INSIGHTS_PRODUTO = [
+  {titulo:'Fish & Chips',     re:/FISH ?& ?CHIP|FISH CHIPS/},
+  {titulo:'Batata Porquinho', re:/PORQUINHO|BAT\.?PORCO|BATATA PORCO/}
+];
+
 const CARDS_RESUMO = [
   {titulo:'Espetos por sabor', itens:['ESPETO DE CARNE', 'ESPETO DE FRANGO']},
   {titulo:'Batatas',           itens:['BATATA FRITA', 'BATATA CRINKLE']},
@@ -900,7 +909,7 @@ function somarComponentes(F){
       (m[nome] || (m[nome] = {q:0, un:un})).q += q;
     });
   });
-  return {geral:geral, porMarca:porMarca};
+  return {geral:geral, porMarca:porMarca, linhas:linhas};
 }
 
 // Frase no formato pedido. Soma so o que compartilha a unidade do primeiro
@@ -931,7 +940,7 @@ function renderResumo(F){
     'Consumo por insumo — <b>' + periodo + '</b>';
 
   const somas = somarComponentes(F);
-  const geral = somas.geral, porMarca = somas.porMarca;
+  const geral = somas.geral, porMarca = somas.porMarca, linhas = somas.linhas;
 
   document.getElementById('rCards').innerHTML = CARDS_RESUMO.map(card => {
     const linhas = card.itens.map(n => [n, geral[n]]).filter(par => par[1] && par[1].q > 0);
@@ -971,6 +980,13 @@ function renderResumo(F){
       const f = fraseInsight(par[1], periodo);
       return f ? bloco(rotuloMarca(par[0]), f) : '';
     });
+
+  INSIGHTS_PRODUTO.forEach(cfg => {
+    const q = linhas.filter(l => cfg.re.test(normProd(F.produtos[l[3]])))
+                    .reduce((t, l) => t + l[5], 0);
+    if(q > 0) blocos.push(bloco(cfg.titulo, 'Foram vendidas <b>' +
+      qtdTexto(q, 'UND') + '</b> porções de ' + cfg.titulo + ' ' + periodo + '.'));
+  });
 
   // Bebidas por subcategoria (CHOPE, REDBULL, SOFT DRINK...), somando de TODOS
   // os produtos - inclusive a bebida que vem dentro de um combo de comida.
