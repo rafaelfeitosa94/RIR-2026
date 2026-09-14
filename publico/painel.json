@@ -1,6 +1,18 @@
 {
   "feed": [
     {
+      "id": 222082318,
+      "hora": "02:54:30",
+      "ponto": "SUN.A.ESPETTO",
+      "produto": "RED BULL",
+      "outros_produtos": 1,
+      "quantidade": 2,
+      "valor": 42.0,
+      "operacao": "Compra Ficha",
+      "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
       "id": 222082283,
       "hora": "02:51:19",
       "ponto": "MUN.A.ESPETTO.AEB03",
@@ -286,18 +298,6 @@
       "valor": 116.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222081983,
-      "hora": "02:30:15",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "FRITAS",
-      "outros_produtos": 1,
-      "quantidade": 2,
-      "valor": 38.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
