@@ -220,9 +220,49 @@ def carregar_exclusoes():
         return set()
 
 
+PASTA_BACKOFFICE = "dados_backoffice"
+JSONL_BACKOFFICE = "retiradas_ausentes.jsonl"
+
+
+def carregar_complemento_backoffice():
+    """Transacoes que existem so no BackOffice - a API nunca as entregou.
+
+    Nos dias 04 e 05/09 o ListaTransacoes ficou instavel e 830 'Retirada de
+    produto' (R$ 14.215) se perderam. Elas aparecem na exportacao do
+    BackOffice e estao reconstruidas dali, no mesmo formato dos registros da
+    API - o de-para de SKU foi derivado cruzando as 5.731 retiradas que as
+    duas bases tem em comum (1:1, sem ambiguidade, zero divergencia de valor).
+
+    Unica diferenca conhecida: a planilha trunca os segundos. O painel agrega
+    por hora e por dia, e nenhum dos 830 muda de balde por causa disso.
+
+    Fica num arquivo versionado - e nao no .jsonl bruto, que e gitignored e
+    vive no cache do Actions - para valer tambem no runner. Para desfazer,
+    basta apagar o arquivo: nenhum dado bruto e tocado.
+    """
+    caminho = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           PASTA_BACKOFFICE, JSONL_BACKOFFICE)
+    if not os.path.exists(caminho):
+        return []
+    return ler_jsonl(caminho, "transacao_id")
+
+
 def carregar_transacoes(pasta=PASTA_DADOS, converter_tipos=True):
     """DataFrame das transacoes, uma linha por produto, colunas renomeadas."""
     registros = ler_jsonl(os.path.join(pasta, JSONL_TRANSACOES), "transacao_id")
+
+    # Complemento do BackOffice: so entra o que a API ainda nao trouxe. Se ela
+    # se recuperar e entregar a transacao, o registro real e que vale.
+    complemento = carregar_complemento_backoffice()
+    if complemento:
+        ja_tem = {str(r.get("transacao_id")) for r in registros}
+        novos = [r for r in complemento
+                 if str(r.get("transacao_id")) not in ja_tem]
+        if novos:
+            registros = registros + novos
+            print(f"  complemento BackOffice: +{len(novos)} transacao(oes) "
+                  f"de {JSONL_BACKOFFICE}")
+
     excluidos = carregar_exclusoes()
     if excluidos:
         antes = len(registros)
