@@ -179,13 +179,21 @@ COL_PRODUTO = COLUNAS_TRANSACAO["produto"]
 COL_CATEGORIA = COLUNAS_TRANSACAO["categoria_produto"]
 COL_PAGAMENTO = COLUNAS_TRANSACAO["forma_pagamento"]
 
-# Operacoes que NAO sao venda. No fluxo de ficha/copo o dinheiro entra em
-# "Compra Ficha"; a "Retirada de produto" e apenas a ENTREGA do que ja foi pago
-# - por isso vem sem forma de pagamento. Somar as duas DUPLICA o faturamento.
-# O relatorio "Vendas Consolidado" do BackOffice tambem as exclui: sem elas o
-# painel bate com o relatorio (a diferenca cai de R$ 58 mil para 0,16%).
-# Comecaram a aparecer em 05/09/2026 15:00 - ate o dia 04 os numeros batiam.
-OPERACOES_NAO_VENDA = ("retirada de produto",)
+# Operacoes excluidas do faturamento. Hoje: NENHUMA.
+#
+# "Retirada de produto" (R$ 110.364) ficou fora daqui por um tempo, na hipotese
+# de que o dinheiro entrava em "Compra Ficha" e a retirada era so a entrega do
+# que ja fora pago - somar as duas duplicaria a receita. O dado desmentiu isso:
+#
+#   * as 5.731 retiradas trazem transacao_original_id preenchido, mas NENHUM
+#     desses originais existe na base: nao ha linha alguma sendo duplicada;
+#   * os produtos de retirada ("CHOPE HNK RETORNANDO COPO", "... 1a COMPRA")
+#     nao aparecem uma unica vez em "Compra Ficha" - sao SKUs proprios;
+#   * a planilha da operacao soma R$ 3.865.220 e o painel dava exatamente
+#     R$ 3.754.856. A diferenca era so a retirada.
+#
+# Confirmado com o Rafael em 29/09/2026: e receita e entra no faturamento.
+OPERACOES_NAO_VENDA = ()
 
 
 def somente_vendas(df):
