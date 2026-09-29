@@ -1,13 +1,13 @@
 {
-  "atualizado_em": "2026-09-29T15:06:38",
+  "atualizado_em": "2026-09-29T15:12:14",
   "codigo_evento": 38049,
   "totais": {
-    "transacoes": 81419,
-    "transacoes_venda": 81150,
+    "transacoes": 87980,
+    "transacoes_venda": 87711,
     "transacoes_cancelamento": 269,
-    "itens": 152605.0,
-    "valor_liquido": 3754856.0,
-    "valor_bruto_vendas": 3771506.0,
+    "itens": 159166.0,
+    "valor_liquido": 3865220.0,
+    "valor_bruto_vendas": 3881870.0,
     "valor_cancelado": 16650.0,
     "ultima_transacao": "2026-09-14T03:02:13"
   },
@@ -39,22 +39,57 @@
       "itens": 7640.0,
       "transacoes": 4060,
       "linhas": 5055
+    },
+    {
+      "Nome do Ponto": "MUN.A.ANTE SIRENE.AEB05",
+      "valor_liquido": 52414.0,
+      "itens": 3153.0,
+      "transacoes": 3153,
+      "linhas": 3153
+    },
+    {
+      "Nome do Ponto": "SUN.A.ANTE ESPETTO",
+      "valor_liquido": 36538.0,
+      "itens": 2128.0,
+      "transacoes": 2128,
+      "linhas": 2128
+    },
+    {
+      "Nome do Ponto": "MUN.A.ANTE ESPETTO.AEB03",
+      "valor_liquido": 14979.0,
+      "itens": 905.0,
+      "transacoes": 905,
+      "linhas": 905
+    },
+    {
+      "Nome do Ponto": "MUN.A.ANTE MANE.AEB04",
+      "valor_liquido": 6433.0,
+      "itens": 375.0,
+      "transacoes": 375,
+      "linhas": 375
     }
   ],
   "por_produto": [
     {
       "Produto": "CHOPE HNK RT",
-      "valor_liquido": 587958.0,
-      "itens": 31222.0,
-      "transacoes": 19091,
-      "linhas": 19091
+      "valor_liquido": 640856.0,
+      "itens": 34162.0,
+      "transacoes": 22032,
+      "linhas": 22032
     },
     {
       "Produto": "2.ESP.CARNE +BT",
-      "valor_liquido": 316435.0,
-      "itens": 6464.0,
-      "transacoes": 4652,
-      "linhas": 4652
+      "valor_liquido": 316515.0,
+      "itens": 6467.0,
+      "transacoes": 4653,
+      "linhas": 4653
+    },
+    {
+      "Produto": "CHOPE HNK",
+      "valor_liquido": 242442.0,
+      "itens": 10411.0,
+      "transacoes": 7118,
+      "linhas": 7118
     },
     {
       "Produto": "ESPETO DE CARNE",
@@ -64,16 +99,9 @@
       "linhas": 5281
     },
     {
-      "Produto": "CHOPE HNK",
-      "valor_liquido": 228665.0,
-      "itens": 9812.0,
-      "transacoes": 6519,
-      "linhas": 6519
-    },
-    {
       "Produto": "ESP.CARNE+BT",
-      "valor_liquido": 216507.0,
-      "itens": 6121.0,
+      "valor_liquido": 216482.0,
+      "itens": 6120.0,
       "transacoes": 4585,
       "linhas": 4585
     },
@@ -86,10 +114,10 @@
     },
     {
       "Produto": "AGUA CRYSTAL",
-      "valor_liquido": 158073.0,
-      "itens": 14441.0,
-      "transacoes": 6754,
-      "linhas": 6754
+      "valor_liquido": 161790.0,
+      "itens": 14972.0,
+      "transacoes": 7285,
+      "linhas": 7285
     },
     {
       "Produto": "SAND.CARNE+BT",
@@ -97,6 +125,13 @@
       "itens": 3100.0,
       "transacoes": 2165,
       "linhas": 2165
+    },
+    {
+      "Produto": "COCA COLA",
+      "valor_liquido": 141925.0,
+      "itens": 6876.0,
+      "transacoes": 4519,
+      "linhas": 4519
     },
     {
       "Produto": "COCA ZERO",
@@ -113,13 +148,6 @@
       "linhas": 1945
     },
     {
-      "Produto": "COCA COLA",
-      "valor_liquido": 129741.0,
-      "itens": 6115.0,
-      "transacoes": 3761,
-      "linhas": 3761
-    },
-    {
       "Produto": "COCA ZERO RT",
       "valor_liquido": 112115.0,
       "itens": 6089.0,
@@ -128,14 +156,14 @@
     },
     {
       "Produto": "SAND CARNE",
-      "valor_liquido": 105639.0,
-      "itens": 2867.0,
-      "transacoes": 1950,
-      "linhas": 1950
+      "valor_liquido": 105697.0,
+      "itens": 2869.0,
+      "transacoes": 1951,
+      "linhas": 1951
     },
     {
       "Produto": "COCA COLA RT",
-      "valor_liquido": 98085.0,
+      "valor_liquido": 98124.0,
       "itens": 5459.0,
       "transacoes": 3448,
       "linhas": 3448
@@ -149,31 +177,31 @@
     },
     {
       "Produto": "FRITAS",
-      "valor_liquido": 87791.0,
-      "itens": 4442.0,
-      "transacoes": 3187,
-      "linhas": 3187
+      "valor_liquido": 87719.0,
+      "itens": 4438.0,
+      "transacoes": 3186,
+      "linhas": 3186
     },
     {
       "Produto": "ESPETO FRANGO",
-      "valor_liquido": 57751.0,
-      "itens": 2350.0,
-      "transacoes": 1426,
-      "linhas": 1426
+      "valor_liquido": 57854.0,
+      "itens": 2353.0,
+      "transacoes": 1427,
+      "linhas": 1427
     },
     {
       "Produto": "RED BULL",
-      "valor_liquido": 40450.0,
-      "itens": 1877.0,
-      "transacoes": 1375,
-      "linhas": 1375
+      "valor_liquido": 47254.0,
+      "itens": 2201.0,
+      "transacoes": 1699,
+      "linhas": 1699
     },
     {
       "Produto": "ESP.FRANGO+BT",
-      "valor_liquido": 36315.0,
-      "itens": 1022.0,
-      "transacoes": 781,
-      "linhas": 781
+      "valor_liquido": 36237.0,
+      "itens": 1020.0,
+      "transacoes": 780,
+      "linhas": 780
     },
     {
       "Produto": "RED BULL RT",
@@ -190,18 +218,18 @@
       "linhas": 990
     },
     {
+      "Produto": "AMERIC.FISH+BT",
+      "valor_liquido": 28012.0,
+      "itens": 569.0,
+      "transacoes": 422,
+      "linhas": 422
+    },
+    {
       "Produto": "MIEXD VODKA RT",
       "valor_liquido": 28002.0,
       "itens": 1301.0,
       "transacoes": 859,
       "linhas": 859
-    },
-    {
-      "Produto": "AMERIC.FISH+BT",
-      "valor_liquido": 27912.0,
-      "itens": 567.0,
-      "transacoes": 421,
-      "linhas": 421
     },
     {
       "Produto": "2.ESP.FRANG+BT",
@@ -268,10 +296,10 @@
     },
     {
       "Produto": "SAND.FRANGO+BT",
-      "valor_liquido": 17357.0,
-      "itens": 369.0,
-      "transacoes": 266,
-      "linhas": 266
+      "valor_liquido": 17238.0,
+      "itens": 366.0,
+      "transacoes": 265,
+      "linhas": 265
     },
     {
       "Produto": "RB ZERO",
@@ -366,10 +394,10 @@
     },
     {
       "Produto": "AMERICAN FISH",
-      "valor_liquido": 10259.0,
-      "itens": 258.0,
-      "transacoes": 177,
-      "linhas": 177
+      "valor_liquido": 10159.0,
+      "itens": 256.0,
+      "transacoes": 176,
+      "linhas": 176
     },
     {
       "Produto": "FANTA GUA 0",
@@ -405,6 +433,13 @@
       "itens": 364.0,
       "transacoes": 294,
       "linhas": 294
+    },
+    {
+      "Produto": "COCA COLA RTN",
+      "valor_liquido": 8360.0,
+      "itens": 760.0,
+      "transacoes": 760,
+      "linhas": 760
     },
     {
       "Produto": "CHOP LAG IPA",
@@ -470,6 +505,13 @@
       "linhas": 153
     },
     {
+      "Produto": "RED BULL RTN",
+      "valor_liquido": 5152.0,
+      "itens": 322.0,
+      "transacoes": 322,
+      "linhas": 322
+    },
+    {
       "Produto": "RB CEREJA RT",
       "valor_liquido": 4547.0,
       "itens": 266.0,
@@ -477,11 +519,25 @@
       "linhas": 186
     },
     {
+      "Produto": "SCH MIXED RTN",
+      "valor_liquido": 4158.0,
+      "itens": 198.0,
+      "transacoes": 198,
+      "linhas": 198
+    },
+    {
       "Produto": "1FRANG+BT+RB+CP",
       "valor_liquido": 3533.0,
       "itens": 63.0,
       "transacoes": 54,
       "linhas": 54
+    },
+    {
+      "Produto": "SCH MIXED",
+      "valor_liquido": 3328.0,
+      "itens": 128.0,
+      "transacoes": 128,
+      "linhas": 128
     },
     {
       "Produto": "CB PIPOCA+2CHOP",
@@ -673,18 +729,18 @@
       "linhas": 3
     },
     {
-      "Produto": "(C)MIXED GIN TO RT",
-      "valor_liquido": -84.0,
-      "itens": 4.0,
-      "transacoes": 4,
-      "linhas": 4
-    },
-    {
       "Produto": "(C)RB TROPICAL",
       "valor_liquido": -84.0,
       "itens": 4.0,
       "transacoes": 2,
       "linhas": 2
+    },
+    {
+      "Produto": "(C)MIXED GIN TO RT",
+      "valor_liquido": -84.0,
+      "itens": 4.0,
+      "transacoes": 4,
+      "linhas": 4
     },
     {
       "Produto": "(C)BATATA CRINKLE",
@@ -757,14 +813,14 @@
       "linhas": 2
     },
     {
-      "Produto": "(C)MIXED SPRITZ RT",
+      "Produto": "(C)RED BULL",
       "valor_liquido": -189.0,
       "itens": 9.0,
       "transacoes": 5,
       "linhas": 5
     },
     {
-      "Produto": "(C)RED BULL",
+      "Produto": "(C)MIXED SPRITZ RT",
       "valor_liquido": -189.0,
       "itens": 9.0,
       "transacoes": 5,
@@ -942,15 +998,15 @@
   "por_categoria": [
     {
       "Categoria Produto": "Bebida",
-      "valor_liquido": 1883582.0,
-      "itens": 100520.0,
-      "transacoes": 56640,
-      "linhas": 61235
+      "valor_liquido": 1993999.0,
+      "itens": 107083.0,
+      "transacoes": 63201,
+      "linhas": 67796
     },
     {
       "Categoria Produto": "Comida",
-      "valor_liquido": 1871274.0,
-      "itens": 52085.0,
+      "valor_liquido": 1871221.0,
+      "itens": 52083.0,
       "transacoes": 33107,
       "linhas": 35042
     }
@@ -976,6 +1032,13 @@
       "itens": 11960.0,
       "transacoes": 6640,
       "linhas": 7677
+    },
+    {
+      "Forma de Pagamento": "Retirada de produto",
+      "valor_liquido": 110364.0,
+      "itens": 6561.0,
+      "transacoes": 6561,
+      "linhas": 6561
     },
     {
       "Forma de Pagamento": "Zig Cashless",
@@ -1345,94 +1408,94 @@
     },
     {
       "_hora": "2026-09-04T15",
-      "valor_liquido": 10586.0,
-      "itens": 452.0,
-      "transacoes": 264,
-      "linhas": 345
+      "valor_liquido": 10936.0,
+      "itens": 470.0,
+      "transacoes": 282,
+      "linhas": 363
     },
     {
       "_hora": "2026-09-04T16",
-      "valor_liquido": 13475.0,
-      "itens": 563.0,
-      "transacoes": 341,
-      "linhas": 451
+      "valor_liquido": 14200.0,
+      "itens": 603.0,
+      "transacoes": 381,
+      "linhas": 491
     },
     {
       "_hora": "2026-09-04T17",
-      "valor_liquido": 22793.0,
-      "itens": 913.0,
-      "transacoes": 534,
-      "linhas": 740
+      "valor_liquido": 24112.0,
+      "itens": 982.0,
+      "transacoes": 603,
+      "linhas": 809
     },
     {
       "_hora": "2026-09-04T18",
-      "valor_liquido": 29265.0,
-      "itens": 1169.0,
-      "transacoes": 705,
-      "linhas": 957
+      "valor_liquido": 30542.0,
+      "itens": 1237.0,
+      "transacoes": 773,
+      "linhas": 1025
     },
     {
       "_hora": "2026-09-04T19",
-      "valor_liquido": 57572.0,
-      "itens": 2166.0,
-      "transacoes": 1240,
-      "linhas": 1767
+      "valor_liquido": 59413.0,
+      "itens": 2270.0,
+      "transacoes": 1344,
+      "linhas": 1871
     },
     {
       "_hora": "2026-09-04T20",
-      "valor_liquido": 73415.0,
-      "itens": 2599.0,
-      "transacoes": 1423,
-      "linhas": 2150
+      "valor_liquido": 74731.0,
+      "itens": 2679.0,
+      "transacoes": 1503,
+      "linhas": 2230
     },
     {
       "_hora": "2026-09-04T21",
-      "valor_liquido": 69574.0,
-      "itens": 2635.0,
-      "transacoes": 1515,
-      "linhas": 2162
+      "valor_liquido": 71133.0,
+      "itens": 2725.0,
+      "transacoes": 1605,
+      "linhas": 2252
     },
     {
       "_hora": "2026-09-04T22",
-      "valor_liquido": 68254.0,
-      "itens": 2724.0,
-      "transacoes": 1486,
-      "linhas": 2169
+      "valor_liquido": 69653.0,
+      "itens": 2807.0,
+      "transacoes": 1569,
+      "linhas": 2252
     },
     {
       "_hora": "2026-09-04T23",
-      "valor_liquido": 49236.0,
-      "itens": 2217.0,
-      "transacoes": 1256,
-      "linhas": 1741
+      "valor_liquido": 50513.0,
+      "itens": 2298.0,
+      "transacoes": 1337,
+      "linhas": 1822
     },
     {
       "_hora": "2026-09-05T00",
-      "valor_liquido": 35407.0,
-      "itens": 1868.0,
-      "transacoes": 1105,
-      "linhas": 1350
+      "valor_liquido": 36354.0,
+      "itens": 1922.0,
+      "transacoes": 1159,
+      "linhas": 1404
     },
     {
       "_hora": "2026-09-05T01",
-      "valor_liquido": 34909.0,
-      "itens": 1800.0,
-      "transacoes": 1034,
-      "linhas": 1341
+      "valor_liquido": 35736.0,
+      "itens": 1858.0,
+      "transacoes": 1092,
+      "linhas": 1399
     },
     {
       "_hora": "2026-09-05T02",
-      "valor_liquido": 21380.0,
-      "itens": 924.0,
-      "transacoes": 525,
-      "linhas": 759
+      "valor_liquido": 22096.0,
+      "itens": 975.0,
+      "transacoes": 576,
+      "linhas": 810
     },
     {
       "_hora": "2026-09-05T03",
-      "valor_liquido": 4435.0,
-      "itens": 194.0,
-      "transacoes": 117,
-      "linhas": 154
+      "valor_liquido": 4522.0,
+      "itens": 201.0,
+      "transacoes": 124,
+      "linhas": 161
     },
     {
       "_hora": "2026-09-05T04",
@@ -1506,101 +1569,101 @@
     },
     {
       "_hora": "2026-09-05T14",
-      "valor_liquido": 11773.0,
-      "itens": 420.0,
-      "transacoes": 263,
-      "linhas": 364
+      "valor_liquido": 12348.0,
+      "itens": 447.0,
+      "transacoes": 290,
+      "linhas": 391
     },
     {
       "_hora": "2026-09-05T15",
-      "valor_liquido": 30199.0,
-      "itens": 1108.0,
-      "transacoes": 679,
-      "linhas": 957
+      "valor_liquido": 31824.0,
+      "itens": 1192.0,
+      "transacoes": 763,
+      "linhas": 1041
     },
     {
       "_hora": "2026-09-05T16",
-      "valor_liquido": 38865.0,
-      "itens": 1538.0,
-      "transacoes": 923,
-      "linhas": 1240
+      "valor_liquido": 41453.0,
+      "itens": 1684.0,
+      "transacoes": 1069,
+      "linhas": 1386
     },
     {
       "_hora": "2026-09-05T17",
-      "valor_liquido": 43941.0,
-      "itens": 1761.0,
-      "transacoes": 1050,
-      "linhas": 1432
+      "valor_liquido": 46720.0,
+      "itens": 1917.0,
+      "transacoes": 1206,
+      "linhas": 1588
     },
     {
       "_hora": "2026-09-05T18",
-      "valor_liquido": 44200.0,
-      "itens": 1541.0,
-      "transacoes": 936,
-      "linhas": 1327
+      "valor_liquido": 46065.0,
+      "itens": 1647.0,
+      "transacoes": 1042,
+      "linhas": 1433
     },
     {
       "_hora": "2026-09-05T19",
-      "valor_liquido": 42471.0,
-      "itens": 1593.0,
-      "transacoes": 1004,
-      "linhas": 1354
+      "valor_liquido": 44128.0,
+      "itens": 1688.0,
+      "transacoes": 1099,
+      "linhas": 1449
     },
     {
       "_hora": "2026-09-05T20",
-      "valor_liquido": 47313.0,
-      "itens": 1855.0,
-      "transacoes": 1160,
-      "linhas": 1587
+      "valor_liquido": 48975.0,
+      "itens": 1953.0,
+      "transacoes": 1258,
+      "linhas": 1685
     },
     {
       "_hora": "2026-09-05T21",
-      "valor_liquido": 23634.0,
-      "itens": 970.0,
-      "transacoes": 602,
-      "linhas": 789
+      "valor_liquido": 24497.0,
+      "itens": 1026.0,
+      "transacoes": 658,
+      "linhas": 845
     },
     {
       "_hora": "2026-09-05T22",
-      "valor_liquido": 25490.0,
-      "itens": 1248.0,
-      "transacoes": 720,
-      "linhas": 994
+      "valor_liquido": 26399.0,
+      "itens": 1309.0,
+      "transacoes": 781,
+      "linhas": 1055
     },
     {
       "_hora": "2026-09-05T23",
-      "valor_liquido": 42715.0,
-      "itens": 1842.0,
-      "transacoes": 1076,
-      "linhas": 1522
+      "valor_liquido": 43882.0,
+      "itens": 1922.0,
+      "transacoes": 1156,
+      "linhas": 1602
     },
     {
       "_hora": "2026-09-06T00",
-      "valor_liquido": 21680.0,
-      "itens": 958.0,
-      "transacoes": 600,
-      "linhas": 792
+      "valor_liquido": 22312.0,
+      "itens": 1001.0,
+      "transacoes": 643,
+      "linhas": 835
     },
     {
       "_hora": "2026-09-06T01",
-      "valor_liquido": 13640.0,
-      "itens": 648.0,
-      "transacoes": 446,
-      "linhas": 524
+      "valor_liquido": 13916.0,
+      "itens": 667.0,
+      "transacoes": 465,
+      "linhas": 543
     },
     {
       "_hora": "2026-09-06T02",
-      "valor_liquido": 17251.0,
-      "itens": 817.0,
-      "transacoes": 511,
-      "linhas": 674
+      "valor_liquido": 18710.0,
+      "itens": 922.0,
+      "transacoes": 616,
+      "linhas": 779
     },
     {
       "_hora": "2026-09-06T03",
-      "valor_liquido": 4122.0,
-      "itens": 153.0,
-      "transacoes": 102,
-      "linhas": 134
+      "valor_liquido": 4201.0,
+      "itens": 159.0,
+      "transacoes": 108,
+      "linhas": 140
     },
     {
       "_hora": "2026-09-06T04",
@@ -1674,101 +1737,101 @@
     },
     {
       "_hora": "2026-09-06T14",
-      "valor_liquido": 6486.0,
-      "itens": 252.0,
-      "transacoes": 153,
-      "linhas": 205
+      "valor_liquido": 6789.0,
+      "itens": 266.0,
+      "transacoes": 167,
+      "linhas": 219
     },
     {
       "_hora": "2026-09-06T15",
-      "valor_liquido": 27270.0,
-      "itens": 1000.0,
-      "transacoes": 602,
-      "linhas": 864
+      "valor_liquido": 28851.0,
+      "itens": 1078.0,
+      "transacoes": 680,
+      "linhas": 942
     },
     {
       "_hora": "2026-09-06T16",
-      "valor_liquido": 38660.0,
-      "itens": 1434.0,
-      "transacoes": 827,
-      "linhas": 1171
+      "valor_liquido": 41520.0,
+      "itens": 1579.0,
+      "transacoes": 972,
+      "linhas": 1316
     },
     {
       "_hora": "2026-09-06T17",
-      "valor_liquido": 57523.0,
-      "itens": 2247.0,
-      "transacoes": 1287,
-      "linhas": 1807
+      "valor_liquido": 60997.0,
+      "itens": 2434.0,
+      "transacoes": 1474,
+      "linhas": 1994
     },
     {
       "_hora": "2026-09-06T18",
-      "valor_liquido": 93284.0,
-      "itens": 3255.0,
-      "transacoes": 1705,
-      "linhas": 2603
+      "valor_liquido": 96177.0,
+      "itens": 3424.0,
+      "transacoes": 1874,
+      "linhas": 2772
     },
     {
       "_hora": "2026-09-06T19",
-      "valor_liquido": 84472.0,
-      "itens": 3415.0,
-      "transacoes": 1873,
-      "linhas": 2643
+      "valor_liquido": 88169.0,
+      "itens": 3616.0,
+      "transacoes": 2074,
+      "linhas": 2844
     },
     {
       "_hora": "2026-09-06T20",
-      "valor_liquido": 113763.0,
-      "itens": 4004.0,
-      "transacoes": 2017,
-      "linhas": 3148
+      "valor_liquido": 117739.0,
+      "itens": 4239.0,
+      "transacoes": 2252,
+      "linhas": 3383
     },
     {
       "_hora": "2026-09-06T21",
-      "valor_liquido": 49226.0,
-      "itens": 2012.0,
-      "transacoes": 1068,
-      "linhas": 1485
+      "valor_liquido": 51306.0,
+      "itens": 2132.0,
+      "transacoes": 1188,
+      "linhas": 1605
     },
     {
       "_hora": "2026-09-06T22",
-      "valor_liquido": 37141.0,
-      "itens": 1586.0,
-      "transacoes": 793,
-      "linhas": 1140
+      "valor_liquido": 38597.0,
+      "itens": 1673.0,
+      "transacoes": 880,
+      "linhas": 1227
     },
     {
       "_hora": "2026-09-06T23",
-      "valor_liquido": 78290.0,
-      "itens": 2913.0,
-      "transacoes": 1470,
-      "linhas": 2288
+      "valor_liquido": 81084.0,
+      "itens": 3086.0,
+      "transacoes": 1643,
+      "linhas": 2461
     },
     {
       "_hora": "2026-09-07T00",
-      "valor_liquido": 21441.0,
-      "itens": 966.0,
-      "transacoes": 544,
-      "linhas": 710
+      "valor_liquido": 22942.0,
+      "itens": 1062.0,
+      "transacoes": 640,
+      "linhas": 806
     },
     {
       "_hora": "2026-09-07T01",
-      "valor_liquido": 19161.0,
-      "itens": 840.0,
-      "transacoes": 496,
-      "linhas": 659
+      "valor_liquido": 20692.0,
+      "itens": 943.0,
+      "transacoes": 599,
+      "linhas": 762
     },
     {
       "_hora": "2026-09-07T02",
-      "valor_liquido": 6071.0,
-      "itens": 222.0,
-      "transacoes": 148,
-      "linhas": 190
+      "valor_liquido": 6564.0,
+      "itens": 251.0,
+      "transacoes": 177,
+      "linhas": 219
     },
     {
       "_hora": "2026-09-07T03",
-      "valor_liquido": 3459.0,
-      "itens": 142.0,
-      "transacoes": 91,
-      "linhas": 118
+      "valor_liquido": 3766.0,
+      "itens": 160.0,
+      "transacoes": 109,
+      "linhas": 136
     },
     {
       "_hora": "2026-09-07T04",
@@ -1842,101 +1905,101 @@
     },
     {
       "_hora": "2026-09-07T14",
-      "valor_liquido": 16322.0,
-      "itens": 549.0,
-      "transacoes": 290,
-      "linhas": 300
+      "valor_liquido": 16899.0,
+      "itens": 578.0,
+      "transacoes": 319,
+      "linhas": 329
     },
     {
       "_hora": "2026-09-07T15",
-      "valor_liquido": 28168.0,
-      "itens": 1017.0,
-      "transacoes": 559,
-      "linhas": 559
+      "valor_liquido": 29755.0,
+      "itens": 1101.0,
+      "transacoes": 643,
+      "linhas": 643
     },
     {
       "_hora": "2026-09-07T16",
-      "valor_liquido": 37299.0,
-      "itens": 1323.0,
-      "transacoes": 742,
-      "linhas": 742
+      "valor_liquido": 38755.0,
+      "itens": 1397.0,
+      "transacoes": 816,
+      "linhas": 816
     },
     {
       "_hora": "2026-09-07T17",
-      "valor_liquido": 37061.0,
-      "itens": 1372.0,
-      "transacoes": 756,
-      "linhas": 756
+      "valor_liquido": 38358.0,
+      "itens": 1443.0,
+      "transacoes": 827,
+      "linhas": 827
     },
     {
       "_hora": "2026-09-07T18",
-      "valor_liquido": 62314.0,
-      "itens": 2179.0,
-      "transacoes": 1017,
-      "linhas": 1017
+      "valor_liquido": 64656.0,
+      "itens": 2311.0,
+      "transacoes": 1149,
+      "linhas": 1149
     },
     {
       "_hora": "2026-09-07T19",
-      "valor_liquido": 104452.0,
-      "itens": 3558.0,
-      "transacoes": 1668,
-      "linhas": 1668
+      "valor_liquido": 105836.0,
+      "itens": 3638.0,
+      "transacoes": 1748,
+      "linhas": 1748
     },
     {
       "_hora": "2026-09-07T20",
-      "valor_liquido": 102512.0,
-      "itens": 3991.0,
-      "transacoes": 1886,
-      "linhas": 1886
+      "valor_liquido": 104519.0,
+      "itens": 4115.0,
+      "transacoes": 2010,
+      "linhas": 2010
     },
     {
       "_hora": "2026-09-07T21",
-      "valor_liquido": 87647.0,
-      "itens": 3787.0,
-      "transacoes": 1686,
-      "linhas": 1686
+      "valor_liquido": 89910.0,
+      "itens": 3929.0,
+      "transacoes": 1828,
+      "linhas": 1828
     },
     {
       "_hora": "2026-09-07T22",
-      "valor_liquido": 92135.0,
-      "itens": 3995.0,
-      "transacoes": 1514,
-      "linhas": 1514
+      "valor_liquido": 94299.0,
+      "itens": 4139.0,
+      "transacoes": 1658,
+      "linhas": 1658
     },
     {
       "_hora": "2026-09-07T23",
-      "valor_liquido": 23147.0,
-      "itens": 1111.0,
-      "transacoes": 618,
-      "linhas": 618
+      "valor_liquido": 23372.0,
+      "itens": 1126.0,
+      "transacoes": 633,
+      "linhas": 633
     },
     {
       "_hora": "2026-09-08T00",
-      "valor_liquido": 28999.0,
-      "itens": 1382.0,
-      "transacoes": 769,
-      "linhas": 769
+      "valor_liquido": 29683.0,
+      "itens": 1435.0,
+      "transacoes": 822,
+      "linhas": 822
     },
     {
       "_hora": "2026-09-08T01",
-      "valor_liquido": 36867.0,
-      "itens": 1518.0,
-      "transacoes": 788,
-      "linhas": 788
+      "valor_liquido": 37971.0,
+      "itens": 1595.0,
+      "transacoes": 865,
+      "linhas": 865
     },
     {
       "_hora": "2026-09-08T02",
-      "valor_liquido": 11417.0,
-      "itens": 443.0,
-      "transacoes": 263,
-      "linhas": 263
+      "valor_liquido": 11781.0,
+      "itens": 468.0,
+      "transacoes": 288,
+      "linhas": 288
     },
     {
       "_hora": "2026-09-08T03",
-      "valor_liquido": 2948.0,
-      "itens": 135.0,
-      "transacoes": 76,
-      "linhas": 76
+      "valor_liquido": 3035.0,
+      "itens": 142.0,
+      "transacoes": 83,
+      "linhas": 83
     },
     {
       "_hora": "2026-09-08T04",
@@ -2514,101 +2577,101 @@
     },
     {
       "_hora": "2026-09-11T14",
-      "valor_liquido": 13115.0,
-      "itens": 491.0,
-      "transacoes": 234,
-      "linhas": 234
+      "valor_liquido": 13398.0,
+      "itens": 506.0,
+      "transacoes": 249,
+      "linhas": 249
     },
     {
       "_hora": "2026-09-11T15",
-      "valor_liquido": 42662.0,
-      "itens": 1547.0,
-      "transacoes": 728,
-      "linhas": 728
+      "valor_liquido": 44235.0,
+      "itens": 1638.0,
+      "transacoes": 819,
+      "linhas": 819
     },
     {
       "_hora": "2026-09-11T16",
-      "valor_liquido": 28495.0,
-      "itens": 1097.0,
-      "transacoes": 577,
-      "linhas": 577
+      "valor_liquido": 29639.0,
+      "itens": 1162.0,
+      "transacoes": 642,
+      "linhas": 642
     },
     {
       "_hora": "2026-09-11T17",
-      "valor_liquido": 31354.0,
-      "itens": 1282.0,
-      "transacoes": 646,
-      "linhas": 646
+      "valor_liquido": 32396.0,
+      "itens": 1347.0,
+      "transacoes": 711,
+      "linhas": 711
     },
     {
       "_hora": "2026-09-11T18",
-      "valor_liquido": 73819.0,
-      "itens": 3006.0,
-      "transacoes": 1188,
-      "linhas": 1188
+      "valor_liquido": 75098.0,
+      "itens": 3087.0,
+      "transacoes": 1269,
+      "linhas": 1269
     },
     {
       "_hora": "2026-09-11T19",
-      "valor_liquido": 33862.0,
-      "itens": 1452.0,
-      "transacoes": 751,
-      "linhas": 751
+      "valor_liquido": 34673.0,
+      "itens": 1505.0,
+      "transacoes": 804,
+      "linhas": 804
     },
     {
       "_hora": "2026-09-11T20",
-      "valor_liquido": 75210.0,
-      "itens": 3516.0,
-      "transacoes": 1504,
-      "linhas": 1504
+      "valor_liquido": 76183.0,
+      "itens": 3592.0,
+      "transacoes": 1580,
+      "linhas": 1580
     },
     {
       "_hora": "2026-09-11T21",
-      "valor_liquido": 35739.0,
-      "itens": 1788.0,
-      "transacoes": 884,
-      "linhas": 884
+      "valor_liquido": 36184.0,
+      "itens": 1819.0,
+      "transacoes": 915,
+      "linhas": 915
     },
     {
       "_hora": "2026-09-11T22",
-      "valor_liquido": 37666.0,
-      "itens": 2351.0,
-      "transacoes": 976,
-      "linhas": 976
+      "valor_liquido": 38014.0,
+      "itens": 2380.0,
+      "transacoes": 1005,
+      "linhas": 1005
     },
     {
       "_hora": "2026-09-11T23",
-      "valor_liquido": 33613.0,
-      "itens": 1862.0,
-      "transacoes": 864,
-      "linhas": 864
+      "valor_liquido": 34076.0,
+      "itens": 1898.0,
+      "transacoes": 900,
+      "linhas": 900
     },
     {
       "_hora": "2026-09-12T00",
-      "valor_liquido": 10257.0,
-      "itens": 563.0,
-      "transacoes": 327,
-      "linhas": 327
+      "valor_liquido": 10268.0,
+      "itens": 564.0,
+      "transacoes": 328,
+      "linhas": 328
     },
     {
       "_hora": "2026-09-12T01",
-      "valor_liquido": 16431.0,
-      "itens": 1092.0,
-      "transacoes": 524,
-      "linhas": 524
+      "valor_liquido": 16674.0,
+      "itens": 1114.0,
+      "transacoes": 546,
+      "linhas": 546
     },
     {
       "_hora": "2026-09-12T02",
-      "valor_liquido": 24660.0,
-      "itens": 1459.0,
-      "transacoes": 672,
-      "linhas": 672
+      "valor_liquido": 25493.0,
+      "itens": 1518.0,
+      "transacoes": 731,
+      "linhas": 731
     },
     {
       "_hora": "2026-09-12T03",
-      "valor_liquido": 2579.0,
-      "itens": 104.0,
-      "transacoes": 69,
-      "linhas": 69
+      "valor_liquido": 2692.0,
+      "itens": 115.0,
+      "transacoes": 80,
+      "linhas": 80
     },
     {
       "_hora": "2026-09-12T04",
@@ -2682,101 +2745,101 @@
     },
     {
       "_hora": "2026-09-12T14",
-      "valor_liquido": 14014.0,
-      "itens": 505.0,
-      "transacoes": 281,
-      "linhas": 281
+      "valor_liquido": 14584.0,
+      "itens": 534.0,
+      "transacoes": 310,
+      "linhas": 310
     },
     {
       "_hora": "2026-09-12T15",
-      "valor_liquido": 38585.0,
-      "itens": 1536.0,
-      "transacoes": 889,
-      "linhas": 889
+      "valor_liquido": 40449.0,
+      "itens": 1635.0,
+      "transacoes": 988,
+      "linhas": 988
     },
     {
       "_hora": "2026-09-12T16",
-      "valor_liquido": 45411.0,
-      "itens": 1990.0,
-      "transacoes": 1139,
-      "linhas": 1139
+      "valor_liquido": 48138.0,
+      "itens": 2135.0,
+      "transacoes": 1284,
+      "linhas": 1284
     },
     {
       "_hora": "2026-09-12T17",
-      "valor_liquido": 45166.0,
-      "itens": 2170.0,
-      "transacoes": 1142,
-      "linhas": 1142
+      "valor_liquido": 47308.0,
+      "itens": 2290.0,
+      "transacoes": 1262,
+      "linhas": 1262
     },
     {
       "_hora": "2026-09-12T18",
-      "valor_liquido": 96662.0,
-      "itens": 3838.0,
-      "transacoes": 1735,
-      "linhas": 1735
+      "valor_liquido": 99101.0,
+      "itens": 3984.0,
+      "transacoes": 1881,
+      "linhas": 1881
     },
     {
       "_hora": "2026-09-12T19",
-      "valor_liquido": 84047.0,
-      "itens": 3338.0,
-      "transacoes": 1726,
-      "linhas": 1726
+      "valor_liquido": 85729.0,
+      "itens": 3440.0,
+      "transacoes": 1828,
+      "linhas": 1828
     },
     {
       "_hora": "2026-09-12T20",
-      "valor_liquido": 90429.0,
-      "itens": 3448.0,
-      "transacoes": 1798,
-      "linhas": 1798
+      "valor_liquido": 91728.0,
+      "itens": 3527.0,
+      "transacoes": 1877,
+      "linhas": 1877
     },
     {
       "_hora": "2026-09-12T21",
-      "valor_liquido": 72961.0,
-      "itens": 2846.0,
-      "transacoes": 1460,
-      "linhas": 1460
+      "valor_liquido": 74023.0,
+      "itens": 2909.0,
+      "transacoes": 1523,
+      "linhas": 1523
     },
     {
       "_hora": "2026-09-12T22",
-      "valor_liquido": 61124.0,
-      "itens": 2445.0,
-      "transacoes": 1199,
-      "linhas": 1199
+      "valor_liquido": 61783.0,
+      "itens": 2487.0,
+      "transacoes": 1241,
+      "linhas": 1241
     },
     {
       "_hora": "2026-09-12T23",
-      "valor_liquido": 87330.0,
-      "itens": 3543.0,
-      "transacoes": 1544,
-      "linhas": 1544
+      "valor_liquido": 88755.0,
+      "itens": 3634.0,
+      "transacoes": 1635,
+      "linhas": 1635
     },
     {
       "_hora": "2026-09-13T00",
-      "valor_liquido": 27194.0,
-      "itens": 1263.0,
-      "transacoes": 759,
-      "linhas": 759
+      "valor_liquido": 27824.0,
+      "itens": 1302.0,
+      "transacoes": 798,
+      "linhas": 798
     },
     {
       "_hora": "2026-09-13T01",
-      "valor_liquido": 19735.0,
-      "itens": 959.0,
-      "transacoes": 590,
-      "linhas": 590
+      "valor_liquido": 20214.0,
+      "itens": 991.0,
+      "transacoes": 622,
+      "linhas": 622
     },
     {
       "_hora": "2026-09-13T02",
-      "valor_liquido": 15982.0,
-      "itens": 659.0,
-      "transacoes": 392,
-      "linhas": 392
+      "valor_liquido": 16273.0,
+      "itens": 686.0,
+      "transacoes": 419,
+      "linhas": 419
     },
     {
       "_hora": "2026-09-13T03",
-      "valor_liquido": 2632.0,
-      "itens": 130.0,
-      "transacoes": 80,
-      "linhas": 80
+      "valor_liquido": 2825.0,
+      "itens": 145.0,
+      "transacoes": 95,
+      "linhas": 95
     },
     {
       "_hora": "2026-09-13T04",
@@ -2850,94 +2913,94 @@
     },
     {
       "_hora": "2026-09-13T14",
-      "valor_liquido": 13069.0,
-      "itens": 455.0,
-      "transacoes": 282,
-      "linhas": 282
+      "valor_liquido": 13626.0,
+      "itens": 485.0,
+      "transacoes": 312,
+      "linhas": 312
     },
     {
       "_hora": "2026-09-13T15",
-      "valor_liquido": 28369.0,
-      "itens": 1036.0,
-      "transacoes": 651,
-      "linhas": 651
+      "valor_liquido": 28755.0,
+      "itens": 1057.0,
+      "transacoes": 672,
+      "linhas": 672
     },
     {
       "_hora": "2026-09-13T16",
-      "valor_liquido": 25412.0,
-      "itens": 948.0,
-      "transacoes": 614,
-      "linhas": 614
+      "valor_liquido": 25890.0,
+      "itens": 974.0,
+      "transacoes": 640,
+      "linhas": 640
     },
     {
       "_hora": "2026-09-13T17",
-      "valor_liquido": 18104.0,
-      "itens": 764.0,
-      "transacoes": 498,
-      "linhas": 498
+      "valor_liquido": 18661.0,
+      "itens": 793.0,
+      "transacoes": 527,
+      "linhas": 527
     },
     {
       "_hora": "2026-09-13T18",
-      "valor_liquido": 38316.0,
-      "itens": 1359.0,
-      "transacoes": 795,
-      "linhas": 795
+      "valor_liquido": 38876.0,
+      "itens": 1394.0,
+      "transacoes": 830,
+      "linhas": 830
     },
     {
       "_hora": "2026-09-13T19",
-      "valor_liquido": 34985.0,
-      "itens": 1172.0,
-      "transacoes": 737,
-      "linhas": 737
+      "valor_liquido": 35381.0,
+      "itens": 1194.0,
+      "transacoes": 759,
+      "linhas": 759
     },
     {
       "_hora": "2026-09-13T20",
-      "valor_liquido": 38077.0,
-      "itens": 1335.0,
-      "transacoes": 843,
-      "linhas": 843
+      "valor_liquido": 38467.0,
+      "itens": 1360.0,
+      "transacoes": 868,
+      "linhas": 868
     },
     {
       "_hora": "2026-09-13T21",
-      "valor_liquido": 35126.0,
-      "itens": 1319.0,
-      "transacoes": 826,
-      "linhas": 826
+      "valor_liquido": 35489.0,
+      "itens": 1342.0,
+      "transacoes": 849,
+      "linhas": 849
     },
     {
       "_hora": "2026-09-13T22",
-      "valor_liquido": 22068.0,
-      "itens": 910.0,
-      "transacoes": 588,
-      "linhas": 588
+      "valor_liquido": 22243.0,
+      "itens": 921.0,
+      "transacoes": 599,
+      "linhas": 599
     },
     {
       "_hora": "2026-09-13T23",
-      "valor_liquido": 17410.0,
-      "itens": 756.0,
-      "transacoes": 481,
-      "linhas": 481
+      "valor_liquido": 17812.0,
+      "itens": 781.0,
+      "transacoes": 506,
+      "linhas": 506
     },
     {
       "_hora": "2026-09-14T00",
-      "valor_liquido": 14477.0,
-      "itens": 633.0,
-      "transacoes": 417,
-      "linhas": 417
+      "valor_liquido": 14694.0,
+      "itens": 649.0,
+      "transacoes": 433,
+      "linhas": 433
     },
     {
       "_hora": "2026-09-14T01",
-      "valor_liquido": 6467.0,
-      "itens": 305.0,
-      "transacoes": 199,
-      "linhas": 199
+      "valor_liquido": 6767.0,
+      "itens": 324.0,
+      "transacoes": 218,
+      "linhas": 218
     },
     {
       "_hora": "2026-09-14T02",
-      "valor_liquido": 4161.0,
-      "itens": 166.0,
-      "transacoes": 108,
-      "linhas": 108
+      "valor_liquido": 4458.0,
+      "itens": 184.0,
+      "transacoes": 126,
+      "linhas": 126
     },
     {
       "_hora": "2026-09-14T03",
@@ -2957,52 +3020,52 @@
     },
     {
       "_dia": "2026-09-04",
-      "valor_liquido": 498469.0,
-      "itens": 20560.0,
-      "transacoes": 11741,
-      "linhas": 16359
+      "valor_liquido": 512109.0,
+      "itens": 21363.0,
+      "transacoes": 12544,
+      "linhas": 17162
     },
     {
       "_dia": "2026-09-05",
-      "valor_liquido": 407294.0,
-      "itens": 16452.0,
-      "transacoes": 10072,
-      "linhas": 13690
+      "valor_liquido": 425430.0,
+      "itens": 17534.0,
+      "transacoes": 11154,
+      "linhas": 14772
     },
     {
       "_dia": "2026-09-06",
-      "valor_liquido": 636312.0,
-      "itens": 24290.0,
-      "transacoes": 13076,
-      "linhas": 19033
+      "valor_liquido": 665258.0,
+      "itens": 25945.0,
+      "transacoes": 14731,
+      "linhas": 20688
     },
     {
       "_dia": "2026-09-07",
-      "valor_liquido": 671288.0,
-      "itens": 26360.0,
-      "transacoes": 12632,
-      "linhas": 12642
+      "valor_liquido": 688829.0,
+      "itens": 27417.0,
+      "transacoes": 13689,
+      "linhas": 13699
     },
     {
       "_dia": "2026-09-11",
-      "valor_liquido": 459551.0,
-      "itens": 21614.0,
-      "transacoes": 9947,
-      "linhas": 9947
+      "valor_liquido": 469112.0,
+      "itens": 22249.0,
+      "transacoes": 10582,
+      "linhas": 10582
     },
     {
       "_dia": "2026-09-12",
-      "valor_liquido": 701329.0,
-      "itens": 28673.0,
-      "transacoes": 14735,
-      "linhas": 14735
+      "valor_liquido": 718791.0,
+      "itens": 29702.0,
+      "transacoes": 15764,
+      "linhas": 15764
     },
     {
       "_dia": "2026-09-13",
-      "valor_liquido": 296103.0,
-      "itens": 11161.0,
-      "transacoes": 7041,
-      "linhas": 7041
+      "valor_liquido": 301181.0,
+      "itens": 11461.0,
+      "transacoes": 7341,
+      "linhas": 7341
     }
   ]
 }

@@ -109,6 +109,30 @@
       "cancelamento": false
     },
     {
+      "id": 714690,
+      "hora": "02:40:44",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Retirada de Produto",
+      "pagamento": NaN,
+      "cancelamento": false
+    },
+    {
+      "id": 714688,
+      "hora": "02:39:25",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Retirada de Produto",
+      "pagamento": NaN,
+      "cancelamento": false
+    },
+    {
       "id": 222082166,
       "hora": "02:39:21",
       "ponto": "SUN.A.ESPETTO",
@@ -130,6 +154,18 @@
       "valor": 18.0,
       "operacao": "Compra Ficha",
       "pagamento": "Cartao Debito",
+      "cancelamento": false
+    },
+    {
+      "id": 714687,
+      "hora": "02:39:08",
+      "ponto": "SUN.A.ANTE ESPETTO",
+      "produto": "CHOPE HNK RT",
+      "outros_produtos": 0,
+      "quantidade": 1,
+      "valor": 18.0,
+      "operacao": "Retirada de Produto",
+      "pagamento": NaN,
       "cancelamento": false
     },
     {
@@ -262,42 +298,6 @@
       "valor": 11.0,
       "operacao": "Compra Ficha",
       "pagamento": "Zig Cashless",
-      "cancelamento": false
-    },
-    {
-      "id": 222082036,
-      "hora": "02:32:39",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "ESPETO DE CARNE",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 25.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
-      "cancelamento": false
-    },
-    {
-      "id": 222082030,
-      "hora": "02:32:35",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK RT",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 18.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Credito",
-      "cancelamento": false
-    },
-    {
-      "id": 222082027,
-      "hora": "02:32:33",
-      "ponto": "SUN.A.ESPETTO",
-      "produto": "CHOPE HNK",
-      "outros_produtos": 0,
-      "quantidade": 1,
-      "valor": 23.0,
-      "operacao": "Compra Ficha",
-      "pagamento": "Cartao Debito",
       "cancelamento": false
     }
   ]
